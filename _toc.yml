@@ -1,4 +1,4 @@
-format: jb-book
+format: jb-book (remove)
 root: intro
 parts:
   - caption: About This Course
