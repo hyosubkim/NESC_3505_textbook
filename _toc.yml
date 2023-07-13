@@ -1,0 +1,124 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: TODO
+    chapters: 
+    - file: TODO.md
+      title: To Do   
+  - caption: About This Course
+    chapters:
+    - file: 1-intro/about-this-course
+    - file: 1-intro/learning_objectives
+    - file: syllabus 
+    - file: 1-intro/class_tech
+      # sections:
+      # # - file: 01_intro/canvas
+      # # - file: 01_intro/communication
+      # # - file: 1_intro/succeeding
+      sections:
+      # - file: 1_intro/learning_approach (grab from about-this-course)
+      - file: 1-intro/mindset
+      - file: 1-intro/errors_debugging
+      - file: 1-intro/pedagogy
+      sections:
+      - file: 1-intro/teaching_approach
+      - file: 1-intro/online_learning
+      - file: 1-intro/assessment_evaluation
+      
+  - caption: Introduction to Data Science
+    chapters:
+    - file: 2-nds/introduction
+    - file: 2-nds/learning_objectives
+    - file: 2-nds/what_is_nds
+      sections:
+      - file: 2-nds/data
+    - file: 2-nds/tools_for_nds
+      sections:
+      - file: 2-nds/spreadsheets
+      - file: 2-nds/spreadsheets_limits
+      - file: 2-nds/reproducibility
+      - file: 2-nds/sci_prog_lang
+      - file: 2-nds/which_lang
+      - file: 2-nds/libs
+      - file: 2-nds/why_python
+    - file: 2-nds/coding
+      sections:
+      - file: 2-nds/python
+      - file: 2-nds/datacamp
+      - file: 2-nds/py4e
+      - file: 2-nds/terminal
+      - file: 2-nds/jupyter
+      - file: 2-nds/markdown
+      - file: 2-nds/cocalc
+      - file: 2-nds/github
+    
+  - caption: Introduction to Python
+    chapters:
+    - file: 3-python/introduction
+    - file: 3-python/learning_objectives
+    - file: 3-python/intro-to-jupyter-in-syzygy
+    - file: 3-python/getting_help
+    - file: 3-python/data_types
+      sections: 
+      - file: 3-python/variables_assignment
+      - file: 3-python/types_conversion
+      - file: 3-python/builtin
+      - file: 3-python/lists
+      - file: 3-python/dictionaries
+    - file: 3-python/flow_control
+      sections:
+      - file: 3-python/for_loops
+      - file: 3-python/conditionals
+    - file: 3-python/writing-a-function
+    - file: 3-python/absolute_beginners
+    - file: 3-python/working_w_data
+      sections:
+      - file: 3-python/pandas_dataframes
+      - file: 3-python/looping_data_files
+  
+  - caption: Data Visualization
+    chapters:
+    - file: 4-viz/introduction
+    - file: 4-viz/learning_objectives
+    - file: 4-viz/plotting
+    - file: 4-viz/proc_vs_oo
+    - file: 4-viz/subplots
+    - file: 4-viz/plotting_types
+    - file: 4-viz/seaborn
+    - file: 4-viz/human_factors
+  
+  - caption: Exploratory Data Analysis
+    chapters:
+    - file: 5-eda/introduction
+    - file: 5-eda/learning_objectives
+    - file: 5-eda/repeated_measures
+    - file: 5-eda/data_cleaning
+    - file: 5-eda/ttests
+    
+  - caption: Single Unit Data
+    chapters:
+    - file: 6-single_unit/introduction
+    - file: 6-single_unit/learning_objectives
+    - file: 6-single_unit/single_unit_intro
+      sections:
+      - file: 6-single_unit/intro_spike_trains
+      - file: 6-single_unit/ten_intensities
+      - file: 6-single_unit/heat_maps
+    - file: 6-single_unit/intro_multielec_data
+      sections:
+      - file: 6-single_unit/pandas_multielec
+      - file: 6-single_unit/corr_spike_trains
+  
+  - caption: Signal Processing
+    chapters:
+    - file: 7-signal_processing/signals-sampling-filtering
+ 
+  
+
+  
+  
+  
+

@@ -1,0 +1,100 @@
+home <https://gribblelab.org/teaching/scicomp2020/index.html>
+
+
+  Scientific Computing (Psychology 9040a)
+
+Fall, 2020
+
+
+  Assignment 8
+
+Due: Nov 24 by 11:55 pm (London ON time)
+
+------------------------------------------------------------------------
+
+Right-click and Save As … these daily weather data from 2019 from
+London, ON and from Vancouver, BC:
+
+  * Toronto, ON
+    <https://www.gribblelab.org/scicomp2020/en_climate_daily_ON_6158731_2019_P1D.csv>
+  * Vancouver, BC
+    <https://www.gribblelab.org/scicomp2020/en_climate_daily_BC_1108395_2019_P1D.csv>
+
+ 1.
+
+    Import each file as a DataFrame, one called |toronto| and one called |vancouver|. Use the |.info()| function to view the contents. For example for the |toronto| DataFrame you should see:
+
+    | <#cb1-1>toronto.info()
+     <#cb1-2>
+     <#cb1-3><class 'pandas.core.frame.DataFrame'>
+     <#cb1-4>RangeIndex: 365 entries, 0 to 364
+     <#cb1-5>Data columns (total 31 columns):
+     <#cb1-6>#   Column                     Non-Null Count  Dtype  
+     <#cb1-7>---  ------                     --------------  -----  
+     <#cb1-8>0   Longitude (x)              365 non-null    float64
+     <#cb1-9>1   Latitude (y)               365 non-null    float64
+     <#cb1-10>2   Station Name               365 non-null    object 
+     <#cb1-11>3   Climate ID                 365 non-null    int64  
+     <#cb1-12>4   Date/Time                  365 non-null    object 
+     <#cb1-13>5   Year                       365 non-null    int64  
+     <#cb1-14>6   Month                      365 non-null    int64  
+     <#cb1-15>7   Day                        365 non-null    int64  
+     <#cb1-16>8   Data Quality               0 non-null      float64
+     <#cb1-17>9   Max Temp (°C)              364 non-null    float64
+     <#cb1-18>10  Max Temp Flag              1 non-null      object 
+     <#cb1-19>11  Min Temp (°C)              364 non-null    float64
+     <#cb1-20>12  Min Temp Flag              1 non-null      object 
+     <#cb1-21>13  Mean Temp (°C)             364 non-null    float64
+     <#cb1-22>14  Mean Temp Flag             1 non-null      object 
+     <#cb1-23>15  Heat Deg Days (°C)         364 non-null    float64
+     <#cb1-24>16  Heat Deg Days Flag         1 non-null      object 
+     <#cb1-25>17  Cool Deg Days (°C)         364 non-null    float64
+     <#cb1-26>18  Cool Deg Days Flag         1 non-null      object 
+     <#cb1-27>19  Total Rain (mm)            365 non-null    float64
+     <#cb1-28>20  Total Rain Flag            25 non-null     object 
+     <#cb1-29>21  Total Snow (cm)            365 non-null    float64
+     <#cb1-30>22  Total Snow Flag            39 non-null     object 
+     <#cb1-31>23  Total Precip (mm)          365 non-null    float64
+     <#cb1-32>24  Total Precip Flag          55 non-null     object 
+     <#cb1-33>25  Snow on Grnd (cm)          110 non-null    float64
+     <#cb1-34>26  Snow on Grnd Flag          39 non-null     object 
+     <#cb1-35>27  Dir of Max Gust (10s deg)  335 non-null    float64
+     <#cb1-36>28  Dir of Max Gust Flag       26 non-null     object 
+     <#cb1-37>29  Spd of Max Gust (km/h)     335 non-null    float64
+     <#cb1-38>30  Spd of Max Gust Flag       30 non-null     object 
+     <#cb1-39>dtypes: float64(14), int64(4), object(13)
+     <#cb1-40>memory usage: 88.5+ KB
+     <#cb1-41>|
+
+ 2.
+
+    For each city, calculate the maximum temperature range over the
+    whole year: the difference between the highest maximum daily
+    temperature and the lowest daily minimum temperature.
+
+    Answer: 55.8 deg C for Toronto and 38.7 deg C for Vancouver
+
+ 3.
+     1. How many days did Vancouver have a maximum temperature less than
+        0 degrees Celsius? What about Toronto? (b) What was the total
+        rainfall over the year in Vancouver? What about Toronto? (c)
+        What was the total snowfall over the year in Vancouver? In Toronto?
+
+    Answer: (a) Vancouver: 3 days, Toronto: 55 days; (b) Vancouver:
+    934.1 mm, Toronto: 799.6 mm; (c) Vancouver: 32.2 cm, Toronto: 163.5 cm
+
+ 4.
+     1. How many days over the course of the whole year did Vancouver have |Total Rain (mm)| greater than zero? What about Toronto? (b) How many days over
+        the course of the whole year did Vancouver have |Total Snow (cm)| greater than zero? What about Toronto? (c) How many days did
+        Vancouver have |Snow on Grnd (cm)| greater than zero? What about Toronto?
+
+    Answer: (a) Vancouver: 144 days, Toronto: 130 days; (b) Vancouver: 9
+    days, Toronto: 52 days; (c) Vancouver: 11 days, Toronto: 76 days
+
+ 5.
+     1. How many days did both Toronto and Vancouver have |Total Rain (mm)| greater than 1.0 mm? (b) What proportion *of those days*, in
+        percent out of 100, using 2 decimal places (e.g. 12.34%) did
+        Vancouver have greater |Total Rain (mm)| than Toronto? (c), (d) Repeat the analysis for |Total Snow (cm)| greater than 0.0 cm.
+
+    Answer: (a) 21 days; (b) 38.10 %; (c) 5 days; (d) 40.00 %
+

@@ -1,0 +1,88 @@
+home <https://gribblelab.org/teaching/scicomp2020/index.html>
+
+
+  Scientific Computing (Psychology 9040a)
+
+Fall, 2020
+
+
+  Assignment 3
+
+Due: Oct 13 by 11:55 pm (London ON time)
+
+------------------------------------------------------------------------
+
+
+    Estimate
+    π
+
+    by throwing darts
+
+Imagine a circle of radius (
+r
+
+) inscribed inside a square with side length
+2r
+
+. Now imagine throwing a dart which lands at some random location within
+the square (imagine you are terribly random at throwing darts).
+Sometimes the dart will be inside the circle and sometimes it will not.
+If you count the number of darts that land inside the circle and divide
+that by the total number of darts, that ratio ought to equal
+
+π4
+
+.
+
+As an exercise, implement this method of estimating
+π
+
+. Write the program so that you can use any number of random darts
+n
+
+. Start with 1000 darts and then try larger numbers. See how close you
+can get to the actual value of
+π
+
+. Here are the first 100,000 digits of
+π
+
+<http://www.geom.uiuc.edu/~huberty/math5337/groupe/digits.html>.
+
+Write a function called |estimatepi()| that takes an integer |n| as input, and returns as output the estimated value of
+π
+
+using |n| throws of the dart.
+
+Note that this algorithm is not a very efficient or fast way of getting
+the digits of
+π
+
+, but it’s a fun programming exercise nevertheless and a way to get you
+coding.
+
+*Hint*: you will need a function that generates random numbers.
+
+In NumPy the |np.random.rand()| function samples from a uniform (pseudo)random distribution over the
+interval
+(0,1)
+
+.
+
+*Hint*: to determine whether each point is inside or outside of the
+circle you can compute the distance between the point and the centre of
+the circle. If this distance is greater than the radius of the circle,
+it must be outside of the circle. Using the Pythagorean theorem you can
+easily show that the equation for the distance
+d
+
+between two points
+(x1,y1)
+
+and
+(x2,y2)
+
+is:
+
+d=(x2−x1)2+(y2−y1)2
+

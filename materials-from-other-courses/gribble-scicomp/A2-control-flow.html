@@ -1,0 +1,44 @@
+home <https://gribblelab.org/teaching/scicomp2020/index.html>
+
+
+  Scientific Computing (Psychology 9040a)
+
+Fall, 2020
+
+
+  Assignment 2
+
+Due: Oct 6 by 11:55 pm (London ON time)
+
+------------------------------------------------------------------------
+
+
+    Newton’s Method for Square Root
+
+Write a short program to estimate the square root of any number using
+Newton’s method
+<https://en.wikipedia.org/wiki/Newton%27s_method#Examples>. Write your
+program so that the number whose square root is to be taken, and the
+number of iterations to be used, are both variables that can be set at
+the top of the program. You can choose the initial guess on your own,
+use whatever you like. I suggest the number 10.0 as in the Wikipedia
+example.
+
+Find the square root of 612 using 5 iterations. Try it again using 10
+iterations.
+
+This is the relevant section of the Wikipedia entry and the only bit you
+need in order to complete this assignment. The relevant equation is
+highlighted in a red box.
+
+The idea is you start with an initial guess (in this case, |10|). The initial guess is then passed through an equation (shown in the
+red box) to refine it (in the example, it gets refined to |35.6|). That refined guess then becomes the next guess which is passed
+through the same equation again, and further refined.
+
+*Hint*: the first 3 iterations (after the initial guess of |10|) should produce this:
+
+| <#cb1-1>10
+ <#cb1-2>35.6
+ <#cb1-3>26.395505617977527
+ <#cb1-4>24.790635492455475|
+

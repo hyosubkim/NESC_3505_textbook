@@ -1,0 +1,47 @@
+home <https://gribblelab.org/teaching/scicomp2020/index.html>
+
+
+  Scientific Computing (Psychology 9040a)
+
+Fall, 2020
+
+
+  Assignment 7
+
+Due: Nov 17 by 11:55 pm (London ON time)
+
+------------------------------------------------------------------------
+
+ 1.
+
+    Consider the following Python dictionary data and Python list labels:
+
+    | <#cb1-1>data = {'animal': ['cat', 'cat', 'snake', 'dog', 'dog', 'cat', 'snake', 'cat', 'dog', 'dog'],
+     <#cb1-2>        'age': [2.5, 3, 0.5, np.nan, 5, 2, 4.5, np.nan, 7, 3],
+     <#cb1-3>        'visits': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+     <#cb1-4>        'priority': ['yes', 'yes', 'no', 'yes', 'no', 'no', 'no', 'yes', 'no', 'no']}
+     <#cb1-5>
+     <#cb1-6>labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']|
+
+    Create a *DataFrame* |df| from this dictionary |data| which has the index |labels|.
+
+ 2.
+
+    Show the first 3 rows of the DataFrame |df|
+
+ 3.
+
+    Select just the |animal| and |age| columns from the DataFrame |df|.
+
+ 4.
+
+    Select the rows where the animal is a cat and the age is less than 3.
+
+ 5.
+
+    Calculate the sum of all visits in df (i.e. the total number of visits).
+
+ 6.
+
+    Calculate the mean age for each different animal in df.
+

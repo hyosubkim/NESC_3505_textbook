@@ -1,0 +1,50 @@
+home <https://gribblelab.org/teaching/scicomp2020/index.html>
+
+
+  Scientific Computing (Psychology 9040a)
+
+Fall, 2020
+
+
+  Assignment 4
+
+Due: Oct 20 by 11:55 pm (London ON time)
+
+------------------------------------------------------------------------
+
+
+    Advent of Code 2015 Day 2
+
+Complete both Part 1 and Part 2 of Advent of Code 2015 Day 2
+<https://adventofcode.com/2015/day/2>.
+
+Please make sure to save your puzzle input as a file called |A4_input.txt|
+
+Your code should assume that the input is in a file named |A4_input.txt|
+
+This will allow us to run your code locally to veryify that it works.
+
+*Hint*: In Part 1 and in Part 2 you will need to find the smallest of
+three quantities. You can use the built-in function |min()| to do this:
+
+| <#cb1-1># in Part 1:
+ <#cb1-2>slack = min(l*w,l*h,w*h)
+ <#cb1-3>
+ <#cb1-4># in Part 2:
+ <#cb1-5>ribbon = 2*min(l+w,l+h,w+h)|
+
+*Hint*: To load in the input file line by line there are many ways to do
+it, but here is one way:
+
+| <#cb2-1>with open("A4_input.txt") as fp:
+ <#cb2-2>    for line in fp:
+ <#cb2-3>        l,w,h = map(int,line.split('x'))|
+
+Here is another way that will use the NumPy function |genfromtxt()| to load in the entire file into one big 2D array:
+
+| <#cb3-1>import numpy as np
+ <#cb3-2>a4 = np.genfromtxt('A4_input.txt', delimiter='x')|
+
+There are other ways to read in the file as well. Whatever works for you
+is fine.
+

@@ -1,0 +1,41 @@
+home <https://gribblelab.org/teaching/scicomp2020/index.html>
+
+
+  Scientific Computing (Psychology 9040a)
+
+Fall, 2020
+
+
+  Assignment 6
+
+Due: Nov 10 by 11:55 pm (London ON time)
+
+------------------------------------------------------------------------
+
+Complete both Part 1 and Part 2 of Advent of Code 2015 Day 6
+<https://adventofcode.com/2015/day/6>.
+
+
+      Hints:
+
+  *
+
+    You can use a |1000x1000| 2D matrix to represent the grid of lights
+
+  *
+
+    Here is some python code you can use to load in the input file, and
+    for each line, split the instructions into a list of items:
+
+    | <#cb1-1>with open("A6_input.txt") as fp:
+     <#cb1-2>  for line in fp:
+     <#cb1-3>      e = line.strip().split(" ")
+     <#cb1-4>      print(e)|
+
+    You will need some |if| statements to determine which instruction it is, and how to act on
+    them.
+
+  *
+
+    Remember to add 1 to the second |x|-coordinate and the second |y|-coordinate, to handle how Python indexes into arrays. For example, |Z[0:5]| results in the first, second, third, and fourth values of the array |Z|. To get the first 5 values you would have to use |Z[0:6]|.
+
