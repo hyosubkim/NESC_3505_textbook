@@ -73,7 +73,7 @@ parts:
       - file: 3-python/for_loops
       - file: 3-python/conditionals
     - file: 3-python/writing-a-function
-    - file: 3-python/absolute_beginners
+    - file: 3-python/absolute_beginners.ipynb
     - file: 3-python/working_w_data
       sections:
       - file: 3-python/pandas_dataframes

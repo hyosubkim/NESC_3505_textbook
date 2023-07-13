@@ -1,13 +1,13 @@
 # Acknowledgments
 
-First, I owe a great debt of gratitude to Aaron J. Newman of Dalhousie University for sharing his excellent open-source textbook, [Data Science for Psychology and Neuroscience - in Python](https://neuraldatascience.io/intro.html). I have edited, remixed, and added to the original book so that it would best suit undergraduate Kinesiology students at The University of British Columbia. Some notable changes include substituting the chapters on EEG and MRI data with one on Signal Processing, as well as the addition of a section on writing functions. 
+First, I owe a great debt of gratitude to [Aaron J. Newman](https://aaronjnewman.com/) of Dalhousie University for sharing his excellent open-source textbook, [Data Science for Psychology and Neuroscience - in Python](https://neuraldatascience.io/intro.html). I have edited, remixed, and added to the original book so that it would best suit undergraduate Kinesiology students at The University of British Columbia. Some notable changes include substituting the chapters on EEG and MRI data with one on signal processing, as well as the addition of a section on writing functions. 
 
 There are others whose work I have also adopted (and adapted) and to whom I am very grateful:
-- [Meghan Allen] of UBC for the section on writing functions
-- [Paul Gribble] of Western University for his chapter on signal processing
-- Todd Gureckis and Brendan Lake for sharing materials from their [NYU course on Cognition and Perception](https://cims.nyu.edu/~brenden/courses/labincp/intro.html)
+- [Meghan Allen](https://www.cs.ubc.ca/people/meghan-allen) of UBC for the section on writing functions
+- [Paul Gribble](https://gribblelab.org/) of Western University for his [chapter on signal processing](https://gribblelab.org/teaching/scicomp2014/09_Signals_sampling_filtering.html)
+- [Todd Gureckis](https://as.nyu.edu/faculty/todd-gureckis.html) and [Brendan Lake](https://cims.nyu.edu/~brenden/) for sharing materials from their [NYU course on Cognition and Perception](https://cims.nyu.edu/~brenden/courses/labincp/intro.html)
 - [Jessica Hamrick](http://www.jesshamrick.com/) for the Jupyter-based teaching materials
-- [Software Carpentry](http://swcarpentry.github.io/python-novice-gapminder/) for all of their great tutorials
+- [Software Carpentry](https://software-carpentry.org/) for all of their great tutorials
 
 
 ## License for this book
