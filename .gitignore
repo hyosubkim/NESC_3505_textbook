@@ -6,3 +6,7 @@
 **/.icloud
 **/_extra
 **/mri/data
+.DS_Store
+.ipynb_checkpoints
+assignments/
+labs/
