@@ -25,14 +25,14 @@ parts:
       - file: 1-intro/pedagogy
       sections:
       - file: 1-intro/teaching_approach
-      - file: 1-intro/online_learning
-      - file: 1-intro/assessment_evaluation
+      # - file: 1-intro/online_learning
+      # - file: 1-intro/assessment_evaluation
       
   - caption: Introduction to Data Science
     chapters:
     - file: 2-nds/introduction
     - file: 2-nds/learning_objectives
-    - file: 2-nds/what_is_nds
+    - file: 2-nds/what-is-datascience
       sections:
       - file: 2-nds/data
     - file: 2-nds/tools_for_nds

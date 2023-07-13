@@ -16,12 +16,14 @@ The learning outcomes for this class can be characterized as a mix of “hard”
 - Extend your Python skills using online resources
 
 ## Soft Skills
-- demonstrate a professional work ethic
-- be effective and productive in a hybrid/remote working environment
-- work collaboratively, effectively, and productively in a distributed team
-- manage projects: manage time and human resources effectively to achieve specific objectives on a stated timeline
-- peer-review the work of other team members
-- teach others skills and solutions you discover, and communicate your approach to discovering these
-- articulate your strengths and weaknesses as a data scientist working in a team, and identify ways to improve your abilities
-- demonstrate skills you have developed using a portfolio of work, to potential supervisors/employers
-- use, and communicate the value of, open and reproducible code and data
+- Demonstrate a professional work ethic
+- Work collaboratively, effectively, and productively in a distributed team
+- Manage projects: manage time and human resources effectively to achieve specific objectives on a stated timeline
+- Peer-review the work of other team members
+- Teach others skills and solutions you discover, and communicate your approach to discovering these
+- Articulate your strengths and weaknesses as a data scientist working in a team, and identify ways to improve your abilities
+- dDmonstrate skills you have developed using a portfolio of work, to potential supervisors/employers
+- Use, and communicate the value of, open and reproducible code and data
+
+---
+This section was adapted from Aaron J. Newman's [Data Science for Psychology and Neuroscience - in Python](https://neuraldatascience.io/intro.html), [Meghan Allen's](https://www.cs.ubc.ca/people/meghan-allen).

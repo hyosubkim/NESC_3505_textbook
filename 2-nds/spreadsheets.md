@@ -14,7 +14,7 @@ We expect that the incongruent condition would be associated with slower RTs, be
 
 To estimate the average RT for each condition for an individual, we would want to present many trials of each condition, in random order. We do this because there is always some trial-to-trial variability in measuring human RTs (**within-subject** variability). We might want to include 50 trials per condition.
 
-We normally run experiments like this on a computer, which would save a data file for each participant. So at the end of data collection, you now have a 40 data files; one from each participant. An example data file is shown in the figure below, showing the first 10 trials for one participant (identified as `subj_01`) as it might appear in Microsoft Excel.
+We normally run experiments like this on a computer, which would save a data file for each participant. So at the end of data collection, you now have 40 data files; one from each participant. An example data file is shown in the figure below, showing the first 10 trials for one participant (identified as `subj_01`) as it might appear in Microsoft Excel.
 
 ![example spreadsheet](images/spreadsheet_RT_data.png)
 
@@ -28,3 +28,5 @@ Since in our example we tested 40 participants, we would have to manually perfor
 ```{Note}
 There is nothing fundamentally incorrect with this process, and it would yield the correct values for the data. However, there are a number of issues with this workflow. Before reading on, try to think of some!
 ```
+---
+This section was adapted from Aaron J. Newman's [Data Science for Psychology and Neuroscience - in Python](https://neuraldatascience.io/intro.html).

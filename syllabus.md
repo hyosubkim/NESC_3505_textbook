@@ -1,7 +1,7 @@
-# Data Science for Kinesiology
+# Syllabus 
 
 ## Basic Course Information
-2023 Winter Term I; 3 credit hours 
+KIN 482E Advanced Seminar in Neuromechanics ("Data Science for Kinesiology"); 2023 Winter Term I; 3 credit hours 
 
 ## Time and Place
 Mon and Wed, 9:30 - 11:00 am, UBC Life Building (Room 2214)
