@@ -31,3 +31,6 @@ Notice that there is some confusing terminology here — what DataCamp calls "as
 You can navigate around a bit on the DataCamp site if you like. You can access other courses and lessons to see what's out there. You can also explore other features of the site. For example, there are practice exercises you can do between lessons. You can always get back to your Assignments list by clicking on "Organizations".
 
 DataCamp also offers a mobile app that you can use for the lessons. However, the small screen and touch interface are not ideal for the activities that involve typing and running code, so using the web browser on a computer is the best platform.
+
+---
+This section was adapted from Aaron J. Newman's [Data Science for Psychology and Neuroscience - in Python](https://neuraldatascience.io/intro.html).
