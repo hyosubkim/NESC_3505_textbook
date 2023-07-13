@@ -1,4 +1,4 @@
-# NESC_3505_textbook
-Repository for textbook for NESC 3505, Neural Data Science, at Dalhousie University
+# Data Science for Kinesiology textbook
+Repository for textbook for KIN 482, Programming and Data Science, at UBC
 
-Formatted version here: [https://neuraldatascience.io/](https://neuraldatascience.io/)
+Adapted from Aaron J. Newman's [Data Science for Psychology and Neuroscience](https://neuraldatascience.io/](https://neuraldatascience.io/).
