@@ -52,14 +52,14 @@ parts:
       # - file: 2-nds/terminal
       - file: 2-nds/jupyter
       - file: 2-nds/markdown
-      # - file: 2-nds/cocalc
+      # - file: 2-nds/cocalc (replace with chapter on jupyterhub?)
       # - file: 2-nds/github
     
   - caption: Introduction to Python
     chapters:
     - file: 3-python/introduction
     - file: 3-python/learning_objectives
-    - file: 3-python/intro-to-jupyter-in-syzygy
+    - file: 3-python/intro-to-jupyter-in-syzygy  # compare to jupyter-cocalc
     - file: 3-python/getting_help
     - file: 3-python/data_types
       sections: 
