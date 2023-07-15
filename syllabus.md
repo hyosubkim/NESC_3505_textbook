@@ -7,7 +7,7 @@ KIN 482E Advanced Seminar in Neuromechanics ("Data Science for Kinesiology"); 20
 Mon and Wed, 9:30 - 11:00 am, UBC Life Building (Room 2214)
 
 ## Description
-Learn how to write code and use data science tools for analyzing data. 
+Learn how to write code and use data science tools for processing, analyzing, and interpreting data. 
 
 **Long version:** This course provides hands-on experience with learning to program in Python. Students will learn how to think algorithmically in order to process, visualize, and analyze data related to all types of research questions. Through a combination of tutorials, problem sets, and a final project, students will learn some of the most important tools and techniques in the Python data science ecosystem. This course will be especially useful for undergraduate students interested in getting actively involved in research at UBC. In addition, this course provides a strong background for future advanced undergraduate and graduate work in computational approaches to kinesiology, including modeling. However, even for students who do not plan to do scientific research in the future, this course will still provide a solid foundation in core computing and data science skills that will serve them well whether going into industry, healthcare, or another technical field.
 
@@ -20,7 +20,7 @@ Students are required to bring a laptop, chromebook or tablet to both lectures a
 All other required software will be provided by the instructors. Students will learn to perform their analysis using the [Python programming language](https://www.python.org/). Worksheets and tutorial problem sets as well as the final project analysis, development, and reports will be done using [Jupyter Notebooks](http://jupyter.org/) accessed via [Canvas](https://canvas.ubc.ca).
 
 ## Prerequisites
-Two of the following courses: 
+Completion of two of the following courses: 
 - KIN 310
 - KIN 311
 - KIN 313
@@ -51,28 +51,40 @@ The course is designed to achieve the following primary goals:
 **Please read the course policy (e.g., late registration, missing quiz/assignment due to sickness) below before contacting.**
 
 ## Assessment 
-For each class (lecture and tutorial) there will be an assignment. Lecture and tutorial worksheet due dates are posted on Canvas. To open the assignment, click the link (e.g. worksheet_01) from Canvas. To submit your assignment, just make sure your work is saved (File -> Save and Checkpoint to be sure) on our server (i.e., using the link from Canvas) before the deadline. Our server will automatically snapshot at the due date/time.
+- Quiz (in-person): Same time and location as week X (data)
+- Midterm Exam (in-person): 
+- Final Exam (in-person): 
 
+For each class (lecture and tutorial) there will be an assignment. Lecture and tutorial worksheet due dates are posted on Canvas. To open the assignment, click the link (e.g. worksheet_01) from Canvas. To submit your assignment, just make sure your work is saved (File -> Save and Checkpoint to be sure) on our server (i.e., using the link from Canvas) before the deadline. Our server will automatically snapshot at the due date/time.
 
 | Category              | Percent Grade |
 |-----------------------|---------------|
 | Data Camp problems    | 5             |
-| Tutorials (labs)      | 10            |
+| Tutorials (labs)      | 15            |
 | Problem sets          | 25            |
+| Quiz                  | 10            |
 | Midterm               | 20            |
 | Final                 | 25            |
 
 ## Schedule
-
+| Week | Topic | Description |
+|------|-------|-------------|  
+| 1    | Introduction to Course | Learn the tech stack used in the course; in particular, Jupyter notebooks |
+| 2    | Introduction to Python | Learn about variables and assignment, converting variable types |  
+| 3    | Python built-ins, lists, dictionaries | Learn how to store data in two key Python types, lists and dictionaries |
+| 4 | Flow control | Learn about loops and more |
+| 5 | Quiz 1 | Cover concepts from weeks 1-4 |
+| 5 | Functions | Learn how to write your own custom functions |
+| 6 | Functions (continued) | Review and practice writing functions |
+| 7 | 
+ 
 
 ## Policies
 
 ### Late Registration
-
 Students who register for the class late have 1 week from their registration date on Canvas to complete all prior assignments.
 
-### Late Assignments / Quiz Absence
-
+### Late Assignments / Quiz or Exam Absence
 Students **must be present** at the invigilation venue (in class, on Zoom, examination centre, etc) to take quizzes; otherwise they will be considered to have missed the quiz and will be assigned a grade of zero.
 
 Students who will miss a quiz **must provide a self-declaration of academic concession prior to the quiz** (see Canvas homepage for the academic concession form) and make arrangements with the Instructor. Failing to present a declaration within a reasonable timeframe before the quiz will result in a grade of zero.
@@ -82,41 +94,35 @@ There will be **no extensions for the lecture and tutorial worksheets**; late as
 For all other assignments and the course project, a **late submission will receive a 50% penalty**.
 
 ### Autograder Policy
-
-Many of the questions in assignments are graded automatically by software. The grading computer has exactly the same hardware setup as the server that students work on. No assignment, when completed, should take longer than 5 minutes to run on the server. The autograder will automatically stop (time out) for each student assignment after a maximum of 5 minutes; **any ungraded questions at that point will receive a score of 0.**
+<!-- Many of the questions in assignments are graded automatically by software. The grading computer has exactly the same hardware setup as the server that students work on. No assignment, when completed, should take longer than 5 minutes to run on the server. The autograder will automatically stop (time out) for each student assignment after a maximum of 5 minutes; **any ungraded questions at that point will receive a score of 0.** -->
 
 Students are responsible for making sure their assignments are *reproducible*, and run from beginning to end on the autograding computer. In particular, **please ensure that any data that needs to be downloaded is done so by the assignment notebook with the correct filename to the correct folder.** A common mistake is to manually download data when working on the assignment, making the autograder unable to find the data and often resulting in an assignment grade of 0.
 
 In short: whatever grade the autograder returns after 5 minutes (assuming the teaching team did not make an error) is the grade that will be assigned.
 
-### Re-grading
+<!-- ### Re-grading
 
 Students get a free 1% at the end of the course. If you want questions regraded, you can fill out a form at the end of the term documenting in detail what you want regraded. Regrading is only offered if the teaching team makes a mistake. If the total sum of value of possible points via regrading is greater than 1%, you can submit (please do so before the last day of class); otherwise the regrade request is rejected. Note: If you submit a regrade request, you may get less than 1% via regrade.
 
-Note if you received 0 on an assignment when you shouldn't have, please contact the course coordinator as soon as possible rather than waiting until the end of the term.
+Note if you received 0 on an assignment when you shouldn't have, please contact the course coordinator as soon as possible rather than waiting until the end of the term. -->
 
 ### Device/Browser
-
 Students are responsible for using a device and browser compatible with all functionality of Canvas. Chrome or Firefox browsers are recommended; Safari has had issues with Canvas quizzes in the past.
 
 ### Missed Final Exam
-
 Students who miss the final quiz must report to their faculty advising office within 72 hours of the missed exam, and must supply supporting documentation. Only your faculty advising office can grant deferred standing in a course. You must also notify your instructor prior to (if possible) or immediately after the exam. Your instructor will let you know when you are expected to write your deferred exam. Deferred exams will ONLY be provided to students who have applied for and received deferred standing from their faculty.
 
 ### Academic Concession Policy
-
 Please see [UBC's concession policy](http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0) for detailed information on dealing with missed coursework, quizzes, and exams under circumstances of an acute and unanticipated nature.
 
 See our Canvas homepage for the academic concession form.
 
 ### Academic Integrity
-
 The academic enterprise is founded on honesty, civility, and integrity. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, this means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. This also means you should not cheat, copy, or mislead others about what is your work. Violations of academic integrity (i.e., misconduct) lead to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred to the President's Advisory Committee on Student Discipline. Careful records are kept in order to monitor and prevent recurrences.
 
 A more detailed description of academic integrity, including the University's policies and procedures, may be found in the Academic Calendar at <http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0>.
 
 ### Plagiarism
-
 Students must correctly cite any code or text that has been authored by someone else or by the student themselves for other assignments. Cases of plagiarism may include, but are not limited to:
 
 -   the reproduction (copying and pasting) of code or text with none or minimal reformatting (e.g., changing the name of the variables)
@@ -134,12 +140,6 @@ The above attribution policy applies only to assignments. **No code or text may 
 Parts of this syllabus (particularly the policies) have been copied and derived from the [UBC MDS Policies](https://ubc-mds.github.io/policies/).
 
 
-
-
-## Links to Other Courses
-Completion of this course will help prepare you for the following courses:
-- Introduction to Computational Modeling 
-- KIN 419: Laboratory Investigations in Neuromechanical Kinesiology
 
  
 
@@ -240,16 +240,6 @@ Thoughts:
 - Skills-based notebooks or DataCamp exercises (must be prior to each session - unlimited opportunities to get right)
 - More involved problem set each week/module (see Gribble course, NYU course)
 
-### Final Project (xx% of grade)
 
-## University Policies
-
-UBC provides resources to support student learning and to maintain healthy lifestyles but recognizes that sometimes crises arise and so there are additional resources to access including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious observances. UBC values academic honesty and students are expected to acknowledge the ideas generated by others and to uphold the highest academic standards in all of their actions.  
-
-Details of the policies and how to access support are available on [the UBC Senate website](https://senate.ubc.ca/policies-resources-support-student-success/).
-
-## Other Course Policies
-
-## Learning Resources
 
 
