@@ -69,14 +69,22 @@ For each class (lecture and tutorial) there will be an assignment. Lecture and t
 ## Schedule
 | Week | Topic | Description |
 |------|-------|-------------|  
-| 1    | Introduction to Course | Learn the tech stack used in the course; in particular, Jupyter notebooks |
+| 1    | Introduction to Course | Learn the tech stack used in the course, especially Jupyter notebooks |
 | 2    | Introduction to Python | Learn about variables and assignment, converting variable types |  
 | 3    | Python built-ins, lists, dictionaries | Learn how to store data in two key Python types, lists and dictionaries |
-| 4 | Flow control | Learn about loops and more |
+| 4 | Flow control | Learn about loops and conditional (i.e., "if-then") statements |
 | 5 | Quiz 1 | Cover concepts from weeks 1-4 |
-| 5 | Functions | Learn how to write your own custom functions |
-| 6 | Functions (continued) | Review and practice writing functions |
-| 7 | 
+| 5 | Functions | Learn how to write your own custom functions for repeated tasks |
+| 6 | Functions (continued), File I/O and *pandas* | Learn how to read in and manipulate data with the powerful Python library *pandas* | 
+| 7 | Data visualization with *Matplotlib* | Learn the principles of effective visualizations with *Matplotlib* |
+| 8 | More data visualizaiton with *seaborn* | Learn how to effectively visualize statistical relationships with *seaborn* |
+| 9 | Intoduction to Exploratory Data Analysis | Learn how to effectively extract information from your data; also learn about repeated measures design studies | 
+| 10 | Introduction to Basic Stats with Python | Learn how to conduct familiar statistical analyses in Python | 
+| 10 | Midterm Exam |  Covers materials from weeks 1-10       |
+| 11 | Midterm Break |       |
+| 12 | Single Unit Data & Spike Trains | Apply your programming skills to neural data; also learn about numerical computing using the famous Python library *NumPy* | 
+| 13 | Signal Processing | Learn the principles of signal processing and apply them to analyzing kinematic data | 
+| 14 | Leveling Up Your Data Science Skills | Everything you ever wanted to know about installing the scientific Python ecosystem on your computer/the terminal/version control but were afraid to ask | 
  
 
 ## Policies
