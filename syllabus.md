@@ -155,7 +155,7 @@ See our Canvas homepage for the academic concession form.
 ### Academic Integrity
 The academic enterprise is founded on honesty, civility, integrity, and accountability. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, this means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. This also means you should not cheat, copy, or mislead others about what is your work. Violations of academic integrity (i.e., misconduct) lead to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred to the President's Advisory Committee on Student Discipline. Careful records are kept in order to monitor and prevent recurrences.
 
-A more detailed description of academic integrity, including the University's policies and procedures, may be found in the Academic Calendar at <http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0>.
+A more detailed description of academic integrity, including the University's policies and procedures, may be found in the [Academic Calendar](http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0).
 
 ### Plagiarism
 
@@ -165,9 +165,9 @@ Cases of plagiarism may include, but are not limited to:
 -   the translation of an algorithm or a script from a language to another
 -   the generation of code by automatic code-generation software
 
-**Plagiarism of any form will result in serious penalties, including failure of the course.**
+**Plagiarism of any form will result in serious penalties, up to and including failure of the course.**
 
 ## Attribution
 
-Portions of this syllabus, including the Policies section, have been copied and adapted from the [UBC MDS Policies](https://ubc-mds.github.io/policies/) and [UBC's Campus-wide Policies and Regulations](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations).
+Portions of this syllabus, most notably the Policies section, have been copied and adapted from the syllabus for another data science course at UBC (DSCI 100), which are in turn based on [UBC MDS Policies](https://ubc-mds.github.io/policies/) and [UBC's Campus-wide Policies and Regulations](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations).
 

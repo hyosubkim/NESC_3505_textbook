@@ -16,13 +16,10 @@ The learning outcomes for this class can be characterized as a mix of “hard”
 - Extend your Python skills using online resources
 
 ## Soft Skills
-- Demonstrate a professional work ethic
-- Work collaboratively, effectively, and productively in a distributed team
-- Manage projects: manage time and human resources effectively to achieve specific objectives on a stated timeline
-- Peer-review the work of other team members
+- Demonstrate a professional work ethic by managing your time well, coming to class prepared, and engaging with your instructors and classmates
+- Peer-review the work of other classmates
 - Teach others skills and solutions you discover, and communicate your approach to discovering these
 - Articulate your strengths and weaknesses as a data scientist working in a team, and identify ways to improve your abilities
-- dDmonstrate skills you have developed using a portfolio of work, to potential supervisors/employers
 - Use, and communicate the value of, open and reproducible code and data
 
 ---

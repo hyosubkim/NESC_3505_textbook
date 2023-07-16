@@ -3,30 +3,53 @@
 
 format: jb-book
 root: intro
-parts:
-  - caption: TODO
-    chapters: 
-    - file: TODO.md
-      title: To Do   
+parts: 
   - caption: About This Course
     chapters:
+    # - file: 1-intro/why
     - file: 1-intro/about-this-course
     - file: 1-intro/learning_objectives
     - file: syllabus 
     - file: 1-intro/class_tech
       # sections:
-      # # - file: 01_intro/canvas
-      # # - file: 01_intro/communication
-      # # - file: 1_intro/succeeding
+      # - file: 1-intro/lms
+      # - file: 1-intro/teams
+      # - file: 1-intro/communication
+      # - file: 1-intro/videos
+    # - file: 1-intro/how_to_rock
+    #   sections:
+    #   - file: 1-intro/learning_approach
+    #   - file: 1-intro/mindset
+    #   - file: 1-intro/errors_debugging
+    #   - file: 1-intro/teamwork
+    - file: 1_intro/learning_approach 
       sections:
-      # - file: 1_intro/learning_approach (grab from about-this-course)
       - file: 1-intro/mindset
       - file: 1-intro/errors_debugging
-      - file: 1-intro/pedagogy
+    - file: 1-intro/pedagogy
       sections:
       - file: 1-intro/teaching_approach
-      # - file: 1-intro/online_learning
-      # - file: 1-intro/assessment_evaluation
+    #   - file: 1-intro/online_learning
+    #   - file: 1-intro/assessment_evaluation
+    #   - file: 1-intro/constructivism
+    #   - file: 1-intro/connectivism
+    #   - file: 1-intro/authenticity
+    #   - file: 1-intro/21st_cen_skills
+    # - file: 1-intro/open
+    #   sections:
+    #   - file: 1-intro/software
+    #   - file: 1-intro/free_licenses
+    #   - file: 1-intro/open_science
+    #   - file: 1-intro/peer_review
+    #   - file: 1-intro/for_profit
+    #   - file: 1-intro/impact_factors
+    #   - file: 1-intro/novelty
+    #   - file: 1-intro/open_publishing
+    #   - file: 1-intro/preregistration
+    #   - file: 1-intro/open_methods
+    #   - file: 1-intro/oer
+    #   - file: 1-intro/oer_this_course
+    #   - file: 1-intro/licenses
       
   - caption: Introduction to Data Science
     chapters:
@@ -59,7 +82,8 @@ parts:
     chapters:
     - file: 3-python/introduction
     - file: 3-python/learning_objectives
-    - file: 3-python/intro-to-jupyter-in-syzygy  # compare to jupyter-cocalc
+    # - file: 3-python/jupyter_cocalc
+    - file: 3-python/intro-to-jupyter-in-syzygy  
     - file: 3-python/getting_help
     - file: 3-python/data_types
       sections: 
@@ -73,7 +97,7 @@ parts:
       - file: 3-python/for_loops
       - file: 3-python/conditionals
     - file: 3-python/writing-a-function
-    - file: 3-python/absolute_beginners.ipynb
+    # - file: notebook on numpy? 
     - file: 3-python/working_w_data
       sections:
       - file: 3-python/pandas_dataframes
