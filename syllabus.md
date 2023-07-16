@@ -14,35 +14,36 @@ Learn how to write code and use data science tools for processing, analyzing, an
 ## Textbook
 We will be using an open-source textbook available for free on the Web:
 
-## Hardware & Software
+## Hardware & Software 
 Students are required to bring a laptop, chromebook or tablet to both lectures and tutorials. Students who do not own a laptop, chromebook, or tablet may be able to [loan a laptop from the UBC library](https://services.library.ubc.ca/computers-technology/technology-borrowing/).
 
-All other required software will be provided by the instructors. Students will learn to perform their analysis using the [Python programming language](https://www.python.org/). Worksheets and tutorial problem sets as well as the final project analysis, development, and reports will be done using [Jupyter Notebooks](http://jupyter.org/) accessed via [Canvas](https://canvas.ubc.ca).
+All other required software will be provided by the instructors. Students will learn to perform their analysis using the [Python programming language](https://www.python.org/). Worksheets and tutorial problem sets will be done using [Jupyter Notebooks](http://jupyter.org/) accessed via [Canvas](https://canvas.ubc.ca).
 
 ## Prerequisites
 Completion of two of the following courses: 
-- KIN 310
-- KIN 311
-- KIN 313
-- KIN 316
-- KIN 411
-- KIN 419
+- KIN 310 
+- KIN 311 "Sensorimotor Control of Human Movement"
+- KIN 313 "Neuromuscular Integration of Human Movement"
+- KIN 316 "Biomechanical Properties of Tissues"
+- KIN 411 "Neuroanatomy of Human Movement"
+- KIN 419 "Laboratory Investigations in Neuromechanical Kinesiology"
 
 ***No prior programming experience is expected or required.***
 
 ## Learning Outcomes
-The course is designed to achieve the following primary goals:
+By the end of the course, you will be able to: 
 
 - Write code in a high-level programming language (i.e., Python).
 - Process, visualize, and analyze data using some of the most powerful (and popular) tools in data science (e.g., pandas, NumPy, Jupyter).
-- Approach and solve novel problems in a logical, step-wise (algorithmic) manner.
 - Effectively visualize and present the results of your data analyses.
+- Apply your computing and data science skills towards working with and understanding neural and kinematic data.
+- Approach and solve novel problems in a logical, step-wise (algorithmic) manner.
 - Leave the class well-prepared to advance your programming and data analysis skills, whether in advanced undergraduate or graduate courses (e.g., statistics, modeling, machine learning, etc.), academic research, or industry. 
 
 ## Instructors
 **Professor**: [Hyosub Kim](ccmlab.org)  
 **Email**: [hyosub.kim@ubc.ca](mailto:hyosub.kim@ubc.ca)  
-**Office Hours**: TBD  
+**Office Hours**: By appointment.   
 
 **Teaching Assistant**: My very good TA   
 **Email**: TBD   
@@ -50,13 +51,38 @@ The course is designed to achieve the following primary goals:
 
 **Please read the course policy (e.g., late registration, missing quiz/assignment due to sickness) below before contacting.**
 
-## Assessment 
-- Quiz (in-person): Same time and location as week X (data)
-- Midterm Exam (in-person): 
-- Final Exam (in-person): 
+## Comunication
 
+- Piazza?
+- There are no formal office hours. Please speak to the instructor(s) to schedule a meeting. 
+- Before emailing your course instructor or TA, please check the syllabus, course materials, your notes, and ask your classmates. Also be advised that we will not answer course content-related questions over email. That is, we will not be explaining concepts, helping with assignments, or teaching over email. We are here to guide and instruct you, and you will be best served by being engaged in class and engaging your teaaching team in person. The best time to ask questions is during class time. That being said, do email the instructor if you have a private matter you need to discuss. 
+
+## Course Format
+This course will generally follow a schedule of one lecture, one tutorial/lab per week. One thing that you may find different about the course format is that we will employ a **flipped classroom** approach for > 50% of the time. This means that class time, even during "lecture" days, is not used primarily for conveying information, the way a normal lecture-based class operates. Rather, there will be mini-lectures at the start of class that highlight key concepts, and the remaining time will be used for practicing the news coding skills you will be learning. The lecture days will generally have more lecture content than tutorial days, which are mostly devoted to continued practice of the skill/concept taught during the Monday lecture. Therefore, there is a strong emphasis placed on being prepared for each class session by reading the assigned chapter of the textbook and keeping track of questions that arise, and asking them **during class**. Class time is an opportunity for students to discuss the course material, practice their skills, and ask questions from the teaching team. **Coding is a skill, and like any skill, it requires significant practice within and outside of class.** 
+
+A link to the current schedule can be found here (create link) and will be updated as we go. 
+
+## Assessment 
+- Quiz (in-person): Wed, October 4
+- Midterm Exam (in-person): Wed, November 8
+- Final Exam (in-person): TBD
+
+### Labs and assignments (problem sets)
 For each class (lecture and tutorial) there will be an assignment. Lecture and tutorial worksheet due dates are posted on Canvas. To open the assignment, click the link (e.g. worksheet_01) from Canvas. To submit your assignment, just make sure your work is saved (File -> Save and Checkpoint to be sure) on our server (i.e., using the link from Canvas) before the deadline. Our server will automatically snapshot at the due date/time.
 
+### DataCamp
+In this course, we will leverage the significant investment and expertise that [DataCamp](https://datacamp.com), a massive open online course (MOOC) platform for data science education, can provide. The teaching team will add all students registered in this class to the class DataCamp "group", using your UBC email address. You will receive an invitation email from DataCamp with a link that will allow you to set a password. Once you have logged in for the first time, you will see a window like the one below, listing your active assignments; click on "DUE BY" to sort them by due date (which also indicates the sequence you should complete the assignments in). On the right, there is a trophy icon to see the leaderboard. This tracks all students' progress and can be fun for you competitive types.
+
+```{figure} 2-nds/images/datacamp_assignments.png
+---
+align: left
+```
+
+Each DataCamp assignment has a due date, which conveys when you need to have covered that material in order to keep up with the work in NESC 3505. **Each DataCamp assignment will probably take you approximately 4 hours.** Each one has an estimated duration that you'll see when you start it, and these seem pretty accurate. DataCamp will remember your progress, so you don't have to complete an assignment — or even a chapter — all in one go. You can work in smaller or larger chunks at your preference, log off, and log back on to resume the course later.
+
+Notice that there is some confusing terminology here — what DataCamp calls "assignments" are referred to as "lessons" in NESC 3505.
+
+## Course Breakdown
 | Category              | Percent Grade |
 |-----------------------|---------------|
 | Data Camp problems    | 5             |
@@ -66,7 +92,8 @@ For each class (lecture and tutorial) there will be an assignment. Lecture and t
 | Midterm               | 20            |
 | Final                 | 25            |
 
-## Schedule
+## Schedule 
+
 | Week | Topic | Description |
 |------|-------|-------------|  
 | 1    | Introduction to Course | Learn the tech stack used in the course, especially Jupyter notebooks |
@@ -87,17 +114,17 @@ For each class (lecture and tutorial) there will be an assignment. Lecture and t
 | 14 | Leveling Up Your Data Science Skills | Everything you ever wanted to know about installing the scientific Python ecosystem on your computer/the terminal/version control but were afraid to ask | 
  
 
-## Policies
+## Policies 
 
 ### Late Registration
 Students who register for the class late have 1 week from their registration date on Canvas to complete all prior assignments.
 
 ### Late Assignments / Quiz or Exam Absence
-Students **must be present** at the invigilation venue (in class, on Zoom, examination centre, etc) to take quizzes; otherwise they will be considered to have missed the quiz and will be assigned a grade of zero.
+Students **must be present** at the invigilation venue (in class, examination centre, etc) to take exams; otherwise, they will be considered to have missed the exam and will be assigned a grade of zero.
 
 Students who will miss a quiz **must provide a self-declaration of academic concession prior to the quiz** (see Canvas homepage for the academic concession form) and make arrangements with the Instructor. Failing to present a declaration within a reasonable timeframe before the quiz will result in a grade of zero.
 
-There will be **no extensions for the lecture and tutorial worksheets**; late assignments will receive a grade of zero. Instead, we will drop the lowest grade on tutorials and worksheets for the semester.
+There will be **no extensions for the labs and assignments**; late assignments will receive a grade of zero. Instead, we will drop the lowest grade on tutorials and worksheets for the semester.
 
 For all other assignments and the course project, a **late submission will receive a 50% penalty**.
 
@@ -118,7 +145,7 @@ Note if you received 0 on an assignment when you shouldn't have, please contact 
 Students are responsible for using a device and browser compatible with all functionality of Canvas. Chrome or Firefox browsers are recommended; Safari has had issues with Canvas quizzes in the past.
 
 ### Missed Final Exam
-Students who miss the final quiz must report to their faculty advising office within 72 hours of the missed exam, and must supply supporting documentation. Only your faculty advising office can grant deferred standing in a course. You must also notify your instructor prior to (if possible) or immediately after the exam. Your instructor will let you know when you are expected to write your deferred exam. Deferred exams will ONLY be provided to students who have applied for and received deferred standing from their faculty.
+Students who miss the final exam must report to their faculty advising office within 72 hours of the missed exam, and must supply supporting documentation. Only your faculty advising office can grant deferred standing in a course. You must also notify your instructor prior to (if possible) or immediately after the exam. Your instructor will let you know when you are expected to write your deferred exam. Deferred exams will ONLY be provided to students who have applied for and received deferred standing from their faculty.
 
 ### Academic Concession Policy
 Please see [UBC's concession policy](http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0) for detailed information on dealing with missed coursework, quizzes, and exams under circumstances of an acute and unanticipated nature.
@@ -126,128 +153,21 @@ Please see [UBC's concession policy](http://www.calendar.ubc.ca/vancouver/index.
 See our Canvas homepage for the academic concession form.
 
 ### Academic Integrity
-The academic enterprise is founded on honesty, civility, and integrity. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, this means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. This also means you should not cheat, copy, or mislead others about what is your work. Violations of academic integrity (i.e., misconduct) lead to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred to the President's Advisory Committee on Student Discipline. Careful records are kept in order to monitor and prevent recurrences.
+The academic enterprise is founded on honesty, civility, integrity, and accountability. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, this means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. This also means you should not cheat, copy, or mislead others about what is your work. Violations of academic integrity (i.e., misconduct) lead to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred to the President's Advisory Committee on Student Discipline. Careful records are kept in order to monitor and prevent recurrences.
 
 A more detailed description of academic integrity, including the University's policies and procedures, may be found in the Academic Calendar at <http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0>.
 
 ### Plagiarism
-Students must correctly cite any code or text that has been authored by someone else or by the student themselves for other assignments. Cases of plagiarism may include, but are not limited to:
+
+Cases of plagiarism may include, but are not limited to:
 
 -   the reproduction (copying and pasting) of code or text with none or minimal reformatting (e.g., changing the name of the variables)
 -   the translation of an algorithm or a script from a language to another
 -   the generation of code by automatic code-generation software
 
-An "adequate acknowledgement" requires a detailed identification of the (parts of the) code or text reused and a full citation of the original source code that has been reused.
-
-The above attribution policy applies only to assignments. **No code or text may be copied (with or without attribution) from any source during a quiz or exam. Answers must always be in your own words. At a minimum, copying will result in a grade of 0 for the related question.**
-
-**Repeated plagiarism of any form could result in larger penalties, including failure of the course.**
+**Plagiarism of any form will result in serious penalties, including failure of the course.**
 
 ## Attribution
 
-Parts of this syllabus (particularly the policies) have been copied and derived from the [UBC MDS Policies](https://ubc-mds.github.io/policies/).
-
-
-
- 
-
-## Communication
-We will use (Canvas, Microsoft Teams, Edstem...?) to facilitate discussion outside of class. 
-
-## Course Structure
-Classes will utilize a mixed format of lectures, videos, class discussions, labs, and student presentations in order to foster an interactive and engaged learning experience. A link to the current schedule can be found here (create link) and will be updated as we go. 
-
-Need to really think about this. Some ideas and things to consider:
-- 3 credit hour course
-- Meet 2 days/week for 1.5 hrs per session?
-- Split meetings into 1 lecture, 1 tutorial/lab per week 
-- Notes on UBC's CS 0.5 ([Dawson et al 2018](https://www.cs.ubc.ca/~meghana/sigcse_2018_dawson.pdf)):
-    - For 4 credit hr course, split into one 80-minute lecture and one 50-minute tutorial per week
-    - "In each content module students are assigned pre-class work consisting of reading custom course materials, solving problems using the new concepts, and writing and submitting a brief summary of what they learned and at least one question about the module or how it relates to the rest of the course."
-    - "In lecture we use Just-In-Time teaching [15] and deliver short mini-lectures to address the questions raised by students in their pre-class work. Students spend the majority of lecture time working in small groups to solve problems on a worksheet package; we usually interject with one or two 5-10 minute mini-lectures and/or wrap-up discussion that focuses on key problems from the worksheets. Completed worksheet packages are collected in the following lecture, graded for completion, and returned electronically."
-    - "In tutorials, students work in small groups on weekly homework assignments with TA support. They also complete weekly peer review assignments that require them to solve a problem, assess three of their peers’ solutions, and complete a self-assessment of their own solution."
-
-
-## Learning Objectives
-
-The course is designed to achieve three primary goals:
-
-1. You will learn to write programs in a high-level programming language (i.e., Python).
-2. You will learn to process, visualize, and analyze data using some of the most powerful (and popular) tools in data science (e.g., pandas, NumPy, Jupyter).
-3. You will learn to approach and solve novel problems in a logical, step-wise (algorithmic) manner.
-4. You will learn to effectively visualize and present the results of your data analyses.
-5. You will leave the class well-prepared to advance your programming and data analysis skills, whether in advanced undergraduate or graduate courses (e.g., statistics, modeling, machine learning, etc.), academic research, or industry. 
-
-Major course themes:
-
-- Core programming skills
-- Data exploration and visualization
-- Data analysis
-
-Here are specific topics related to Python and scientific computing we will cover in this course: 
-
-- Why programming/Python/data science?
-- What is a computer program?
-- Variables and assignment
-- Data types and conversion
-- Lists
-- Dictionaries
-- Conditional statements and control flow
-- For loops
-- Functions
-- File I/O (input & output)
-- Scientific computing using NumPy
-- Data visualization with Matplotlib and Seaborn
-- Structuring data with Pandas
-
-We will actively apply the core programming skills you learn throughout the course to explore and better understand research-related questions and examples (**[Note: some of these are pie-in-the-sky ideas that will likely not make the cut.]**):
-- Work with Romeo and Jean (and others) on good 'example use' cases and datasets (interleave with concepts from Romeo's lab/methods course KIN 419)
-- EMG: reflex responses
-- Postural responses
-- From JS: introduce derivates and integrals for discretized values
-    - Students experiment with position, velocity, acceleration traces (JS)
-- Some linear algebra?
-    - Change between coordinate systems within a sports science context (JS)
-
-- Exploratory data analysis
-- Working with repeated measures data
-- Data processing and dealing with outliers
-- Statistical inference using Python 
-  - Bayes' Theorem
-  - Regression (introduce vector and matrix notation here?)
-- Working with behavioral data
-  - Kinematics (e.g., reach trajectories)
-  - Reaction times
-  - Signal Detection Theory
-  - Psychophysical functions
-  - Sensorimotor adaptation
-- Signal processing
-  - Time vs frequency domain representations
-  - Sampling
-  - Filtering (consider using Paul Gribble's iPhone and heartrate exercise)
-
-
-## Computing Environment
-The course will rely on a online computing environment called Jupyter. Each student will have their own JupyterHub instance and can connect to this from a variety of devices over the internet. The address of the class JupyterHub is here (create link). You will log in with your normal UBC credentials.
-
-## Learning Assessment
-Much of the work you do for the course will, for good reason, require lots of programming. We will mostly be using Jupyter notebooks for assignments and labs that you will turn in for grading. [Using Jupyter tools to assess student learning](https://jupyter4edu.github.io/jupyter-edu-book/getting-going.html). 
-
-The grade in the course will be determined by the following categories:
-
-### Class Participation (xx% of grade)??
-Attendance and participation is critical for success in this course as it takes a hands-on, practical approach to programming and data analysis. 
-
-### Labs (xx% of grade)
-The main part of the course will consist of several labs. These labs will explore key concepts in kinesiological research, with a focus on the brain-behavior relationship, and will consist of multiple exercises.  Most of this work will take place in the Jupyterhub.
-
-### Homework (xx% of grade)
-Programming is a skill, and, like any skill, requires consistent practice. As such, you will receive regular programming assignments meant to solidify the conceptual knowledge gained through readings, videos, and lectures. 
-
-Thoughts:
-- Skills-based notebooks or DataCamp exercises (must be prior to each session - unlimited opportunities to get right)
-- More involved problem set each week/module (see Gribble course, NYU course)
-
-
-
+Portions of this syllabus, including the Policies section, have been copied and adapted from the [UBC MDS Policies](https://ubc-mds.github.io/policies/) and [UBC's Campus-wide Policies and Regulations](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations).
 

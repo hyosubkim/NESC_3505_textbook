@@ -1,9 +1,9 @@
 # Acknowledgments
 
-First, I owe a great debt of gratitude to [Aaron J. Newman](https://aaronjnewman.com/) of Dalhousie University for sharing his excellent open-source textbook, [Data Science for Psychology and Neuroscience - in Python](https://neuraldatascience.io/intro.html). I have edited, remixed, and added to the original book so that it would best suit undergraduate Kinesiology students at The University of British Columbia. Some notable changes include substituting the chapters on EEG and MRI data with one on signal processing, as well as the addition of a section on writing functions. 
+First of all, I owe a great debt of gratitude to [Aaron J. Newman](https://aaronjnewman.com/) of Dalhousie University for sharing his excellent open-source textbook, [Data Science for Psychology and Neuroscience - in Python](https://neuraldatascience.io/intro.html). What you see now is an edited / remixed / and adapted version of the original book, one that I hope will best suit undergraduate Kinesiology students at The University of British Columbia. A couple of notable changes include substituting the chapters on EEG and MRI data with one on signal processing (thanks to [Paul Gribble](https://gribblelab.org/) of Western U.), as well as the addition of a section on writing functions (thanks to [Meghan Allen](https://www.cs.ubc.ca/people/meghan-allen) at UBC). 
 
-There are others whose work I have also adopted (and adapted) and to whom I am very grateful:
-- [Meghan Allen](https://www.cs.ubc.ca/people/meghan-allen) of UBC for the section on writing functions
+There are others whose work I have also adopted (and adapted) and to whom I am grateful:
+- [Meghan Allen](https://www.cs.ubc.ca/people/meghan-allen) of UBC for the section on writing functions, evaluating expressions, and some early tutorial materials
 - [Paul Gribble](https://gribblelab.org/) of Western University for his [chapter on signal processing](https://gribblelab.org/teaching/scicomp2014/09_Signals_sampling_filtering.html)
 - [Todd Gureckis](https://as.nyu.edu/faculty/todd-gureckis.html) and [Brendan Lake](https://cims.nyu.edu/~brenden/) for sharing materials from their [NYU course on Cognition and Perception](https://cims.nyu.edu/~brenden/courses/labincp/intro.html)
 - [Jessica Hamrick](http://www.jesshamrick.com/) for the Jupyter-based teaching materials
@@ -11,10 +11,9 @@ There are others whose work I have also adopted (and adapted) and to whom I am v
 
 
 ## License for this book
+
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-(section-label)=
 
 
-```{tableofcontents}
-```
+

@@ -2,17 +2,7 @@
 
 1) **Tech stack:**
     - UBC's [JupyterHub Instructor Guide](https://lthub.ubc.ca/guides/jupyterhub-instructor-guide/): seems pretty straight forward; question of whether to use free Jupyter Open or pay for Jupyter Course (~$20/student), which allows for course integration with Canvas   
-&nbsp;
-
-2) **Define final project.** What is the scope? Find datasets. Look at CPSC 103 and UCSD course for examples.
-    - Final assignment in form of Jupyter notebook and presentation
-    - Introduce data and motivating question
-    - Read in some data
-    - Data wrangling
-    - Data visualization
-    - Data analysis
-    - Tell story of analysis  
-&nbsp;    
+&nbsp;   
 
 3) **Define how skills and knowledge will be regularly assessed.**
     - **(Almost complete)** Weekly problem sets, likely in form of Jupyter notebooks (for ideas, look at Gribble course, NYU course, NDS course, CPSC 103)
@@ -25,4 +15,17 @@
 &nbsp;
 
 4) **Fill in course structure details based on above two points.**
+
+
+Probably no longer relevant, as there will not be a final project. 
+
+2) **Define final project.** What is the scope? Find datasets. Look at CPSC 103 and UCSD course for examples.
+    - Final assignment in form of Jupyter notebook and presentation
+    - Introduce data and motivating question
+    - Read in some data
+    - Data wrangling
+    - Data visualization
+    - Data analysis
+    - Tell story of analysis  
+&nbsp; 
 
