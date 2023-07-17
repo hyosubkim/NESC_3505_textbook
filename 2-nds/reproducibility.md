@@ -5,3 +5,6 @@ A fundamental principle of empirical (experimental) science is **reproducibility
 In practice, this is harder than it sounds — especially if we are using the manual spreadsheet approach described above. Unless the analysis was documented very closely, it's possible that methodological differences will arise. For example, a Methods section might state that the mean RT was calculated for each participant and then averaged across participants, but this doesn't specify that this was done by a lab volunteer cutting and pasting numbers while simultaneously watching YouTube and chatting with another student in the lab. Even if the procedures were precisely documented, replicating the process would still be as tedious and error-prone — and very likely, even the errors would be different since they are random occurrences.
 
 Science should not be this way; science should be accurate, precise, reliable, and reproducible. For this to be true, we need high standards of control and automation to ensure that data is handled consistently and reproducibly. If only we could replace those flaky lab volunteers with machines that did precisely what we intended...
+
+---
+This section was adapted from Aaron J. Newman's [Data Science for Psychology and Neuroscience - in Python](https://neuraldatascience.io/intro.html).
