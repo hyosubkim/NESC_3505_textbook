@@ -1,6 +1,6 @@
 # Getting Help with Python
 
-Python is a widely-used language and there is lots of information on the web about it. But, sometimes it's hard to know where to start! The lessons in this course will introduce you to Python, and the chapters in this book are meant as a starting point for reference. The chapters follow the DataCamp lessons, which can be handy if you remember which lesson you learned something in. However, the assignments and projects in this course are designed to make you go beyond the material as it was taught. You will inevitably need to rely on other educational resources and reference materials on the web
+Python is a widely-used language and there is lots of information on the web about it. But, sometimes it's hard to know where to start! The lessons in this course will introduce you to Python, and the chapters in this book are meant as a starting point for reference. The chapters align well with the DataCamp lessons, which is quite handy. However, some of the assignments in this course are designed to make you go beyond the material as it was taught. You will inevitably need to rely on other educational resources and reference materials on the web.
 
 **Python**, and associated packages, have official documentation. The official documentation for Python is at [https://docs.python.org/3/](https://docs.python.org/3/)
 
