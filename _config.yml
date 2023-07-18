@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Data Science for Kinesiology 
+title: Data Science for Kinesiology (adapted from Data Science for Psychology and Neuroscience - in Python) 
 author: Hyosub Kim
 copyright: 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 logo: images/NESC3505_icon.png
