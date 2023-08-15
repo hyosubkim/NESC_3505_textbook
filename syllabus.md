@@ -11,13 +11,13 @@ Learn how to write code and use data science tools for processing, analyzing, an
 
 **Long version:** This course provides hands-on experience with learning to program in Python. Students will learn how to think algorithmically in order to process, visualize, and analyze data related to all types of research questions. Through a combination of tutorials, problem sets, and a final project, students will learn some of the most important tools and techniques in the Python data science ecosystem. This course will be especially useful for undergraduate students interested in getting actively involved in research at UBC. In addition, this course provides a strong background for future advanced undergraduate and graduate work in computational approaches to kinesiology, including modeling. However, even for students who do not plan to do scientific research in the future, this course will still provide a solid foundation in core computing and data science skills that will serve them well whether going into industry, healthcare, or another technical field.
 
-## Textbook
+## Learning Materials
 We will be using an open-source textbook available for free on the Web:
 
 ## Hardware & Software 
-Students are required to bring a laptop, chromebook or tablet to both lectures and tutorials. Students who do not own a laptop, chromebook, or tablet may be able to [loan a laptop from the UBC library](https://services.library.ubc.ca/computers-technology/technology-borrowing/).
+Students are required to bring a laptop (or chromebook) to both lectures and tutorials. Students who do not own a laptop or chromebook may be able to [loan a laptop from the UBC library](https://services.library.ubc.ca/computers-technology/technology-borrowing/).
 
-All other required software will be provided by the instructors. Students will learn to perform their analysis using the [Python programming language](https://www.python.org/). Worksheets and tutorial problem sets will be done using [Jupyter Notebooks](http://jupyter.org/) accessed via [Canvas](https://canvas.ubc.ca).
+All other required software will be provided by the instructors. Students will learn to perform their analysis using the [Python programming language](https://www.python.org/). Worksheets and tutorial problem sets will be compelted using [Jupyter Notebooks](http://jupyter.org/) accessed via UBC's instance of JupyterHub.
 
 ## Prerequisites
 Completion of two of the following courses: 
@@ -45,7 +45,7 @@ By the end of the course, you will be able to:
 **Email**: [hyosub.kim@ubc.ca](mailto:hyosub.kim@ubc.ca)  
 **Office Hours**: By appointment.   
 
-**Teaching Assistant**: My very good TA   
+**Teaching Assistant**: TBD 
 **Email**: TBD   
 **Office Hours**: TBD 
 
@@ -53,7 +53,6 @@ By the end of the course, you will be able to:
 
 ## Comunication
 
-- Piazza?
 - There are no formal office hours. Please speak to the instructor(s) to schedule a meeting. 
 - Before emailing your course instructor or TA, please check the syllabus, course materials, your notes, and ask your classmates. Also be advised that we will not answer course content-related questions over email. That is, we will not be explaining concepts, helping with assignments, or teaching over email. We are here to guide and instruct you, and you will be best served by being engaged in class and engaging your teaaching team in person. The best time to ask questions is during class time. That being said, do email the instructor if you have a private matter you need to discuss. 
 
@@ -62,25 +61,6 @@ This course will generally follow a schedule of one lecture, one tutorial/lab pe
 
 A link to the current schedule can be found here (create link) and will be updated as we go. 
 
-## Assessment 
-- Quiz (in-person): Wed, October 4
-- Midterm Exam (in-person): Wed, November 8
-- Final Exam (in-person): TBD
-
-### Labs and assignments (problem sets)
-For each class (lecture and tutorial) there will be an assignment. Lecture and tutorial worksheet due dates are posted on Canvas. To open the assignment, click the link (e.g. worksheet_01) from Canvas. To submit your assignment, just make sure your work is saved (File -> Save and Checkpoint to be sure) on our server (i.e., using the link from Canvas) before the deadline. Our server will automatically snapshot at the due date/time.
-
-### DataCamp
-In this course, we will leverage the significant investment and expertise that [DataCamp](https://datacamp.com), a massive open online course (MOOC) platform for data science education, can provide. The teaching team will add all students registered in this class to the class DataCamp "group", using your UBC email address. You will receive an invitation email from DataCamp with a link that will allow you to set a password. Once you have logged in for the first time, you will see a window like the one below, listing your active assignments; click on "DUE BY" to sort them by due date (which also indicates the sequence you should complete the assignments in). On the right, there is a trophy icon to see the leaderboard. This tracks all students' progress and can be fun for you competitive types.
-
-```{figure} 2-nds/images/datacamp_assignments.png
----
-align: left
-```
-
-Each DataCamp assignment has a due date, which conveys when you need to have covered that material in order to keep up with the work in NESC 3505. **Each DataCamp assignment will probably take you approximately 4 hours.** Each one has an estimated duration that you'll see when you start it, and these seem pretty accurate. DataCamp will remember your progress, so you don't have to complete an assignment — or even a chapter — all in one go. You can work in smaller or larger chunks at your preference, log off, and log back on to resume the course later.
-
-Notice that there is some confusing terminology here — what DataCamp calls "assignments" are referred to as "lessons" in NESC 3505.
 
 ## Course Breakdown
 | Category              | Percent Grade |
@@ -92,26 +72,52 @@ Notice that there is some confusing terminology here — what DataCamp calls "as
 | Midterm               | 20            |
 | Final                 | 25            |
 
+
+## Assessments (combined: 55%) 
+- Quiz (in-person): Wed, October 4
+- Midterm Exam (in-person): Wed, November 8
+- Final Exam (in-person): TBD
+
+These assessments require a thorough understanding of the course material. While they will be "open book", you will still be required to demonstrate your ability to write code and problem solve by answering a series of multiple-choice, short answer (code), and conceptual questions. The final exam will be scheduled for a sometime during December 11 - 22. Do not book any travel plans for this time until the final exam has been scheduled. 
+
+### Labs and Problem Sets (combined: 40%)
+Each week, there will be a lab/tutorial notebook that must be completed, and roughly every other week, a more challenging problem set will be assigned. Due dates will be posted on Canvas. To open the assignment, click the link (e.g. lab_01) from Canvas. We will go over in detail the proper steps to submiting your assignments during the first class session. Briefly, to submit your assignment, make sure your work is saved (File -> Save and Checkpoint to be sure) on the JupyterHub server, download the notebook to your personal computer, and then upload it to the appropriate Assignment on Canvas. It is critical that you check your notebook before submitting by clicking "Kernel -> Restart Kernel and Run All" and making sure that it runs properly from top-to-bottom without any errors. This is the first step we will take in grading your assingments and if it does not run error free, no credit will be given for the assignment. 
+
+We will also drop your lowest score on a problem set when calculating your final grade. 
+
+### DataCamp (5%)
+In this course, we will leverage the significant resources that [DataCamp](https://datacamp.com), a massive open online course (MOOC) platform for data science education, can provide. The teaching team will add all students registered in this class to the class DataCamp "group", using the email address you provide to us. You will receive an invitation email from DataCamp with a link that will allow you to set a password. Once you have logged in for the first time, you will see a window like the one below, listing your active assignments; click on "DUE BY" to sort them by due date (which also indicates the sequence you should complete the assignments in). On the right, there is a trophy icon to see the leaderboard. This is a DataCamp-specific feature that tracks all students' progress, but it has no bearing on your grade---so keep the competition friendly! 
+
+```{figure} 2-nds/images/datacamp_assignments.png
+---
+align: left
+```
+
+Each DataCamp assignment has a due date, which conveys when you need to have covered that material in order to keep up with the work in KIN 482. **Each DataCamp assignment will take you approximately 4 hours.** Each one has an estimated duration that you'll see when you start it, and these seem fairly accurate. DataCamp will remember your progress, so you don't have to complete an assignment all in one sitting. You can work in smaller or larger chunks at your preference, log off, and log back on to resume the course later. Note that with DataCamp you have as many opportunities as you need to provide the correct solution. This part of your grade is essentially making sure you are practicing the skills you need to succeed in the course and write functional code.
+
+
 ## Schedule 
+
+This schedule is subject to change during the semester. However, you will always be notified in advance (through a Canvas announcement) of any upcoming changes. 
 
 | Week | Topic | Description |
 |------|-------|-------------|  
 | 1    | Introduction to Course | Learn the tech stack used in the course, especially Jupyter notebooks |
 | 2    | Introduction to Python | Learn about variables and assignment, converting variable types |  
 | 3    | Python built-ins, lists, dictionaries | Learn how to store data in two key Python types, lists and dictionaries |
-| 4 | Flow control | Learn about loops and conditional (i.e., "if-then") statements |
-| 5 | Quiz 1 | Cover concepts from weeks 1-4 |
-| 5 | Functions | Learn how to write your own custom functions for repeated tasks |
-| 6 | Functions (continued), File I/O and *pandas* | Learn how to read in and manipulate data with the powerful Python library *pandas* | 
-| 7 | Data visualization with *Matplotlib* | Learn the principles of effective visualizations with *Matplotlib* |
-| 8 | More data visualizaiton with *seaborn* | Learn how to effectively visualize statistical relationships with *seaborn* |
-| 9 | Intoduction to Exploratory Data Analysis | Learn how to effectively extract information from your data; also learn about repeated measures design studies | 
-| 10 | Introduction to Basic Stats with Python | Learn how to conduct familiar statistical analyses in Python | 
-| 10 | Midterm Exam |  Covers materials from weeks 1-10       |
-| 11 | Midterm Break |       |
-| 12 | Single Unit Data & Spike Trains | Apply your programming skills to neural data; also learn about numerical computing using the famous Python library *NumPy* | 
-| 13 | Signal Processing | Learn the principles of signal processing and apply them to analyzing kinematic data | 
-| 14 | Leveling Up Your Data Science Skills | Everything you ever wanted to know about installing the scientific Python ecosystem on your computer/the terminal/version control but were afraid to ask | 
+| 4    | Flow control | Learn about loops and conditional (i.e., "if-then") statements |
+| 5    | Quiz 1 | Cover concepts from weeks 1-4 |
+| 5    | Functions | Learn how to write your own custom functions for repeated tasks |
+| 6    | Functions (continued), File I/O and *pandas* | Learn how to read in and manipulate data with the powerful Python library *pandas* | 
+| 7    | Data visualization with *Matplotlib* | Learn the principles of effective visualizations with *Matplotlib* |
+| 8    | More data visualization with *seaborn* | Learn how to effectively visualize statistical relationships with *seaborn* |
+| 9    | Intoduction to Exploratory Data Analysis | Learn how to effectively extract information from your data; also learn about repeated measures design studies | 
+| 10   | Introduction to Basic Stats with Python | Learn how to conduct familiar statistical analyses in Python | 
+| 10   | Midterm Exam |  Covers materials from weeks 1-10       |
+| 11   | Midterm Break |       |
+| 12   | Single Unit Data & Spike Trains | Apply your programming skills to neural data; also learn about numerical computing using the famous Python library *NumPy* | 
+| 13   | Signal Processing | Learn the principles of signal processing and apply them to analyzing kinematic data | 
+| 14   | Leveling Up Your Data Science Skills | Everything you ever wanted to know about installing the scientific Python ecosystem on your computer/the terminal/version control but were afraid to ask | 
  
 
 ## Policies 
@@ -124,22 +130,7 @@ Students **must be present** at the invigilation venue (in class, examination ce
 
 Students who will miss a quiz **must provide a self-declaration of academic concession prior to the quiz** (see Canvas homepage for the academic concession form) and make arrangements with the Instructor. Failing to present a declaration within a reasonable timeframe before the quiz will result in a grade of zero.
 
-There will be **no extensions for the labs and assignments**; late assignments will receive a grade of zero. Instead, we will drop the lowest grade on tutorials and worksheets for the semester.
-
-For all other assignments and the course project, a **late submission will receive a 50% penalty**.
-
-### Autograder Policy
-<!-- Many of the questions in assignments are graded automatically by software. The grading computer has exactly the same hardware setup as the server that students work on. No assignment, when completed, should take longer than 5 minutes to run on the server. The autograder will automatically stop (time out) for each student assignment after a maximum of 5 minutes; **any ungraded questions at that point will receive a score of 0.** -->
-
-Students are responsible for making sure their assignments are *reproducible*, and run from beginning to end on the autograding computer. In particular, **please ensure that any data that needs to be downloaded is done so by the assignment notebook with the correct filename to the correct folder.** A common mistake is to manually download data when working on the assignment, making the autograder unable to find the data and often resulting in an assignment grade of 0.
-
-In short: whatever grade the autograder returns after 5 minutes (assuming the teaching team did not make an error) is the grade that will be assigned.
-
-<!-- ### Re-grading
-
-Students get a free 1% at the end of the course. If you want questions regraded, you can fill out a form at the end of the term documenting in detail what you want regraded. Regrading is only offered if the teaching team makes a mistake. If the total sum of value of possible points via regrading is greater than 1%, you can submit (please do so before the last day of class); otherwise the regrade request is rejected. Note: If you submit a regrade request, you may get less than 1% via regrade.
-
-Note if you received 0 on an assignment when you shouldn't have, please contact the course coordinator as soon as possible rather than waiting until the end of the term. -->
+There will be **no extensions for the labs and assignments**; late assignments will receive a grade of zero. 
 
 ### Device/Browser
 Students are responsible for using a device and browser compatible with all functionality of Canvas. Chrome or Firefox browsers are recommended; Safari has had issues with Canvas quizzes in the past.
@@ -167,7 +158,11 @@ Cases of plagiarism may include, but are not limited to:
 
 **Plagiarism of any form will result in serious penalties, up to and including failure of the course.**
 
+## University Policies
+UBC provides resources to support student learning and to maintain healthy lifestyles but recognizes that sometimes crises arise and so there are additional resources to access including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious observances. UBC values academic honesty and students are expected to acknowledge the ideas generated by others and to uphold the highest academic standards in all of their actions.
+Details of the policies and how to access support are available on the [UBC Senate website](https://senate.ubc.ca/policies-resources-support-student-success/).
+
 ## Attribution
 
-Portions of this syllabus, most notably the Policies section, have been copied and adapted from the syllabus for another data science course at UBC (DSCI 100), which are in turn based on [UBC MDS Policies](https://ubc-mds.github.io/policies/) and [UBC's Campus-wide Policies and Regulations](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations).
+Portions of this syllabus, most notably the Policies section, have been adapted from the syllabus for UBC's DSCI 100 course, which in turn is based on [UBC MDS Policies](https://ubc-mds.github.io/policies/) and [UBC's Campus-wide Policies and Regulations](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations). Information regarding DataCamp was adapted from Prof. Aaron Newman of Dalhousie University's [Neural Data Science course](https://neural-data-science.github.io/NESC_3505/). 
 
