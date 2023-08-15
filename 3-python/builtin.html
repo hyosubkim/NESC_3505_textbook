@@ -1,0 +1,1635 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Python Built-Ins &#8212; Data Science for Kinesiology</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lists" href="lists.html" />
+    <link rel="prev" title="Data Types and Conversion" href="types_conversion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/NESC3505_icon.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science for Kinesiology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Acknowledgments
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About This Course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1-intro/about-this-course.html">
+   About this course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1-intro/learning_objectives.html">
+   Learning Objectives for this Course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1-intro/class_tech.html">
+   Technologies Used in this Class
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction to Data Science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-nds/introduction.html">
+   Getting Started with the Course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-nds/learning_objectives.html">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../2-nds/what-is-datascience.html">
+   What is Data Science?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/data.html">
+     Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../2-nds/tools_for_datasci.html">
+   Tools for (Kinesiological) Data Science
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/spreadsheets.html">
+     Spreadsheets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/spreadsheets_limits.html">
+     Limitations of Spreadsheets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/reproducibility.html">
+     Reproducibility
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/sci_prog_lang.html">
+     Scientific Programming Languages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/which_lang.html">
+     Which language to use?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/libs.html">
+     Libraries and packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/why_python.html">
+     Why Python for this Course?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../2-nds/coding.html">
+   Coding Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/python.html">
+     Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/datacamp.html">
+     DataCamp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/jupyter.html">
+     Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/markdown.html">
+     Markdown
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction to Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introducing Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning_objectives.html">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="jupyter_jhub.html">
+   Introduction to Jupyter Notebooks in JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_help.html">
+   Getting Help with Python
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="data_types.html">
+   Data types
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables_assignment.html">
+     Variables and Assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="types_conversion.html">
+     Data Types and Conversion
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Python Built-Ins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lists.html">
+     Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries.html">
+     Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="flow_control.html">
+   Flow Control
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="for_loops.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="conditionals.html">
+     Conditionals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="writing-a-function.html">
+   Writing Functions
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="working_w_data.html">
+   Working with Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pandas_dataframes.html">
+     Introduction to pandas DataFrames
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="looping_data_files.html">
+     Looping Over Data Files
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Visualization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/introduction.html">
+   Introduction to Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/learning_objectives.html">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/plotting.html">
+   Introduction to Plotting with Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/proc_vs_oo.html">
+   Procedural versus Object-Oriented Plotting in Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/subplots.html">
+   Subplots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/plotting_types.html">
+   Thinking About Data for Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/seaborn.html">
+   Introduction to Plotting with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/human_factors.html">
+   Accessibility and Human Factors in Plotting
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exploratory Data Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-eda/introduction.html">
+   Introduction to EDA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-eda/learning_objectives.html">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-eda/repeated_measures.html">
+   Working with Repeated Measures Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-eda/data_cleaning.html">
+   Data Cleaning - Dealing with Outliers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-eda/ttests.html">
+   Basic Statistics in Python:
+   <em>
+    t
+   </em>
+   tests with SciPy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Single Unit Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6-single_unit/introduction.html">
+   Introduction to Single Unit Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6-single_unit/learning_objectives.html">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../6-single_unit/single_unit_intro.html">
+   Single Unit Data and Spike Trains
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6-single_unit/intro_spike_trains.html">
+     Introduction to Spike Train Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6-single_unit/ten_intensities.html">
+     Effects of Light Intensity on Spike Rate
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6-single_unit/heat_maps.html">
+     Heat Maps
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../6-single_unit/intro_multielec_data.html">
+   Introducing Multielectrode Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6-single_unit/pandas_multielec.html">
+     Working with Multielectrode Data in pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6-single_unit/corr_spike_trains.html">
+     Correlating spike trains
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Signal Processing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../7-signal_processing/signals-sampling-filtering.html">
+   Signals, Sampling &amp; Filtering
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/hyosubkim/datasci-for-kin/master?urlpath=tree/3-python/builtin.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/hyosubkim/datasci-for-kin"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/hyosubkim/datasci-for-kin/issues/new?title=Issue%20on%20page%20%2F3-python/builtin.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/3-python/builtin.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning Objectives:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-in-python">
+   Functions in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-function-may-take-zero-or-more-arguments">
+   A function may take zero or more
+   <strong>
+    arguments
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#every-function-returns-something">
+   Every function
+   <strong>
+    returns
+   </strong>
+   something
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commonly-used-built-in-functions-include-max-min-and-round">
+   Commonly-used built-in functions include
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     max
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     min
+    </span>
+   </code>
+   , and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     round
+    </span>
+   </code>
+   .
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-may-only-work-for-certain-combinations-of-arguments">
+   Functions may only work for certain (combinations of) arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-may-have-default-values-for-some-arguments">
+   Functions may have default values for some arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#errors">
+   Errors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-reports-a-syntax-error-when-it-can-t-understand-the-source-of-a-program">
+     Python reports a
+     <em>
+      syntax
+     </em>
+     error when it can’t understand the source of a program
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-reports-a-runtime-error-when-something-goes-wrong-while-a-program-is-executing">
+     Python reports a
+     <em>
+      runtime
+     </em>
+     error when something goes wrong while a program is executing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help">
+   Getting Help
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-the-built-in-function-help-to-get-help-for-a-function">
+     Use the built-in function
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       help
+      </span>
+     </code>
+     to get help for a function
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-2">
+       Option 2:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-3">
+       Option 3:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#putting-comments-in-your-code">
+     Putting comments in your code
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#worked-example-of-how-to-evaluate-a-complicated-expression">
+   Worked example of how to evaluate a complicated expression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-happens-when">
+   What Happens When
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spot-the-difference">
+   Spot the Difference
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-not">
+   Why Not?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-on-getting-help-apis">
+   More on getting help: APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-key-points">
+   Summary of Key Points:
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Python Built-Ins</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning Objectives:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-in-python">
+   Functions in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-function-may-take-zero-or-more-arguments">
+   A function may take zero or more
+   <strong>
+    arguments
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#every-function-returns-something">
+   Every function
+   <strong>
+    returns
+   </strong>
+   something
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commonly-used-built-in-functions-include-max-min-and-round">
+   Commonly-used built-in functions include
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     max
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     min
+    </span>
+   </code>
+   , and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     round
+    </span>
+   </code>
+   .
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-may-only-work-for-certain-combinations-of-arguments">
+   Functions may only work for certain (combinations of) arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-may-have-default-values-for-some-arguments">
+   Functions may have default values for some arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#errors">
+   Errors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-reports-a-syntax-error-when-it-can-t-understand-the-source-of-a-program">
+     Python reports a
+     <em>
+      syntax
+     </em>
+     error when it can’t understand the source of a program
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-reports-a-runtime-error-when-something-goes-wrong-while-a-program-is-executing">
+     Python reports a
+     <em>
+      runtime
+     </em>
+     error when something goes wrong while a program is executing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help">
+   Getting Help
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-the-built-in-function-help-to-get-help-for-a-function">
+     Use the built-in function
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       help
+      </span>
+     </code>
+     to get help for a function
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-2">
+       Option 2:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-3">
+       Option 3:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#putting-comments-in-your-code">
+     Putting comments in your code
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#worked-example-of-how-to-evaluate-a-complicated-expression">
+   Worked example of how to evaluate a complicated expression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-happens-when">
+   What Happens When
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spot-the-difference">
+   Spot the Difference
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-not">
+   Why Not?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-on-getting-help-apis">
+   More on getting help: APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-key-points">
+   Summary of Key Points:
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="python-built-ins">
+<h1>Python Built-Ins<a class="headerlink" href="#python-built-ins" title="Permalink to this headline">#</a></h1>
+<hr class="docutils" />
+<section id="questions">
+<h2>Questions:<a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>How can I use built-in functions?</p></li>
+<li><p>How can I find out what they do?</p></li>
+<li><p>What kind of errors can occur in programs?</p></li>
+</ul>
+</section>
+<section id="learning-objectives">
+<h2>Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Explain the purpose of functions</p></li>
+<li><p>Correctly call built-in Python functions</p></li>
+<li><p>Correctly nest calls to built-in functions</p></li>
+<li><p>Use help to display documentation for built-in functions</p></li>
+<li><p>Correctly describe situations in which SyntaxError and NameError occur</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="functions-in-python">
+<h2>Functions in Python<a class="headerlink" href="#functions-in-python" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Functions</strong> are, effectively, commands that you can run (execute) in Python.</p></li>
+<li><p>Python provides many built-in functions, such as <code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">len()</span></code></p></li>
+<li><p>Later in this course, we will demonstrate how to write your own functions to perform specific tasks repeatedly. In this section, we will focus on understanding the basics of how functions work, and introduce a few new ones.</p></li>
+</ul>
+</section>
+<section id="a-function-may-take-zero-or-more-arguments">
+<h2>A function may take zero or more <strong>arguments</strong><a class="headerlink" href="#a-function-may-take-zero-or-more-arguments" title="Permalink to this headline">#</a></h2>
+<p>An <strong>argument</strong> is a value passed into a function, inside parentheses.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code> takes exactly one argument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">str()</span></code>, and <code class="docutils literal notranslate"><span class="pre">float()</span></code> take one argument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print</span></code> takes zero or more</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> with no arguments prints a blank line</p></li>
+</ul>
+</li>
+<li><p>We must always use parentheses when calling a function, even if they’re empty, so that Python knows a function is being called</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;before&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;after&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before
+
+after
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="every-function-returns-something">
+<h2>Every function <strong>returns</strong> something<a class="headerlink" href="#every-function-returns-something" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Every function call produces some result</p></li>
+<li><p>If the function doesn’t have a useful result to return, it usually returns the special value <code class="docutils literal notranslate"><span class="pre">None</span></code>. <code class="docutils literal notranslate"><span class="pre">None</span></code> is a Python object that stands in anytime there is no value.</p></li>
+<li><p>Somewhat counter-intuitively, <code class="docutils literal notranslate"><span class="pre">print()</span></code> returns <code class="docutils literal notranslate"><span class="pre">None</span></code>. The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function prints its arguments directly to the output, but when we attempt to assign the result of <code class="docutils literal notranslate"><span class="pre">print()</span></code> to a variable, that variable ends up with a value of <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;result of print is&#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example
+result of print is None
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="commonly-used-built-in-functions-include-max-min-and-round">
+<h2>Commonly-used built-in functions include <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, and <code class="docutils literal notranslate"><span class="pre">round</span></code>.<a class="headerlink" href="#commonly-used-built-in-functions-include-max-min-and-round" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">max()</span></code> to find the largest value of two or more values</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">min()</span></code> to find the smallest</p></li>
+<li><p>Both work on character strings as well as numbers</p>
+<ul>
+<li><p>“Larger” and “smaller” use (0-9, A-Z, a-z) to compare letters</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="functions-may-only-work-for-certain-combinations-of-arguments">
+<h2>Functions may only work for certain (combinations of) arguments<a class="headerlink" href="#functions-may-only-work-for-certain-combinations-of-arguments" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">max()</span></code> and <code class="docutils literal notranslate"><span class="pre">min()</span></code> must be given at least two values to compare. They must also be given things that can meaningfully be compared.</p>
+<p>See what happens when you run each of the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">999</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">999</span><span class="p">))</span>
+
+<span class="ne">TypeError</span>: &#39;int&#39; object is not iterable
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">max()</span></code> only works if it has at least two values to compare:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">))</span>
+
+<span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since Python can’t compare int and char types, we need to give it two characters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="functions-may-have-default-values-for-some-arguments">
+<h2>Functions may have default values for some arguments<a class="headerlink" href="#functions-may-have-default-values-for-some-arguments" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">round()</span></code> will round off a floating-point number. By default, it rounds to zero decimal places:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.712</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can specify the number of decimal places we want by passing a second argument</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.712</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">#</a></h2>
+<p>You can fix syntax errors by reading the source and runtime errors by tracing execution</p>
+<section id="python-reports-a-syntax-error-when-it-can-t-understand-the-source-of-a-program">
+<h3>Python reports a <em>syntax</em> error when it can’t understand the source of a program<a class="headerlink" href="#python-reports-a-syntax-error-when-it-can-t-understand-the-source-of-a-program" title="Permalink to this headline">#</a></h3>
+<p>It won’t even try to run the program if it can’t be parsed.</p>
+<p>Look more closely at this error message:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span>
+                       <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unexpected EOF while parsing
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The message indicates a problem on first line of the input (“line 1”)</p>
+<ul>
+<li><p>In this case the “ipython-input” section of the file name tells us that we are working with input into IPython, the Python interpreter used by the Jupyter Notebook</p></li>
+</ul>
+</li>
+<li><p>The number after <code class="docutils literal notranslate"><span class="pre">ipython-input-</span></code> indicates the cell number that the error occurred in (the number in square brackets to the left of the cell). Note that cells are numbered based on the sequence they are <em>executed</em> in, not their order in the notebook. So if you execute the cell above again, this number will change.</p></li>
+<li><p>Next is the problematic line of code, indicating the start of the problem with a <code class="docutils literal notranslate"><span class="pre">^</span></code> pointer</p></li>
+<li><p>Finally, the type of error is provided on the last line</p></li>
+</ul>
+<p>Here are some other examples of syntax errors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Forgot to close the quote marks around the string</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Feng</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Feng</span>
+                <span class="o">^</span>
+<span class="ne">SyntaxError</span>: EOL while scanning string literal
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># An extra &#39;=&#39; in the assignment</span>
+<span class="n">age</span> <span class="o">=</span> <span class="o">=</span> <span class="mi">52</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="o">=</span> <span class="mi">52</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="python-reports-a-runtime-error-when-something-goes-wrong-while-a-program-is-executing">
+<h3>Python reports a <em>runtime</em> error when something goes wrong while a program is executing<a class="headerlink" href="#python-reports-a-runtime-error-when-something-goes-wrong-while-a-program-is-executing" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">53</span>
+<span class="n">remaining</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">aege</span> <span class="c1"># mis-spelled &#39;age&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">53</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">remaining</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">aege</span> <span class="c1"># mis-spelled &#39;age&#39;</span>
+
+<span class="ne">NameError</span>: name &#39;aege&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Runtime</em> errors are basically any type of error that is not a syntax error. The messages will provide different names for these errors, like <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, as you just saw.</p>
+</section>
+</section>
+<section id="getting-help">
+<h2>Getting Help<a class="headerlink" href="#getting-help" title="Permalink to this headline">#</a></h2>
+<section id="use-the-built-in-function-help-to-get-help-for-a-function">
+<h3>Use the built-in function <code class="docutils literal notranslate"><span class="pre">help</span></code> to get help for a function<a class="headerlink" href="#use-the-built-in-function-help-to-get-help-for-a-function" title="Permalink to this headline">#</a></h3>
+<p>Every built-in function has online documentation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">round</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function round in module builtins:
+
+round(number, ndigits=None)
+    Round a number to a given precision in decimal digits.
+    
+    The return value is an integer if ndigits is omitted or None.  Otherwise
+    the return value has the same type as the number.  ndigits may be negative.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="option-2">
+<h4>Option 2:<a class="headerlink" href="#option-2" title="Permalink to this headline">#</a></h4>
+<p>Type the function name in a cell with a question mark after it. Then run the cell:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>round<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> round<span class=" -Color -Color-Blue">(</span>number<span class=" -Color -Color-Blue">,</span> ndigits<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Round a number to a given precision in decimal digits.
+
+The return value is an integer if ndigits is omitted or None.  Otherwise
+the return value has the same type as the number.  ndigits may be negative.
+<span class=" -Color -Color-Red">Type:</span>      builtin_function_or_method
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="option-3">
+<h4>Option 3:<a class="headerlink" href="#option-3" title="Permalink to this headline">#</a></h4>
+<p>Position your cursor over the function name and press the <code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">tab</span></code> keys:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Type &#39;round&#39; below and try</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="putting-comments-in-your-code">
+<h3>Putting comments in your code<a class="headerlink" href="#putting-comments-in-your-code" title="Permalink to this headline">#</a></h3>
+<p>This is how you can help your future self, and others reading your code.</p>
+<p>Anything appearing after a hash symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> in a line of code is ignored by Python. These are called <strong>comments</strong>. This is a useful way to help yourself and other readers of your code understand what’s going on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This sentence isn&#39;t executed by Python</span>
+<span class="n">adjustment</span> <span class="o">=</span> <span class="mf">0.5</span>   <span class="c1"># Neither is this - anything after &#39;#&#39; is ignored</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="worked-example-of-how-to-evaluate-a-complicated-expression">
+<h2>Worked example of how to evaluate a complicated expression<a class="headerlink" href="#worked-example-of-how-to-evaluate-a-complicated-expression" title="Permalink to this headline">#</a></h2>
+<p>Assign values to variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assign values to variables</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>  
+<span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>  
+</pre></div>
+</div>
+<p>The key is to systematically evaluate smaller chunks of the overall expression. Below is a logical step-by-step method of interpreting what initially seems to be quite complicated. With practice, this type of mental parsing will become much easier for you.</p>
+<p><u>(x &gt; 7)</u>  or  <u>(y[0] == “h” and (x - 1) &lt; 5)</u><br />
+<u>(5 &gt; 7)</u> or (y[0] == “h” and (x - 1) &lt; 5)<br />
+False or (y[0] == “h” and (x - 1) &lt; 5)<br />
+False or (“hello”[0] == “h” and (x - 1) &lt; 5)<br />
+False or (“h” == “h” and (x - 1) &lt; 5)<br />
+False or (True and (x - 1) &lt; 5)<br />
+False or (True and (5 - 1) &lt; 5)<br />
+False or (True and 4 &lt; 5)<br />
+False or (True and True)<br />
+False or True<br />
+True</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="what-happens-when">
+<h2>What Happens When<a class="headerlink" href="#what-happens-when" title="Permalink to this headline">#</a></h2>
+<p>Explain in simple terms the order of operations in the following program: when does the addition happen, when does the subtraction happen, when is each function called, etc.
+What is the final value of radiance?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">radiance</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">radiance</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.0</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="n">radiance</span><span class="p">,</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="n">radiance</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Click the button to reveal the solution</p>
+<h3>Solution</h3>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1.1</span> <span class="pre">*</span> <span class="pre">radiance</span> <span class="pre">=</span> <span class="pre">1.1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1.1</span> <span class="pre">-</span> <span class="pre">0.5</span> <span class="pre">=</span> <span class="pre">0.6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min(radiance,</span> <span class="pre">0.6)</span> <span class="pre">=</span> <span class="pre">0.6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2.0</span> <span class="pre">+</span> <span class="pre">0.6</span> <span class="pre">=</span> <span class="pre">2.6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max(2.1,</span> <span class="pre">2.6)</span> <span class="pre">=</span> <span class="pre">2.6</span></code></p></li>
+</ol>
+<p>At the end, <code class="docutils literal notranslate"><span class="pre">radiance</span> <span class="pre">=</span> <span class="pre">2.6</span></code></p>
+</div>
+</section>
+<section id="spot-the-difference">
+<h2>Spot the Difference<a class="headerlink" href="#spot-the-difference" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Predict what each of the <code class="docutils literal notranslate"><span class="pre">print</span></code> statements in the program below will print</p></li>
+<li><p>Does <code class="docutils literal notranslate"><span class="pre">max(len(rich),</span> <span class="pre">poor)</span></code> run or produce an error message?  If it runs, does its result make any sense?</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">easy_string</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">easy_string</span><span class="p">))</span>
+<span class="n">rich</span> <span class="o">=</span> <span class="s2">&quot;gold&quot;</span>
+<span class="n">poor</span> <span class="o">=</span> <span class="s2">&quot;tin&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">rich</span><span class="p">,</span> <span class="n">poor</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rich</span><span class="p">),</span> <span class="n">poor</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Click the button to reveal the solution</p>
+<p><code class="docutils literal notranslate"><span class="pre">print(max(easy_string)</span></code> prints <code class="docutils literal notranslate"><span class="pre">c</span></code>.
+<code class="docutils literal notranslate"><span class="pre">print(max(rich,</span> <span class="pre">poor))</span> <span class="pre">prints</span> </code>tin<code class="docutils literal notranslate"><span class="pre">.</span> </code>max(len(rich), poor)<code class="docutils literal notranslate"><span class="pre">throws</span> <span class="pre">a</span> <span class="pre">TypeError.</span> <span class="pre">This</span> <span class="pre">turns</span> <span class="pre">into</span></code>max(4, ‘tin’)` and
+as we discussed earlier a string and integer cannot meaningfully be compared.</p>
+</div>
+</section>
+<section id="why-not">
+<h2>Why Not?<a class="headerlink" href="#why-not" title="Permalink to this headline">#</a></h2>
+<p>Why don’t <code class="docutils literal notranslate"><span class="pre">max</span></code> and <code class="docutils literal notranslate"><span class="pre">min</span></code> return <code class="docutils literal notranslate"><span class="pre">None</span></code> when they are given no arguments?</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Click the button to reveal the solution</p>
+<p><code class="docutils literal notranslate"><span class="pre">max</span></code> and <code class="docutils literal notranslate"><span class="pre">min</span></code> return TypeErrors in this case because the correct number of parameters
+was not supplied. If it just returned <code class="docutils literal notranslate"><span class="pre">None</span></code>, the error would be much harder to trace as it
+would likely be stored into a variable and used later in the program, only to likely throw
+a runtime error.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="more-on-getting-help-apis">
+<h2>More on getting help: APIs<a class="headerlink" href="#more-on-getting-help-apis" title="Permalink to this headline">#</a></h2>
+<p>One thing you will often find, especially if you’re trying to figure out how to use a command or function, is the <strong>application programming interface</strong> (<strong>API</strong>). The API will give you the name of the command, and the different <strong>arguments</strong> it takes. Arguments are bits of information you provide to the command (typically inside parentheses) that are either required for the command to run, or optional extra information. For example, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html">this is the API for the NumPy (a popular Python library for data analysis and data science you will learn about later in the course) command to compute the mean of a set of numbers</a>:
+<code class="docutils literal notranslate"><span class="pre">numpy.mean(a,</span> <span class="pre">axis=None,</span> <span class="pre">dtype=None,</span> <span class="pre">out=None,</span> <span class="pre">keepdims=&lt;no</span> <span class="pre">value&gt;)</span></code></p>
+<p>The command itself is the first part before the parentheses (in this case, <code class="docutils literal notranslate"><span class="pre">numpy.mean</span></code>) and the arguments are in the parentheses. Each argument is separated by a comma from the other arguments. Required arguments are generally first in the list, and don’t include an <code class="docutils literal notranslate"><span class="pre">=</span></code> sign. The arguments with <code class="docutils literal notranslate"><span class="pre">=</span></code> signs are generally optional. The NumPy API at the link above also explains what each argument is; for simplicity here, the <code class="docutils literal notranslate"><span class="pre">a</span></code> is the set of data you want to compute the mean from (which is required; how could the function give you a mean if it didn’t have data to do that from?) and the other arguments are all options that might be required to get the result you desire.</p>
+<p>APIs may look pretty complicated at first, but they can be very helpful in breaking down a command and understanding how to use it better. By contrast, when you search the web for answers to programming questions, often you’ll get example code that shows a particular way to use a function or method. This is also useful, but in order to adapt that to your problem (or understand what it’s actually doing), you may want to check the API for that function to learn more.</p>
+</section>
+<hr class="docutils" />
+<section id="summary-of-key-points">
+<h2>Summary of Key Points:<a class="headerlink" href="#summary-of-key-points" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Functions are Python commands that return a result</p></li>
+<li><p>Commonly-used built-in functions include <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, and <code class="docutils literal notranslate"><span class="pre">round</span></code></p></li>
+<li><p>A function may take zero or more arguments</p>
+<ul>
+<li><p>Functions may only work for certain (combinations of) arguments</p></li>
+<li><p>Functions may have default values for some arguments</p></li>
+</ul>
+</li>
+<li><p>Fix syntax errors by reading the source code, and runtime errors by tracing the program’s execution</p></li>
+<li><p>Use the built-in function <code class="docutils literal notranslate"><span class="pre">help</span></code> to get help for a function</p></li>
+<li><p>The Jupyter Notebook has two other ways to get help</p>
+<ul>
+<li><p>use a <code class="docutils literal notranslate"><span class="pre">?</span></code> followed by the function name</p></li>
+<li><p>position cursor over command name and press the <code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">tab</span></code> keys</p></li>
+</ul>
+</li>
+<li><p>Python reports a syntax error when it can’t understand the source of a program</p></li>
+<li><p>Python reports a runtime error when something goes wrong while a program is executing</p></li>
+</ul>
+<hr class="docutils" />
+<p>This section was adapted from Aaron J. Newman’s <a class="reference external" href="https://neuraldatascience.io/intro.html">Data Science for Psychology and Neuroscience - in Python</a>, <a class="reference external" href="https://www.cs.ubc.ca/people/meghan-allen">Meghan Allen’s</a> CPSC 103 course at UBC (example of evaluating a complicated expression), and Software Carpentry’s <a class="reference external" href="http://swcarpentry.github.io/python-novice-gapminder/">Plotting and Programming in Python</a> workshop.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./3-python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="types_conversion.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Data Types and Conversion</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="lists.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lists</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hyosub Kim<br/>
+  
+      &copy; Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

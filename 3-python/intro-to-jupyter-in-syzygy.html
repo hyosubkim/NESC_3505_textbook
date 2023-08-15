@@ -1,0 +1,1361 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Jupyter Notebooks &#8212; Data Science for Kinesiology</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Help with Python" href="getting_help.html" />
+    <link rel="prev" title="Learning Objectives" href="learning_objectives.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/NESC3505_icon.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science for Kinesiology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Acknowledgments
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About This Course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1-intro/about-this-course.html">
+   About this course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1-intro/learning_objectives.html">
+   Learning Objectives for this Course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1-intro/class_tech.html">
+   Technologies Used in this Class
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1-intro/pedagogy.html">
+   Pedagogy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1-intro/teaching_approach.html">
+     Teaching Approach
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction to Data Science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-nds/introduction.html">
+   Getting Started with the Course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2-nds/learning_objectives.html">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../2-nds/what-is-datascience.html">
+   What is Data Science?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/data.html">
+     Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../2-nds/tools_for_nds.html">
+   Tools for Neural Data Science
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/spreadsheets.html">
+     Spreadsheets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/spreadsheets_limits.html">
+     Limitations of Spreadsheets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/reproducibility.html">
+     Reproducibility
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/sci_prog_lang.html">
+     Scientific Programming Languages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/which_lang.html">
+     Which language to use?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/libs.html">
+     Libraries and packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/why_python.html">
+     Why Python for this Course?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../2-nds/coding.html">
+   Coding Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/python.html">
+     Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/datacamp.html">
+     DataCamp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/jupyter.html">
+     Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2-nds/markdown.html">
+     Markdown
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction to Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introducing Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning_objectives.html">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction to Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_help.html">
+   Getting Help with Python
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="data_types.html">
+   Data types
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables_assignment.html">
+     Variables and Assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="types_conversion.html">
+     Data Types and Conversion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="builtin.html">
+     Python Built-Ins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lists.html">
+     Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dictionaries.html">
+     Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="flow_control.html">
+   Flow Control
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="for_loops.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="conditionals.html">
+     Conditionals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="writing-a-function.html">
+   Writing Functions
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="working_w_data.html">
+   Working with Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pandas_dataframes.html">
+     Introduction to pandas DataFrames
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="looping_data_files.html">
+     Looping Over Data Files
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Visualization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/introduction.html">
+   Introduction to Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/learning_objectives.html">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/plotting.html">
+   Introduction to Plotting with Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/proc_vs_oo.html">
+   Procedural versus Object-Oriented Plotting in Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/subplots.html">
+   Subplots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/plotting_types.html">
+   Thinking About Data for Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/seaborn.html">
+   Introduction to Plotting with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4-viz/human_factors.html">
+   Accessibility and Human Factors in Plotting
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exploratory Data Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-eda/introduction.html">
+   Introduction to EDA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-eda/learning_objectives.html">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-eda/repeated_measures.html">
+   Working with Repeated Measures Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-eda/data_cleaning.html">
+   Data Cleaning - Dealing with Outliers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5-eda/ttests.html">
+   Basic Statistics in Python:
+   <em>
+    t
+   </em>
+   tests with SciPy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Single Unit Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6-single_unit/introduction.html">
+   Introduction to Single Unit Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6-single_unit/learning_objectives.html">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../6-single_unit/single_unit_intro.html">
+   Single Unit Data and Spike Trains
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6-single_unit/intro_spike_trains.html">
+     Introduction to Spike Train Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6-single_unit/ten_intensities.html">
+     Effects of Light Intensity on Spike Rate
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6-single_unit/heat_maps.html">
+     Heat Maps
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../6-single_unit/intro_multielec_data.html">
+   Introducing Multielectrode Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6-single_unit/pandas_multielec.html">
+     Working with Multielectrode Data in pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6-single_unit/corr_spike_trains.html">
+     Correlating spike trains
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Signal Processing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../7-signal_processing/signals-sampling-filtering.html">
+   Signals, Sampling &amp; Filtering
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/3-python/intro-to-jupyter-in-syzygy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3-python/intro-to-jupyter-in-syzygy.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/3-python/intro-to-jupyter-in-syzygy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter notebooks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-jupyter-notebooks">
+     Why Jupyter notebooks?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-notebook-and-kernel-concepts">
+   The “notebook” and “kernel” concepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caution-the-notebook-state-and-kernel-state-are-not-the-same">
+   Caution: The Notebook State and Kernel State are not the Same!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-bit-more-about-jupyter-notebooks">
+   A bit more about Jupyter notebooks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-files">
+     Working With Files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-kernels-and-items-in-memory">
+     Running Kernels, and Items in Memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-in-notebooks">
+     Working in Notebooks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#help">
+     Help!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown">
+   Markdown
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists-in-markdown">
+     Lists in Markdown
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#different-levels-of-headings">
+     Different levels of headings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Jupyter Notebooks</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter notebooks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-jupyter-notebooks">
+     Why Jupyter notebooks?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-notebook-and-kernel-concepts">
+   The “notebook” and “kernel” concepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caution-the-notebook-state-and-kernel-state-are-not-the-same">
+   Caution: The Notebook State and Kernel State are not the Same!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-bit-more-about-jupyter-notebooks">
+   A bit more about Jupyter notebooks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-files">
+     Working With Files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-kernels-and-items-in-memory">
+     Running Kernels, and Items in Memory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-in-notebooks">
+     Working in Notebooks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#help">
+     Help!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown">
+   Markdown
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists-in-markdown">
+     Lists in Markdown
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#different-levels-of-headings">
+     Different levels of headings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-jupyter-notebooks">
+<h1>Introduction to Jupyter Notebooks<a class="headerlink" href="#introduction-to-jupyter-notebooks" title="Permalink to this headline">#</a></h1>
+<hr class="docutils" />
+<div class="alert alert-block alert-info">
+<b>Sources:</b> Aaron Newman's NDS, CPSC 103, NYU lab.
+</div><section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>How do I work with and navigate Jupyter notebooks in Syzygy?</p></li>
+</ul>
+</section>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<p>In this chapter, you will learn to:</p>
+<ul class="simple">
+<li><p>Open a Jupyter notebook</p></li>
+<li><p>Navigate a Jupyter notebook</p></li>
+<li><p>Enter and run code in a Jupyter notebook</p></li>
+<li><p>Enter and format rich text in a Jupyter notebook, using Markdown</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>In this lab course you will spend a lot of time analyzing data using computer programs that you partially design yourself. A core part of the researcher’s toolkit these days is knowing how to use computers to manipulate and analyze data. In this class, Jupyter notebooks will provide a powerful platform for learning, coding, and presenting results of data analyses.</p>
+<p>A Jupyter notebook “is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text” [<a class="reference external" href="http://www.jupyter.org/">www.jupyter.org</a>]. What you are currently reading is actually a Jupyter notebook! (More on that later.) Rather than have everyone in class set up their home computer (which can be difficult across many different home computer types) we will instead use a web-based (or “cloud-based”) solution. The Jupyter notebooks that we will be using are hosted online at <a class="reference external" href="https://ubc.syzygy.ca/">ubc.syzygy.ca</a> so you don’t need to install any software on your own computer. Whenever you have access to the internet, you’ll have access to your programming environment.</p>
+<p>If you have any trouble below, please ask a TA or instructor for help on <span class="xref myst">Piazza</span>!</p>
+<p>You should be able to <strong>submit</strong> your tutorials (and later your tutorial resubmissions and project stages) by using the submission system that appears when you run your tutorial notebook. <strong>Try this early and ask for help</strong> if you run into trouble! <strong>If anything goes wrong with submission</strong> you may need to download your files from Jupyter and upload them to Canvas. In that case, we have a guide on <span class="xref myst">how to download and submit your Jupyter notebooks</span> that you can refer to.</p>
+<div class="alert alert-block alert-warning">
+<b>This section on getting set up requires major revision depending on how students will access JupyterHub. For step 2, they can launch this notebook. Provide instructions in step 2.</b> 
+</div>
+<p><strong>Step 1: Setup</strong></p>
+<p>To get set up for CPSC 103 on <a class="reference external" href="https://ubc.syzygy.ca/">ubc.syzygy.ca</a>, you should open <a class="reference external" href="https://www.students.cs.ubc.ca/~cs-103/redirect-vantage/?target=setup/Misc/setup.ipynb">setup.ipynb</a> and run it. Then, open <a class="reference external" href="https://www.students.cs.ubc.ca/~cs-103/redirect-vantage/?target=setup/Misc/no-syntax-warning.ipynb">no-syntax-warning.ipynb</a> and run it.</p>
+<p>Over the term, you may sometimes get a “404: Not Found” error when you try one of these links. That’s usually because the file is not yet released (e.g., tutorial solutions release about 15 minutes after the tutorial deadline). If you encounter this error when you think you shouldn’t, post on Piazza or e-mail <a class="reference external" href="mailto:cpsc103-vantage&#37;&#52;&#48;cs&#46;ubc&#46;ca">cpsc103-vantage<span>&#64;</span>cs<span>&#46;</span>ubc<span>&#46;</span>ca</a> with details and ideally screenshots to show what’s happening so we can help.</p>
+<p>The setup notebook contains code that will setup your Jupyter notebooks for this course. Run the code by pressing the run button: <img alt="" src="https://edge.edx.org/assets/courseware/v1/6e968cdb1677dbe4c28713c3f558a4e1/asset-v1:UBC+CPSC103-101-102+2017W1+type&#64;asset+block/run_button.png" />. If it has worked properly, you should see a confirmation underneath the code that says “Setup succeeded!”. If you have trouble, please ask a TA or instructor for help!.   A link to the specific JupyterHub URL for our class this semester is provided in the sidebar of this website.</p>
+<figure class="align-default" id="jupyterproject">
+<a class="reference internal image-reference" href="3-python/images/jupyterlogo.png"><img alt="3-python/images/jupyterlogo.png" src="3-python/images/jupyterlogo.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The Jupyter Project logo.</span><a class="headerlink" href="#jupyterproject" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>UBC’s Syzygy lets everyone registered in the class log on to a website and access their own personal set of files. In addition, the instructor can distribute new files to students to work on.</p>
+<p>We will focus primarily on Python in this class.  Future readings and assignments will introduce the Python programming language to you and also teach you how to use it to analyze data.</p>
+<p>However, for now we want to begin by understanding a bit more about Jupyter and the system we will be interacting with.</p>
+<p><strong>Step 2: Introductory Notebook</strong></p>
+<p>You can open this notebook!</p>
+</section>
+<section id="jupyter-notebooks">
+<h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">#</a></h2>
+<p>You are currently viewing a Jupyter notebook. Jupyter notebooks are composed of <em>cells</em>. Cells can be of three types: code, Markdown, or raw. This cell you’re reading is Markdown, a simple language for formatting rich text. The cell below is a code cell, where you can write and run Python commands. Raw cells are “raw” text — they aren’t fancy-formatted Markdown, and they aren’t run-able as code. They also aren’t terribly useful.</p>
+<p>Cells have two modes: <strong>edit</strong> and <strong>command</strong>. Edit mode is indicated by a green border around the cell, while command mode has a blue border. In edit mode, you can type into the cell and edit it. In command mode, you can run the cell, or manipulate it in certain ways (e.g., deleting a whole cell, or moving it).</p>
+<p>This text you are currently reading is a Markdown cell. If you are viewing it in Syzygy, and click once on this text, the cell should become active in command mode, so you should see a blue border around it. If you double-click on this (or any other Markdown) cell, the outline will turn green, the text will change to a <em>fixed-width</em> font and you’ll see the Markdown formatting tags (like <code class="docutils literal notranslate"><span class="pre">#</span></code> for headings). Try it! Then hit Shift &amp; Enter to execute the cell (which applies and renders the Markdown formatting).</p>
+<p>So in summary:</p>
+<ul class="simple">
+<li><p>Single-clicking a cell will select it in Command mode</p></li>
+<li><p>Double-clicking a cell will put it in Edit mode</p></li>
+<li><p>Pressing the Shift &amp; Enter keys on your keyboard simultaneously will execute a cell. Execution will format a Markdown cell, or run the code in a code cell.</p></li>
+</ul>
+<p>Below is a code cell with some very simple Python code. You haven’t started learning Python yet, but as you can see, at its simplest Python can act like a calculator. Try executing the cell and see what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Take note of a couple of things here. Firstly, The text to the left of the cell changed from <code class="docutils literal notranslate"><span class="pre">In:</span> <span class="pre">[]:</span></code> to <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[1]:</span></code> (or some number). “In” stands for “input”, and the number indicates that the cell was run, and the numbers increase sequentially as you run cells. In general, it’s a good idea to run Jupyter notebook cells sequentially, from top to bottom. But sometimes, when you’re writing and debugging your code, you’ll run them many times before you get it right, and sometimes you’ll run a few cells and then go back and run them again. So the numbers are useful in keeping track of what you’ve done, in what order. If a process takes a while to run, then the cell will show <code class="docutils literal notranslate"><span class="pre">In:</span> <span class="pre">[*]:</span></code> while the cell is running.</p>
+<p>The outputs (<code class="docutils literal notranslate"><span class="pre">Out</span></code>) are numbered to match the inputs. The more important thing to know about the <code class="docutils literal notranslate"><span class="pre">Out[]:</span></code> output is that it  <em>only reflects the last output from the cell</em>. In the example above, that’s OK, but check out what happens when you run the cell below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>…you only see the output of the last line! This is normally not what you want. Thus in Jupyter if you want to see the output of commands you run in a cell, you should embed the command inside a print() statement, as shown below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Soon in this class, you’ll learn about data <em>types</em>. For now, it’s worth noting that if you want to output text in Python, you need to put it inside quotation marks (Python doesn’t care if you use single or double quotes, as long as you start and finish with the same one). So, running the cell below produces an error (do it!):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Hello</span> <span class="n">World</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Hello</span> <span class="n">World</span><span class="p">)</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax. Perhaps you forgot a comma?
+</pre></div>
+</div>
+</div>
+</div>
+<p>But the following works as desired. Copy (type) the following text you see into the empty cell below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Type your code here</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Even in code cells, you can add random commentary that&#39;s not Python code </span>
+<span class="c1"># as long as you start each line with a hash mark, like this line is.</span>
+
+<span class="c1"># These lines are called &quot;comments&quot; and it is good coding practice to use them.</span>
+
+<span class="c1"># Comments allow you to make notes about your code. When you&#39;re starting out, </span>
+<span class="c1"># you may want to add comments so that the next time you look at your code, </span>
+<span class="c1"># you remember what a particular line or section does. Or, you may want to </span>
+<span class="c1"># leave a &quot;note to self&quot; if you want to come back and add things to a particular </span>
+<span class="c1"># section later.</span>
+
+<span class="c1"># Although Syzygy &quot;wraps&quot; your comments to the width of the window, </span>
+<span class="c1"># not all programs do this. So it&#39;s good programming style to put in line breaks</span>
+<span class="c1"># manually for your comments, like this.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this cell. We&#39;ll use it later.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="why-jupyter-notebooks">
+<h3>Why Jupyter notebooks?<a class="headerlink" href="#why-jupyter-notebooks" title="Permalink to this headline">#</a></h3>
+<p>As you’ve already begun to experience, the “notebook” interface is an approach to programming and data analysis which combines programming/analysis code with text, images, figure, animations, and other multimedia in the same document (see <a class="reference internal" href="#jupyternotebook"><span class="std std-numref">Figure 2</span></a>). The idea for computational notebooks has been around for a long time (e.g., <a class="reference external" href="https://www.wolfram.com/mathematica/">Mathematica</a> is a commercial product that has long provided a notebook interface for data analysis and programming). However, Jupyter is now one of the leading tools that scientists, including those in biomechanics, neuroscience, and physiology, use to analyze their data and write code.</p>
+<div>
+    <center><img src="images/jupyterpreview.png" style="height: 300px"></center>
+</div>
+<center>A screenshot of a Jupyter Notebook.  Notice how the document combines text, pictures and analysis code.</center><figure class="align-default" id="jupyternotebook">
+<a class="reference internal image-reference" href="3-python/images/jupyterpreview.png"><img alt="3-python/images/jupyterpreview.png" src="3-python/images/jupyterpreview.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">A screenshot of a Jupyter Notebook.  Notice how the document combines text, pictures and analysis code.</span><a class="headerlink" href="#jupyternotebook" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There are several reasons for the popularity of Jupyter:</p>
+<ol class="simple">
+<li><p>Jupyter is open source and free. This means it is not owned by any one person or company. Scientists and other programmers devote their time to improving Jupyter. The code is readable by anyone which means it is easier to catch bugs.</p></li>
+<li><p>Jupyter works with several different programming languages including R, Python, Matlab and others which are popular for data analysis. In fact, the name “Jupyter” combines the names of three different languages, <strong>Ju</strong>lia, <strong>Pyt</strong>hon, and <strong>R</strong>.</p></li>
+<li><p>Jupyter runs in a standard web browser. This means you can use Jupyter often on any computing device you like including low-cost laptops like Chromebooks/Netbooks or even a tablet like an iPad.</p></li>
+<li><p>Jupyter has many extensions which provide interactive widgets, animations, beautiful graphics, etc…</p></li>
+<li><p>Jupyter is fun!  Once you get the hang of the notebook concept then it makes developing and debugging code a pretty fun experience.</p></li>
+<li><p>Many companies use Jupyter internally and are looking to hire people with this skill!</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">External Reading</p>
+<p>For assignment 0, please <a class="reference external" href="https://www.nature.com/articles/d41586-018-07196-1">read this article</a> r <span id="id1">[]</span>.</p>
+</div>
+</section>
+</section>
+<section id="the-notebook-and-kernel-concepts">
+<h2>The “notebook” and “kernel” concepts<a class="headerlink" href="#the-notebook-and-kernel-concepts" title="Permalink to this headline">#</a></h2>
+<p>One sort of interesting feature of this class is that more or less <strong>everything</strong> uses Jupyter notebooks. This includes the class webpage and each chapter of the online textbook.  In fact, the document you are reading was first entered in as a Jupyter notebook.  Using <a class="reference external" href="https://jupyterbook.org/">Jupyterbook</a>, these notebooks were converted to a webpage. However, you can easily open the notebook that was used to write this chapter and check out the code and run it yourself <a class="footnote-reference brackets" href="#format" id="id2">1</a>.</p>
+<p>There are two key ways to do this.  First, in the top right of this webpage you should see a little menu option that looks like this:</p>
+<div>
+    <center><img src="images/jupyterbookmenu.png" style="height: 50px"></center>
+</div>
+<center>The JupyterBook menus for our online textbook.</center><figure class="align-default" id="jupyterbookmenu">
+<a class="reference internal image-reference" href="3-python/images/jupyterbookmenu.png"><img alt="3-python/images/jupyterbookmenu.png" src="3-python/images/jupyterbookmenu.png" style="height: 50px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">The JupyterBook menus for our online textbook.</span><a class="headerlink" href="#jupyterbookmenu" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The button with the little arrow pointing down will let you download the current chapter either as a .ipynb (i.e., a Jupyter notebook) or as a PDF.  If you download the notebook to your computer you can easily upload it to a running Jupyter/JupyterHub instance.  For example, if you login to the class JupyterHub you can upload the .ipynb, open it, and then begin interacting with it by executing the cells, editing them, and interacting with widgets and other interactive animations.</p>
+<p>Even easier, if you are registered for the course (this will not work for people viewing these pages online) you can launch any of the chapters of the textbook on your own Jupyter instance by clicking on the buttons shown here:</p>
+<figure class="align-default" id="jupyterhublaunch">
+<a class="reference internal image-reference" href="3-python/images/jupyterhublaunch.png"><img alt="3-python/images/jupyterhublaunch.png" src="3-python/images/jupyterhublaunch.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">The JupyterBook menu to launch the current book notebook on your own personal Jupyterhub (registered students only).</span><a class="headerlink" href="#jupyterhublaunch" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In addition, for most of the computer-generated graphs and tables in the book you can view the code used to create the figure.  Just look for something that looks like this:</p>
+<figure class="align-default" id="jupyterviewcell">
+<a class="reference internal image-reference" href="3-python/images/jupyterviewcell.png"><img alt="3-python/images/jupyterviewcell.png" src="3-python/images/jupyterviewcell.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Click this button to reveal the python code used to generate the figure, table, graph or other output.</span><a class="headerlink" href="#jupyterviewcell" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The key to Jupyter is the concept of a <strong>computational notebook</strong>.  A computational notebook is a document-based approach to structuring data analysis and programming.  A notebook appears and acts similar to other programs you are familiar with like Excel or Google Sheets (spreadsheets) or Word or Google Docs (word processor).  These programs provide ways for you to enter information into documents and to save those file, send them to others, copy-paste text, alter the formatting, etc…</p>
+<p>We will primarily use the “classic” Jupyter Notebook interface which consists of a single document which you interact with. There is a newer interface called <a class="reference external" href="https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906">JupyterLab</a> which looks more like Matlab or RStudio’s interface, allowing multiple windows and views of the running code.  The traditional notebook interface is prefered here primarily because it simple and faciliates reading along.</p>
+<p>A computational notebook typically is made up of a set of elements called “cells” that group little bits of information together.  A notebook document (usually ending with the .ipynb extension on the file name) is a list of cells arranged from the top of the document to the bottom.  Cells can contain several types of information including code, text, images and so forth.  You develop your project by creating new cells, entering information, reordering cells, and saving the results.</p>
+<p>The key element which makes a notebook “computational” is that it can be linked to a computing engine known as a “kernel” which can run on the same computer or another computer using the Internet.  The kernel is separate from the notebook and can for instance be stopped and started independently from the program displaying the notebook itself. The magic happens when a cell is “executed”, which refers simply to making the code in the cell “go”.  When this happens the code from the cell that was executed is sent to the computational kernel and this kernel will run the sequence of commands contained within the cell. Any results such as figures or printouts from the results of that code running will be sent to the notebook from the kernel and will be inserted beneath the cell which was just executed. A diagram of the basic conceptual idea is shown in <a class="reference internal" href="#jupyterflow"><span class="std std-numref">Figure 6</span></a>.</p>
+<div>
+    <center><img src="images/jupyterflow.png" style="height: 370px"></center><figure class="align-default" id="jupyterflow">
+<a class="reference internal image-reference" href="3-python/images/jupyterflow.png"><img alt="3-python/images/jupyterflow.png" src="3-python/images/jupyterflow.png" style="height: 370px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">The flow between the notebook and the kernel. Cells, when they are executed, are sent to the computational kernel which is an independent piece of software that can be started and stopped independently from the notebook.</span><a class="headerlink" href="#jupyterflow" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="caution-the-notebook-state-and-kernel-state-are-not-the-same">
+<h2>Caution: The Notebook State and Kernel State are not the Same!<a class="headerlink" href="#caution-the-notebook-state-and-kernel-state-are-not-the-same" title="Permalink to this headline">#</a></h2>
+<p>One somewhat confusing aspect of Jupyter for beginners is that the notebook is simply a way to organize information and the order of information in a notebook has nothing to do with the order in which code has been executed on the server.</p>
+<p>Instead, each time you execute a cell, the commands from that cell are sent to the kernel, run, and then returned.  Usually it make sense to organize your code so that multiple cells are arranged in order from the top of the document to the bottom.  You would then execute the first cell, then the second cell, and so forth.</p>
+<p>However, <strong>and this is really important</strong>, you don’t have to execute the cells in order.  You can execute the third cell before the second or first cell if you want.  This just means that the code in the third cell would be sent to the kernel first and then the other cells would be sent.  This means that the order of the cells in the notebook document are really just for presentation, and it is up to you to “run/execute” the cells in whatever order you want.</p>
+<p>This is mostly helpful because when you are doing an analysis you might want to go back up to the top and change something and then continue where you left off.  To do that you could scroll back to a earlier cell, change it, then execute it and then go back down to the beginning of the script.</p>
+<p>However, things can get confusing. If you delete a cell it doesn’t mean the code was “undone”. The kernel doesn’t know anything about any edits you make to the notebook interface.  All it does is receive code when you send it via the “execute cell” command and then it waits. This can mean that the “state” or current status of the kernel can at times be different from what your cells or notebook look like.  One easy option to deal with this is that if things get too far out of whack you can simply restart the kernel. This will erase its current state and set it back to a fresh start. However, then you need to re-execute all of the cells in your notebook to get back to where you were.</p>
+<p>The best analogy is like telling your friend how to cook a meal for you over the phone. You have the instructions in front of you (your notebook) and you tell your friend (the kernel) what to do. If you read the instructions out of order, your friend can’t tell the difference. They just know each step you told them to do and follow it. It is up to you to direct the instructions so they arrive to your friend (the kernel) in the right order. And of course if things get confused you can just tell your friend to start over from stratch and begin again.</p>
+<p>At first this can be confusing but eventually you get the hang of it. It is one source of bugs/errors in programming in Jupyter notebooks, though, so you want to be mindful of that. Overall, you will find Jupyter notebooks to be an incredibly useful tool as you develop your programming and data analysis skills.</p>
+<p><a class="reference external" href="https://github.com/Carreau/ipython-wiki/blob/master/A-gallery-of-interesting-IPython-Notebooks.md#introductory-tutorials">Here</a> is a just a small smattering of some of the awesome ways people have put Jupyter to use.</p>
+<figure class="align-default" id="jupyterwarning">
+<a class="reference internal image-reference" href="3-python/images/jupyterwarning.png"><img alt="3-python/images/jupyterwarning.png" src="3-python/images/jupyterwarning.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Important facts that the notebook interface and the order things are sent to the kernel is up to you.
+Also cells can be deleted or added in the notebook interface and the kernel doesn’t know this.</span><a class="headerlink" href="#jupyterwarning" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<hr class="docutils" />
+<section id="a-bit-more-about-jupyter-notebooks">
+<h2>A bit more about Jupyter notebooks<a class="headerlink" href="#a-bit-more-about-jupyter-notebooks" title="Permalink to this headline">#</a></h2>
+<p>The top of this window probably looks a bit intimidating, with a lot of menus and buttons. You’ll gradually get familiar with many of these functions, although some you may never use in this course. For now, we’ll go through the most important functions and concepts.</p>
+<section id="working-with-files">
+<h3>Working With Files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">#</a></h3>
+<p>In general, when using Syzygy you don’t need to explicitly save files. Notebooks are auto-saved so you don’t have to worry about it! But there is a button to manually save between auto-saves.</p>
+<p>Although for most of your work you will receive assignments with pre-made files to work in, for projects, for practice, or just for fun, you can create new files — including Jupyter notebooks but a variety of others as well. The <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">New</span></code> menu item will give you the options for different types of files you can create. The <code class="docutils literal notranslate"><span class="pre">File</span></code>menu also provides options for downloading your notebook files, including converting them from Jupyter notebooks to PDFs or other formats.</p>
+<p>You can have multiple files open at once, and they appear as tabs at the top of the Syzygy window. In general, the tabs/files you have open will stay there even when you close your browser window/tab or log out, so the next time you connect to Syzygy you’ll see those tabs still there. <strong>HOWEVER</strong> (and this is important), even if you leave your browser with the Syzygy window/tab open on your computer, Syzygy will “terminate” your running notebook after about 2 hours.</p>
+<p>If you have multiple files open, normally they’ll just appear as tabs across the top. However, over in the top right section of the window, you’ll find these buttons:
+<img alt="" src="../_images/frames.png" /> which allow you to divide the window into multiple “frames” and view multiple files at one time; each pane is itself sub-dividable into more frames!</p>
+<p><strong>Pro tip:</strong> Notebook files can get really long. Syzygy has a “Contents” button that will show you a table of contents for a notebook file. It makes this automatically from all the Markdown headings it finds. Find the Contents button above and click it to see.</p>
+</section>
+<section id="running-kernels-and-items-in-memory">
+<h3>Running Kernels, and Items in Memory<a class="headerlink" href="#running-kernels-and-items-in-memory" title="Permalink to this headline">#</a></h3>
+<p>This may seem contradictory: how is it that the file is still open, but the notebook is terminated? The answer lies in the fact that when you open a notebook file, you are <em>also</em> starting a new Python <strong>kernel</strong> — a live, running instance of Python that will interpret your Python commands and produce output. Remember: The notebook and kernel states are not the same! Each notebook you open will start a new Python kernel. As long as the kernel is running, the things you do in Python will be stored in memory (RAM). This will make more sense as you start to use Python, but when you’re running Python, you generally don’t just run commands and get output. You also read data files into memory, and store the results of one command in memory for use in the next command. For example, a bit earlier in this notebook you were instructed to run a cell with the code:
+<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
+<p>This <em>assigned</em> a value of <code class="docutils literal notranslate"><span class="pre">1</span></code> to a <em>variable</em> named <code class="docutils literal notranslate"><span class="pre">x</span></code>. This is now stored in RAM inside this notebook’s kernel, so now in the cell below if you type
+<code class="docutils literal notranslate"><span class="pre">print(x)</span></code> you will get the output <code class="docutils literal notranslate"><span class="pre">1</span></code>, because the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> was stored in memory.</p>
+<p>However, if the notebook’s kernel terminates, then everything that was held in memory is erased. The next time you open or start to use the notebook, if you tried to run that <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> command without running the cells above it, you would get an error, because <code class="docutils literal notranslate"><span class="pre">x</span></code> is no longer in memory. You would need to start at the top of the file and run all the commands again.</p>
+<p>In general, this isn’t a big deal. Python is very efficient, and for the most part we are working with reasonably small data sets so your code should not take long to run or re-run. It is important to understand this, though, because you will get confusing errors if you come back to your work after several hours, and try to just pick up where you left off.</p>
+<p>If you’re wondering why kernels are automatically terminated, it’s because Syzygy runs on cloud servers. Every active kernel is consuming resources (computer hardware and energy) at a data centre somewhere. Terminating “idle” kernels saves Syzygy’s operator money, as well as reducing the energy demands of the data centre.</p>
+<p>You’ll see at the top that there is a <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> menu. This menu has several options, including restarting a kernel manually (which will clear everything out of memory, somthing you may want to do sometimes as you’re working in order to get a fresh start rather than trying to un-do errors you made), running all the cells in the notebook (an easy way to get back to where you left off, when your kernel terminated), and clearing all of the output in the notebook.</p>
+<p><strong>Pro tip:</strong> In general, it’s a good idea to clear all output from a notebook when you restart the kernel, so you don’t get confused between old and new outputs.</p>
+</section>
+<section id="working-in-notebooks">
+<h3>Working in Notebooks<a class="headerlink" href="#working-in-notebooks" title="Permalink to this headline">#</a></h3>
+<p>There is an <strong>undo</strong> function, which works similarly to other software you’ll have used, sequentially undoing things you’ve typed in cells. <strong>Importantly</strong>, <em>the undo function does <em>not</em> undo the results of commands you’ve run in Python</em>. Continuing with our previous example, this means that if you ran the Python command <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code>, then ran “undo”, Jupyter would delete your typing, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code>. However, in the kernel’s memory, <code class="docutils literal notranslate"><span class="pre">x</span></code> would still equal <code class="docutils literal notranslate"><span class="pre">1</span></code>. So you could run <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> and the output would still be <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>Syzygy also offers <a class="reference external" href="https://doc.Syzygy.com/time-travel.html">Time Travel</a>. This allows you to revert your notebook file to some specific, previous state. It’s essentially like hitting “undo” a large (and very specific) number of times, without the risk of carpal tunnel syndrome.</p>
+<p>You can insert a new cell right below whatever cell is currently active, either by pressing the “+” button under the menu, or using the <code class="docutils literal notranslate"><span class="pre">Insert</span></code> menu, or, as long as no cell is in edit mode, pressing the <code class="docutils literal notranslate"><span class="pre">b</span></code> key on the keyboard to insert a new cell <em>b</em>elow the selected cell (or <code class="docutils literal notranslate"><span class="pre">a</span></code> to insert a cell <em>a</em>bove the selected one). The <code class="docutils literal notranslate"><span class="pre">Cell</span></code> menu also has a variety of useful tools for working with cells, which are pretty self-explanatory if you look at them.</p>
+<p>We encourage you to peruse the menus and randomly push buttons and try things in a notebook file. You will not break the internet (probably). Maybe first create a new notebook file first, though, and don’t mess this one up!</p>
+</section>
+<section id="help">
+<h3>Help!<a class="headerlink" href="#help" title="Permalink to this headline">#</a></h3>
+<p>Syzygy has <a class="reference external" href="https://intro.syzygy.ca/">extensive documentation</a>. You may want to start <a class="reference external" href="https://intro.syzygy.ca/the-basic-elements/">here</a>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="markdown">
+<h2>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://daringfireball.net/projects/markdown/"><strong>Markdown</strong></a> is a “plain text formatting syntax” and a tool for converting such plain text to a formatted version, such as <a class="reference external" href="https://en.wikipedia.org/wiki/HTML">HTML</a> for display in a web page. There is a fundamental difference between plain text (.txt files) versus rich text (such as in Markdown, and also Microsoft Word or Google Docs). Rich text files display the text that you enter, and the formatting you choose (e.g., boldface), and hide the information telling your computer to make that text boldface “behind the scenes” in a complex file. In contrast, when you open a plain text file, what you see is literally the contents of that file, with nothing hiding in the background (except for a couple of hidden features, like markers for line breaks and tabs).</p>
+<p>So a plain text file can never contain formatting like boldface or italic. Markdown allows you to create a text file with special codes that you type to “mark” certain text for formatting, and then run a program on that text file to produce a formatted output. For example, text surrounded by <code class="docutils literal notranslate"><span class="pre">*one</span> <span class="pre">asterisk*</span></code> shows up in <em>italics</em>; text surrounded by <code class="docutils literal notranslate"><span class="pre">**two</span> <span class="pre">asterisks**</span></code> shows up as <strong>boldface</strong>.</p>
+<section id="lists-in-markdown">
+<h3>Lists in Markdown<a class="headerlink" href="#lists-in-markdown" title="Permalink to this headline">#</a></h3>
+<p>You can make a bulleted list by starting each line of the list with a hyphen (<code class="docutils literal notranslate"><span class="pre">-</span></code>) followed by a space:</p>
+<ul class="simple">
+<li><p>this is a first list item</p></li>
+<li><p>this is another list item</p></li>
+</ul>
+<p>You can generate a numbered list by starting each line with a number, then a period, then a space. A nice feature is that if you start <em>every</em> item in your list with <code class="docutils literal notranslate"><span class="pre">1.</span> </code>, Markdown will auto-number your items:</p>
+<ol class="simple">
+<li><p>This is item 1</p></li>
+<li><p>This is item 2, even though the Markdown starts with <code class="docutils literal notranslate"><span class="pre">1.</span> </code></p></li>
+</ol>
+</section>
+<section id="different-levels-of-headings">
+<h3>Different levels of headings<a class="headerlink" href="#different-levels-of-headings" title="Permalink to this headline">#</a></h3>
+<p>Different levels of headings can be indicated with hash marks; the more hash marks, the more deeply embedded a header is. So, the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Heading</span> <span class="pre">1</span></code> = first-level heading (like the title at the very top of this page)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Heading</span> <span class="pre">2</span></code> = second-level heading (like the title of the section titled ‘Markdown’)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">Heading</span> <span class="pre">3</span></code> = third-level heading (heading of this section)</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>While originally Markdown was designed to simplify creating web pages in HTML (the coding language for web pages), there are now a huge number of output formats available (e.g., PDF, Microsoft Word, ePub) in different applications, and many Markdown apps that allow you write and edit Markdown files while viewing a preview of the formatted output in another window alongside your Markdown text file.</p>
+<p>HTML — and by extension, Markdown — embodies a design philosophy of separating the content of a document from its formatting. That is, when writing the content, you focus on writing, not how it’s going to look, and then later, you apply formatting to make it look a certain way. This means that the same document can be formatted in virtually any possible way, with different fonts, sizes, etc.. It also provides consistency (e.g., you don’t have to remember to manually make every first-level heading a specific larger font size, and bold) and makes it very easy to produce professional-looking output without professional web design skills.</p>
+<p><a class="reference external" href="https://www.markdownguide.org/cheat-sheet/">You can see a Markdown cheatsheet here</a></p>
+</section>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+<p>Create a cell below this one, convert it to Markdown, and use Markdown to do the following:</p>
+<ul class="simple">
+<li><p>your name, with your last name in bold</p></li>
+<li><p>a bulleted list of names of people in your family</p></li>
+<li><p>a second-level heading that reads “Education”</p></li>
+<li><p>a numbered list of educational attainments, including your high school and any university degrees</p></li>
+</ul>
+<p>Note: By default, new cells are code cells. Use the drop-down menu at the top (which will say “code”) to change it to a Markdown cell.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="format"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>The book chapters have some additional formatting for the web that you might not see in a regular notebook.  However most of this just looks like more complex Markdown.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "jupyter_books"
+        },
+        kernelOptions: {
+            kernelName: "jupyter_books",
+            path: "./3-python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'jupyter_books'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="learning_objectives.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Learning Objectives</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="getting_help.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Getting Help with Python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Hyosub Kim<br/>
+  
+      &copy; Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
