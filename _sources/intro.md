@@ -1,6 +1,6 @@
 # Acknowledgments
 
-First of all, I owe a great debt of gratitude to [Aaron J. Newman](https://aaronjnewman.com/) of Dalhousie University for sharing his excellent open-source textbook, [Data Science for Psychology and Neuroscience - in Python](https://neuraldatascience.io/intro.html). What you see now is an edited / remixed / adapted version of the original book, one that I hope will best suit undergraduate Kinesiology students at The University of British Columbia. Much of the original work has largely been kept intact, although a couple of notable changes include substituting the chapters on EEG and MRI data with one on signal processing, as well as the addition of a section on writing functions. My goal is that this book will evolve and take on a life of its own over iterations of teaching the course and serve as a useful, open resource for those studying and researching human movement.
+First of all, I owe a great debt of gratitude to [Aaron J. Newman](https://aaronjnewman.com/) of Dalhousie University for sharing his excellent open-source textbook, [Data Science for Psychology and Neuroscience - in Python](https://neuraldatascience.io/intro.html). What you see now is an edited/remixed/adapted version of the original book, one that I hope will best suit undergraduate Kinesiology students at The University of British Columbia. Much of the original work has largely been kept intact, although a couple of notable changes include substituting the chapters on EEG and MRI data with one on signal processing, as well as the addition of a section on writing functions. My goal is that this book will evolve and take on a life of its own over iterations of teaching the course and serve as a useful, open resource for those studying and researching human movement.
 
 There are others whose work I have also adopted (and adapted) and to whom I am grateful:
 - [Meghan Allen](https://www.cs.ubc.ca/people/meghan-allen) of UBC for the section on writing functions, evaluating expressions, and some early tutorial materials
@@ -8,6 +8,12 @@ There are others whose work I have also adopted (and adapted) and to whom I am g
 - [Todd Gureckis](https://as.nyu.edu/faculty/todd-gureckis.html) and [Brendan Lake](https://cims.nyu.edu/~brenden/) for sharing materials from their [NYU course on Cognition and Perception](https://cims.nyu.edu/~brenden/courses/labincp/intro.html)
 - [Jessica Hamrick](http://www.jesshamrick.com/) for the Jupyter-based teaching materials
 - [Software Carpentry](https://software-carpentry.org/) for all of their great tutorials
+
+
+## Disclaimer
+(August 16, 2023) This book is currently a work-in-progress, and I expect to make minor edits to it over the next several weeks. Don't be thrown off if it looks slightly different the next time you view it. Also, if you find any errors (for which I claim sole responsibility), or have suggestions, please let me know by opening an Issue on GitHub (click the Octocat icon in upper right). 
+
+- HK
 
 
 ## License for this book
