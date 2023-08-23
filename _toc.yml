@@ -11,7 +11,7 @@ parts:
     - file: 1-intro/learning_objectives
     - file: 1-intro/academic-integrity
     # - file: syllabus 
-    - file: 1-intro/class_tech
+    # - file: 1-intro/class_tech
       # sections:
       # - file: 1-intro/lms
       # - file: 1-intro/teams
