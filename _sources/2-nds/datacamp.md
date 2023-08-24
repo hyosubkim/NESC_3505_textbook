@@ -15,7 +15,7 @@ Completing the lessons only counts towards a small portion of your final grade, 
 
 ## Getting Started with DataCamp
 
-The teaching team will add all students registered in this class to the class DataCamp "group", using your UBC email address. You will receive an invitation email from DataCamp with a link that will allow you to set a password (use something secure!).
+The teaching team will add all students registered in this class to the class DataCamp "group", using the email address provided to us. You will receive an invitation email from DataCamp with a link that will allow you to set a password (use something secure!).
 
 Once you have logged in for the first time, you will see a window like the one below, listing your active assignments; click on "DUE BY" to sort them by due date (which also indicates the sequence you should complete the assignments in). On the right, there is a trophy icon to see the leaderboard. This tracks all students' progress and can be fun for you competitive types.
 
@@ -24,11 +24,9 @@ Once you have logged in for the first time, you will see a window like the one b
 align: left
 ```
 
-Each DataCamp assignment has a due date, which conveys when you need to have covered that material in order to keep up with the work in this class. Again, completion by class time does not contribute to your grade, but it *does* ensure you're prepared for the class, and for the next upcoming assignment. **Each DataCamp assignment will probably take you approximately 4 hours.** Each one has an estimated duration that you'll see when you start it, and these seem pretty accurate. DataCamp will remember your progress, so you don't have to complete an assignment — or even a chapter — all in one go. You can work in smaller or larger chunks at your preference, log off, and log back on to resume the course later.
+Each DataCamp assignment has a due date, which conveys when you need to have covered that material in order to keep up with the work in this class. Again, completion by class time does not contribute to your grade, but it *does* ensure you're prepared for the class, and for the next upcoming assignment. Each assignment has an estimated duration (e.g., 4 hours for the first one - Introduction to Python) that you'll see when you start it, and these seem pretty accurate. DataCamp will remember your progress, so you don't have to complete an assignment — or even a chapter — all in one go. You can work in smaller or larger chunks at your preference, log off, and log back on to resume the course later.
 
-<!-- Notice that there is some confusing terminology here — what DataCamp calls "assignments" are referred to as "lessons" in NESC 3505, whereas NESC 3505 "assignments" are graded work based on neuroscience data. Unfortunately I don't think DataCamp will change the terminology they use for over 4.5 million learners, just because I ask them to. You'll get the hang of this. -->
-
-You can navigate around a bit on the DataCamp site if you like. You can access other courses and lessons to see what's out there. You can also explore other features of the site. For example, there are practice exercises you can do between lessons. You can always get back to your Assignments list by clicking on "Organizations".
+You can navigate around a bit on the DataCamp site if you like. You can access other courses and lessons to see what's out there. You can also explore other features of the site. For example, there are practice exercises you can do between lessons. You can always get back to your Assignments list by clicking on Learn -> Assignments.
 
 DataCamp also offers a mobile app that you can use for the lessons. However, the small screen and touch interface are not ideal for the activities that involve typing and running code, so using the web browser on a computer is the best platform.
 

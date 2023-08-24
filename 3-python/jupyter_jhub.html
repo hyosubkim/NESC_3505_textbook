@@ -115,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  About This Course
+  1. About This Course
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -134,15 +134,10 @@ const thebe_selector_output = ".output, .cell_output"
    Academic Integrity and Collaboration
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/class_tech.html">
-   Technologies Used in this Class
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Introduction to Data Science
+  2. Introduction to Data Science
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -255,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Introduction to Python
+  3. Introduction to Python
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -373,7 +368,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Data Visualization
+  4. Data Visualization
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -420,7 +415,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Exploratory Data Analysis
+  5. Exploratory Data Analysis
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -456,7 +451,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Single Unit Data
+  6. Single Unit Data
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -522,7 +517,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Signal Processing
+  7. Signal Processing
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -926,7 +921,8 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="jupyter-notebooks">
 <h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">#</a></h2>
-<p>If you’re in class now, you should currently be viewing this Jupyter notebook file on JupyterHub as opposed to looking at the static webpage for the textbook. Jupyter notebooks are composed of <em>cells</em>. Cells can be of three types: code, Markdown, or raw. This cell you’re reading is Markdown, a simple language for formatting rich text. The cell below is a code cell, where you can write and run Python commands. Raw cells are “raw” text — they aren’t fancy-formatted Markdown, and they aren’t run-able as code. They also aren’t terribly useful.</p>
+<p>If you’re in class now, you should currently be viewing this Jupyter notebook file on JupyterHub as opposed to looking at the static webpage for the textbook. You can go to the <a class="reference external" href="https://canvas.ubc.ca/courses/124902">course Canvas page</a> where you will see the <a class="reference external" href="https://open.jupyter.ubc.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fhyosubkim%2Fdatasci-for-kin-student&amp;urlpath=lab%2Ftree%2Fdatasci-for-kin-student%2F">link</a> to access your UBC JupyterHub account. Your first “assignment” should be ready (“A0-intro.ipynb”). <strong>IMPORTANT: We are using a version of JupyterHub at UBC referred to as “Jupyter Open”. If you google “UBC Jupyter Hub” you may see links to other JupyterHubs  like “Syzygy”, but that will not take you to your account for this course, so don’t be confused. Whenever in doubt, use the Canvas link.</strong></p>
+<p>Jupyter notebooks are composed of <em>cells</em>. Cells can be of three types: code, Markdown, or raw. This cell you’re reading is Markdown, a simple language for formatting rich text. The cell below is a code cell, where you can write and run Python commands. Raw cells are “raw” text — they aren’t fancy-formatted Markdown, and they aren’t run-able as code. They also aren’t terribly useful.</p>
 <p>Cells have two modes: <strong>edit</strong> and <strong>command</strong>. Edit mode is indicated by the cell having a white background, while in command mode the cell has a gray background. In edit mode, you can type into the cell and edit it. In command mode, you can run the cell, or manipulate it in certain ways (e.g., deleting a whole cell, or moving it). (Note: These visual cues are slightly different in the classic Jupyter notebook view, where Edit mode is indicated by a green boorder and command mode is indicated by a blue border. Either way, the functionality is identical.)</p>
 <p>This text you are currently reading is a Markdown cell. If you are viewing it in JupyterHub, and click once on this text, the cell should become active in command mode. If you double-click on this (or any other Markdown) cell,  the text will change to a <em>fixed-width</em> font and you’ll see the Markdown formatting tags (like <code class="docutils literal notranslate"><span class="pre">#</span></code> for headings). Try it! Then hit Shift &amp; Enter to execute the cell (which applies and renders the Markdown formatting).</p>
 <p>So in summary:</p>
@@ -1004,11 +1000,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1043,7 +1034,7 @@ title="Print to PDF"
 <h3>Working With Files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">#</a></h3>
 <p>In general, when using JupyterHub you don’t need to explicitly save files. Notebooks are auto-saved so you don’t have to worry about it! But there is a button to manually save between auto-saves.</p>
 <p>Although for most of your work you will receive assignments with pre-made files to work in, for projects, for practice, or just for fun, you can create new files — including Jupyter notebooks but a variety of others as well. The <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">New</span></code> menu item will give you the options for different types of files you can create. All of your JupyterHub files are associated with your account, and will last through the duration of the course — and, possibly, even beyond! The <code class="docutils literal notranslate"><span class="pre">File</span></code>menu also provides options for downloading your notebook files, including converting them from Jupyter notebooks to PDFs or other formats.</p>
-<p>You can have multiple files open at once, and they appear as tabs at the top of the JupyterHub window. In general, the tabs/files you have open will stay there even when you close your browser window/tab or log out, so the next time you connect to JupyterHub you’ll see those tabs still there. <strong>HOWEVER</strong> (and this is important), even if you leave your browser with the JupyterHub window/tab open on your computer, JupyterHub will “terminate” your running notebook after about 2 hours.</p>
+<p>You can have multiple files open at once, and they appear as tabs at the top of the JupyterHub window. In general, the tabs/files you have open will stay there even when you close your browser window/tab or log out, so the next time you connect to JupyterHub you’ll see those tabs still there. <strong>HOWEVER</strong> (and this is important), even if you leave your browser with the JupyterHub window/tab open on your computer, JupyterHub will eventually “terminate” your running notebook (i.e., the kernel will shut down, but you will not lose your work – see below).</p>
 <p><strong>Pro tip:</strong> Notebook files can get really long. JupyterHub has a “Table of Contents” button on the left that will show you a table of contents for a notebook file. It makes this automatically from all the Markdown headings it finds. Find the Table of Contents button and click it to see.</p>
 </section>
 <section id="running-kernels-and-items-in-memory">
@@ -1062,7 +1053,7 @@ title="Print to PDF"
 <section id="working-in-notebooks">
 <h3>Working in Notebooks<a class="headerlink" href="#working-in-notebooks" title="Permalink to this headline">#</a></h3>
 <p>There is an <strong>undo</strong> function, which works similarly to other software you’ll have used, sequentially undoing things you’ve typed in cells. <strong>Importantly</strong>, <em>the undo function does <em>not</em> undo the results of commands you’ve run in Python</em>. Continuing with our previous example, this means that if you ran the Python command <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code>, then ran “undo”, Jupyter would delete your typing, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code>. However, in the kernel’s memory, <code class="docutils literal notranslate"><span class="pre">x</span></code> would still equal <code class="docutils literal notranslate"><span class="pre">1</span></code>. So you could run <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> the output would be <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
-<p>You can insert a new cell right below whatever cell is currently active, either by pressing the “+” button under the menu, or using the <code class="docutils literal notranslate"><span class="pre">Insert</span></code> menu, or As long as no cell is in edit mode) pressing the <code class="docutils literal notranslate"><span class="pre">b</span></code> key on the keyboard to insert a new cell <em>b</em>elow the selected cell (or <code class="docutils literal notranslate"><span class="pre">a</span></code> to insert a cell <em>a</em>bove the selected one). The <code class="docutils literal notranslate"><span class="pre">Cell</span></code> menu also has a variety of useful tools for working with cells, which are pretty self-explanatory if you look at them.</p>
+<p>You can insert a new cell right below whatever cell is currently active, either by pressing the “+” button under the menu, or using the <code class="docutils literal notranslate"><span class="pre">Insert</span></code> menu, or as long as no cell is in edit mode) pressing the <code class="docutils literal notranslate"><span class="pre">b</span></code> key on the keyboard to insert a new cell <em>b</em>elow the selected cell (or <code class="docutils literal notranslate"><span class="pre">a</span></code> to insert a cell <em>a</em>bove the selected one). The <code class="docutils literal notranslate"><span class="pre">Cell</span></code> menu also has a variety of useful tools for working with cells, which are pretty self-explanatory if you look at them.</p>
 <p>We encourage you to peruse the menus and randomly push buttons and try things in a notebook file. You will not break the internet (probably). Maybe first create a new notebook file first, though, and don’t mess this one up!</p>
 </section>
 <section id="help">
@@ -1097,7 +1088,7 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">Heading</span> <span class="pre">3</span></code> = third-level heading (heading of this section)</p></li>
 <li><p>etc.</p></li>
 </ul>
-<p>While originally Markdown was designed to simplify creating web pages in HTML (the coding language for web pages), there are now a huge number of output formats available (e.g., PDF, Microsoft Word, ePub) in different applications, and many Markdown apps that allow you write and edit Markdown files while viewing a preview of the formatted output in another window alongside your Markdown text file.</p>
+<p>While originally Markdown was designed to simplify creating web pages in HTML (the coding language for web pages), there are now a huge number of output formats available (e.g., PDF, Microsoft Word, ePub) in different applications, and many Markdown apps that allow you to write and edit Markdown files while viewing a preview of the formatted output in another window alongside your Markdown text file.</p>
 <p>HTML — and by extension, Markdown — embodies a design philosophy of separating the content of a document from its formatting. That is, when writing the content, you focus on writing, not how it’s going to look, and then later, you apply formatting to make it look a certain way. This means that the same document can be formatted in virtually any possible way, with different fonts, sizes, etc.. It also provides consistency (e.g., you don’t have to remember to manually make every first-level heading a specific larger font size, and bold) and makes it very easy to produce professional-looking output without professional web design skills.</p>
 <p><a class="reference external" href="https://www.markdownguide.org/cheat-sheet/">You can see a Markdown cheatsheet here</a></p>
 </section>
@@ -1122,6 +1113,7 @@ title="Print to PDF"
 <li><p>Each Jupyter notebook runs a kernel (e.g, Python) that maintains information in RAM as long as it is running</p></li>
 <li><p>Restarting the kernel will clear everything from RAM for that notebook</p></li>
 <li><p>Operations occur in the order that you run cells in a notebook - not necessarily the order the cells appear in the notebook. It’s good practice to run cells in the order they appear in the notebook, and restart the kernel if you need to make changes and re-run</p></li>
+<li><p><strong>Always select <em>Restart Kernel and Run All Cells</em> on every notebook and make sure it runs top to bottom with no errors <em>before</em> turning it in</strong></p></li>
 <li><p>Markdown is useful for annotating your code with rich text</p></li>
 <li><p>Comments can be put in code cells as well; Python ignores anything on a line after a <code class="docutils literal notranslate"><span class="pre">#</span></code></p></li>
 </ul>

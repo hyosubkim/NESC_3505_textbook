@@ -115,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  About This Course
+  1. About This Course
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -134,15 +134,10 @@ const thebe_selector_output = ".output, .cell_output"
    Academic Integrity and Collaboration
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/class_tech.html">
-   Technologies Used in this Class
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Introduction to Data Science
+  2. Introduction to Data Science
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -255,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Introduction to Python
+  3. Introduction to Python
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -373,7 +368,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Data Visualization
+  4. Data Visualization
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -420,7 +415,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Exploratory Data Analysis
+  5. Exploratory Data Analysis
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -456,7 +451,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Single Unit Data
+  6. Single Unit Data
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -522,7 +517,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Signal Processing
+  7. Signal Processing
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -749,7 +744,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introducing-python">
 <h1>Introducing Python<a class="headerlink" href="#introducing-python" title="Permalink to this headline">#</a></h1>
-<p>This chapter covers the material for about the first month of the course, which is a basic introduction to Python. This is not an introduction to computer science. Our focus is on how to use Python as a tool for working with data. As such, our focus is on:</p>
+<p>This chapter covers the material for about the first month of the course, which is a basic introduction to Python. Our focus is on how to use Python as a tool for working with data. As such, our focus is on:</p>
 <ul class="simple">
 <li><p>learning the fundamentals of Python</p></li>
 <li><p>learning the fundamentals of programming logic</p></li>
@@ -766,7 +761,7 @@ title="Print to PDF"
 <p>After working through the lessons, you can get more practice with DataCamp. Refer to the course schedule to see which DataCamp lessons go with which course lessons. This chapter relates to the material taught in the first two DataCamp lessons, <a class="reference external" href="https://learn.datacamp.com/courses/intro-to-python-for-data-science">Introduction to Python</a> and <a class="reference external" href="https://learn.datacamp.com/courses/intro-to-python-for-data-science">Intermediate Python</a>.</p>
 <section id="origins-of-this-material">
 <h2>Origins of this material<a class="headerlink" href="#origins-of-this-material" title="Permalink to this headline">#</a></h2>
-<p>The lessons introducing Python are adapted from a workshop created by the <a class="reference external" href="http://swcarpentry.github.io/python-novice-gapminder/index.html">Software Carpentry</a> foundation. It uses freely-available open source data from <a class="reference external" href="https://www.gapminder.org">Gapminder</a>, an independent Swedish foundation whose mission is to “fight devastating ignorance with a fact-based worldview everyone can understand.” Gapminder is perhaps most famous for the TED talks given by its co-founder, the late Dr. Hans Rosling (the other founders were Ola Rosling and Anna Rosling Rönnlund). Dr. Rosling’s TED talk, <a class="reference external" href="https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?language=en"><em>The best statistics you’ve ever seen</em></a>, became one of the most watched TED talks ever (nearly 15m views as of Feb. 4, 2021). The Gapminder data we will be working with here are a subset of those used in Dr. Rosling’s talk. Specifically, the data are gross domestic product (GDP) of countries from around the world, over a time period from 1952 – 2007.</p>
+<p>The lessons introducing Python are adapted from a workshop created by the <a class="reference external" href="http://swcarpentry.github.io/python-novice-gapminder/index.html">Software Carpentry</a> foundation. It uses freely-available open source data from <a class="reference external" href="https://www.gapminder.org">Gapminder</a>, an independent Swedish foundation whose mission is to “fight devastating ignorance with a fact-based worldview everyone can understand.” Gapminder is perhaps most famous for the TED talks given by its co-founder, the late Dr. Hans Rosling (the other founders were Ola Rosling and Anna Rosling Rönnlund). Dr. Rosling’s TED talk, <a class="reference external" href="https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?language=en"><em>The best statistics you’ve ever seen</em></a>, became one of the most watched TED talks ever (nearly 15.6m views as of August 23, 2023). The Gapminder data we will be working with here are a subset of those used in Dr. Rosling’s talk. Specifically, the data are gross domestic product (GDP) of countries from around the world, over a time period from 1952 – 2007.</p>
 <p>While we could introduce Python with virtually any data (including neuromechanics-specific data), the Gapminder data are relatively easy to understand without deep technical knowledge of a domain (GDP is a measure of a country’s wealth, and the data reflect how this changes over time), the data files are open source and so support open sharing and transparency in science, and Dr. Rosling’s talks provide a colourful and interesting introduction to the data. We have adapted the Software Carpentry (SC) version of the workshop based on experience teaching it, and finding that some parts of the SC workshop were unclear, or assumed certain background knowledge (particularly mathematics) that was not universally held by our target audience, or that concepts in the SC workshop were presented in a sequence that was not intuitive to us. We have great respect for the SC organization and its aims, and adapting and customizing the workshop is in the spirit of the open source movement and open educational resources.</p>
 <hr class="docutils" />
 <p>This section was adapted from Aaron J. Newman’s <a class="reference external" href="https://neuraldatascience.io/intro.html">Data Science for Psychology and Neuroscience - in Python</a>.</p>
