@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 parts: 
-  - caption: About This Course
+  - caption: 1. About This Course
     chapters:
     # - file: 1-intro/why
     - file: 1-intro/about-this-course
@@ -52,7 +52,7 @@ parts:
     #   - file: 1-intro/oer_this_course
     #   - file: 1-intro/licenses
       
-  - caption: Introduction to Data Science
+  - caption: 2. Introduction to Data Science
     chapters:
     - file: 2-nds/introduction
     - file: 2-nds/learning_objectives
@@ -79,7 +79,7 @@ parts:
       # - file: 2-nds/cocalc (replace with chapter on jupyterhub?)
       # - file: 2-nds/github
     
-  - caption: Introduction to Python
+  - caption: 3. Introduction to Python
     chapters:
     - file: 3-python/introduction
     - file: 3-python/learning_objectives
@@ -104,7 +104,7 @@ parts:
       - file: 3-python/pandas_dataframes
       - file: 3-python/looping_data_files
   
-  - caption: Data Visualization
+  - caption: 4. Data Visualization
     chapters:
     - file: 4-viz/introduction
     - file: 4-viz/learning_objectives
@@ -115,7 +115,7 @@ parts:
     - file: 4-viz/seaborn
     - file: 4-viz/human_factors
   
-  - caption: Exploratory Data Analysis
+  - caption: 5. Exploratory Data Analysis
     chapters:
     - file: 5-eda/introduction
     - file: 5-eda/learning_objectives
@@ -123,7 +123,7 @@ parts:
     - file: 5-eda/data_cleaning
     - file: 5-eda/ttests
     
-  - caption: Single Unit Data
+  - caption: 6. Single Unit Data
     chapters:
     - file: 6-single_unit/introduction
     - file: 6-single_unit/learning_objectives
@@ -137,7 +137,7 @@ parts:
       - file: 6-single_unit/pandas_multielec
       - file: 6-single_unit/corr_spike_trains
   
-  - caption: Signal Processing
+  - caption: 7. Signal Processing
     chapters:
     - file: 7-signal_processing/signals-sampling-filtering
  
