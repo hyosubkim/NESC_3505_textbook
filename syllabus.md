@@ -73,7 +73,7 @@ A link to the current schedule can be found here (create link) and will be updat
 |-----------------------|---------------|
 | DataCamp assignments  | 5             |
 | Tutorials (labs)      | 15            |
-| Problem sets          | 20            |
+| Assignments           | 20            |
 | Quizzes (3 total)     | 60            |
 
 
@@ -84,13 +84,15 @@ A link to the current schedule can be found here (create link) and will be updat
 
 These assessments require a thorough understanding of the course material. You will be required to demonstrate your ability to write code and problem solve through answering a combination of multiple choice, short answer, and conceptual questions. You may also be asked to process, visualize, and/or analyze data. [The final exam will be scheduled for sometime during December 11 - 22. Do not book any travel plans for this time until the final exam has been scheduled.] 
 
-### Problem Sets (top 5 out of 6, 4% each)
-A problem set will be assigned roughly every other week. Due dates will be posted on Canvas. To open the assignment, click the link provided on Canvas. We will go over in detail the proper steps to submiting your assignments during the first class session. Briefly, to submit your assignment, make sure your work is saved (File -> Save and Checkpoint to be sure) on the JupyterHub server, download the notebook to your personal computer, and then upload it to the appropriate Assignment on Canvas. It is critical that you check your notebook before submitting by clicking "Kernel -> Restart Kernel and Run All" and making sure that it runs properly from top-to-bottom without any errors. This is the first step we will take in grading your assignments and if it does not run error free, no credit will be given for the assignment. 
+### Assignments (15%)
+An assignment/problem set will be assigned roughly every other week. Due dates will be posted on Canvas. To open the assignment, click the link provided on Canvas to get to JupyterHub. We will go over in detail the proper steps to submiting your assignments during the first class session. Briefly, to submit your assignment, make sure your work is saved (File -> Save and Checkpoint to be sure) on the JupyterHub server, download the notebook to your personal computer, and then upload it to the appropriate Assignment on Canvas. It is critical that you check your notebook before submitting by clicking "Kernel -> Restart Kernel and Run All" and making sure that it runs properly from top-to-bottom without any errors. This is the first step we will take in grading your assignments and if it does not run error free, no credit will be given for the assignment. 
 
-We will also drop your lowest score on a problem set when calculating your final grade. 
+Assignment 0 will be worth 1%; Assignment 1 - 3%; All remaining assignments - 4% each.
+
+We will also drop your lowest score from Assignments 2-6 when calculating your final grade. 
 
 ### Tutorials (total: 15%)
-Each week, there will be a tutorial/lab notebook that must be completed, typically before the start of the next week (exact dates will be posted to Canvas). Follow the same steps as you would for a problem set in order to access the tutorial and submit your completed version to Canvas. Tutorial notebooks must also run from top to bottom without any errors.
+Each week, there will be a tutorial/lab notebook that must be completed, typically before the start of the next week (exact dates will be posted to Canvas). Follow the same steps as you would for a problem set in order to access the tutorial and submit your completed version to Canvas. Tutorial notebooks must also run from top to bottom without any errors to receive any credit.
 
 ### DataCamp (5%)
 In this course, we will leverage the significant resources that [DataCamp](https://datacamp.com), a massive open online course (MOOC) platform for data science education, can provide. The teaching team will add all students registered in this class to the class DataCamp "group", using the email address you provide to us\*. You will receive an invitation email from DataCamp with a link that will allow you to set a password. Once you have logged in for the first time, you will see a window like the one below, listing your active assignments; click on "DUE BY" to sort them by due date (which also indicates the sequence you should complete the assignments in). On the right, there is a trophy icon to see the leaderboard. This is a DataCamp-specific feature that tracks all students' progress, but it has no bearing on your grade---so keep the competition friendly! 
