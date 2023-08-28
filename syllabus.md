@@ -17,7 +17,7 @@ We will be using an open-source textbook available for free on the Web: https://
 ## Hardware & Software 
 Students are required to bring a laptop (or chromebook) to both lectures and tutorials. Students who do not own a laptop or chromebook may be able to [loan a laptop from the UBC library](https://services.library.ubc.ca/computers-technology/technology-borrowing/).
 
-All other required software will be provided by the instructors. Students will learn to perform their analysis using the [Python programming language](https://www.python.org/). Worksheets and tutorial problem sets will be completed using [Jupyter Notebooks](http://jupyter.org/) accessed via [UBC's instance of JupyterHub](https://open.jupyter.ubc.ca/jupyter/).
+All other required software will be provided by the instructors. Students will learn to perform their analysis using the [Python programming language](https://www.python.org/). Tutorials and assignments/problem sets will be completed using [Jupyter Notebooks](http://jupyter.org/) accessed via [UBC's JupyterHub](https://open.jupyter.ubc.ca/jupyter/).
 
 ## Prerequisites
 Completion of two of the following courses: 
@@ -165,7 +165,7 @@ Cases of plagiarism may include, but are not limited to:
 
 -   the reproduction (copying and pasting) of code or text with none or minimal reformatting (e.g., changing the name of the variables)
 -   the translation of an algorithm or a script from one language to another
--   AI-generated code (e.g., ChatGPT)
+-   AI-generated code (e.g., ChatGPT, GitHub Co-Pilot)
 
 **Plagiarism of any form will result in serious penalties, up to and including failure of the course.**
 
