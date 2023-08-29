@@ -45,11 +45,7 @@ By the end of the course, you will be able to:
 **Email**: [hyosub.kim@ubc.ca](mailto:hyosub.kim@ubc.ca)  
 **Office Hours**: By appointment.   
 
-**Teaching Assistant**: TBD 
-**Email**: TBD   
-**Office Hours**: TBD 
-
-**Please read the course policy (e.g., late registration, missing quiz/assignment due to sickness) below before contacting.**
+*Please read the course policy (e.g., late registration, missing quiz/assignment due to sickness) below before contacting the instructor.*
 
 ## Comunication
 - We are here to guide and instruct you, and you will be best served by being engaged in class and engaging your teaching team in person. The best time to ask questions is during class time. Regarding questions that come up outside of class time, please follow these steps prior to requesting an appointment or emailing the instructor:
@@ -63,9 +59,7 @@ By the end of the course, you will be able to:
 
 
 ## Course Format
-This course will generally follow a schedule of one lecture, one tutorial/lab per week. One thing that you may find different about the course format is that we will employ a **flipped classroom** approach for > 50% of the time. This means that class time, even during "lecture" days, is not used primarily for conveying information, the way a normal lecture-based class operates. Rather, there will be mini-lectures at the start of class that highlight key concepts, and the remaining time will be used for practicing the news coding skills you will be learning. The lecture days will generally have more lecture content than tutorial days, which are mostly devoted to continued application of the skill/concept taught during the Monday lecture. Therefore, there is a strong emphasis placed on being prepared for each class session by reading the assigned chapter of the textbook and keeping track of questions that arise, and asking them **during class**. Class time is an opportunity for students to discuss the course material, practice their skills, and ask questions from the teaching team. **Coding is a skill, and like any skill, it requires significant practice within and outside of class.** 
-
-A link to the current schedule can be found here (create link) and will be updated as we go. 
+This course will generally follow a schedule of one lecture, one tutorial/lab per week. One thing that you may find different about the course format is that we will employ a **flipped classroom** approach for > 50% of the time. This means that class time, even during "lecture" days, is not used primarily for conveying information, the way a normal lecture-based class operates. Rather, there will be mini-lectures at the start of class that highlight key concepts, and the remaining time will be used for practicing the new coding skills you will be learning. This has been shown to be a highly effective way to teach beginners how to program (see [here](https://onlinelibrary.wiley.com/doi/full/10.1002/cae.22447)). The lecture days will generally have more lecture content than tutorial days, which are mostly devoted to continued application of the skill/concept taught during the Monday lecture. Therefore, there is a strong emphasis placed on being prepared for each class session, usually through staying on top of readings and assignments, as well as keeping track of questions that arise and asking them **during class**. Class time is an opportunity for students to discuss the course material, practice their skills, and ask questions to the teaching team and each other. **Remember that coding is a skill, and like any skill, it requires significant practice within and outside of class.** 
 
 
 ## Course Breakdown
@@ -82,7 +76,7 @@ A link to the current schedule can be found here (create link) and will be updat
 - Quiz 2 (in-person): Wed, November 8
 - Quiz 3 (in-person): Wed, December 6
 
-These assessments require a thorough understanding of the course material. You will be required to demonstrate your ability to write code and problem solve through answering a combination of multiple choice, short answer, and conceptual questions. You may also be asked to process, visualize, and/or analyze data. [The final exam will be scheduled for sometime during December 11 - 22. Do not book any travel plans for this time until the final exam has been scheduled.] 
+These assessments require a thorough understanding of the course material. You will be required to demonstrate your ability to write code and problem solve through answering a combination of multiple choice, short answer, and conceptual questions. You may also be asked to process, visualize, and/or analyze data. 
 
 ### Assignments (15%)
 An assignment/problem set will be assigned roughly every other week. Due dates will be posted on Canvas. To open the assignment, click the link provided on Canvas to get to JupyterHub. We will go over in detail the proper steps to submiting your assignments during the first class session. Briefly, to submit your assignment, make sure your work is saved (File -> Save and Checkpoint to be sure) on the JupyterHub server, download the notebook to your personal computer, and then upload it to the appropriate Assignment on Canvas. It is critical that you check your notebook before submitting by clicking "Kernel -> Restart Kernel and Run All" and making sure that it runs properly from top-to-bottom without any errors. This is the first step we will take in grading your assignments and if it does not run error free, no credit will be given for the assignment. 
@@ -130,7 +124,6 @@ This schedule is subject to change during the semester. However, you will always
 | 13   | Signal Processing | Learn the principles of signal processing and apply them to analyzing kinematic data | 
 | 14   | Leveling Up Your Data Science Skills | Everything you ever wanted to know about installing the scientific Python ecosystem on your computer/the terminal/version control but were afraid to ask | 
  
-
 ## Policies 
 
 ### Late Registration
@@ -145,9 +138,6 @@ There will be **no extensions for the tutorials and assignments**; late assignme
 
 ### Device/Browser
 Students are responsible for using a device and browser compatible with all functionality of Canvas. Chrome or Firefox browsers are recommended; Safari has had issues with Canvas quizzes in the past.
-
-### Missed Quiz
-
 
 ### Academic Concession Policy
 Please see [UBC's concession policy](http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0) for detailed information on dealing with missed coursework, quizzes, and exams under circumstances of an acute and unanticipated nature.
@@ -171,6 +161,7 @@ Cases of plagiarism may include, but are not limited to:
 
 ## University Policies
 UBC provides resources to support student learning and to maintain healthy lifestyles but recognizes that sometimes crises arise and so there are additional resources to access including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious observances. UBC values academic honesty and students are expected to acknowledge the ideas generated by others and to uphold the highest academic standards in all of their actions.
+
 Details of the policies and how to access support are available on the [UBC Senate website](https://senate.ubc.ca/policies-resources-support-student-success/).
 
 ## Attribution
