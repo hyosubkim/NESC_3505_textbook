@@ -1,4 +1,6 @@
-# Syllabus 
+![9_2016_1UnitStandard_SchoolKin_Blue282RGB300.png](attachment:e189427f-e569-42f9-93ff-9d099d927c1f.png)
+
+# Syllabus
 
 ## Basic Course Information
 KIN 482E Advanced Seminar in Neuromechanics ("Programming and Data Science for Kinesiology"); 2023 Winter Term I; 3 credit hours 
@@ -28,7 +30,7 @@ Completion of two of the following courses:
 - KIN 411 "Neuroanatomy of Human Movement"
 - KIN 419 "Laboratory Investigations in Neuromechanical Kinesiology"
 
-***IMPORTANT: No prior programming experience is expected or required.***
+***IMPORTANT: This class is targeting beginners, so no prior programming experience is expected or required. However, if you do have prior programming experience, especially in another language, you may still benefit from this course.***
 
 ## Learning Outcomes
 By the end of the course, you will be able to: 
@@ -68,20 +70,20 @@ This course will generally follow a schedule of one lecture, one tutorial/lab pe
 | DataCamp assignments  | 5             |
 | Tutorials (labs)      | 15            |
 | Assignments           | 20            |
-| Quizzes (3 total)     | 60            |
+| Quizzes (3)           | 60            |
 
 
-### Quizzes (3 total, 20% each) 
+### Quizzes (60%) 
 - Quiz 1 (in-person): Wed, October 4
 - Quiz 2 (in-person): Wed, November 8
-- Quiz 3 (in-person): Wed, December 6
+- Quiz 3 (in-person): TBD
 
-These assessments require a thorough understanding of the course material. You will be required to demonstrate your ability to write code and problem solve through answering a combination of multiple choice, short answer, and conceptual questions. You may also be asked to process, visualize, and/or analyze data. 
+These assessments require a thorough understanding of the course material. You will be required to demonstrate your ability to write code and problem solve through answering a combination of multiple choice, short answer, and conceptual questions. You may also be asked to process, visualize, and/or analyze data. The final quiz will be scheduled for sometime during December 11 - 22. **Do not book any travel plans for this time until the final quiz has been scheduled.**
 
-### Assignments (15%)
+### Assignments (20%)
 An assignment/problem set will be assigned roughly every other week. Due dates will be posted on Canvas. To open the assignment, click the link provided on Canvas to get to JupyterHub. We will go over in detail the proper steps to submiting your assignments during the first class session. Briefly, to submit your assignment, make sure your work is saved (File -> Save and Checkpoint to be sure) on the JupyterHub server, download the notebook to your personal computer, and then upload it to the appropriate Assignment on Canvas. It is critical that you check your notebook before submitting by clicking "Kernel -> Restart Kernel and Run All" and making sure that it runs properly from top-to-bottom without any errors. This is the first step we will take in grading your assignments and if it does not run error free, no credit will be given for the assignment. 
 
-Assignment 0 will be worth 1%; Assignment 1 - 3%; All remaining assignments - 4% each.
+Assignment 0 will be worth 1%. Assignments 1-6 will be worth between 3-4% each. 
 
 We will also drop your lowest score from Assignments 2-6 when calculating your final grade. 
 
@@ -93,10 +95,7 @@ In this course, we will leverage the significant resources that [DataCamp](https
 
 \**DataCamp is a US-based company and the data they collect are stored in the US. Although you do not have to provide them any information besides an email address, if you still have privacy concerns, you may wish to create an email account specifically for this service that is not tied to your UBC identity.*
 
-```{figure} 2-nds/images/datacamp_assignments.png
----
-align: left
-```
+![datacamp_assignments.png](attachment:3f49f350-0985-472e-89f6-343f851d5340.png)
 
 Each DataCamp assignment has a due date, which conveys when you need to have covered that material in order to keep up with the work in KIN 482. Each one has an estimated duration that you'll see when you start it, and these seem fairly accurate. DataCamp will remember your progress, so you don't have to complete an assignment all in one sitting. You can work in smaller or larger chunks at your preference, log off, and log back on to resume the course later. Note that with DataCamp you have as many opportunities as you need to provide the correct solution. This part of your grade is essentially making sure you are practicing the skills you need to succeed in the course and write functional code.
 
@@ -122,7 +121,8 @@ This schedule is subject to change during the semester. However, you will always
 |      | Midterm Break |       |
 | 10   | Single Unit Data & Spike Trains | Apply your programming skills to neural data; also learn about numerical computing using the famous Python library *NumPy* | 
 | 11   | Signal Processing | Learn the principles of signal processing and apply them to analyzing kinematic data | 
-| 12   | Leveling Up Your Data Science Skills | Everything you ever wanted to know about installing the scientific Python ecosystem on your computer/the terminal/version control but were afraid to ask | 
+| 12   | Leveling Up Your Data Science Skills | Everything you ever wanted to know about installing the scientific Python ecosystem on your computer/the terminal/version control but were afraid to ask |
+| TBD  | Quiz 3 | Focuses on last third of course. **Do not make travel plans for anytime between December 11 - 22 until quiz has been scheduled.** | 
  
 ## Policies 
 
@@ -141,8 +141,6 @@ Students are responsible for using a device and browser compatible with all func
 
 ### Academic Concession Policy
 Please see [UBC's concession policy](http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0) for detailed information on dealing with missed coursework, quizzes, and exams under circumstances of an acute and unanticipated nature.
-
-See our Canvas homepage for the academic concession form.
 
 ### Academic Integrity
 The academic enterprise is founded on honesty, civility, integrity, and accountability. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, this means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. This also means you should not cheat, copy, or mislead others about what is your work. Violations of academic integrity (i.e., misconduct) lead to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred to the President's Advisory Committee on Student Discipline. Careful records are kept in order to monitor and prevent recurrences.
@@ -164,6 +162,12 @@ UBC provides resources to support student learning and to maintain healthy lifes
 
 Details of the policies and how to access support are available on the [UBC Senate website](https://senate.ubc.ca/policies-resources-support-student-success/).
 
+## Land Acknowledgment
+UBC's Vancouver Campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) people.The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.
+
+To learn more about the relationship between the Musqueam people and UBC, you may find this [webpage](https://indigenous.ubc.ca/indigenous-engagement/musqueam-and-ubc/) helpful. 
+
 ## Attribution
 Portions of this syllabus, most notably the Policies section, have been adapted from the syllabus for UBC's DSCI 100 course, which in turn is based on [UBC MDS Policies](https://ubc-mds.github.io/policies/) and [UBC's Campus-wide Policies and Regulations](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations). Information regarding DataCamp was adapted from Prof. Aaron Newman of Dalhousie University's [Neural Data Science course](https://neural-data-science.github.io/NESC_3505/). 
+
 
