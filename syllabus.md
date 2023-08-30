@@ -1,4 +1,4 @@
-![9_2016_1UnitStandard_SchoolKin_Blue282RGB300.png](attachment:e189427f-e569-42f9-93ff-9d099d927c1f.png)
+<img src="9_2016_1UnitStandard_SchoolKin_Blue282RGB300.png">
 
 # Syllabus
 
@@ -95,7 +95,7 @@ In this course, we will leverage the significant resources that [DataCamp](https
 
 \**DataCamp is a US-based company and the data they collect are stored in the US. Although you do not have to provide them any information besides an email address, if you still have privacy concerns, you may wish to create an email account specifically for this service that is not tied to your UBC identity.*
 
-![datacamp_assignments.png](attachment:3f49f350-0985-472e-89f6-343f851d5340.png)
+<img src="datacamp_assignments.png">
 
 Each DataCamp assignment has a due date, which conveys when you need to have covered that material in order to keep up with the work in KIN 482. Each one has an estimated duration that you'll see when you start it, and these seem fairly accurate. DataCamp will remember your progress, so you don't have to complete an assignment all in one sitting. You can work in smaller or larger chunks at your preference, log off, and log back on to resume the course later. Note that with DataCamp you have as many opportunities as you need to provide the correct solution. This part of your grade is essentially making sure you are practicing the skills you need to succeed in the course and write functional code.
 
@@ -163,7 +163,7 @@ UBC provides resources to support student learning and to maintain healthy lifes
 Details of the policies and how to access support are available on the [UBC Senate website](https://senate.ubc.ca/policies-resources-support-student-success/).
 
 ## Land Acknowledgment
-UBC's Vancouver Campus is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) people.The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.
+UBC's Vancouver Campus is located on the traditional, ancestral, and unceded territory of the Musqueam people.The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.
 
 To learn more about the relationship between the Musqueam people and UBC, you may find this [webpage](https://indigenous.ubc.ca/indigenous-engagement/musqueam-and-ubc/) helpful. 
 
