@@ -1034,84 +1034,84 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>272</th>
-      <td>s18</td>
-      <td>4</td>
-      <td>17</td>
-      <td>incongruent</td>
-      <td>0.386041</td>
-    </tr>
-    <tr>
-      <th>1956</th>
-      <td>s12</td>
+      <th>3067</th>
+      <td>s23</td>
       <td>2</td>
-      <td>24</td>
-      <td>neutral</td>
-      <td>0.497843</td>
-    </tr>
-    <tr>
-      <th>2351</th>
-      <td>s26</td>
-      <td>5</td>
-      <td>5</td>
+      <td>19</td>
       <td>congruent</td>
-      <td>0.573072</td>
+      <td>0.521791</td>
     </tr>
     <tr>
-      <th>3827</th>
-      <td>s19</td>
-      <td>1</td>
-      <td>18</td>
+      <th>3417</th>
+      <td>s3</td>
+      <td>3</td>
+      <td>22</td>
+      <td>neutral</td>
+      <td>0.721166</td>
+    </tr>
+    <tr>
+      <th>2776</th>
+      <td>s10</td>
+      <td>3</td>
+      <td>15</td>
       <td>incongruent</td>
-      <td>0.632286</td>
+      <td>0.349787</td>
     </tr>
     <tr>
-      <th>484</th>
-      <td>s22</td>
-      <td>1</td>
-      <td>5</td>
-      <td>neutral</td>
-      <td>0.490001</td>
+      <th>4038</th>
+      <td>s5</td>
+      <td>3</td>
+      <td>6</td>
+      <td>congruent</td>
+      <td>0.414242</td>
     </tr>
     <tr>
-      <th>2020</th>
-      <td>s12</td>
+      <th>1698</th>
+      <td>s13</td>
       <td>4</td>
-      <td>24</td>
-      <td>incongruent</td>
-      <td>0.529979</td>
-    </tr>
-    <tr>
-      <th>536</th>
-      <td>s22</td>
-      <td>2</td>
-      <td>25</td>
+      <td>14</td>
       <td>neutral</td>
-      <td>0.393978</td>
+      <td>0.540884</td>
     </tr>
     <tr>
-      <th>2174</th>
-      <td>s9</td>
-      <td>4</td>
-      <td>20</td>
+      <th>2467</th>
+      <td>s14</td>
+      <td>3</td>
+      <td>26</td>
       <td>neutral</td>
-      <td>0.348530</td>
+      <td>0.401925</td>
     </tr>
     <tr>
-      <th>650</th>
-      <td>s11</td>
-      <td>1</td>
-      <td>11</td>
-      <td>neutral</td>
-      <td>0.357642</td>
-    </tr>
-    <tr>
-      <th>1468</th>
-      <td>s1</td>
+      <th>838</th>
+      <td>s8</td>
       <td>2</td>
       <td>8</td>
       <td>neutral</td>
-      <td>0.420786</td>
+      <td>0.517623</td>
+    </tr>
+    <tr>
+      <th>1612</th>
+      <td>s13</td>
+      <td>1</td>
+      <td>24</td>
+      <td>neutral</td>
+      <td>0.472896</td>
+    </tr>
+    <tr>
+      <th>3133</th>
+      <td>s23</td>
+      <td>4</td>
+      <td>23</td>
+      <td>neutral</td>
+      <td>0.529797</td>
+    </tr>
+    <tr>
+      <th>3345</th>
+      <td>s3</td>
+      <td>1</td>
+      <td>11</td>
+      <td>incongruent</td>
+      <td>0.665308</td>
     </tr>
   </tbody>
 </table>
@@ -1791,14 +1791,14 @@ title="Print to PDF"
 <span class="g g-Whitespace">   </span><span class="mi">3451</span> <span class="c1"># Place it into the swarm</span>
 <span class="g g-Whitespace">   </span><span class="mi">3452</span> <span class="n">swarm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">swarm</span><span class="p">,</span> <span class="n">new_xyr_i</span><span class="p">])</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/seaborn/categorical.py:3506,</span> in <span class="ni">Beeswarm.first_non_overlapping_candidate</span><span class="nt">(self, candidates, neighbors)</span>
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/seaborn/categorical.py:3504,</span> in <span class="ni">Beeswarm.first_non_overlapping_candidate</span><span class="nt">(self, candidates, neighbors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3502</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">neighbors_x</span> <span class="o">-</span> <span class="n">x_i</span>
 <span class="g g-Whitespace">   </span><span class="mi">3503</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">neighbors_y</span> <span class="o">-</span> <span class="n">y_i</span>
-<span class="g g-Whitespace">   </span><span class="mi">3504</span> <span class="n">sq_distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">dy</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">3506</span> <span class="n">sep_needed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">neighbors_r</span> <span class="o">+</span> <span class="n">r_i</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3504</span> <span class="n">sq_distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">dy</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3506</span> <span class="n">sep_needed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">neighbors_r</span> <span class="o">+</span> <span class="n">r_i</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3508</span> <span class="c1"># Good candidate does not overlap any of neighbors which means that</span>
 <span class="g g-Whitespace">   </span><span class="mi">3509</span> <span class="c1"># squared distance between candidate and any of the neighbors has</span>
 <span class="g g-Whitespace">   </span><span class="mi">3510</span> <span class="c1"># to be at least square of the summed radii</span>
-<span class="g g-Whitespace">   </span><span class="mi">3511</span> <span class="n">good_candidate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">sq_distances</span> <span class="o">&gt;=</span> <span class="n">sep_needed</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
