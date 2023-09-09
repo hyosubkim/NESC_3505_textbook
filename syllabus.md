@@ -1,4 +1,4 @@
-<img src="9_2016_1UnitStandard_SchoolKin_Blue282RGB300.png">
+# THE UNIVERSITY OF BRITISH COLUMBIA School of Kinesiology 
 
 # Syllabus
 
@@ -17,18 +17,18 @@ Learn how to write code and use data science tools for processing, analyzing, an
 We will be using an open-source textbook available for free on the Web: https://hyosubkim.github.io/datasci-for-kin/intro.html.
 
 ## Hardware & Software 
-Students are required to bring a laptop (or chromebook) to both lectures and tutorials. Students who do not own a laptop or chromebook may be able to [loan a laptop from the UBC library](https://services.library.ubc.ca/computers-technology/technology-borrowing/).
+Students are required to bring a laptop to both lectures and tutorials. Students who do not own a laptop may be able to [borrow a laptop from the UBC library](https://services.library.ubc.ca/computers-technology/technology-borrowing/).
 
 All other required software will be provided by the instructors. Students will learn to perform their analysis using the [Python programming language](https://www.python.org/). Tutorials and assignments/problem sets will be completed using [Jupyter Notebooks](http://jupyter.org/) accessed via [UBC's JupyterHub](https://open.jupyter.ubc.ca/jupyter/).
 
 ## Prerequisites
-Completion of two of the following courses: 
-- KIN 310 "Human Functional Musculoskeletal Anatomy"
-- KIN 311 "Sensorimotor Control of Human Movement"
-- KIN 313 "Neuromuscular Integration of Human Movement"
-- KIN 316 "Biomechanical Properties of Tissues"
-- KIN 411 "Neuroanatomy of Human Movement"
-- KIN 419 "Laboratory Investigations in Neuromechanical Kinesiology"
+Completion of two of the following courses:   
+- KIN 310 "Human Functional Musculoskeletal Anatomy"     
+- KIN 311 "Sensorimotor Control of Human Movement"      
+- KIN 313 "Neuromuscular Integration of Human Movement"       
+- KIN 316 "Biomechanical Properties of Tissues"       
+- KIN 411 "Neuroanatomy of Human Movement"        
+- KIN 419 "Laboratory Investigations in Neuromechanical Kinesiology"       
 
 ***IMPORTANT: This class is targeting beginners, so no prior programming experience is expected or required. However, if you do have prior programming experience, especially in another language, you may still benefit from this course.***
 
@@ -43,23 +43,21 @@ By the end of the course, you will be able to:
 - Leave the class well-prepared to advance your programming and data analysis skills, whether in advanced undergraduate or graduate courses (e.g., statistics, modeling, machine learning, etc.), academic research, or industry. 
 
 ## Instructors
-**Professor**: [Hyosub Kim](https://ccmlab.org)  
+**Professor**: [Hyosub Kim, DPT, PhD](https://ccmlab.org)  
 **Email**: [hyosub.kim@ubc.ca](mailto:hyosub.kim@ubc.ca)  
 **Office Hours**: By appointment.   
 
 *Please read the course policy (e.g., late registration, missing quiz/assignment due to sickness) below before contacting the instructor.*
 
 ## Comunication
-- We are here to guide and instruct you, and you will be best served by being engaged in class and engaging your teaching team in person. The best time to ask questions is during class time. Regarding questions that come up outside of class time, please follow these steps prior to requesting an appointment or emailing the instructor:
-    - Check the syllabus
-    - Check the course materials, including the textbook and your notes
-    - Check the course [Canvas page](https://canvas.ubc.ca/courses/124902)
-    - Ask your classmates 
-- Be advised that we will not answer course content-related questions over email. That is, we will not be explaining concepts, helping with assignments, or teaching over email. That being said, do email the instructor if you have a private matter you need to discuss.
-- You are encouraged to post questions to each other on the Discussions page on Canvas. Your teaching team may occasionally check the boards, but not with any regularity (i.e., these discussions are for you, the students). 
-- There are no formal office hours. If after following all the steps outlined above, you still have questions, speak to the instructor(s) to schedule a meeting.
-
-
+We are here to guide and instruct you, and you will be best served by being engaged in class and engaging your teaching team in person. The best time to ask questions is during class time. Regarding questions that come up outside of class time, please follow these steps prior to requesting an appointment or emailing the instructor:
+- Check the syllabus
+- Check the course materials, including the textbook and your notes
+- Check the course [Canvas page](https://canvas.ubc.ca/courses/124902)
+- Ask your classmates, including by posting questions to each other on the Discussions page on Canvas. Ideally, this can serve as an additional platform for you to help, and learn from, each other. Your teaching team may occasionally check the boards, but do not expect feedback over Canvas (i.e., these discussions are for you, the students).  
+    
+Due to the difficulties in aligning everyone's schedules, there are no formal office hours; however, if you still have questions after following the steps outlined above, please contact me, and we can schedule a meeting. Please be advised that I will not do any teaching over email, and if the answer to your question can be readily found through one of the steps outlined above, it is unlikely that you will receive a direct reply to your message. 
+ 
 ## Course Format
 This course will generally follow a schedule of one lecture, one tutorial/lab per week. One thing that you may find different about the course format is that we will employ a **flipped classroom** approach for > 50% of the time. This means that class time, even during "lecture" days, is not used primarily for conveying information, the way a normal lecture-based class operates. Rather, there will be mini-lectures at the start of class that highlight key concepts, and the remaining time will be used for practicing the new coding skills you will be learning. This has been shown to be a highly effective way to teach beginners how to program (see [here](https://onlinelibrary.wiley.com/doi/full/10.1002/cae.22447)). The lecture days will generally have more lecture content than tutorial days, which are mostly devoted to continued application of the skill/concept taught during the Monday lecture. Therefore, there is a strong emphasis placed on being prepared for each class session, usually through staying on top of readings and assignments, as well as keeping track of questions that arise and asking them **during class**. Class time is an opportunity for students to discuss the course material, practice their skills, and ask questions to the teaching team and each other. **Remember that coding is a skill, and like any skill, it requires significant practice within and outside of class.** 
 
@@ -91,11 +89,9 @@ We will also drop your lowest score from Assignments 2-6 when calculating your f
 Each week, there will be a tutorial/lab notebook that must be completed, typically before the start of the next week (exact dates will be posted to Canvas). Follow the same steps as you would for a problem set in order to access the tutorial and submit your completed version to Canvas. Tutorial notebooks must also run from top to bottom without any errors to receive any credit.
 
 ### DataCamp (5%)
-In this course, we will leverage the significant resources that [DataCamp](https://datacamp.com), a massive open online course (MOOC) platform for data science education, can provide. The teaching team will add all students registered in this class to the class DataCamp "group", using the email address you provide to us\*. You will receive an invitation email from DataCamp with a link that will allow you to set a password. Once you have logged in for the first time, you will see a window like the one below, listing your active assignments; click on "DUE BY" to sort them by due date (which also indicates the sequence you should complete the assignments in). On the right, there is a trophy icon to see the leaderboard. This is a DataCamp-specific feature that tracks all students' progress, but it has no bearing on your grade---so keep the competition friendly! 
+In this course, we will leverage the significant resources that [DataCamp](https://datacamp.com), a massive open online course (MOOC) platform for data science education, can provide. The teaching team will add all students registered in this class to the class DataCamp "group", using the email address you provide to us\*. You will receive an invitation email from DataCamp with a link that will allow you to set a password. Once you have logged in for the first time, you will get to your assignments by clicking on "Learn" in the upper left menu, and then "Assignments" in the lef-hand menu that follows. On the right, there is a trophy icon to see the leaderboard. This is a DataCamp-specific feature that tracks all students' progress, but it has no bearing on your grade---so keep the competition friendly! 
 
 \**DataCamp is a US-based company and the data they collect are stored in the US. Although you do not have to provide them any information besides an email address, if you still have privacy concerns, you may wish to create an email account specifically for this service that is not tied to your UBC identity.*
-
-<img src="datacamp_assignments.png">
 
 Each DataCamp assignment has a due date, which conveys when you need to have covered that material in order to keep up with the work in KIN 482. Each one has an estimated duration that you'll see when you start it, and these seem fairly accurate. DataCamp will remember your progress, so you don't have to complete an assignment all in one sitting. You can work in smaller or larger chunks at your preference, log off, and log back on to resume the course later. Note that with DataCamp you have as many opportunities as you need to provide the correct solution. This part of your grade is essentially making sure you are practicing the skills you need to succeed in the course and write functional code.
 
@@ -110,19 +106,19 @@ This schedule is subject to change during the semester. However, you will always
 | 1    | Introduction to Python | Learn about variables and assignment, converting variable types |  
 | 2    | Python built-ins, lists, dictionaries | Learn how to store data in two key Python types, lists and dictionaries |
 | 3    | Flow control | Learn about loops and conditional (i.e., "if-then") statements |
-| 4    | Quiz 1 | Cover concepts from weeks 1-4 |
+| 4    | Quiz 1 | Cover concepts from preceding weeks |
 | 4    | Functions | Learn how to write your own custom functions for repeated tasks |
 | 5    | Functions (continued), File I/O and *pandas* | Learn how to read in and manipulate data with the powerful Python library *pandas* | 
 | 6    | Data visualization with *Matplotlib* | Learn the principles of effective visualizations with *Matplotlib* |
 | 7    | More data visualization with *seaborn* | Learn how to effectively visualize statistical relationships with *seaborn* |
 | 8    | Intoduction to Exploratory Data Analysis | Learn how to effectively extract information from your data; also learn about repeated measures design studies | 
-| 9   | Introduction to Basic Stats with Python | Learn how to conduct familiar statistical analyses in Python | 
-| 9   | Quiz 2 |  Focuses on materials since Quiz 1       |
+| 9    | Introduction to Basic Stats with Python | Learn how to conduct familiar statistical analyses in Python | 
+| 9    | Quiz 2 |  Covers concepts from preceding weeks  |
 |      | Midterm Break |       |
 | 10   | Single Unit Data & Spike Trains | Apply your programming skills to neural data; also learn about numerical computing using the famous Python library *NumPy* | 
 | 11   | Signal Processing | Learn the principles of signal processing and apply them to analyzing kinematic data | 
 | 12   | Leveling Up Your Data Science Skills | Everything you ever wanted to know about installing the scientific Python ecosystem on your computer/the terminal/version control but were afraid to ask |
-| TBD  | Quiz 3 | Focuses on last third of course. **Do not make travel plans for anytime between December 11 - 22 until quiz has been scheduled.** | 
+| TBD  | Quiz 3 | Covers concepts from preceding weeks. **Do not make travel plans for anytime between December 11 - 22 until quiz has been scheduled.** | 
  
 ## Policies 
 
@@ -163,11 +159,9 @@ UBC provides resources to support student learning and to maintain healthy lifes
 Details of the policies and how to access support are available on the [UBC Senate website](https://senate.ubc.ca/policies-resources-support-student-success/).
 
 ## Land Acknowledgment
-UBC's Vancouver Campus is located on the traditional, ancestral, and unceded territory of the Musqueam people.The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.
+UBC's Vancouver Campus is located on the traditional, ancestral, and unceded territory of the Musqueam people. The land it is situated on has always been a place of learning for the Musqueam people, who for millennia have passed on their culture, history, and traditions from one generation to the next on this site.
 
 To learn more about the relationship between the Musqueam people and UBC, you may find this [webpage](https://indigenous.ubc.ca/indigenous-engagement/musqueam-and-ubc/) helpful. 
 
 ## Attribution
 Portions of this syllabus, most notably the Policies section, have been adapted from the syllabus for UBC's DSCI 100 course, which in turn is based on [UBC MDS Policies](https://ubc-mds.github.io/policies/) and [UBC's Campus-wide Policies and Regulations](https://vancouver.calendar.ubc.ca/campus-wide-policies-and-regulations). Information regarding DataCamp was adapted from Prof. Aaron Newman of Dalhousie University's [Neural Data Science course](https://neural-data-science.github.io/NESC_3505/). 
-
-
