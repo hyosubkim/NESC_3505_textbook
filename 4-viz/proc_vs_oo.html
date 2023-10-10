@@ -869,7 +869,7 @@ title="Print to PDF"
 </section>
 <section id="procedural-approach">
 <h2>Procedural Approach<a class="headerlink" href="#procedural-approach" title="Permalink to this headline">#</a></h2>
-<p>The procedural approach uses the Matplotlib module PyPlot (<code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>). Modules in Python packages are a way of organizing functions, into related or conceptual groupings. You can think of modules as subdirectories within the package’s main folder. This means that <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> contains a variety of functions, which have names like <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot()</span></code>. Because that’s a lot to type, the convention is to import the PyPlot module as the alias <code class="docutils literal notranslate"><span class="pre">plt</span></code>, as follows:</p>
+<p>The procedural approach uses the Matplotlib module PyPlot (<code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>). Modules in Python packages are a way of organizing functions into related or conceptual groupings. You can think of modules as subdirectories within the package’s main folder. This means that <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> contains a variety of functions, which have names like <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot()</span></code>. Because that’s a lot to type, the convention is to import the PyPlot module as the alias <code class="docutils literal notranslate"><span class="pre">plt</span></code>, as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -886,29 +886,12 @@ title="Print to PDF"
 
 <span class="c1"># Draw the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc3690c2380&gt;]
-</pre></div>
-</div>
-<img alt="../_images/proc_vs_oo_6_1.png" src="../_images/proc_vs_oo_6_1.png" />
-</div>
-</div>
-<p>You may notice that above the plot is some text, something like, <code class="docutils literal notranslate"><span class="pre">[&lt;matplotlib.lines.Line2D</span> <span class="pre">at</span> <span class="pre">0x7ff8b002e710&gt;]</span></code>. This is part of the output of the <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> command, but typically not something that we care to see. We can generate the plot without this extra output, by including the command <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> at the end of the cell. Recall that Jupyter only shows the output of the last output-generating command in a cell, and <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> shows the plot without the extra text. It’s good practice to get into the habit of adding <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> when using Matplotlib.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw the plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="c1"># Show the plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/proc_vs_oo_8_0.png" src="../_images/proc_vs_oo_8_0.png" />
+<img alt="../_images/proc_vs_oo_6_0.png" src="../_images/proc_vs_oo_6_0.png" />
 </div>
 </div>
 <p>We can use additional PyPlot functions to modify the plot, such as adding a title:</p>
@@ -921,7 +904,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/proc_vs_oo_10_0.png" src="../_images/proc_vs_oo_10_0.png" />
+<img alt="../_images/proc_vs_oo_8_0.png" src="../_images/proc_vs_oo_8_0.png" />
 </div>
 </div>
 </section>
@@ -944,7 +927,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/proc_vs_oo_13_0.png" src="../_images/proc_vs_oo_13_0.png" />
+<img alt="../_images/proc_vs_oo_11_0.png" src="../_images/proc_vs_oo_11_0.png" />
 </div>
 </div>
 </section>
@@ -961,7 +944,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/proc_vs_oo_15_0.png" src="../_images/proc_vs_oo_15_0.png" />
+<img alt="../_images/proc_vs_oo_13_0.png" src="../_images/proc_vs_oo_13_0.png" />
 </div>
 </div>
 </section>
@@ -1011,7 +994,7 @@ title="Print to PDF"
 </ul>
 </li>
 <li><p>Procedural and object-oriented approaches are incompatible with each other, so trying to combine bits of code that use the different approaches (as may happen if you have a bit of code and are using online help to improve it) usually results in errors and frustration</p></li>
-<li><p>Both procedural and object-oriented approaches are valid ways to use Matplotlib. In general, the object-oriented approaches are more pythonic, and they also are generally better when you want to generate a figure with different subplots</p></li>
+<li><p>Both procedural and object-oriented approaches are valid ways to use Matplotlib. In general, the object-oriented approaches are more Pythonic, and they also are generally better when you want to generate a figure with different subplots</p></li>
 </ul>
 <hr class="docutils" />
 <p>This section was adapted from Aaron J. Newman’s <a class="reference external" href="https://neuraldatascience.io/intro.html">Data Science for Psychology and Neuroscience - in Python</a>.</p>
