@@ -1142,7 +1142,7 @@ title="Print to PDF"
 <section id="tukey-s-method">
 <h3>Tukey’s method<a class="headerlink" href="#tukey-s-method" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/John_Tukey">John Tukey</a>, <a class="reference external" href="https://scholar.google.com/scholar_lookup?&amp;journal=Exploratory+Data+Analysis&amp;author=Tukey+J.+W.&amp;publication_year=1977&amp;volume=Vol.%202">who was a driving force in the development of exploratory data analysis</a>, defined outliers as points more than <span class="math notranslate nohighlight">\(1.5 \times IQR\)</span> above the third quartile (Q3) or below the first quartile (Q1). Recall that IQR is the <em>inter-quartile range</em>, which captures the middle 50% of the data points in a data set. In a box plot (which Tukey invented), the IQR is the “box”, and 1.5 IQR are the extent of the “whiskers” in each direction from the median. We noted earlier that in box plots, outliers are represented as individual points in the plot, beyond the whiskers. Since Tukey invented box plots and this definition of outliers, it’s not surprising that they are identical. In general, outliers defined in this way will comprise approximately 1% of the data, if the data are approximately normally distributed.</p>
-<p><img alt="" src="../_images/boxplot_vs_pdf.png" /></p>
+<p><img alt="" src="../_images/Boxplot_vs_Pdf.png" /></p>
 <p><em>Image from <a class="reference external" href="https://en.wikipedia.org/wiki/User:Jhguch">Jhguch</a> and shared under the  <a class="reference external" href="https://creativecommons.org/licenses/by-sa/2.5/deed.en">Creative Commons Attribution-Share Alike 2.5 Generic</a> license, via Wikimedia Commons</em></p>
 </section>
 <section id="standard-scores">
@@ -1626,70 +1626,70 @@ Name: rt_z, Length: 4289, dtype: bool
   </thead>
   <tbody>
     <tr>
-      <th>3495</th>
-      <td>s20</td>
-      <td>1</td>
-      <td>4</td>
-      <td>neutral</td>
-      <td>0.446080</td>
-      <td>False</td>
-      <td>-0.484967</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2842</th>
-      <td>s10</td>
-      <td>5</td>
-      <td>18</td>
-      <td>incongruent</td>
-      <td>0.481637</td>
-      <td>False</td>
-      <td>-0.137709</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2559</th>
-      <td>s4</td>
-      <td>1</td>
-      <td>22</td>
-      <td>incongruent</td>
-      <td>0.469325</td>
-      <td>False</td>
-      <td>-0.257950</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>3391</th>
-      <td>s3</td>
+      <th>2437</th>
+      <td>s14</td>
       <td>2</td>
       <td>28</td>
-      <td>incongruent</td>
-      <td>0.617214</td>
+      <td>congruent</td>
+      <td>0.497699</td>
       <td>False</td>
-      <td>1.186368</td>
+      <td>0.019157</td>
       <td>False</td>
     </tr>
     <tr>
-      <th>2548</th>
-      <td>s4</td>
+      <th>3885</th>
+      <td>s19</td>
+      <td>3</td>
+      <td>12</td>
+      <td>congruent</td>
+      <td>0.692793</td>
+      <td>False</td>
+      <td>1.924493</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3652</th>
+      <td>s17</td>
       <td>1</td>
-      <td>11</td>
-      <td>neutral</td>
-      <td>0.369766</td>
+      <td>2</td>
+      <td>incongruent</td>
+      <td>0.485940</td>
       <td>False</td>
-      <td>-1.230268</td>
+      <td>-0.095685</td>
       <td>False</td>
     </tr>
     <tr>
-      <th>1869</th>
-      <td>s7</td>
-      <td>4</td>
-      <td>30</td>
+      <th>2887</th>
+      <td>s6</td>
+      <td>1</td>
+      <td>31</td>
+      <td>congruent</td>
+      <td>0.381102</td>
+      <td>False</td>
+      <td>-1.119557</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1039</th>
+      <td>s24</td>
+      <td>3</td>
+      <td>19</td>
       <td>neutral</td>
-      <td>0.557782</td>
+      <td>0.576482</td>
       <td>False</td>
-      <td>0.605941</td>
+      <td>0.788569</td>
       <td>False</td>
+    </tr>
+    <tr>
+      <th>4208</th>
+      <td>s15</td>
+      <td>3</td>
+      <td>16</td>
+      <td>incongruent</td>
+      <td>0.897641</td>
+      <td>True</td>
+      <td>3.925088</td>
+      <td>True</td>
     </tr>
   </tbody>
 </table>
@@ -1877,10 +1877,10 @@ Name: rt_z, Length: 4289, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [-0.82210385  0.27661644 -0.43281406  0.9019205  -2.64482004 -0.62916858
- -0.27254625 -1.18644387  0.33846759 -0.405222  ]
-Mean of data with no outliers: -0.48761
-Standard deviation of data with no outliers: 0.92342
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [ 0.90714791 -0.53182462 -1.42684453 -0.32577921  0.80645757 -0.04681725
+  1.24601908 -1.03688385 -2.41219847  0.49570545]
+Mean of data with no outliers: -0.2325
+Standard deviation of data with no outliers: 1.09781
 </pre></div>
 </div>
 </div>
@@ -1898,10 +1898,10 @@ Standard deviation of data with no outliers: 0.92342
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [-0.82210385  0.27661644 -0.43281406  0.9019205  -2.64482004 -0.62916858
- -0.27254625 -1.18644387  0.33846759  3.        ]
-Mean of data with minor outlier: -0.14709
-Standard deviation of data with minor outlier: 1.39729
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [ 0.90714791 -0.53182462 -1.42684453 -0.32577921  0.80645757 -0.04681725
+  1.24601908 -1.03688385 -2.41219847  3.        ]
+Mean of data with minor outlier: 0.01793
+Standard deviation of data with minor outlier: 1.46094
 </pre></div>
 </div>
 </div>
@@ -1919,10 +1919,10 @@ Standard deviation of data with minor outlier: 1.39729
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [-0.82210385  0.27661644 -0.43281406  0.9019205  -2.64482004 -0.62916858
- -0.27254625 -1.18644387  0.33846759 10.        ]
-Mean of data with extreme outlier: 0.55291
-Standard deviation of data with extreme outlier: 3.28152
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [ 0.90714791 -0.53182462 -1.42684453 -0.32577921  0.80645757 -0.04681725
+  1.24601908 -1.03688385 -2.41219847 10.        ]
+Mean of data with extreme outlier: 0.71793
+Standard deviation of data with extreme outlier: 3.27403
 </pre></div>
 </div>
 </div>
@@ -1942,25 +1942,33 @@ Standard deviation of data with extreme outlier: 3.28152
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [-0.49468382  0.17022217 -0.61555165  0.94411827 -1.36432407 -1.39182403
- -0.72866762  0.26351038 -0.49180341 -0.49101002 -0.35683119  0.54323498
-  1.47286664 -0.10365318 -0.14415935 -0.3046101   1.43105382  0.59811829
-  0.48430195  0.37536987  0.22333768 -1.28108685  0.55801026 -0.87681746
- -2.49693113 -1.9120336  -0.95225227 -0.15093974  1.24949304  0.44816947
-  0.23935363 -0.37544156 -0.85990171 -0.48696495 -1.3873201  -0.71036272
- -0.23641004 -0.74241566  0.33728679  2.09917913 -0.07931385  1.66136009
- -0.62677664  0.5837952   0.75132624 -0.75906612 -0.46644704  0.95908407
-  2.27452295 -0.14261004 -1.80849914  0.19066137 -0.01600839 -0.45058605
-  1.26502697 -0.81348443 -1.9067934  -1.0866888   0.06400468 -0.40138626
- -1.86598135 -0.46579435  1.27276123  0.05426815 -0.55956954  1.96461631
- -0.74397583 -0.21005319  1.32971369 -0.04435926  0.79135434  0.66923742
- -0.15398163  0.94359199 -1.03716258  0.01404466 -1.80983425  0.40942197
- -0.12421866  1.13791319 -0.1520189   1.09561715  1.16289044  1.89649862
-  0.20717775  1.23912279  0.91766234  1.17319555  1.07555651  1.24818438
- -1.10889008  1.14039303 -1.34476275 -0.62621777  0.22949219 -1.17426241
- -0.67210018  1.39369547  0.30207903 -0.33150535]
-Mean of data with no outliers: 0.00918
-Standard deviation of data with no outliers: 0.99422
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [-9.99649158e-01  6.22497448e-01 -1.90154464e-01  4.10588288e-01
+ -7.57323083e-01  3.33335744e-01 -9.00747623e-01 -3.43903951e-01
+ -1.21129846e-01 -8.58330129e-01  8.54133731e-01  1.85126243e+00
+ -2.19123648e+00 -7.39048373e-01 -9.62681186e-01 -8.26954628e-01
+  1.09715738e+00 -3.64455284e-01 -8.53309516e-01  1.88389821e+00
+  9.94161041e-02  7.35407711e-01  1.29781191e-02  2.05567789e+00
+ -2.19427258e+00  7.01557667e-01  8.82272689e-01 -1.85830137e+00
+ -7.87252705e-01 -1.97323404e+00  7.83651507e-01  1.15398049e+00
+ -1.40949779e+00  2.31697853e-01 -1.79096401e-01 -2.37485912e-01
+  1.87434358e-01  8.47102110e-04  7.07373980e-01  7.44374510e-01
+ -1.18661061e+00  4.78456701e-01 -5.21927350e-01  3.85397170e-02
+ -4.42907202e-02  3.77816345e-01  1.65471065e-01  1.11487099e+00
+  2.92736367e-01  6.38372218e-02  4.52243068e-01 -5.11896010e-02
+ -3.40620522e-01  1.51580847e+00 -4.58480320e-01  2.38892754e-01
+ -3.44851117e-01 -4.09330685e-01 -1.04560441e+00  1.90196101e+00
+ -2.07954326e-01 -1.10969205e+00  7.71545795e-01  1.05682455e+00
+  1.52384610e+00 -1.02959726e+00 -1.66667053e+00  1.68019645e+00
+  2.88254329e-01  1.41568471e+00 -8.15732549e-01 -1.79173667e+00
+ -1.71957539e-01  2.67695323e-01  1.24350309e+00  1.18687968e+00
+ -1.47445177e+00  3.81048007e-01 -3.48223656e-01  7.96047514e-01
+ -3.34601877e-01 -3.83383995e-01  1.92451016e+00 -5.58013354e-03
+  2.94975172e-01 -5.74048631e-02 -7.23530089e-01  8.24406628e-01
+ -6.21028214e-01 -4.46010564e-01  5.46117471e-01 -3.33696741e-01
+ -1.52597873e+00 -1.17782483e+00  9.23291199e-01  1.78300078e+00
+  2.29443845e-01 -4.71177322e-01 -3.71169485e-01  1.46326637e+00]
+Mean of data with no outliers: 0.02372
+Standard deviation of data with no outliers: 0.98254
 </pre></div>
 </div>
 </div>
@@ -1978,25 +1986,33 @@ Standard deviation of data with no outliers: 0.99422
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [-0.49468382  0.17022217 -0.61555165  0.94411827 -1.36432407 -1.39182403
- -0.72866762  0.26351038 -0.49180341 -0.49101002 -0.35683119  0.54323498
-  1.47286664 -0.10365318 -0.14415935 -0.3046101   1.43105382  0.59811829
-  0.48430195  0.37536987  0.22333768 -1.28108685  0.55801026 -0.87681746
- -2.49693113 -1.9120336  -0.95225227 -0.15093974  1.24949304  0.44816947
-  0.23935363 -0.37544156 -0.85990171 -0.48696495 -1.3873201  -0.71036272
- -0.23641004 -0.74241566  0.33728679  2.09917913 -0.07931385  1.66136009
- -0.62677664  0.5837952   0.75132624 -0.75906612 -0.46644704  0.95908407
-  2.27452295 -0.14261004 -1.80849914  0.19066137 -0.01600839 -0.45058605
-  1.26502697 -0.81348443 -1.9067934  -1.0866888   0.06400468 -0.40138626
- -1.86598135 -0.46579435  1.27276123  0.05426815 -0.55956954  1.96461631
- -0.74397583 -0.21005319  1.32971369 -0.04435926  0.79135434  0.66923742
- -0.15398163  0.94359199 -1.03716258  0.01404466 -1.80983425  0.40942197
- -0.12421866  1.13791319 -0.1520189   1.09561715  1.16289044  1.89649862
-  0.20717775  1.23912279  0.91766234  1.17319555  1.07555651  1.24818438
- -1.10889008  1.14039303 -1.34476275 -0.62621777  0.22949219 -1.17426241
- -0.67210018  1.39369547  0.30207903 10.        ]
-Mean of data with extreme outlier: 0.11249
-Standard deviation of data with extreme outlier: 1.40528
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [-9.99649158e-01  6.22497448e-01 -1.90154464e-01  4.10588288e-01
+ -7.57323083e-01  3.33335744e-01 -9.00747623e-01 -3.43903951e-01
+ -1.21129846e-01 -8.58330129e-01  8.54133731e-01  1.85126243e+00
+ -2.19123648e+00 -7.39048373e-01 -9.62681186e-01 -8.26954628e-01
+  1.09715738e+00 -3.64455284e-01 -8.53309516e-01  1.88389821e+00
+  9.94161041e-02  7.35407711e-01  1.29781191e-02  2.05567789e+00
+ -2.19427258e+00  7.01557667e-01  8.82272689e-01 -1.85830137e+00
+ -7.87252705e-01 -1.97323404e+00  7.83651507e-01  1.15398049e+00
+ -1.40949779e+00  2.31697853e-01 -1.79096401e-01 -2.37485912e-01
+  1.87434358e-01  8.47102110e-04  7.07373980e-01  7.44374510e-01
+ -1.18661061e+00  4.78456701e-01 -5.21927350e-01  3.85397170e-02
+ -4.42907202e-02  3.77816345e-01  1.65471065e-01  1.11487099e+00
+  2.92736367e-01  6.38372218e-02  4.52243068e-01 -5.11896010e-02
+ -3.40620522e-01  1.51580847e+00 -4.58480320e-01  2.38892754e-01
+ -3.44851117e-01 -4.09330685e-01 -1.04560441e+00  1.90196101e+00
+ -2.07954326e-01 -1.10969205e+00  7.71545795e-01  1.05682455e+00
+  1.52384610e+00 -1.02959726e+00 -1.66667053e+00  1.68019645e+00
+  2.88254329e-01  1.41568471e+00 -8.15732549e-01 -1.79173667e+00
+ -1.71957539e-01  2.67695323e-01  1.24350309e+00  1.18687968e+00
+ -1.47445177e+00  3.81048007e-01 -3.48223656e-01  7.96047514e-01
+ -3.34601877e-01 -3.83383995e-01  1.92451016e+00 -5.58013354e-03
+  2.94975172e-01 -5.74048631e-02 -7.23530089e-01  8.24406628e-01
+ -6.21028214e-01 -4.46010564e-01  5.46117471e-01 -3.33696741e-01
+ -1.52597873e+00 -1.17782483e+00  9.23291199e-01  1.78300078e+00
+  2.29443845e-01 -4.71177322e-01 -3.71169485e-01  1.00000000e+01]
+Mean of data with extreme outlier: 0.10909
+Standard deviation of data with extreme outlier: 1.39019
 </pre></div>
 </div>
 </div>
@@ -2016,33 +2032,33 @@ Standard deviation of data with extreme outlier: 1.40528
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [-4.94683817e-01  1.70222175e-01 -6.15551652e-01  9.44118272e-01
- -1.36432407e+00 -1.39182403e+00 -7.28667615e-01  2.63510376e-01
- -4.91803407e-01 -4.91010024e-01 -3.56831185e-01  5.43234976e-01
-  1.47286664e+00 -1.03653183e-01 -1.44159353e-01 -3.04610098e-01
-  1.43105382e+00  5.98118289e-01  4.84301950e-01  3.75369866e-01
-  2.23337681e-01 -1.28108685e+00  5.58010259e-01 -8.76817463e-01
- -2.49693113e+00 -1.91203360e+00 -9.52252267e-01 -1.50939744e-01
-  1.24949304e+00  4.48169474e-01  2.39353630e-01 -3.75441561e-01
- -8.59901714e-01 -4.86964945e-01 -1.38732010e+00 -7.10362723e-01
- -2.36410042e-01 -7.42415661e-01  3.37286793e-01  2.09917913e+00
- -7.93138531e-02  1.66136009e+00 -6.26776640e-01  5.83795196e-01
-  7.51326236e-01 -7.59066115e-01 -4.66447041e-01  9.59084074e-01
-  2.27452295e+00 -1.42610035e-01 -1.80849914e+00  1.90661367e-01
- -1.60083922e-02 -4.50586047e-01  1.26502697e+00 -8.13484430e-01
- -1.90679340e+00 -1.08668880e+00  6.40046799e-02 -4.01386258e-01
- -1.86598135e+00 -4.65794348e-01  1.27276123e+00  5.42681478e-02
- -5.59569541e-01  1.96461631e+00 -7.43975832e-01 -2.10053192e-01
-  1.32971369e+00 -4.43592608e-02  7.91354337e-01  6.69237415e-01
- -1.53981628e-01  9.43591992e-01 -1.03716258e+00  1.40446588e-02
- -1.80983425e+00  4.09421966e-01 -1.24218658e-01  1.13791319e+00
- -1.52018895e-01  1.09561715e+00  1.16289044e+00  1.89649862e+00
-  2.07177754e-01  1.23912279e+00  9.17662339e-01  1.17319555e+00
-  1.07555651e+00  1.24818438e+00 -1.10889008e+00  1.14039303e+00
- -1.34476275e+00 -6.26217771e-01  2.29492187e-01 -1.17426241e+00
- -6.72100184e-01  1.39369547e+00  3.02079033e-01  1.00000000e+02]
-Mean of data with extreme outlier: 1.01249
-Standard deviation of data with extreme outlier: 9.99812
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data: [-9.99649158e-01  6.22497448e-01 -1.90154464e-01  4.10588288e-01
+ -7.57323083e-01  3.33335744e-01 -9.00747623e-01 -3.43903951e-01
+ -1.21129846e-01 -8.58330129e-01  8.54133731e-01  1.85126243e+00
+ -2.19123648e+00 -7.39048373e-01 -9.62681186e-01 -8.26954628e-01
+  1.09715738e+00 -3.64455284e-01 -8.53309516e-01  1.88389821e+00
+  9.94161041e-02  7.35407711e-01  1.29781191e-02  2.05567789e+00
+ -2.19427258e+00  7.01557667e-01  8.82272689e-01 -1.85830137e+00
+ -7.87252705e-01 -1.97323404e+00  7.83651507e-01  1.15398049e+00
+ -1.40949779e+00  2.31697853e-01 -1.79096401e-01 -2.37485912e-01
+  1.87434358e-01  8.47102110e-04  7.07373980e-01  7.44374510e-01
+ -1.18661061e+00  4.78456701e-01 -5.21927350e-01  3.85397170e-02
+ -4.42907202e-02  3.77816345e-01  1.65471065e-01  1.11487099e+00
+  2.92736367e-01  6.38372218e-02  4.52243068e-01 -5.11896010e-02
+ -3.40620522e-01  1.51580847e+00 -4.58480320e-01  2.38892754e-01
+ -3.44851117e-01 -4.09330685e-01 -1.04560441e+00  1.90196101e+00
+ -2.07954326e-01 -1.10969205e+00  7.71545795e-01  1.05682455e+00
+  1.52384610e+00 -1.02959726e+00 -1.66667053e+00  1.68019645e+00
+  2.88254329e-01  1.41568471e+00 -8.15732549e-01 -1.79173667e+00
+ -1.71957539e-01  2.67695323e-01  1.24350309e+00  1.18687968e+00
+ -1.47445177e+00  3.81048007e-01 -3.48223656e-01  7.96047514e-01
+ -3.34601877e-01 -3.83383995e-01  1.92451016e+00 -5.58013354e-03
+  2.94975172e-01 -5.74048631e-02 -7.23530089e-01  8.24406628e-01
+ -6.21028214e-01 -4.46010564e-01  5.46117471e-01 -3.33696741e-01
+ -1.52597873e+00 -1.17782483e+00  9.23291199e-01  1.78300078e+00
+  2.29443845e-01 -4.71177322e-01 -3.71169485e-01  1.00000000e+02]
+Mean of data with extreme outlier: 1.00909
+Standard deviation of data with extreme outlier: 9.99631
 </pre></div>
 </div>
 </div>
@@ -2587,112 +2603,112 @@ What I’ve done in my own work is to run separate analyses, one on the data wit
   </thead>
   <tbody>
     <tr>
-      <th>2405</th>
-      <td>s14</td>
-      <td>1</td>
-      <td>28</td>
-      <td>incongruent</td>
-      <td>0.365089</td>
-      <td>-1.229313</td>
-    </tr>
-    <tr>
-      <th>314</th>
-      <td>s18</td>
-      <td>5</td>
-      <td>27</td>
-      <td>incongruent</td>
-      <td>0.470246</td>
-      <td>-0.521122</td>
-    </tr>
-    <tr>
-      <th>906</th>
-      <td>s8</td>
+      <th>4252</th>
+      <td>s15</td>
       <td>4</td>
-      <td>12</td>
-      <td>neutral</td>
-      <td>0.525561</td>
-      <td>0.521723</td>
-    </tr>
-    <tr>
-      <th>2237</th>
-      <td>s26</td>
-      <td>1</td>
-      <td>19</td>
-      <td>neutral</td>
-      <td>0.452990</td>
-      <td>-1.170623</td>
-    </tr>
-    <tr>
-      <th>1200</th>
-      <td>s21</td>
-      <td>3</td>
-      <td>24</td>
-      <td>congruent</td>
-      <td>0.378090</td>
-      <td>-0.940258</td>
-    </tr>
-    <tr>
-      <th>1330</th>
-      <td>s2</td>
-      <td>2</td>
       <td>28</td>
-      <td>neutral</td>
-      <td>0.461990</td>
-      <td>-0.207224</td>
-    </tr>
-    <tr>
-      <th>2605</th>
-      <td>s4</td>
-      <td>3</td>
-      <td>4</td>
-      <td>neutral</td>
-      <td>0.429815</td>
-      <td>0.197840</td>
-    </tr>
-    <tr>
-      <th>3143</th>
-      <td>s23</td>
-      <td>5</td>
-      <td>1</td>
       <td>congruent</td>
-      <td>0.448923</td>
-      <td>-0.954896</td>
+      <td>0.624953</td>
+      <td>0.584453</td>
     </tr>
     <tr>
-      <th>4042</th>
-      <td>s5</td>
+      <th>1819</th>
+      <td>s7</td>
       <td>3</td>
       <td>10</td>
-      <td>congruent</td>
-      <td>0.546038</td>
-      <td>0.603165</td>
-    </tr>
-    <tr>
-      <th>3575</th>
-      <td>s20</td>
-      <td>3</td>
-      <td>20</td>
-      <td>neutral</td>
-      <td>0.501630</td>
-      <td>0.078121</td>
-    </tr>
-    <tr>
-      <th>1151</th>
-      <td>s21</td>
-      <td>2</td>
-      <td>7</td>
       <td>incongruent</td>
-      <td>0.750666</td>
-      <td>3.288323</td>
+      <td>0.629628</td>
+      <td>0.004931</td>
     </tr>
     <tr>
-      <th>2056</th>
-      <td>s12</td>
-      <td>5</td>
-      <td>29</td>
+      <th>2665</th>
+      <td>s4</td>
+      <td>4</td>
+      <td>32</td>
+      <td>incongruent</td>
+      <td>0.429314</td>
+      <td>0.188569</td>
+    </tr>
+    <tr>
+      <th>3999</th>
+      <td>s5</td>
+      <td>1</td>
+      <td>31</td>
+      <td>congruent</td>
+      <td>0.413443</td>
+      <td>-1.156239</td>
+    </tr>
+    <tr>
+      <th>3040</th>
+      <td>s23</td>
+      <td>1</td>
+      <td>24</td>
       <td>neutral</td>
-      <td>0.618035</td>
-      <td>1.517831</td>
+      <td>0.581962</td>
+      <td>0.274991</td>
+    </tr>
+    <tr>
+      <th>1681</th>
+      <td>s13</td>
+      <td>3</td>
+      <td>29</td>
+      <td>incongruent</td>
+      <td>0.440597</td>
+      <td>-0.228658</td>
+    </tr>
+    <tr>
+      <th>2117</th>
+      <td>s9</td>
+      <td>2</td>
+      <td>26</td>
+      <td>incongruent</td>
+      <td>0.420741</td>
+      <td>-0.182349</td>
+    </tr>
+    <tr>
+      <th>2696</th>
+      <td>s4</td>
+      <td>5</td>
+      <td>31</td>
+      <td>neutral</td>
+      <td>0.357280</td>
+      <td>-1.144631</td>
+    </tr>
+    <tr>
+      <th>1100</th>
+      <td>s24</td>
+      <td>5</td>
+      <td>20</td>
+      <td>incongruent</td>
+      <td>0.584835</td>
+      <td>-0.003015</td>
+    </tr>
+    <tr>
+      <th>1731</th>
+      <td>s13</td>
+      <td>5</td>
+      <td>15</td>
+      <td>incongruent</td>
+      <td>0.365029</td>
+      <td>-1.403900</td>
+    </tr>
+    <tr>
+      <th>2671</th>
+      <td>s4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>incongruent</td>
+      <td>0.397392</td>
+      <td>-0.402239</td>
+    </tr>
+    <tr>
+      <th>1007</th>
+      <td>s24</td>
+      <td>2</td>
+      <td>18</td>
+      <td>neutral</td>
+      <td>0.476501</td>
+      <td>-1.115187</td>
     </tr>
   </tbody>
 </table>
@@ -2837,103 +2853,103 @@ What I’ve done in my own work is to run separate analyses, one on the data wit
   </thead>
   <tbody>
     <tr>
-      <th>2841</th>
-      <td>s10</td>
-      <td>5</td>
-      <td>17</td>
-      <td>neutral</td>
-      <td>0.730521</td>
-      <td>3.250012</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1878</th>
-      <td>s7</td>
-      <td>5</td>
-      <td>8</td>
-      <td>incongruent</td>
-      <td>0.965726</td>
-      <td>3.095147</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>227</th>
-      <td>s18</td>
-      <td>3</td>
-      <td>4</td>
-      <td>neutral</td>
-      <td>0.806528</td>
-      <td>3.368613</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>518</th>
-      <td>s22</td>
+      <th>2262</th>
+      <td>s26</td>
       <td>2</td>
-      <td>7</td>
+      <td>12</td>
       <td>incongruent</td>
-      <td>0.817863</td>
-      <td>4.600506</td>
+      <td>0.840871</td>
+      <td>3.309630</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>3108</th>
-      <td>s23</td>
+      <th>2926</th>
+      <td>s6</td>
       <td>3</td>
-      <td>28</td>
-      <td>incongruent</td>
-      <td>0.877870</td>
-      <td>3.010529</td>
+      <td>6</td>
+      <td>congruent</td>
+      <td>0.889037</td>
+      <td>3.237846</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>602</th>
-      <td>s22</td>
-      <td>4</td>
-      <td>27</td>
-      <td>incongruent</td>
-      <td>0.701941</td>
-      <td>3.182802</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>766</th>
-      <td>s11</td>
-      <td>4</td>
-      <td>31</td>
+      <th>3571</th>
+      <td>s20</td>
+      <td>3</td>
+      <td>16</td>
       <td>neutral</td>
-      <td>0.749664</td>
-      <td>4.908618</td>
+      <td>0.841455</td>
+      <td>4.189282</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>3319</th>
-      <td>s27</td>
-      <td>5</td>
-      <td>17</td>
+      <th>4077</th>
+      <td>s5</td>
+      <td>4</td>
+      <td>13</td>
       <td>incongruent</td>
-      <td>0.773004</td>
-      <td>3.873254</td>
+      <td>0.742321</td>
+      <td>3.207646</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>1299</th>
+      <th>1105</th>
+      <td>s24</td>
+      <td>5</td>
+      <td>25</td>
+      <td>incongruent</td>
+      <td>0.896856</td>
+      <td>3.200232</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1296</th>
       <td>s2</td>
       <td>1</td>
-      <td>28</td>
-      <td>neutral</td>
-      <td>0.837920</td>
-      <td>4.414282</td>
+      <td>25</td>
+      <td>incongruent</td>
+      <td>0.745997</td>
+      <td>3.284224</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>117</th>
-      <td>s25</td>
-      <td>4</td>
-      <td>22</td>
+      <th>4208</th>
+      <td>s15</td>
+      <td>3</td>
+      <td>16</td>
       <td>incongruent</td>
-      <td>0.817285</td>
-      <td>3.572408</td>
+      <td>0.897641</td>
+      <td>3.201033</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2695</th>
+      <td>s4</td>
+      <td>5</td>
+      <td>30</td>
+      <td>incongruent</td>
+      <td>0.657840</td>
+      <td>4.418124</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>667</th>
+      <td>s11</td>
+      <td>1</td>
+      <td>28</td>
+      <td>incongruent</td>
+      <td>0.701472</td>
+      <td>4.127361</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>s12</td>
+      <td>4</td>
+      <td>20</td>
+      <td>neutral</td>
+      <td>0.814067</td>
+      <td>3.895140</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -2982,64 +2998,44 @@ What I’ve done in my own work is to run separate analyses, one on the data wit
   </thead>
   <tbody>
     <tr>
-      <th>3588</th>
-      <td>s20</td>
-      <td>4</td>
-      <td>1</td>
-      <td>neutral</td>
-      <td>0.796931</td>
-      <td>3.650637</td>
-      <td>0.489359</td>
-    </tr>
-    <tr>
-      <th>3313</th>
-      <td>s27</td>
-      <td>5</td>
-      <td>11</td>
-      <td>congruent</td>
-      <td>0.832711</td>
-      <td>4.620377</td>
-      <td>0.457454</td>
-    </tr>
-    <tr>
-      <th>953</th>
-      <td>s8</td>
-      <td>5</td>
-      <td>27</td>
-      <td>incongruent</td>
-      <td>0.881690</td>
-      <td>3.404502</td>
-      <td>0.477679</td>
-    </tr>
-    <tr>
-      <th>3108</th>
-      <td>s23</td>
+      <th>1524</th>
+      <td>s1</td>
       <td>3</td>
+      <td>32</td>
+      <td>incongruent</td>
+      <td>0.777096</td>
+      <td>4.349914</td>
+      <td>0.465963</td>
+    </tr>
+    <tr>
+      <th>766</th>
+      <td>s11</td>
+      <td>4</td>
+      <td>31</td>
+      <td>neutral</td>
+      <td>0.749664</td>
+      <td>4.908618</td>
+      <td>0.443325</td>
+    </tr>
+    <tr>
+      <th>667</th>
+      <td>s11</td>
+      <td>1</td>
       <td>28</td>
       <td>incongruent</td>
-      <td>0.877870</td>
-      <td>3.010529</td>
-      <td>0.542556</td>
+      <td>0.701472</td>
+      <td>4.127361</td>
+      <td>0.443325</td>
     </tr>
     <tr>
-      <th>3319</th>
-      <td>s27</td>
-      <td>5</td>
-      <td>17</td>
-      <td>incongruent</td>
-      <td>0.773004</td>
-      <td>3.873254</td>
-      <td>0.457454</td>
-    </tr>
-    <tr>
-      <th>2841</th>
-      <td>s10</td>
-      <td>5</td>
-      <td>17</td>
+      <th>1078</th>
+      <td>s24</td>
+      <td>4</td>
+      <td>28</td>
       <td>neutral</td>
-      <td>0.730521</td>
-      <td>3.250012</td>
-      <td>0.489909</td>
+      <td>0.888508</td>
+      <td>3.114528</td>
+      <td>0.581082</td>
     </tr>
     <tr>
       <th>37</th>
@@ -3052,34 +3048,54 @@ What I’ve done in my own work is to run separate analyses, one on the data wit
       <td>0.475143</td>
     </tr>
     <tr>
-      <th>1524</th>
-      <td>s1</td>
-      <td>3</td>
-      <td>32</td>
-      <td>incongruent</td>
-      <td>0.777096</td>
-      <td>4.349914</td>
-      <td>0.465963</td>
-    </tr>
-    <tr>
-      <th>3017</th>
-      <td>s23</td>
-      <td>1</td>
-      <td>1</td>
-      <td>neutral</td>
-      <td>0.945058</td>
-      <td>3.631653</td>
-      <td>0.542556</td>
-    </tr>
-    <tr>
-      <th>602</th>
-      <td>s22</td>
+      <th>2964</th>
+      <td>s6</td>
       <td>4</td>
-      <td>27</td>
+      <td>12</td>
+      <td>neutral</td>
+      <td>0.917153</td>
+      <td>3.456548</td>
+      <td>0.466651</td>
+    </tr>
+    <tr>
+      <th>2087</th>
+      <td>s9</td>
+      <td>1</td>
+      <td>28</td>
+      <td>congruent</td>
+      <td>0.646603</td>
+      <td>3.045625</td>
+      <td>0.430409</td>
+    </tr>
+    <tr>
+      <th>609</th>
+      <td>s22</td>
+      <td>5</td>
+      <td>2</td>
       <td>incongruent</td>
-      <td>0.701941</td>
-      <td>3.182802</td>
+      <td>0.713883</td>
+      <td>3.328852</td>
       <td>0.431980</td>
+    </tr>
+    <tr>
+      <th>3769</th>
+      <td>s17</td>
+      <td>4</td>
+      <td>23</td>
+      <td>incongruent</td>
+      <td>0.778205</td>
+      <td>4.073122</td>
+      <td>0.473696</td>
+    </tr>
+    <tr>
+      <th>4208</th>
+      <td>s15</td>
+      <td>3</td>
+      <td>16</td>
+      <td>incongruent</td>
+      <td>0.897641</td>
+      <td>3.201033</td>
+      <td>0.557696</td>
     </tr>
   </tbody>
 </table>
@@ -3132,114 +3148,114 @@ What I’ve done in my own work is to run separate analyses, one on the data wit
   </thead>
   <tbody>
     <tr>
-      <th>4023</th>
-      <td>s5</td>
-      <td>2</td>
-      <td>23</td>
-      <td>neutral</td>
-      <td>0.406017</td>
-      <td>-1.254775</td>
-      <td>0.499061</td>
-      <td>0.406017</td>
-    </tr>
-    <tr>
-      <th>1189</th>
-      <td>s21</td>
+      <th>1352</th>
+      <td>s2</td>
       <td>3</td>
-      <td>13</td>
+      <td>18</td>
       <td>neutral</td>
-      <td>0.354730</td>
-      <td>-1.205384</td>
-      <td>0.459101</td>
-      <td>0.354730</td>
+      <td>0.405910</td>
+      <td>-0.896646</td>
+      <td>0.474832</td>
+      <td>0.405910</td>
     </tr>
     <tr>
-      <th>646</th>
-      <td>s11</td>
-      <td>1</td>
+      <th>4199</th>
+      <td>s15</td>
+      <td>3</td>
       <td>7</td>
-      <td>incongruent</td>
-      <td>0.453586</td>
-      <td>0.108794</td>
-      <td>0.443325</td>
-      <td>0.453586</td>
-    </tr>
-    <tr>
-      <th>3090</th>
-      <td>s23</td>
-      <td>3</td>
-      <td>10</td>
       <td>neutral</td>
-      <td>0.578006</td>
-      <td>0.238419</td>
-      <td>0.542556</td>
-      <td>0.578006</td>
+      <td>0.553530</td>
+      <td>-0.100887</td>
+      <td>0.557696</td>
+      <td>0.553530</td>
     </tr>
     <tr>
-      <th>114</th>
-      <td>s25</td>
-      <td>4</td>
-      <td>19</td>
-      <td>incongruent</td>
-      <td>0.637395</td>
-      <td>1.666824</td>
-      <td>0.475143</td>
-      <td>0.637395</td>
-    </tr>
-    <tr>
-      <th>2969</th>
-      <td>s6</td>
-      <td>4</td>
-      <td>17</td>
-      <td>congruent</td>
-      <td>0.468960</td>
-      <td>-0.029742</td>
-      <td>0.466651</td>
-      <td>0.468960</td>
-    </tr>
-    <tr>
-      <th>219</th>
+      <th>206</th>
       <td>s18</td>
       <td>2</td>
-      <td>28</td>
-      <td>incongruent</td>
-      <td>0.505641</td>
-      <td>-0.111713</td>
-      <td>0.513467</td>
-      <td>0.505641</td>
-    </tr>
-    <tr>
-      <th>3119</th>
-      <td>s23</td>
-      <td>4</td>
-      <td>9</td>
-      <td>incongruent</td>
-      <td>0.610031</td>
-      <td>0.534477</td>
-      <td>0.542556</td>
-      <td>0.610031</td>
-    </tr>
-    <tr>
-      <th>950</th>
-      <td>s8</td>
-      <td>5</td>
-      <td>24</td>
+      <td>15</td>
       <td>neutral</td>
-      <td>0.496787</td>
-      <td>0.288804</td>
-      <td>0.477679</td>
-      <td>0.496787</td>
+      <td>0.534134</td>
+      <td>0.217864</td>
+      <td>0.513467</td>
+      <td>0.534134</td>
     </tr>
     <tr>
-      <th>942</th>
-      <td>s8</td>
-      <td>5</td>
+      <th>3443</th>
+      <td>s3</td>
+      <td>4</td>
       <td>16</td>
       <td>congruent</td>
-      <td>0.413540</td>
-      <td>-0.385063</td>
-      <td>0.477679</td>
-      <td>0.413540</td>
+      <td>0.497133</td>
+      <td>-0.813839</td>
+      <td>0.580459</td>
+      <td>0.497133</td>
+    </tr>
+    <tr>
+      <th>1525</th>
+      <td>s1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>neutral</td>
+      <td>0.783683</td>
+      <td>4.443189</td>
+      <td>0.465963</td>
+      <td>0.465963</td>
+    </tr>
+    <tr>
+      <th>3454</th>
+      <td>s3</td>
+      <td>4</td>
+      <td>27</td>
+      <td>congruent</td>
+      <td>0.533358</td>
+      <td>-0.460035</td>
+      <td>0.580459</td>
+      <td>0.533358</td>
+    </tr>
+    <tr>
+      <th>3022</th>
+      <td>s23</td>
+      <td>1</td>
+      <td>6</td>
+      <td>incongruent</td>
+      <td>0.597790</td>
+      <td>0.421313</td>
+      <td>0.542556</td>
+      <td>0.597790</td>
+    </tr>
+    <tr>
+      <th>3764</th>
+      <td>s17</td>
+      <td>4</td>
+      <td>18</td>
+      <td>neutral</td>
+      <td>0.490208</td>
+      <td>0.196634</td>
+      <td>0.473696</td>
+      <td>0.490208</td>
+    </tr>
+    <tr>
+      <th>4080</th>
+      <td>s5</td>
+      <td>4</td>
+      <td>16</td>
+      <td>incongruent</td>
+      <td>0.630296</td>
+      <td>1.721186</td>
+      <td>0.499061</td>
+      <td>0.630296</td>
+    </tr>
+    <tr>
+      <th>3538</th>
+      <td>s20</td>
+      <td>2</td>
+      <td>15</td>
+      <td>incongruent</td>
+      <td>0.609974</td>
+      <td>1.388855</td>
+      <td>0.489359</td>
+      <td>0.609974</td>
     </tr>
   </tbody>
 </table>
@@ -3294,48 +3310,26 @@ What I’ve done in my own work is to run separate analyses, one on the data wit
       <td>0.542556</td>
     </tr>
     <tr>
-      <th>2579</th>
-      <td>s4</td>
+      <th>37</th>
+      <td>s25</td>
       <td>2</td>
-      <td>10</td>
-      <td>incongruent</td>
-      <td>0.589781</td>
-      <td>3.158490</td>
-      <td>0.416534</td>
-      <td>0.416534</td>
-    </tr>
-    <tr>
-      <th>1524</th>
-      <td>s1</td>
-      <td>3</td>
-      <td>32</td>
-      <td>incongruent</td>
-      <td>0.777096</td>
-      <td>4.349914</td>
-      <td>0.465963</td>
-      <td>0.465963</td>
-    </tr>
-    <tr>
-      <th>844</th>
-      <td>s8</td>
-      <td>2</td>
-      <td>14</td>
-      <td>incongruent</td>
-      <td>0.061839</td>
-      <td>-3.232000</td>
-      <td>0.477679</td>
-      <td>0.477679</td>
-    </tr>
-    <tr>
-      <th>3612</th>
-      <td>s20</td>
-      <td>4</td>
-      <td>25</td>
+      <td>6</td>
       <td>neutral</td>
-      <td>0.754067</td>
-      <td>3.132075</td>
-      <td>0.489359</td>
-      <td>0.489359</td>
+      <td>0.917223</td>
+      <td>4.631054</td>
+      <td>0.475143</td>
+      <td>0.475143</td>
+    </tr>
+    <tr>
+      <th>2076</th>
+      <td>s9</td>
+      <td>1</td>
+      <td>17</td>
+      <td>incongruent</td>
+      <td>0.705617</td>
+      <td>3.889038</td>
+      <td>0.430409</td>
+      <td>0.430409</td>
     </tr>
     <tr>
       <th>2866</th>
@@ -3349,48 +3343,70 @@ What I’ve done in my own work is to run separate analyses, one on the data wit
       <td>0.466651</td>
     </tr>
     <tr>
-      <th>1078</th>
-      <td>s24</td>
-      <td>4</td>
-      <td>28</td>
-      <td>neutral</td>
-      <td>0.888508</td>
-      <td>3.114528</td>
-      <td>0.581082</td>
-      <td>0.581082</td>
-    </tr>
-    <tr>
-      <th>2440</th>
-      <td>s14</td>
-      <td>2</td>
-      <td>31</td>
-      <td>neutral</td>
-      <td>0.701127</td>
-      <td>3.621617</td>
-      <td>0.446461</td>
-      <td>0.446461</td>
-    </tr>
-    <tr>
-      <th>3058</th>
-      <td>s23</td>
-      <td>2</td>
-      <td>10</td>
+      <th>3313</th>
+      <td>s27</td>
+      <td>5</td>
+      <td>11</td>
       <td>congruent</td>
-      <td>0.953989</td>
-      <td>3.714217</td>
-      <td>0.542556</td>
-      <td>0.542556</td>
+      <td>0.832711</td>
+      <td>4.620377</td>
+      <td>0.457454</td>
+      <td>0.457454</td>
     </tr>
     <tr>
-      <th>1299</th>
-      <td>s2</td>
+      <th>3319</th>
+      <td>s27</td>
+      <td>5</td>
+      <td>17</td>
+      <td>incongruent</td>
+      <td>0.773004</td>
+      <td>3.873254</td>
+      <td>0.457454</td>
+      <td>0.457454</td>
+    </tr>
+    <tr>
+      <th>1598</th>
+      <td>s13</td>
       <td>1</td>
-      <td>28</td>
+      <td>10</td>
+      <td>incongruent</td>
+      <td>0.688901</td>
+      <td>3.632997</td>
+      <td>0.453831</td>
+      <td>0.453831</td>
+    </tr>
+    <tr>
+      <th>3302</th>
+      <td>s27</td>
+      <td>4</td>
+      <td>32</td>
+      <td>incongruent</td>
+      <td>0.728959</td>
+      <td>3.322114</td>
+      <td>0.457454</td>
+      <td>0.457454</td>
+    </tr>
+    <tr>
+      <th>953</th>
+      <td>s8</td>
+      <td>5</td>
+      <td>27</td>
+      <td>incongruent</td>
+      <td>0.881690</td>
+      <td>3.404502</td>
+      <td>0.477679</td>
+      <td>0.477679</td>
+    </tr>
+    <tr>
+      <th>2841</th>
+      <td>s10</td>
+      <td>5</td>
+      <td>17</td>
       <td>neutral</td>
-      <td>0.837920</td>
-      <td>4.414282</td>
-      <td>0.474832</td>
-      <td>0.474832</td>
+      <td>0.730521</td>
+      <td>3.250012</td>
+      <td>0.489909</td>
+      <td>0.489909</td>
     </tr>
   </tbody>
 </table>
