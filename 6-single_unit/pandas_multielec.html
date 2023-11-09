@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Correlating spike trains" href="corr_spike_trains.html" />
@@ -1103,7 +1104,7 @@ Channel labels: [4.0, 7.0, 10.0, 22.0, 23.0, 32.0, 35.0, 42.0, 44.0, 45.0, 63.0,
 </div>
 </div>
 </div>
-<p>This is a bit weird — we’re told this is a 96 electrode array, but there are only 15 electrodes?!</p>
+<p>This is a bit weird — we’re told this is a 96 electrode array, but there are only 20 electrodes?!</p>
 <p>This is because the full data set is huge, with over 2 million rows. The amount of memory that this requires makes doing anything with the data quite slow. So we’ve provided data for a subset of channels for the purposes of this tutorial.</p>
 </section>
 <section id="orientations">
@@ -1123,7 +1124,6 @@ Channel labels: [4.0, 7.0, 10.0, 22.0, 23.0, 32.0, 35.0, 42.0, 44.0, 45.0, 63.0,
 </div>
 </div>
 </div>
-<p>So most channels contain activity from one neuron, but channel 20 picked up 4 neurons, and 29 and 60 each picked up 2 neurons.</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -1175,7 +1175,7 @@ Channel labels: [4.0, 7.0, 10.0, 22.0, 23.0, 32.0, 35.0, 42.0, 44.0, 45.0, 63.0,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/pandas_multielec_24_0.png" src="../_images/pandas_multielec_24_0.png" />
+<img alt="../_images/pandas_multielec_23_0.png" src="../_images/pandas_multielec_23_0.png" />
 </div>
 </div>
 </section>
@@ -1198,7 +1198,7 @@ Channel labels: [4.0, 7.0, 10.0, 22.0, 23.0, 32.0, 35.0, 42.0, 44.0, 45.0, 63.0,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/pandas_multielec_26_0.png" src="../_images/pandas_multielec_26_0.png" />
+<img alt="../_images/pandas_multielec_25_0.png" src="../_images/pandas_multielec_25_0.png" />
 </div>
 </div>
 </section>
@@ -2012,7 +2012,7 @@ Channel labels: [4.0, 7.0, 10.0, 22.0, 23.0, 32.0, 35.0, 42.0, 44.0, 45.0, 63.0,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/pandas_multielec_41_0.png" src="../_images/pandas_multielec_41_0.png" />
+<img alt="../_images/pandas_multielec_40_0.png" src="../_images/pandas_multielec_40_0.png" />
 </div>
 </div>
 <p>Note above the differences in total spike counts (<em>y</em> axis ranges) between sort codes. This is because the data are summed over channels; every channel as at least a sort code of 1 (i.e., contains data from one neuron/unit), but fewer channels were found to contain data from two or more units. So decreasing amounts of data contribute to the averages for sort codes 1-4.</p>
