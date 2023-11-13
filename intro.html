@@ -451,22 +451,34 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  6. Single Unit Data
+  6. Statistical Inference and the Bootstrap
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="6-single_unit/introduction.html">
+  <a class="reference internal" href="6-Inference/inference.html">
+   Statistical inference
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  7. Single Unit Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-single_unit/introduction.html">
    Introduction to Single Unit Data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="6-single_unit/learning_objectives.html">
+  <a class="reference internal" href="7-single_unit/learning_objectives.html">
    Learning Objectives
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="6-single_unit/single_unit_intro.html">
+  <a class="reference internal" href="7-single_unit/single_unit_intro.html">
    Single Unit Data and Spike Trains
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -476,24 +488,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-single_unit/intro_spike_trains.html">
+    <a class="reference internal" href="7-single_unit/intro_spike_trains.html">
      Introduction to Spike Train Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-single_unit/ten_intensities.html">
+    <a class="reference internal" href="7-single_unit/ten_intensities.html">
      Effects of Light Intensity on Spike Rate
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-single_unit/heat_maps.html">
+    <a class="reference internal" href="7-single_unit/heat_maps.html">
      Heat Maps
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="6-single_unit/intro_multielec_data.html">
+  <a class="reference internal" href="7-single_unit/intro_multielec_data.html">
    Introducing Multielectrode Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -503,12 +515,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-single_unit/pandas_multielec.html">
+    <a class="reference internal" href="7-single_unit/pandas_multielec.html">
      Working with Multielectrode Data in pandas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-single_unit/corr_spike_trains.html">
+    <a class="reference internal" href="7-single_unit/corr_spike_trains.html">
      Correlating spike trains
     </a>
    </li>
@@ -517,12 +529,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  7. Signal Processing
+  8. Signal Processing
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="7-signal_processing/signals-sampling-filtering.html">
+  <a class="reference internal" href="8-signal_processing/signals-sampling-filtering.html">
    Signals, Sampling &amp; Filtering
   </a>
  </li>
@@ -754,10 +766,11 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="acknowledgments">
 <h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">#</a></h1>
-<p>First of all, I owe a great debt of gratitude to <a class="reference external" href="https://aaronjnewman.com/">Aaron J. Newman</a> of Dalhousie University for sharing his excellent open-source textbook, <a class="reference external" href="https://neuraldatascience.io/intro.html">Data Science for Psychology and Neuroscience - in Python</a>. What you see now is an edited/remixed/adapted version of the original book, one that I hope will best suit undergraduate Kinesiology students at The University of British Columbia. Much of the original work has largely been kept intact, although a couple of notable changes include substituting the chapters on EEG and MRI data with one on signal processing, as well as the addition of a section on writing functions. My goal is that this book will evolve and take on a life of its own over iterations of teaching the course and serve as a useful, open resource for those studying and researching human movement.</p>
+<p>First of all, I owe a great debt of gratitude to <a class="reference external" href="https://aaronjnewman.com/">Aaron J. Newman</a> of Dalhousie University for sharing his excellent open-source textbook, <a class="reference external" href="https://neuraldatascience.io/intro.html">Data Science for Psychology and Neuroscience - in Python</a>. What you see now is largely an edited/remixed/adapted version of the original book, one that I hope will best suit undergraduate Kinesiology students at the University of British Columbia. Much of the original work has largely been kept intact, although a couple of notable changes include substituting the chapters on EEG and MRI data with one on signal processing, as well as the addition of a section on writing functions and a chapter on statistical inference and boostrapping (see below). My goal is that this book will evolve and take on a life of its own over iterations of teaching the course and serve as a useful, open resource for those studying and researching human movement.</p>
 <p>There are others whose work I have also adopted (and adapted) and to whom I am very grateful:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.cs.ubc.ca/people/meghan-allen">Meghan Allen</a> of UBC for the section on writing functions, evaluating expressions, and some early tutorial materials</p></li>
+<li><p><a class="reference external" href="https://trevorcampbell.me/">Trevor Campbell</a>, <a class="reference external" href="https://www.tiffanytimbers.com/">Tiffany Timbers</a>, <a class="reference external" href="https://www.stat.ubc.ca/users/melissa-lee">Melissa Lee</a>, <a class="reference external" href="https://lindseyjh.ca/">Lindsey Heagy</a>, and <a class="reference external" href="https://joelostblom.com/">Joel Ostblom</a> of UBC, for their excellent open textbook <a class="reference external" href="https://python.datasciencebook.ca/index.html">Data Science: A First Introduction (Python Edition)</a> and especially their chapter on statistical inference</p></li>
 <li><p><a class="reference external" href="https://gribblelab.org/">Paul Gribble</a> of Western University for his <a class="reference external" href="https://gribblelab.org/teaching/scicomp2014/09_Signals_sampling_filtering.html">chapter on signal processing</a></p></li>
 <li><p><a class="reference external" href="https://as.nyu.edu/faculty/todd-gureckis.html">Todd Gureckis</a> and <a class="reference external" href="https://cims.nyu.edu/~brenden/">Brendan Lake</a> for sharing materials from their <a class="reference external" href="https://cims.nyu.edu/~brenden/courses/labincp/intro.html">NYU course on Cognition and Perception</a></p></li>
 <li><p><a class="reference external" href="http://www.jesshamrick.com/">Jessica Hamrick</a> for the Jupyter-based teaching materials</p></li>
@@ -774,6 +787,8 @@ title="Print to PDF"
 <p><strong>Suggested attribution:</strong><br />
 <em><a class="reference external" href="https://hyosubkim.github.io/datasci-for-kin/intro.html">Data Science for Kinesiology</a> by Hyosub Kim. Adapted from Aaron J. Newman’s <a class="reference external" href="https://neuraldatascience.io/intro.html">Data Science for Pyschology and Neuroscience</a> and published under a <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</em></p>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">

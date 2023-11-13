@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to Single Unit Data" href="../6-single_unit/introduction.html" />
+    <link rel="next" title="Statistical inference" href="../6-Inference/inference.html" />
     <link rel="prev" title="Data Cleaning - Dealing with Outliers" href="data_cleaning.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -454,22 +454,34 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  6. Single Unit Data
+  6. Statistical Inference and the Bootstrap
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../6-single_unit/introduction.html">
+  <a class="reference internal" href="../6-Inference/inference.html">
+   Statistical inference
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  7. Single Unit Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../7-single_unit/introduction.html">
    Introduction to Single Unit Data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../6-single_unit/learning_objectives.html">
+  <a class="reference internal" href="../7-single_unit/learning_objectives.html">
    Learning Objectives
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../6-single_unit/single_unit_intro.html">
+  <a class="reference internal" href="../7-single_unit/single_unit_intro.html">
    Single Unit Data and Spike Trains
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -479,24 +491,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../6-single_unit/intro_spike_trains.html">
+    <a class="reference internal" href="../7-single_unit/intro_spike_trains.html">
      Introduction to Spike Train Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../6-single_unit/ten_intensities.html">
+    <a class="reference internal" href="../7-single_unit/ten_intensities.html">
      Effects of Light Intensity on Spike Rate
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../6-single_unit/heat_maps.html">
+    <a class="reference internal" href="../7-single_unit/heat_maps.html">
      Heat Maps
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../6-single_unit/intro_multielec_data.html">
+  <a class="reference internal" href="../7-single_unit/intro_multielec_data.html">
    Introducing Multielectrode Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -506,12 +518,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../6-single_unit/pandas_multielec.html">
+    <a class="reference internal" href="../7-single_unit/pandas_multielec.html">
      Working with Multielectrode Data in pandas
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../6-single_unit/corr_spike_trains.html">
+    <a class="reference internal" href="../7-single_unit/corr_spike_trains.html">
      Correlating spike trains
     </a>
    </li>
@@ -520,12 +532,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  7. Signal Processing
+  8. Signal Processing
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../7-signal_processing/signals-sampling-filtering.html">
+  <a class="reference internal" href="../8-signal_processing/signals-sampling-filtering.html">
    Signals, Sampling &amp; Filtering
   </a>
  </li>
@@ -1541,33 +1553,33 @@ Name: rt, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>participant
-s10    0.499031
-s2     0.518216
-s19    0.591181
-s18    0.527152
-s16    0.492921
-s3     0.591022
-s11    0.473012
-s8     0.494878
-s12    0.506722
-s5     0.530722
-s7     0.650769
-s24    0.595977
-s6     0.490298
-s25    0.513179
 s15    0.591644
-s26    0.565531
-s1     0.471838
-s14    0.453524
-s4     0.428867
-s20    0.507257
-s21    0.507033
-s13    0.478367
-s23    0.554172
+s10    0.499031
 s17    0.504452
-s27    0.501069
-s9     0.437926
+s12    0.506722
+s23    0.554172
+s3     0.591022
+s13    0.478367
+s1     0.471838
+s26    0.565531
+s2     0.518216
+s6     0.490298
+s11    0.473012
+s5     0.530722
+s19    0.591181
 s22    0.474612
+s25    0.513179
+s18    0.527152
+s24    0.595977
+s27    0.501069
+s20    0.507257
+s9     0.437926
+s7     0.650769
+s21    0.507033
+s16    0.492921
+s8     0.494878
+s4     0.428867
+s14    0.453524
 Name: rt, dtype: float64
 </pre></div>
 </div>
@@ -1582,7 +1594,7 @@ Name: rt, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Congruent vs. Incongruent t =  -2.89  p =  0.0076
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Congruent vs. Incongruent t =  -2.61  p =  0.0147
 </pre></div>
 </div>
 </div>
@@ -1735,10 +1747,10 @@ Name: rt, dtype: float64
             <p class="prev-next-title">Data Cleaning - Dealing with Outliers</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../6-single_unit/introduction.html" title="next page">
+    <a class='right-next' id="next-link" href="../6-Inference/inference.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Single Unit Data</p>
+        <p class="prev-next-title">Statistical inference</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
