@@ -115,7 +115,7 @@ This schedule is subject to change during the semester. However, you will always
 | 9    | Introduction to Basic Stats with Python | Learn how to conduct familiar statistical analyses in Python | 
 | 9    | Quiz 2 |  Covers concepts from preceding weeks  |
 |      | Midterm Break |       |
-| 10   | Single Unit Data & Spike Trains | Apply your programming skills to neural data; also learn about numerical computing using the famous Python library *NumPy* | 
+| 10   | Statistical inference and bootstrapping | Learn how to make inferences about a population based on a much smaller sample; make the most of your data through simulation and bootstrapping | 
 | 11   | Signal Processing | Learn the principles of signal processing and apply them to analyzing kinematic data | 
 | 12   | Leveling Up Your Data Science Skills | Everything you ever wanted to know about installing the scientific Python ecosystem on your computer/the terminal/version control but were afraid to ask |
 | TBD  | Quiz 3 | Covers concepts from preceding weeks. **Do not make travel plans for anytime between December 11 - 22 until quiz has been scheduled.** | 
