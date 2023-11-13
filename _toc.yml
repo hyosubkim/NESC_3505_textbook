@@ -123,23 +123,27 @@ parts:
     - file: 5-eda/data_cleaning
     - file: 5-eda/ttests
     
-  - caption: 6. Single Unit Data
+  - caption: 6. Statistical Inference and the Bootstrap
     chapters:
-    - file: 6-single_unit/introduction
-    - file: 6-single_unit/learning_objectives
-    - file: 6-single_unit/single_unit_intro
+    - file: 6-Inference/inference
+    
+  - caption: 7. Single Unit Data
+    chapters:
+    - file: 7-single_unit/introduction
+    - file: 7-single_unit/learning_objectives
+    - file: 7-single_unit/single_unit_intro
       sections:
-      - file: 6-single_unit/intro_spike_trains
-      - file: 6-single_unit/ten_intensities
-      - file: 6-single_unit/heat_maps
-    - file: 6-single_unit/intro_multielec_data
+      - file: 7-single_unit/intro_spike_trains
+      - file: 7-single_unit/ten_intensities
+      - file: 7-single_unit/heat_maps
+    - file: 7-single_unit/intro_multielec_data
       sections:
-      - file: 6-single_unit/pandas_multielec
-      - file: 6-single_unit/corr_spike_trains
+      - file: 7-single_unit/pandas_multielec
+      - file: 7-single_unit/corr_spike_trains
   
-  - caption: 7. Signal Processing
+  - caption: 8. Signal Processing
     chapters:
-    - file: 7-signal_processing/signals-sampling-filtering
+    - file: 8-signal_processing/signals-sampling-filtering
  
   
 
