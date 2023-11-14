@@ -1,6 +1,4 @@
-# THE UNIVERSITY OF BRITISH COLUMBIA School of Kinesiology 
-
-# Syllabus
+# KIN 482E Syllabus
 
 ## Basic Course Information
 KIN 482E Advanced Seminar in Neuromechanics ("Programming and Data Science for Kinesiology"); 2023 Winter Term I; 3 credit hours 
@@ -118,7 +116,7 @@ This schedule is subject to change during the semester. However, you will always
 | 10   | Statistical inference and bootstrapping | Learn how to make inferences about a population based on a much smaller sample; make the most of your data through simulation and bootstrapping | 
 | 11   | Signal Processing | Learn the principles of signal processing and apply them to analyzing kinematic data | 
 | 12   | Leveling Up Your Data Science Skills | Everything you ever wanted to know about installing the scientific Python ecosystem on your computer/the terminal/version control but were afraid to ask |
-| TBD  | Quiz 3 | Covers concepts from preceding weeks. **Do not make travel plans for anytime between December 11 - 22 until quiz has been scheduled.** | 
+| Dec 14 (3:30 pm)  | Quiz 3 | Convers concepts from preceding weeks | 
  
 ## Policies 
 
