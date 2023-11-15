@@ -747,6 +747,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminology">
+   Terminology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#time-domain-representation-of-signals">
    Time domain representation of signals
   </a>
@@ -812,8 +817,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-for-a-low-pass-butterworth-filter">
-     Code for a low-pass Butterworth filter
+    <a class="reference internal nav-link" href="#python-code-for-filtering">
+     Python code for filtering
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -853,6 +858,11 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminology">
+   Terminology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#time-domain-representation-of-signals">
    Time domain representation of signals
   </a>
@@ -918,8 +928,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-for-a-low-pass-butterworth-filter">
-     Code for a low-pass Butterworth filter
+    <a class="reference internal nav-link" href="#python-code-for-filtering">
+     Python code for filtering
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -955,7 +965,15 @@ title="Print to PDF"
 <div class="alert alert-block alert-info">
 This chapter was copied and lightly adapted (mostly code edits) from Paul Gribble's <a href="https://gribblelab.org/teaching/scicomp2020/">Scientific Computing</a> course under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. Some of the topics here are more advanced. The goal is to provide you an introduction to this extremely important topic as well as some conceptual and practical understanding. Hence, you may find a lot of value in returning to this chapter in the future, whether to boost your understanding or utilize the code examples provided. 
 </div><p>Whereas signals in nature (such as sound waves, magnetic fields, hand position, electromyograms (EMG), electroencephalograms (EEG), extra-cellular potentials, etc) vary continuously, often in science we measure these signals by <strong>sampling</strong> them repeatedly over time, at some <strong>sampling frequency</strong>. The resulting collection of measurements is a <strong>discretized</strong> representation of the original continuous signal.</p>
-<p>Before we get into <strong>sampling theory</strong> however we should first talk about how signals can be represented both in the <strong>time domain</strong> and in the <strong>frequency domain</strong>.</p>
+<p>Before we get into <strong>sampling theory</strong> however we should first define some common terms and talk about how signals can be represented both in the <strong>time domain</strong> and in the <strong>frequency domain</strong>.</p>
+<section id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Frequency - number of cycles per unit time (usually seconds)</p></li>
+<li><p>Period - how long it takes a signal to go through a full cycle (e.g., 2<span class="math notranslate nohighlight">\(\pi\)</span> radians)</p></li>
+<li><p>Phase - angular position (we won’t discuss phase very much here)</p></li>
+</ul>
+</section>
 <section id="time-domain-representation-of-signals">
 <h2>Time domain representation of signals<a class="headerlink" href="#time-domain-representation-of-signals" title="Permalink to this headline">#</a></h2>
 <p>This is how you are probably used to thinking about signals, namely how the magnitude of a signal varies over time. So for example a signal <span class="math notranslate nohighlight">\(s\)</span> containing a sinusoid with a period <span class="math notranslate nohighlight">\(T\)</span> of 0.5 seconds (a frequency of 2 Hz) and a peak-to-peak magnitude <span class="math notranslate nohighlight">\(b\)</span> of 2 volts is represented in the time domain <span class="math notranslate nohighlight">\(t\)</span> as:</p>
@@ -967,22 +985,34 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <p>We can visualize the signal by plotting its magnitude as a function of time:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard imports plus SciPy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">T</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="n">f</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define our sine wave</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># period (1 / frequency)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># peak-to-peak amplitude</span>
 <span class="n">w</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">T</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">b</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+<span class="c1"># Plot our sine wave</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Signal magnitude (V)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/signals-sampling-filtering_4_0.png" src="../_images/signals-sampling-filtering_4_0.png" />
+<img alt="../_images/signals-sampling-filtering_5_0.png" src="../_images/signals-sampling-filtering_5_0.png" />
 </div>
 </div>
 </section>
@@ -1031,36 +1061,34 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <p>Here is some Python code to illustrate these concepts. We construct a one second signal sampled at 1000 Hz that is composed of a 6 Hz, 10 Hz and 13 Hz components. We then use the <code class="docutils literal notranslate"><span class="pre">fft()</span></code> function to compute the Fast Fourier transform, we extract the magnitude information, we set our frequency range (up to the Nyquist) and we plot the <strong>spectrum</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct signal and plot in the time domain</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create our signal</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># 1 second sampled at 1000 Hz</span>
+<span class="c1"># Create 6, 10, and 13 Hz signals</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">13</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Signal magnitude&quot;</span><span class="p">)</span>
 
-<span class="c1"># Compute FFT and plot the magnitude spectrum</span>
-<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>  <span class="c1"># Number of samples</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.001</span>  <span class="c1"># Inter-sample time difference</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>  <span class="c1"># Gives list of frequencies for FFT</span>
-<span class="n">ipos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">w</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">freqs</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="n">ipos</span><span class="p">]</span>  <span class="c1"># Only look at positive fequencies</span>
-<span class="n">mags</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">F</span><span class="p">[</span><span class="n">ipos</span><span class="p">])</span>  <span class="c1"># Magnitude spectrum</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">mags</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Power&quot;</span><span class="p">)</span>
+<span class="c1"># Set-up our subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Signal magnitude&#39;</span><span class="p">)</span>
 
-<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">mags</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Power&quot;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Frequency (Hz)&quot;</span><span class="p">)</span>
+<span class="c1"># Perform the FFT</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># compute the FFT (rfft is fft on real-valued data and is preferred for speed)</span>
+<span class="n">mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>  <span class="c1"># extract the magnitude information</span>
+<span class="n">freqs</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># compute the frequency range; d is sample spacing</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="c1"># Plot the filtered signal</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">mag</span><span class="p">)</span> <span class="c1"># plot the magnitude spectrum up to the Nyquist</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span> <span class="c1"># Zoom in on the first 50 Hz for visualization purposes </span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency Component (Hz)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Power&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/signals-sampling-filtering_12_0.png" src="../_images/signals-sampling-filtering_12_0.png" />
+<img alt="../_images/signals-sampling-filtering_13_0.png" src="../_images/signals-sampling-filtering_13_0.png" />
 </div>
 </div>
 <p>We can see that the power spectrum has revealed peaks at 6, 10 and 13 Hz - which we know is correct, since we designed our signal from scratch.</p>
@@ -1068,29 +1096,39 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </section>
 <section id="power-spectral-density">
 <h2>Power Spectral Density<a class="headerlink" href="#power-spectral-density" title="Permalink to this headline">#</a></h2>
-<p>One solution is instead of performing the FFT on the entire signal all at once, to instead, split the signal into chunks, take the FFT of each chunk, and then average these spectra to come up with a smoother spectrum. This can be accomplished using a <a class="reference external" href="http://www.mathworks.com/help/signal/ref/dspdata.psd.html">power spectral density</a> function. In SciPy (and in MATLAB) there is a function <code class="docutils literal notranslate"><span class="pre">psd()</span></code> to accomplish this. We won’t go into the mathematical details or the theoretical considerations (relating to stochastic processes) but for now suffice it to say that the psd can often give you a better estimate of the power at different frequencies compared to a “plain” FFT.</p>
-<p>Here is an example of plotting the power spectral density of a signal in Python / SciPy. We construct a 50 Hz signal at 200 Hz sampling rate, and we add some random noise on top:</p>
+<p>One solution is instead of performing the FFT on the entire signal all at once, to instead, split the signal into chunks, take the FFT of each chunk, and then average these spectra to come up with a smoother spectrum. This can be accomplished using a <a class="reference external" href="http://www.mathworks.com/help/signal/ref/dspdata.psd.html">power spectral density</a> function. In Python in the SciPy package there is a function scipy.signal.welch() to accomplish this. We won’t go into the mathematical details or the theoretical considerations (relating to stochastic processes) but for now suffice it to say that the psd can often give you a better estimate of the power at different frequencies compared to a “plain” FFT, in the presence of random noise.</p>
+<p>Here is an example of plotting the power spectral density of a signal. We construct a 12 Hz signal at 1000 Hz sampling rate, and we add some random noise on top:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct signal and plot in the time domain</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">201</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Signal magnitude&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct signal</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">yn</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># add noise</span>
 
-<span class="c1"># Compute and plot the power spectral density</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">psd</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">Fs</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Create subplots</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">yn</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Signal Amplitude&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;TIME SERIES SIGNAL&#39;</span><span class="p">)</span>
+
+<span class="c1"># Compute power spectral density</span>
+<span class="n">freqs</span><span class="p">,</span> <span class="n">psd</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">welch</span><span class="p">(</span><span class="n">yn</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span><span class="n">psd</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;PSD&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;PSD&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/signals-sampling-filtering_15_0.png" src="../_images/signals-sampling-filtering_15_0.png" />
+<img alt="../_images/signals-sampling-filtering_16_0.png" src="../_images/signals-sampling-filtering_16_0.png" />
 </div>
 </div>
-<p>You can see that the peak at 50 Hz stands nicely above all the noise, about 20 dB above the noise, in fact (-20 dB corresponds to 1/10th the power, see below).</p>
+<p>In the Figure above you can see that the peak at 12 Hz stands nicely above all the noise in the power spectral density estimate (bottom panel).</p>
 <p>We have been ignoring the <strong>phase</strong> of the signal here, but just like the magnitude coefficients over frequencies, we can recover the phase coefficients of the signal as well.</p>
 </section>
 <section id="decibel-scale">
@@ -1098,7 +1136,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <p>The decibel (dB) scale is a ratio scale. It is commonly used to measure sound level but is also widely used in electronics and signal processing. The dB is a logarithmic unit used to describe a ratio. You will often see power spectra displayed in units of decibels.</p>
 <p>The difference between two sound levels (or two power levels, as in the case of the power spectra above), is defined to be:</p>
 <div class="math notranslate nohighlight">
-\[ 20(log_{10})\frac{P_{2}}{P_{1}}dB \]</div>
+\[ 20 \text{log}_{10} \left(\frac{P_{2}}{P_{1}}\right)dB \]</div>
 <p>Thus when <span class="math notranslate nohighlight">\(P_{2}\)</span> is twice as large as <span class="math notranslate nohighlight">\(P_{1}\)</span>, then the difference is about 6 dB. When <span class="math notranslate nohighlight">\(P_{2}\)</span> is 10 times as large as <span class="math notranslate nohighlight">\(P_{1}\)</span>, the difference is 20 dB. A 100 times difference is 40 dB.</p>
 <p>An advantage of using the dB scale is that it is easier to see small signal components in the presence of large ones. In other words large components don’t visually swamp small ones.</p>
 <p>Since the dB scale is a ratio scale, to compute absolute levels one needs a reference — a zero point. In acoustics this reference is usually 20 micropascals — about the limit of sensitivity of the human ear.</p>
@@ -1128,7 +1166,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/signals-sampling-filtering_19_0.png" src="../_images/signals-sampling-filtering_19_0.png" />
+<img alt="../_images/signals-sampling-filtering_20_0.png" src="../_images/signals-sampling-filtering_20_0.png" />
 </div>
 </div>
 </section>
@@ -1154,6 +1192,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <span class="n">freqs</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="n">ipos</span><span class="p">]</span>  <span class="c1"># Only look at positive fequencies</span>
 <span class="n">mags</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">F</span><span class="p">[</span><span class="n">ipos</span><span class="p">])</span>  <span class="c1"># Magnitude component</span>
 <span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">F</span><span class="p">[</span><span class="n">ipos</span><span class="p">])</span>  <span class="c1"># Phase component</span>
+
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">mags</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>  <span class="c1"># Zoom in on 0-50 Hz freqs</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;FFT magnitude&quot;</span><span class="p">)</span>
@@ -1179,7 +1218,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
   return np.asarray(x, float)
 </pre></div>
 </div>
-<img alt="../_images/signals-sampling-filtering_21_1.png" src="../_images/signals-sampling-filtering_21_1.png" />
+<img alt="../_images/signals-sampling-filtering_22_1.png" src="../_images/signals-sampling-filtering_22_1.png" />
 </div>
 </div>
 <p>You can see above that the original signal is reconstructed in its entirety, simply on the basis of its frequency domain representation (the FFT).</p>
@@ -1234,7 +1273,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/signals-sampling-filtering_24_0.png" src="../_images/signals-sampling-filtering_24_0.png" />
+<img alt="../_images/signals-sampling-filtering_25_0.png" src="../_images/signals-sampling-filtering_25_0.png" />
 </div>
 </div>
 <p>This is a fairly simple-minded way of filtering a signal, but it illustrates the underlying concepts. There are an entire range of algorithms for filtering that are designed to manipulate frequency ranges, and they differ in a number of respects including how quickly they alter the frequencies in question, how they affect the phase information in the signal, and a number of other things we won’t go into here. There are entire signal processing textbooks oriented around this topic, so if you’re interested in details, I can point you towards some good sources.</p>
@@ -1248,7 +1287,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <section id="characterizing-filter-performance">
 <h3>Characterizing filter performance<a class="headerlink" href="#characterizing-filter-performance" title="Permalink to this headline">#</a></h3>
 <p>A useful way of characterizing a filter’s performance is in terms of the ratio of the amplitude of the output to the input (the amplitude ratio AR or gain), and the phase shift ((\phi)) between the input and output, as functions of frequency. A plot of the amplitude ratio and phase shift against frequency is called a <a class="reference external" href="http://en.wikipedia.org/wiki/Bode_plot">Bode plot</a>.</p>
-<p>The <strong>pass band</strong> of a filter is the range of frequencies over which signals pass with no change. The <strong>stop band</strong> refers to the range of frequencies over which a filter attenuates signals. The <strong>cutoff frequency</strong> or <strong>corner frequency</strong> of a filter is used to describe the transition point from the pass band to the reject band. This this transition cannot occur instantaneously it is usually defined to be the point at which the filter output is equal to -6 dB of the input in the pass band. The cutoff frequency is sometimes called the -6 dB point or the half-power point since -6 dB corresponds to half the signal power. The <strong>roll-off</strong> refers to the rate at which the filter attenuates the input after the cutoff point. When the roll-off is linear it can be specified as a specific slope, e.g. in terms of dB/decade or dB/octave (an octave is a doubling in frequency).</p>
+<p>The <strong>pass band</strong> of a filter is the range of frequencies over which signals pass with no change. The <strong>stop band</strong> refers to the range of frequencies over which a filter attenuates signals. The <strong>cutoff frequency</strong> or <strong>corner frequency</strong> of a filter is used to describe the transition point from the pass band to the reject band. Since this transition cannot occur instantaneously it is usually defined to be the point at which the filter output is equal to -6 dB of the input in the pass band. The cutoff frequency is sometimes called the -6 dB point or the half-power point since -6 dB corresponds to half the signal power. The <strong>roll-off</strong> refers to the rate at which the filter attenuates the input after the cutoff point. When the roll-off is linear it can be specified as a specific slope, e.g. in terms of dB/decade or dB/octave (an octave is a doubling in frequency).</p>
 <p>Let’s look at some examples of filter characteristics.</p>
 <div>
 <center><<img src="signal_bode.jpg" width="400"></center></div>
@@ -1274,21 +1313,40 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <p>Practically speaking, you will find that a second-order butterworth filter provides a nice sharp roll-off without too much undesirable side-effects (e.g. large time lag, ripple in the pass-band, etc).</p>
 <p>See <a class="reference external" href="http://en.wikipedia.org/wiki/Low-pass_filter#Continuous-time_low-pass_filters">this section</a> of the wikipedia page on low-pass filters for another description.</p>
 </section>
-<section id="code-for-a-low-pass-butterworth-filter">
-<h3>Code for a low-pass Butterworth filter<a class="headerlink" href="#code-for-a-low-pass-butterworth-filter" title="Permalink to this headline">#</a></h3>
-<p>Here is a function to implement a second order low-pass butterworth filter in Python with SciPy:</p>
+<section id="python-code-for-filtering">
+<h3>Python code for filtering<a class="headerlink" href="#python-code-for-filtering" title="Permalink to this headline">#</a></h3>
+<p>Below is Python code for implementing low-pass, high-pass, band-pass, and band-stop filters using a Butterworth design (more on these terms below).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">butter</span><span class="p">,</span> <span class="n">filtfilt</span>
-<span class="k">def</span> <span class="nf">lowpass</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">samprate</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">):</span>
-    <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="o">=</span> <span class="n">butter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">cutoff</span> <span class="o">/</span> <span class="p">(</span><span class="n">samprate</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">),</span> <span class="n">btype</span><span class="o">=</span><span class="s2">&quot;low&quot;</span><span class="p">,</span> <span class="n">analog</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">&quot;ba&quot;</span><span class="p">)</span>
-    <span class="n">data_f</span> <span class="o">=</span> <span class="n">filtfilt</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">data_f</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lowpass</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">samprate</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">cutoff</span> <span class="o">/</span> <span class="p">(</span><span class="n">samprate</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Normalize the cutoff frequency</span>
+    <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">butter</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">Wn</span><span class="o">=</span><span class="n">w</span><span class="p">,</span> <span class="n">btype</span><span class="o">=</span><span class="s1">&#39;lowpass&#39;</span><span class="p">)</span> <span class="c1"># get the filter coefficients</span>
+    <span class="n">yf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">filtfilt</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># perform the filtering</span>
+    <span class="k">return</span> <span class="n">yf</span>
+
+<span class="k">def</span> <span class="nf">highpass</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">samprate</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">cutoff</span> <span class="o">/</span> <span class="p">(</span><span class="n">samprate</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Normalize the cutoff frequency</span>
+    <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">butter</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">Wn</span><span class="o">=</span><span class="n">w</span><span class="p">,</span> <span class="n">btype</span><span class="o">=</span><span class="s1">&#39;highpass&#39;</span><span class="p">)</span> <span class="c1"># get the filter coefficients</span>
+    <span class="n">yf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">filtfilt</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># perform the filtering</span>
+    <span class="k">return</span> <span class="n">yf</span>
+
+<span class="k">def</span> <span class="nf">bandpass</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">samprate</span><span class="p">,</span> <span class="n">cutoffs</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">cutoffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cutoffs</span><span class="p">)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">cutoffs</span> <span class="o">/</span> <span class="p">(</span><span class="n">samprate</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Normalize the cutoff frequencies</span>
+    <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">butter</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">Wn</span><span class="o">=</span><span class="n">w</span><span class="p">,</span> <span class="n">btype</span><span class="o">=</span><span class="s1">&#39;bandpass&#39;</span><span class="p">)</span> <span class="c1"># get the filter coefficients</span>
+    <span class="n">yf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">filtfilt</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># perform the filtering</span>
+    <span class="k">return</span> <span class="n">yf</span>
+
+<span class="k">def</span> <span class="nf">bandstop</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">samprate</span><span class="p">,</span> <span class="n">cutoffs</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">cutoffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cutoffs</span><span class="p">)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">cutoffs</span> <span class="o">/</span> <span class="p">(</span><span class="n">samprate</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Normalize the cutoff frequencies</span>
+    <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">butter</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">Wn</span><span class="o">=</span><span class="n">w</span><span class="p">,</span> <span class="n">btype</span><span class="o">=</span><span class="s1">&#39;bandstop&#39;</span><span class="p">)</span> <span class="c1"># get the filter coefficients</span>
+    <span class="n">yf</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">filtfilt</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># perform the filtering</span>
+    <span class="k">return</span> <span class="n">yf</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We use a two-pass, bi-directional filter function (called <code class="docutils literal notranslate"><span class="pre">filtfilt()</span></code>) to apply the butterworth filter to the signal. One-way single-pass filter functions (e.g. <code class="docutils literal notranslate"><span class="pre">filter()</span></code>) introduce time lags. This is why in real-time applications in which you want to filter signals in real time (e.g. to reduce noise) there are time lags introduced.</p>
 </section>
 <section id="application-high-frequency-noise-and-taking-derivatives">
 <h3>Application: high-frequency noise and taking derivatives<a class="headerlink" href="#application-high-frequency-noise-and-taking-derivatives" title="Permalink to this headline">#</a></h3>
@@ -1321,7 +1379,10 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Position (mm)&quot;</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Velocity (mm/s)&quot;</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Acceleration ($mm/s^2$)&quot;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Samples (200 Hz)&quot;</span><span class="p">);</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Samples (200 Hz)&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Position and its first two derivatives&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1349,7 +1410,8 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Velocity (mm/s)&quot;</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Acceleration ($mm/s^2$)&quot;</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Samples (200 Hz)&quot;</span><span class="p">);</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Samples (200 Hz)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
