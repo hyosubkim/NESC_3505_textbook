@@ -1047,84 +1047,84 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>2707</th>
-      <td>s10</td>
+      <th>819</th>
+      <td>s8</td>
       <td>1</td>
-      <td>10</td>
-      <td>incongruent</td>
-      <td>0.572950</td>
+      <td>21</td>
+      <td>neutral</td>
+      <td>0.416528</td>
     </tr>
     <tr>
-      <th>1879</th>
+      <th>139</th>
+      <td>s25</td>
+      <td>5</td>
+      <td>12</td>
+      <td>neutral</td>
+      <td>0.423601</td>
+    </tr>
+    <tr>
+      <th>1889</th>
       <td>s7</td>
       <td>5</td>
-      <td>9</td>
+      <td>20</td>
       <td>neutral</td>
-      <td>0.785801</td>
+      <td>0.673615</td>
     </tr>
     <tr>
-      <th>4157</th>
-      <td>s15</td>
-      <td>1</td>
-      <td>29</td>
-      <td>neutral</td>
-      <td>0.581615</td>
-    </tr>
-    <tr>
-      <th>2556</th>
-      <td>s4</td>
-      <td>1</td>
-      <td>19</td>
-      <td>congruent</td>
-      <td>0.385698</td>
-    </tr>
-    <tr>
-      <th>2821</th>
-      <td>s10</td>
-      <td>4</td>
-      <td>28</td>
-      <td>congruent</td>
-      <td>0.557133</td>
-    </tr>
-    <tr>
-      <th>2682</th>
-      <td>s4</td>
+      <th>3011</th>
+      <td>s6</td>
       <td>5</td>
-      <td>17</td>
+      <td>27</td>
       <td>congruent</td>
-      <td>0.393704</td>
+      <td>0.437177</td>
     </tr>
     <tr>
-      <th>2598</th>
-      <td>s4</td>
-      <td>2</td>
-      <td>29</td>
-      <td>neutral</td>
-      <td>0.433719</td>
-    </tr>
-    <tr>
-      <th>3925</th>
-      <td>s19</td>
-      <td>4</td>
-      <td>21</td>
-      <td>congruent</td>
-      <td>0.496806</td>
-    </tr>
-    <tr>
-      <th>744</th>
-      <td>s11</td>
-      <td>4</td>
-      <td>9</td>
-      <td>neutral</td>
-      <td>0.473537</td>
-    </tr>
-    <tr>
-      <th>3733</th>
-      <td>s17</td>
+      <th>1201</th>
+      <td>s21</td>
       <td>3</td>
-      <td>19</td>
+      <td>25</td>
       <td>neutral</td>
-      <td>0.554209</td>
+      <td>0.454654</td>
+    </tr>
+    <tr>
+      <th>495</th>
+      <td>s22</td>
+      <td>1</td>
+      <td>16</td>
+      <td>incongruent</td>
+      <td>0.722015</td>
+    </tr>
+    <tr>
+      <th>615</th>
+      <td>s22</td>
+      <td>5</td>
+      <td>8</td>
+      <td>congruent</td>
+      <td>0.405832</td>
+    </tr>
+    <tr>
+      <th>3543</th>
+      <td>s20</td>
+      <td>2</td>
+      <td>20</td>
+      <td>congruent</td>
+      <td>0.421928</td>
+    </tr>
+    <tr>
+      <th>4279</th>
+      <td>s15</td>
+      <td>5</td>
+      <td>23</td>
+      <td>neutral</td>
+      <td>0.845636</td>
+    </tr>
+    <tr>
+      <th>3597</th>
+      <td>s20</td>
+      <td>4</td>
+      <td>10</td>
+      <td>congruent</td>
+      <td>0.561984</td>
     </tr>
   </tbody>
 </table>
@@ -1804,14 +1804,42 @@ title="Print to PDF"
 <span class="g g-Whitespace">   </span><span class="mi">3451</span> <span class="c1"># Place it into the swarm</span>
 <span class="g g-Whitespace">   </span><span class="mi">3452</span> <span class="n">swarm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">swarm</span><span class="p">,</span> <span class="n">new_xyr_i</span><span class="p">])</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/seaborn/categorical.py:3506,</span> in <span class="ni">Beeswarm.first_non_overlapping_candidate</span><span class="nt">(self, candidates, neighbors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3503</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">neighbors_y</span> <span class="o">-</span> <span class="n">y_i</span>
-<span class="g g-Whitespace">   </span><span class="mi">3504</span> <span class="n">sq_distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">dy</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">3506</span> <span class="n">sep_needed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">neighbors_r</span> <span class="o">+</span> <span class="n">r_i</span><span class="p">)</span>
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/seaborn/categorical.py:3511,</span> in <span class="ni">Beeswarm.first_non_overlapping_candidate</span><span class="nt">(self, candidates, neighbors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3506</span> <span class="n">sep_needed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">neighbors_r</span> <span class="o">+</span> <span class="n">r_i</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3508</span> <span class="c1"># Good candidate does not overlap any of neighbors which means that</span>
 <span class="g g-Whitespace">   </span><span class="mi">3509</span> <span class="c1"># squared distance between candidate and any of the neighbors has</span>
 <span class="g g-Whitespace">   </span><span class="mi">3510</span> <span class="c1"># to be at least square of the summed radii</span>
-<span class="g g-Whitespace">   </span><span class="mi">3511</span> <span class="n">good_candidate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">sq_distances</span> <span class="o">&gt;=</span> <span class="n">sep_needed</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3511</span> <span class="n">good_candidate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">sq_distances</span> <span class="o">&gt;=</span> <span class="n">sep_needed</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3513</span> <span class="k">if</span> <span class="n">good_candidate</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3514</span>     <span class="k">return</span> <span class="n">xyr_i</span>
+
+<span class="nn">File &lt;__array_function__ internals&gt;:180,</span> in <span class="ni">all</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/numpy/core/fromnumeric.py:2489,</span> in <span class="ni">all</span><span class="nt">(a, axis, out, keepdims, where)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2406</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_all_dispatcher</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2407</span> <span class="k">def</span> <span class="nf">all</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2408</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2409</span><span class="sd">     Test whether all array elements along a given axis evaluate to True.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2410</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2487</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">2488</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">2489</span>     <span class="k">return</span> <span class="n">_wrapreduction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2490</span>                           <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/numpy/core/fromnumeric.py:70,</span> in <span class="ni">_wrapreduction</span><span class="nt">(obj, ufunc, method, axis, dtype, out, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="k">def</span> <span class="nf">_wrapreduction</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="nn">---&gt; 70     passkwargs = {k: v for k, v</span> in <span class="ni">kwargs.items</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>                   <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">mu</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/numpy/core/fromnumeric.py:71,</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="k">def</span> <span class="nf">_wrapreduction</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="nn">     70     passkwargs = {k: v for k, v</span> in <span class="ni">kwargs.items</span><span class="nt">()</span>
+<span class="ne">---&gt; </span><span class="mi">71</span>                   <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">mu</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="k">try</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
