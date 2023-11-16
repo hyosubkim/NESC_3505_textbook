@@ -1,4 +1,4 @@
-name: jupyter_books
+name: datasci-for-kin
 channels:
   - conda-forge
   - defaults
