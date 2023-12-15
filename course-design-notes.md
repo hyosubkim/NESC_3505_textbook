@@ -14,7 +14,7 @@
         - Objectives:
             - Understand objectives of the course and learning assessments
             - Understand flow of course and general expectations
-            - Access Jupyter notebooks and course materails on UBC Syzygy
+            - Access Jupyter notebooks and course materials on UBC Syzygy
             - Know how to run cells within Jupyter notebook
             - Know how to enter information in Jupyter (code, Markdown, Latex)
         - Motivation for the course
