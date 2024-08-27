@@ -12,9 +12,10 @@ There are others whose work I have also adopted (and adapted) and to whom I am v
 
 
 ## Disclaimer
-(August 16, 2023) This book is currently a work-in-progress, and I expect to make minor edits to it over the next several weeks. Don't be thrown off if it looks slightly different the next time you view it. Also, if you find any errors (for which I claim sole responsibility), or have suggestions, please let me know by opening an Issue on GitHub (click the Octocat icon in upper right). 
-   
-*-Hyosub*
+(August 27, 2024) This book is currently a work-in-progress, and I expect to make minor edits to it over the coming weeks/months/years. Don't be thrown off if it looks slightly different the next time you view it. Also, if you find any errors (for which I claim sole responsibility), or have suggestions, please let me know by opening an Issue on GitHub (click the Octocat icon in upper right). 
+
+Thanks,   
+*Hyosub*
 
 
 ## License for this book
