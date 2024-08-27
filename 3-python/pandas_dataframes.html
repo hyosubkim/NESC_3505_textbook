@@ -1,111 +1,177 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introduction to pandas DataFrames &#8212; Data Science for Kinesiology</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3-python/pandas_dataframes';</script>
+    <link rel="icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Looping Over Data Files" href="looping_data_files.html" />
     <link rel="prev" title="Working with Data" href="working_w_data.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/NESC3505_icon.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Data Science for Kinesiology</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/NESC3505_icon.png" class="logo__image only-light" alt="Data Science for Kinesiology - Home"/>
+    <script>document.write(`<img src="../_static/NESC3505_icon.png" class="logo__image only-dark" alt="Data Science for Kinesiology - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -114,1033 +180,363 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  1. About This Course
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. About This Course</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/about-this-course.html">
-   About this course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/learning_objectives.html">
-   Learning Objectives for this Course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/academic-integrity.html">
-   Academic Integrity and Collaboration
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/about-this-course.html">About this course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/learning_objectives.html">Learning Objectives for this Course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/academic-integrity.html">Academic Integrity and Collaboration</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  2. Introduction to Data Science
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Introduction to Data Science</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../2-nds/introduction.html">
-   Getting Started with the Course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../2-nds/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/what-is-datascience.html">
-   What is Data Science?
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/data.html">
-     Data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/tools_for_datasci.html">
-   Tools for (Kinesiological) Data Science
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/spreadsheets.html">
-     Spreadsheets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/spreadsheets_limits.html">
-     Limitations of Spreadsheets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/reproducibility.html">
-     Reproducibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/sci_prog_lang.html">
-     Scientific Programming Languages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/which_lang.html">
-     Which language to use?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/libs.html">
-     Libraries and packages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/why_python.html">
-     Why Python for this Course?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/coding.html">
-   Coding Tools
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/python.html">
-     Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/datacamp.html">
-     DataCamp
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/jupyter.html">
-     Jupyter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/markdown.html">
-     Markdown
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../2-nds/introduction.html">Getting Started with the Course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2-nds/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/data.html">Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  3. Introduction to Python
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets.html">Spreadsheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets_limits.html">Limitations of Spreadsheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/reproducibility.html">Reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/sci_prog_lang.html">Scientific Programming Languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/which_lang.html">Which language to use?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/libs.html">Libraries and packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/why_python.html">Why Python for this Course?</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/datacamp.html">DataCamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/jupyter.html">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/markdown.html">Markdown</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Introduction to Python</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="introduction.html">
-   Introducing Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="jupyter_jhub.html">
-   Introduction to Jupyter Notebooks in JupyterHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="getting_help.html">
-   Getting Help with Python
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="data_types.html">
-   Data types
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="variables_assignment.html">
-     Variables and Assignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="types_conversion.html">
-     Data Types and Conversion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="builtin.html">
-     Python Built-Ins
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="lists.html">
-     Lists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dictionaries.html">
-     Dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="flow_control.html">
-   Flow Control
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="for_loops.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     Loops
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="conditionals.html">
-     Conditionals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="writing-a-function.html">
-   Writing Functions
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="working_w_data.html">
-   Working with Data
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Introduction to pandas DataFrames
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="looping_data_files.html">
-     Looping Over Data Files
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introducing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter_jhub.html">Introduction to Jupyter Notebooks in JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_help.html">Getting Help with Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="data_types.html">Data types</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="variables_assignment.html">Variables and Assignment</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="types_conversion.html">Data Types and Conversion</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="builtin.html">Python Built-Ins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">Dictionaries</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  4. Data Visualization
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/introduction.html">
-   Introduction to Data Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/plotting.html">
-   Introduction to Plotting with Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/proc_vs_oo.html">
-   Procedural versus Object-Oriented Plotting in Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/subplots.html">
-   Subplots
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/plotting_types.html">
-   Thinking About Data for Plotting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/seaborn.html">
-   Introduction to Plotting with Seaborn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/human_factors.html">
-   Accessibility and Human Factors in Plotting
-  </a>
- </li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="flow_control.html">Flow Control</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals.html">Conditionals</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  5. Exploratory Data Analysis
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../5-eda/introduction.html">
-   Introduction to EDA
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../5-eda/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../5-eda/repeated_measures.html">
-   Working with Repeated Measures Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../5-eda/data_cleaning.html">
-   Data Cleaning - Dealing with Outliers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../5-eda/ttests.html">
-   Basic Statistics in Python:
-   <em>
-    t
-   </em>
-   tests with SciPy
-  </a>
- </li>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-a-function.html">Writing Functions</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="working_w_data.html">Working with Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introduction to pandas DataFrames</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="looping_data_files.html">Looping Over Data Files</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  6. Statistical Inference and the Bootstrap
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../6-Inference/inference.html">
-   Statistical inference
-  </a>
- </li>
+</details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  7. Single Unit Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Data Visualization</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../7-single_unit/introduction.html">
-   Introduction to Single Unit Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../7-single_unit/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../7-single_unit/single_unit_intro.html">
-   Single Unit Data and Spike Trains
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/intro_spike_trains.html">
-     Introduction to Spike Train Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/ten_intensities.html">
-     Effects of Light Intensity on Spike Rate
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/heat_maps.html">
-     Heat Maps
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../7-single_unit/intro_multielec_data.html">
-   Introducing Multielectrode Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/pandas_multielec.html">
-     Working with Multielectrode Data in pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/corr_spike_trains.html">
-     Correlating spike trains
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/introduction.html">Introduction to Data Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/plotting.html">Introduction to Plotting with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/proc_vs_oo.html">Procedural versus Object-Oriented Plotting in Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/subplots.html">Subplots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/plotting_types.html">Thinking About Data for Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/seaborn.html">Introduction to Plotting with Seaborn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/human_factors.html">Accessibility and Human Factors in Plotting</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  8. Signal Processing
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Exploratory Data Analysis</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../8-signal_processing/signals-sampling-filtering.html">
-   Signals, Sampling &amp; Filtering
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../5-eda/introduction.html">Introduction to EDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-eda/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-eda/repeated_measures.html">Working with Repeated Measures Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-eda/data_cleaning.html">Data Cleaning - Dealing with Outliers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-eda/ttests.html">Basic Statistics in Python: <em>t</em> tests with SciPy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Statistical Inference and the Bootstrap</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../6-Inference/inference.html">Statistical inference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Single Unit Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../7-single_unit/introduction.html">Introduction to Single Unit Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7-single_unit/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/intro_spike_trains.html">Introduction to Spike Train Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/ten_intensities.html">Effects of Light Intensity on Spike Rate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/heat_maps.html">Heat Maps</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/pandas_multielec.html">Working with Multielectrode Data in pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/corr_spike_trains.html">Correlating spike trains</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Signal Processing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../8-signal_processing/signals-sampling-filtering.html">Signals, Sampling &amp; Filtering</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/hyosubkim/datasci-for-kin/master?urlpath=tree/3-python/pandas_dataframes.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/hyosubkim/datasci-for-kin" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/hyosubkim/datasci-for-kin/issues/new?title=Issue%20on%20page%20%2F3-python/pandas_dataframes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/3-python/pandas_dataframes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/hyosubkim/datasci-for-kin"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/hyosubkim/datasci-for-kin/issues/new?title=Issue%20on%20page%20%2F3-python/pandas_dataframes.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/3-python/pandas_dataframes.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Introduction to pandas DataFrames
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#questions">
-     Questions:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#learning-objectives">
-     Learning Objectives:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-pandas">
-     What is pandas?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#about-python-libraries">
-     About Python Libraries
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-data-with-pandas">
-     Importing data with pandas
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#heads-or-tails">
-     Heads or Tails?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-values-in-a-dataframe">
-     Accessing values in a DataFrame
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#select-a-column-using">
-       Select a column using
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         []
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numerical-indexing-using-iloc">
-       Numerical indexing using
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         .iloc[]
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#label-based-indexing-using-loc">
-     Label-based indexing using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .loc[]
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-on-its-own-to-mean-all-columns-or-all-rows">
-     Use
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       :
-      </span>
-     </code>
-     on its own to mean all columns or all rows.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slicing-works-on-dataframes">
-     Slicing works on DataFrames
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-lists-to-select-non-contiguous-sections-of-a-dataframe">
-     Use lists to select non-contiguous sections of a DataFrame
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#it-s-easy-to-do-simple-math-and-statistics-in-dataframes">
-     It’s easy to do simple math and statistics in DataFrames
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mini-exercise">
-       Mini-Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#evaluate-cells-based-on-conditions">
-     Evaluate cells based on conditions
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#select-values-or-nan-using-a-boolean-mask">
-     Select values or NaN using a Boolean mask.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#split-apply-combine">
-     Split-Apply-Combine
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#split">
-       Split
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#apply">
-       Apply
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#combine">
-       Combine
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#chaining">
-       Chaining
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-individual-values">
-     Selecting Individual Values
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extent-of-slicing">
-     Extent of Slicing
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reconstructing-data">
-     Reconstructing Data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-indices">
-     Selecting Indices
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#practice-with-selection">
-     Practice with Selection
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary-of-key-points">
-   Summary of Key Points:
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction to pandas DataFrames</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Introduction to pandas DataFrames
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#questions">
-     Questions:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#learning-objectives">
-     Learning Objectives:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-pandas">
-     What is pandas?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#about-python-libraries">
-     About Python Libraries
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-data-with-pandas">
-     Importing data with pandas
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#heads-or-tails">
-     Heads or Tails?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-values-in-a-dataframe">
-     Accessing values in a DataFrame
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#select-a-column-using">
-       Select a column using
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         []
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numerical-indexing-using-iloc">
-       Numerical indexing using
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         .iloc[]
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#label-based-indexing-using-loc">
-     Label-based indexing using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .loc[]
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-on-its-own-to-mean-all-columns-or-all-rows">
-     Use
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       :
-      </span>
-     </code>
-     on its own to mean all columns or all rows.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slicing-works-on-dataframes">
-     Slicing works on DataFrames
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-lists-to-select-non-contiguous-sections-of-a-dataframe">
-     Use lists to select non-contiguous sections of a DataFrame
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#it-s-easy-to-do-simple-math-and-statistics-in-dataframes">
-     It’s easy to do simple math and statistics in DataFrames
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mini-exercise">
-       Mini-Exercise
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#evaluate-cells-based-on-conditions">
-     Evaluate cells based on conditions
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#select-values-or-nan-using-a-boolean-mask">
-     Select values or NaN using a Boolean mask.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#split-apply-combine">
-     Split-Apply-Combine
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#split">
-       Split
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#apply">
-       Apply
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#combine">
-       Combine
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#chaining">
-       Chaining
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-individual-values">
-     Selecting Individual Values
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extent-of-slicing">
-     Extent of Slicing
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reconstructing-data">
-     Reconstructing Data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-indices">
-     Selecting Indices
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#practice-with-selection">
-     Practice with Selection
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary-of-key-points">
-   Summary of Key Points:
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to pandas DataFrames</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to pandas DataFrames</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pandas">What is pandas?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-python-libraries">About Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-data-with-pandas">Importing data with pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heads-or-tails">Heads or Tails?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-values-in-a-dataframe">Accessing values in a DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-a-column-using">Select a column using <code class="docutils literal notranslate"><span class="pre">[]</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-indexing-using-iloc">Numerical indexing using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-based-indexing-using-loc">Label-based indexing using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-on-its-own-to-mean-all-columns-or-all-rows">Use <code class="docutils literal notranslate"><span class="pre">:</span></code> on its own to mean all columns or all rows.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-works-on-dataframes">Slicing works on DataFrames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-lists-to-select-non-contiguous-sections-of-a-dataframe">Use lists to select non-contiguous sections of a DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#it-s-easy-to-do-simple-math-and-statistics-in-dataframes">It’s easy to do simple math and statistics in DataFrames</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise">Mini-Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-cells-based-on-conditions">Evaluate cells based on conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-values-or-nan-using-a-boolean-mask">Select values or NaN using a Boolean mask.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-apply-combine">Split-Apply-Combine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split">Split</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply">Apply</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combine">Combine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chaining">Chaining</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-individual-values">Selecting Individual Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extent-of-slicing">Extent of Slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstructing-data">Reconstructing Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-indices">Selecting Indices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-selection">Practice with Selection</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-points">Summary of Key Points:</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-pandas-dataframes">
-<h1>Introduction to pandas DataFrames<a class="headerlink" href="#introduction-to-pandas-dataframes" title="Permalink to this headline">#</a></h1>
+<h1>Introduction to pandas DataFrames<a class="headerlink" href="#introduction-to-pandas-dataframes" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="questions">
-<h2>Questions:<a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h2>
+<h2>Questions:<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How do I read in data from a file?</p></li>
 <li><p>How can I work with data in tabular format (tables)?</p></li>
@@ -1148,7 +544,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="learning-objectives">
-<h2>Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<h2>Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Select individual values from a Pandas dataframe</p></li>
 <li><p>Select entire rows or entire columns from a dataframe</p></li>
@@ -1161,14 +557,14 @@ title="Print to PDF"
 <img src="https://pandas.pydata.org/static/img/pandas.svg" width=200px>
 </section>
 <section id="what-is-pandas">
-<h2>What is pandas?<a class="headerlink" href="#what-is-pandas" title="Permalink to this headline">#</a></h2>
+<h2>What is pandas?<a class="headerlink" href="#what-is-pandas" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://pandas.pydata.org/docs/">pandas</a> (whose official name starts with a lower-case “p”) is a Python <em>library</em> for working with data in a tabular format, such as is found in file formats like CSV, Microsoft Excel, and Google Sheets. (Sorry - there are no cute, black-and-white bears here.) Unlike Excel or Sheets, pandas is not a point-and click graphical interface for working with these files — everything is done through Python code. But compared to other formats for working with data that we have seen in this workshop, such as lists and dictionaries, and, most recently, NumPy arrays, pandas may seem more familiar, and it definitely lends itself more naturally to large data sets. Indeed, pandas’ mission statement is, “…to be the fundamental high-level building block for doing practical, real world data analysis in Python”.</p>
 <p>The primary units of pandas data storage you will work with are <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/01_table_oriented.html#min-tut-01-tableoriented">DataFrames</a> (essentially, tables of data organized as rows and columns). DataFrames are actually collections of pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html">Series</a> objects, which can be thought of as individual rows or columns (or vectors, or 1D arrays, which you should now feel familiar with).</p>
 <p>Among the things that make pandas so attractive are the powerful interface to access individual records of the table, proper handling of missing values, and relational-database operations between DataFrames. As well, pandas functions and methods are written to work intuitively and efficiently with data organized in tables. Most operations are <em>vectorized</em>, which means that they will automatically apply to all values in a DataFrame or Series without the need to write <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to execute the same operation on a set of cells.</p>
 <p>pandas is built on top of the <a class="reference external" href="https://numpy.org">NumPy</a> library. While NumPy is a powerful and widely used Python library for working with numerical data, pandas provides greater flexibility in working with different types of data and provides an extremely powerful set of tools for data science, in general, and data wrangling (transforming raw data into more readily usable format), in particular. However, it’s worth noting that most of the methods defined for NumPy Arrays also apply to Pandas Series/DataFrames.</p>
 </section>
 <section id="about-python-libraries">
-<h2>About Python Libraries<a class="headerlink" href="#about-python-libraries" title="Permalink to this headline">#</a></h2>
+<h2>About Python Libraries<a class="headerlink" href="#about-python-libraries" title="Link to this heading">#</a></h2>
 <p>pandas is an example of a Python library. A <strong>library</strong> is a collection of files (called <em>modules</em>) that contains functions for use by other programs. Libraries provide ways of extending Python’s functionality in different ways. They may also contain data values (e.g., numerical constants), entire sample data sets, and other things. A library’s contents are supposed to be related, although there’s no actual way to enforce that.</p>
 <p>The Python <a class="reference external" href="https://docs.python.org/3/library/">standard library</a> is an extensive suite of modules that comes with Python itself. Everything we’ve done so far in this workshop has been part of the standard library. Many additional libraries are available; UBC’s Jupyter Open has a large number of extra libraries already installed.</p>
 <p>To use a library in a particular Jupyter notebook or other Python program, we must import it using the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement, like this:</p>
@@ -1194,10 +590,16 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="importing-data-with-pandas">
-<h2>Importing data with pandas<a class="headerlink" href="#importing-data-with-pandas" title="Permalink to this headline">#</a></h2>
+<h2>Importing data with pandas<a class="headerlink" href="#importing-data-with-pandas" title="Link to this heading">#</a></h2>
 <p>As noted, we can read a CSV file and use it to create a pandas DataFrame, with the function <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>. <a class="reference external" href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> is a text format used for storing tabular data, in which each line of the file corresponds to a row in the table, and columns are separated with commas (“CSV” stands for “comma-separated values”). Often the first row of a CSV file will be the <em>header</em>, containing labels for each column.</p>
 <p>The Gapminder data is in CSV format, so let’s load in one of the Gapminder datasets with the command below. Note that when we read in a DataFrame, we need to assign it to a variable name so that we can reference it later. A convention when working with pandas is to call the DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code>. This works fine if you only have one DataFrame to work with, although if you are working with multiple DataFrames it is a good idea to give them more meaningful names.</p>
 <p>The Gapminder data are stored in a subfolder called <code class="docutils literal notranslate"><span class="pre">data</span></code>, so as the argument to <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> below we give the folder name followed by a slash, then the file name:</p>
@@ -1738,7 +1140,7 @@ title="Print to PDF"
 <p>You’ll see that the rows are numbered in boldface, starting with 0 as is the norm in Python. This boldfaced, leftmost column is called the <strong>index</strong> of the DataFrame, and provides one way of accessing data by rows. Across the top, you’ll see that the column labels are also in boldface. pandas is pretty smart about automatically detecting when the first row of a CSV file contains header information (column names).</p>
 </section>
 <section id="heads-or-tails">
-<h2>Heads or Tails?<a class="headerlink" href="#heads-or-tails" title="Permalink to this headline">#</a></h2>
+<h2>Heads or Tails?<a class="headerlink" href="#heads-or-tails" title="Link to this heading">#</a></h2>
 <p>We might want to “peek” at the DataFrame without printing out the entire thing, especially if it’s big. We can see the first 5 rows of a DataFrame with the <code class="docutils literal notranslate"><span class="pre">.head()</span></code> method:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2034,86 +1436,6 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>17</th>
-      <td>Netherlands</td>
-      <td>8941.571858</td>
-      <td>11276.193440</td>
-      <td>12790.849560</td>
-      <td>15363.251360</td>
-      <td>18794.745670</td>
-      <td>21209.059200</td>
-      <td>21399.460460</td>
-      <td>23651.323610</td>
-      <td>26790.949610</td>
-      <td>30246.130630</td>
-      <td>33724.757780</td>
-      <td>36797.933320</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>Romania</td>
-      <td>3144.613186</td>
-      <td>3943.370225</td>
-      <td>4734.997586</td>
-      <td>6470.866545</td>
-      <td>8011.414402</td>
-      <td>9356.397240</td>
-      <td>9605.314053</td>
-      <td>9696.273295</td>
-      <td>6598.409903</td>
-      <td>7346.547557</td>
-      <td>7885.360081</td>
-      <td>10808.475610</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Iceland</td>
-      <td>7267.688428</td>
-      <td>9244.001412</td>
-      <td>10350.159060</td>
-      <td>13319.895680</td>
-      <td>15798.063620</td>
-      <td>19654.962470</td>
-      <td>23269.607500</td>
-      <td>26923.206280</td>
-      <td>25144.392010</td>
-      <td>28061.099660</td>
-      <td>31163.201960</td>
-      <td>36180.789190</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Greece</td>
-      <td>3530.690067</td>
-      <td>4916.299889</td>
-      <td>6017.190733</td>
-      <td>8513.097016</td>
-      <td>12724.829570</td>
-      <td>14195.524280</td>
-      <td>15268.420890</td>
-      <td>16120.528390</td>
-      <td>17541.496340</td>
-      <td>18747.698140</td>
-      <td>22514.254800</td>
-      <td>27538.411880</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>Serbia</td>
-      <td>3581.459448</td>
-      <td>4981.090891</td>
-      <td>6289.629157</td>
-      <td>7991.707066</td>
-      <td>10522.067490</td>
-      <td>12980.669560</td>
-      <td>15181.092700</td>
-      <td>15870.878510</td>
-      <td>9325.068238</td>
-      <td>7914.320304</td>
-      <td>7236.075251</td>
-      <td>9786.534714</td>
-    </tr>
-    <tr>
       <th>9</th>
       <td>France</td>
       <td>7029.809327</td>
@@ -2130,20 +1452,68 @@ title="Print to PDF"
       <td>30470.016700</td>
     </tr>
     <tr>
-      <th>19</th>
-      <td>Poland</td>
-      <td>4029.329699</td>
-      <td>4734.253019</td>
-      <td>5338.752143</td>
-      <td>6557.152776</td>
-      <td>8006.506993</td>
-      <td>9508.141454</td>
-      <td>8451.531004</td>
-      <td>9082.351172</td>
-      <td>7738.881247</td>
-      <td>10159.583680</td>
-      <td>12002.239080</td>
-      <td>15389.924680</td>
+      <th>29</th>
+      <td>United Kingdom</td>
+      <td>9979.508487</td>
+      <td>11283.177950</td>
+      <td>12477.177070</td>
+      <td>14142.850890</td>
+      <td>15895.116410</td>
+      <td>17428.748460</td>
+      <td>18232.424520</td>
+      <td>21664.787670</td>
+      <td>22705.092540</td>
+      <td>26074.531360</td>
+      <td>29478.999190</td>
+      <td>33203.261280</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Montenegro</td>
+      <td>2647.585601</td>
+      <td>3682.259903</td>
+      <td>4649.593785</td>
+      <td>5907.850937</td>
+      <td>7778.414017</td>
+      <td>9595.929905</td>
+      <td>11222.587620</td>
+      <td>11732.510170</td>
+      <td>7003.339037</td>
+      <td>6465.613349</td>
+      <td>6557.194282</td>
+      <td>9253.896111</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Switzerland</td>
+      <td>14734.232750</td>
+      <td>17909.489730</td>
+      <td>20431.092700</td>
+      <td>22966.144320</td>
+      <td>27195.113040</td>
+      <td>26982.290520</td>
+      <td>28397.715120</td>
+      <td>30281.704590</td>
+      <td>31871.530300</td>
+      <td>32135.323010</td>
+      <td>34480.957710</td>
+      <td>37506.419070</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Turkey</td>
+      <td>1969.100980</td>
+      <td>2218.754257</td>
+      <td>2322.869908</td>
+      <td>2826.356387</td>
+      <td>3450.696380</td>
+      <td>4269.122326</td>
+      <td>4241.356344</td>
+      <td>5089.043686</td>
+      <td>5678.348271</td>
+      <td>6601.429915</td>
+      <td>6508.085718</td>
+      <td>8458.276384</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2162,36 +1532,68 @@ title="Print to PDF"
       <td>33692.605080</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>Bosnia and Herzegovina</td>
-      <td>973.533195</td>
-      <td>1353.989176</td>
-      <td>1709.683679</td>
-      <td>2172.352423</td>
-      <td>2860.169750</td>
-      <td>3528.481305</td>
-      <td>4126.613157</td>
-      <td>4314.114757</td>
-      <td>2546.781445</td>
-      <td>4766.355904</td>
-      <td>6018.975239</td>
-      <td>7446.298803</td>
+      <th>11</th>
+      <td>Greece</td>
+      <td>3530.690067</td>
+      <td>4916.299889</td>
+      <td>6017.190733</td>
+      <td>8513.097016</td>
+      <td>12724.829570</td>
+      <td>14195.524280</td>
+      <td>15268.420890</td>
+      <td>16120.528390</td>
+      <td>17541.496340</td>
+      <td>18747.698140</td>
+      <td>22514.254800</td>
+      <td>27538.411880</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>Czech Republic</td>
-      <td>6876.140250</td>
-      <td>8256.343918</td>
-      <td>10136.867130</td>
-      <td>11399.444890</td>
-      <td>13108.453600</td>
-      <td>14800.160620</td>
-      <td>15377.228550</td>
-      <td>16310.443400</td>
-      <td>14297.021220</td>
-      <td>16048.514240</td>
-      <td>17596.210220</td>
-      <td>22833.308510</td>
+      <th>21</th>
+      <td>Romania</td>
+      <td>3144.613186</td>
+      <td>3943.370225</td>
+      <td>4734.997586</td>
+      <td>6470.866545</td>
+      <td>8011.414402</td>
+      <td>9356.397240</td>
+      <td>9605.314053</td>
+      <td>9696.273295</td>
+      <td>6598.409903</td>
+      <td>7346.547557</td>
+      <td>7885.360081</td>
+      <td>10808.475610</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Norway</td>
+      <td>10095.421720</td>
+      <td>11653.973040</td>
+      <td>13450.401510</td>
+      <td>16361.876470</td>
+      <td>18965.055510</td>
+      <td>23311.349390</td>
+      <td>26298.635310</td>
+      <td>31540.974800</td>
+      <td>33965.661150</td>
+      <td>41283.164330</td>
+      <td>44683.975250</td>
+      <td>49357.190170</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Ireland</td>
+      <td>5210.280328</td>
+      <td>5599.077872</td>
+      <td>6631.597314</td>
+      <td>7655.568963</td>
+      <td>9530.772896</td>
+      <td>11150.981130</td>
+      <td>12618.321410</td>
+      <td>13872.866520</td>
+      <td>17558.815550</td>
+      <td>24521.947130</td>
+      <td>34077.049390</td>
+      <td>40675.996350</td>
     </tr>
   </tbody>
 </table>
@@ -2200,10 +1602,10 @@ title="Print to PDF"
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail()</span></code> methods also optionally take a numerical argument, if you want to view a different number of rows from the default of 5.</p>
 </section>
 <section id="accessing-values-in-a-dataframe">
-<h2>Accessing values in a DataFrame<a class="headerlink" href="#accessing-values-in-a-dataframe" title="Permalink to this headline">#</a></h2>
+<h2>Accessing values in a DataFrame<a class="headerlink" href="#accessing-values-in-a-dataframe" title="Link to this heading">#</a></h2>
 <p>One thing we often want to do is access a single cell in a DataFrame, or a range of cells. Each cell is uniquely defined by a combination of its row and column locations.</p>
 <section id="select-a-column-using">
-<h3>Select a column using <code class="docutils literal notranslate"><span class="pre">[]</span></code><a class="headerlink" href="#select-a-column-using" title="Permalink to this headline">#</a></h3>
+<h3>Select a column using <code class="docutils literal notranslate"><span class="pre">[]</span></code><a class="headerlink" href="#select-a-column-using" title="Link to this heading">#</a></h3>
 <p>If we want to select an entire column of a pandas DataFrame, we just give the name of the DataFrame followed by the column name in square brackets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2434,9 +1836,9 @@ Name: gdpPercap_1992, dtype: float64
 </div>
 </section>
 <section id="numerical-indexing-using-iloc">
-<h3>Numerical indexing using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code><a class="headerlink" href="#numerical-indexing-using-iloc" title="Permalink to this headline">#</a></h3>
+<h3>Numerical indexing using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code><a class="headerlink" href="#numerical-indexing-using-iloc" title="Link to this heading">#</a></h3>
 <p>Often we don’t want to access an entire column, however, but just specific rows within a column (or range of columns). pandas provides two ways of accessing cell locations. One is using the numerical positions in the DataFrame, using the convention of [row, column] — with [0, 0] being the top left cell in the DataFrame. So for a pandas DataFrame with 3 rows and 3 columns, the indices of each cell are as shown:</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p>col 0</p></th>
@@ -2472,6 +1874,7 @@ Name: gdpPercap_1992, dtype: float64
 </tr>
 </tbody>
 </table>
+</div>
 <p>Numerical indexing of DataFrames is conceptually identical to indexing of NumPy arrays, however, with pandas it is performed with the <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> method. For example, to access the GDP value for Austria in 1952 — which is located in the second row, third column of our current DataFrame, we would use:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2489,7 +1892,7 @@ Name: gdpPercap_1992, dtype: float64
 </section>
 </section>
 <section id="label-based-indexing-using-loc">
-<h2>Label-based indexing using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code><a class="headerlink" href="#label-based-indexing-using-loc" title="Permalink to this headline">#</a></h2>
+<h2>Label-based indexing using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code><a class="headerlink" href="#label-based-indexing-using-loc" title="Link to this heading">#</a></h2>
 <p>The other way to access a location in a DataFrame is by its index and column <em>labels</em>, using the <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> method. As noted earlier, in the DataFrame we imported, the indexes are currently numbers, which were created automatically when we imported the data. The <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> method doesn’t work with numerical indexes (that’s what <code class="docutils literal notranslate"><span class="pre">iloc</span></code> is for — and you can’t mix, say, a numerical row index with a column label), but in the data set we imported, the first column of this CSV file is actually meant to be its index: while all other columns are data values (GDP, in type float), the first column identifies the country with which each row of data is associated.</p>
 <p>pandas has a method for setting an index column, <code class="docutils literal notranslate"><span class="pre">.set_index()</span></code>, where the argument (in the parentheses) would be the name of the column to use as the index. So here we want to run:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
@@ -2523,7 +1926,7 @@ Name: gdpPercap_1992, dtype: float64
 </div>
 </section>
 <section id="use-on-its-own-to-mean-all-columns-or-all-rows">
-<h2>Use <code class="docutils literal notranslate"><span class="pre">:</span></code> on its own to mean all columns or all rows.<a class="headerlink" href="#use-on-its-own-to-mean-all-columns-or-all-rows" title="Permalink to this headline">#</a></h2>
+<h2>Use <code class="docutils literal notranslate"><span class="pre">:</span></code> on its own to mean all columns or all rows.<a class="headerlink" href="#use-on-its-own-to-mean-all-columns-or-all-rows" title="Link to this heading">#</a></h2>
 <p>Using Python’s familiar slicing notation (which we’ve previously used for strings, lists, and NumPy arrays), we can use <code class="docutils literal notranslate"><span class="pre">:</span></code> with <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> or <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>, to specify a range in a DataFrame.</p>
 <p>For example, to see the GDP of Albania for every year (column) in the DataFrame, we would use:</p>
 <div class="cell docutils container">
@@ -2622,7 +2025,7 @@ Name: Albania, dtype: float64
 <p>However, since the syntax for <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> is [rows, columns], you cannot omit a row index; you need to use <code class="docutils literal notranslate"><span class="pre">:</span></code> if you want all rows.</p>
 </section>
 <section id="slicing-works-on-dataframes">
-<h2>Slicing works on DataFrames<a class="headerlink" href="#slicing-works-on-dataframes" title="Permalink to this headline">#</a></h2>
+<h2>Slicing works on DataFrames<a class="headerlink" href="#slicing-works-on-dataframes" title="Link to this heading">#</a></h2>
 <p>Slicing using numerical indices works similarly for DataFrames as we previously saw for strings, lists, and ndarrays. For example, the following code will print the third through fifth rows of the DataFrame, and the fifth through eighth columns (remember, Python indexing starts at 0, and slicing does not include the “end” index):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3005,7 +2408,7 @@ Name: Albania, dtype: float64
 <p>The “inclusive” label-based indexing with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> is fairly intuitive, but it’s important to remember that it works differently from numerical indexing.</p>
 </section>
 <section id="use-lists-to-select-non-contiguous-sections-of-a-dataframe">
-<h2>Use lists to select non-contiguous sections of a DataFrame<a class="headerlink" href="#use-lists-to-select-non-contiguous-sections-of-a-dataframe" title="Permalink to this headline">#</a></h2>
+<h2>Use lists to select non-contiguous sections of a DataFrame<a class="headerlink" href="#use-lists-to-select-non-contiguous-sections-of-a-dataframe" title="Link to this heading">#</a></h2>
 <p>While slicing can be very useful, sometimes we might want to extract values that aren’t next to each other in a DataFrame. For example, what if we only want values from two specific years (1992 and 2002), for Scandinavian countries (Denmark, Finland, Norway, and Sweden)? Neither the years nor countries are in adjacent columns/rows in the DataFrame. With <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>, we can use lists, rather than ranges separated by <code class="docutils literal notranslate"><span class="pre">:</span></code>, as selectors:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3205,7 +2608,7 @@ Name: Albania, dtype: float64
 </div>
 </section>
 <section id="it-s-easy-to-do-simple-math-and-statistics-in-dataframes">
-<h2>It’s easy to do simple math and statistics in DataFrames<a class="headerlink" href="#it-s-easy-to-do-simple-math-and-statistics-in-dataframes" title="Permalink to this headline">#</a></h2>
+<h2>It’s easy to do simple math and statistics in DataFrames<a class="headerlink" href="#it-s-easy-to-do-simple-math-and-statistics-in-dataframes" title="Link to this heading">#</a></h2>
 <p>We prevoiusly learned about methods to get simple statistical values out of a Python list, like <code class="docutils literal notranslate"><span class="pre">.max()</span></code>, and <code class="docutils literal notranslate"><span class="pre">.min()</span></code>. We took it a step further when learning about NumPy, as we were able to easily retrieve summary statistics with functions such as <code class="docutils literal notranslate"><span class="pre">np.mean()</span></code> and <code class="docutils literal notranslate"><span class="pre">np.std()</span></code>. pandas includes these and many more methods as well. For example, we can view the mean GDP for Italy across all years (columns) with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3398,12 +2801,12 @@ Name: Albania, dtype: float64
 </div></div></div>
 </div>
 <section id="mini-exercise">
-<h3>Mini-Exercise<a class="headerlink" href="#mini-exercise" title="Permalink to this headline">#</a></h3>
+<h3>Mini-Exercise<a class="headerlink" href="#mini-exercise" title="Link to this heading">#</a></h3>
 <p>In the cell below, use the <code class="docutils literal notranslate"><span class="pre">scand_countries</span></code> and <code class="docutils literal notranslate"><span class="pre">years</span></code> variables to view descriptive statistics for all Scandinavian countries in each year.</p>
 </section>
 </section>
 <section id="evaluate-cells-based-on-conditions">
-<h2>Evaluate cells based on conditions<a class="headerlink" href="#evaluate-cells-based-on-conditions" title="Permalink to this headline">#</a></h2>
+<h2>Evaluate cells based on conditions<a class="headerlink" href="#evaluate-cells-based-on-conditions" title="Link to this heading">#</a></h2>
 <p>pandas allows an easy way to identify values in a DataFrame that meet a certain condition, using operators like <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">==</span></code>. For example, let’s see which countries in a list had a GDP over 10,000 in 1962 and 1992. The result is reported in Booleans (True/False) for each cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3472,7 +2875,7 @@ Name: Albania, dtype: float64
 </div>
 </section>
 <section id="select-values-or-nan-using-a-boolean-mask">
-<h2>Select values or NaN using a Boolean mask.<a class="headerlink" href="#select-values-or-nan-using-a-boolean-mask" title="Permalink to this headline">#</a></h2>
+<h2>Select values or NaN using a Boolean mask.<a class="headerlink" href="#select-values-or-nan-using-a-boolean-mask" title="Link to this heading">#</a></h2>
 <p>A DataFrame full of Booleans is sometimes called a <em>mask</em> because of how it can be used. A mask can be used to remove values that are not True, and replace them with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> — a special Python value representing “not a number”. This can be useful because pandas ignores NaN values when doing computations.</p>
 <p>We create a mask by assigning the output of a conditional statement to a variable name:</p>
 <div class="cell docutils container">
@@ -3628,7 +3031,7 @@ dtype: float64
 </div>
 </section>
 <section id="split-apply-combine">
-<h2>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">#</a></h2>
+<h2>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Link to this heading">#</a></h2>
 <p>A common task in data science is to split data into meaningful subgroups, apply an operation to each subgroup (e.g., compute the mean), and then combine the results into a single output, such as a table or a new DataFrame. This paradigm was famously <a class="reference external" href="http://dx.doi.org/10.18637/jss.v040.i01">described by Hadley Wickham in a 2011 paper</a>.</p>
 <p>pandas provides methods and grouping operations that are very efficient (<em>vectorized</em>) for split-apply-combine operations.</p>
 <p>As an example, let’s say that we wanted to compare the average GDP for different regions of Europe, divided as northern, southern, eastern, and western. To do this, we first have to create lists defining the countries belonging to each of these regions:</p>
@@ -3853,7 +3256,7 @@ dtype: float64
 </div></div></div>
 </div>
 <section id="split">
-<h3>Split<a class="headerlink" href="#split" title="Permalink to this headline">#</a></h3>
+<h3>Split<a class="headerlink" href="#split" title="Link to this heading">#</a></h3>
 <p>Now we can use this “region” column to split the data into groups, using a pandas method called <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3877,7 +3280,7 @@ dtype: float64
 </div>
 </section>
 <section id="apply">
-<h3>Apply<a class="headerlink" href="#apply" title="Permalink to this headline">#</a></h3>
+<h3>Apply<a class="headerlink" href="#apply" title="Link to this heading">#</a></h3>
 <p>Now that we have split the data, we can apply a function separately to each group. Here we’ll compute the mean GDP for each region, for each year:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3888,7 +3291,7 @@ dtype: float64
 </div>
 </section>
 <section id="combine">
-<h3>Combine<a class="headerlink" href="#combine" title="Permalink to this headline">#</a></h3>
+<h3>Combine<a class="headerlink" href="#combine" title="Link to this heading">#</a></h3>
 <p>The combine step actually occurred with the <em>apply</em> step above — the result is automatically combined into a table of mean values organized by region. But since our <em>apply</em> step (<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>) saved the result to a variable, we can view the resulting table as the output of the <em>combine</em> step:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4011,7 +3414,7 @@ dtype: float64
 </div>
 </section>
 <section id="chaining">
-<h3>Chaining<a class="headerlink" href="#chaining" title="Permalink to this headline">#</a></h3>
+<h3>Chaining<a class="headerlink" href="#chaining" title="Link to this heading">#</a></h3>
 <p>In Python, <strong>chaining</strong> refers to combining a number of operations in one command, using a sequence of methods. We can perform the above split-apply-combine procedure in a single step as follows. Note that because we don’t assign the output to a variable name, it is displayed as output but not saved.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4137,9 +3540,9 @@ dtype: float64
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
 <section id="selecting-individual-values">
-<h2>Selecting Individual Values<a class="headerlink" href="#selecting-individual-values" title="Permalink to this headline">#</a></h2>
+<h2>Selecting Individual Values<a class="headerlink" href="#selecting-individual-values" title="Link to this heading">#</a></h2>
 <p>Write an expression to find the Per Capita GDP of Serbia in 2007.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Click the button to reveal the solution</p>
@@ -4147,8 +3550,8 @@ dtype: float64
 </div>
 </section>
 <section id="extent-of-slicing">
-<h2>Extent of Slicing<a class="headerlink" href="#extent-of-slicing" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
+<h2>Extent of Slicing<a class="headerlink" href="#extent-of-slicing" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
 <li><p>Do the two statements below produce the same output? (Hint: you might want to use the <code class="docutils literal notranslate"><span class="pre">.head()</span></code> method to remind yourself of the structure of the DataFrame)</p></li>
 <li><p>Based on this, what rule governs what is included (or not) in numerical slices and named slices in Pandas?</p></li>
 </ol>
@@ -4178,7 +3581,7 @@ dtype: float64
 </div>
 </section>
 <section id="reconstructing-data">
-<h2>Reconstructing Data<a class="headerlink" href="#reconstructing-data" title="Permalink to this headline">#</a></h2>
+<h2>Reconstructing Data<a class="headerlink" href="#reconstructing-data" title="Link to this heading">#</a></h2>
 <p>Explain what each line in the following short program does:
 what is in <code class="docutils literal notranslate"><span class="pre">df1</span></code>, <code class="docutils literal notranslate"><span class="pre">df2</span></code>, etc.?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/gapminder_all.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
@@ -4216,7 +3619,7 @@ row labels in the dataframe.</p>
 </div>
 </section>
 <section id="selecting-indices">
-<h2>Selecting Indices<a class="headerlink" href="#selecting-indices" title="Permalink to this headline">#</a></h2>
+<h2>Selecting Indices<a class="headerlink" href="#selecting-indices" title="Link to this heading">#</a></h2>
 <p>Explain in simple terms what <code class="docutils literal notranslate"><span class="pre">idxmin</span></code> and <code class="docutils literal notranslate"><span class="pre">idxmax</span></code> do. When would you use these methods?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/gapminder_gdp_europe.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
@@ -4233,7 +3636,7 @@ row labels in the dataframe.</p>
 </div>
 </section>
 <section id="practice-with-selection">
-<h2>Practice with Selection<a class="headerlink" href="#practice-with-selection" title="Permalink to this headline">#</a></h2>
+<h2>Practice with Selection<a class="headerlink" href="#practice-with-selection" title="Link to this heading">#</a></h2>
 <p>From the previous exercise, the Gapminder GDP data for Europe should be loaded in as <code class="docutils literal notranslate"><span class="pre">data</span></code>. Using this DataFrame, write an expression to select each of the following:</p>
 <ul class="simple">
 <li><p>GDP per capita for all countries in 1982</p></li>
@@ -4279,7 +3682,7 @@ row labels in the dataframe.</p>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="summary-of-key-points">
-<h1>Summary of Key Points:<a class="headerlink" href="#summary-of-key-points" title="Permalink to this headline">#</a></h1>
+<h1>Summary of Key Points:<a class="headerlink" href="#summary-of-key-points" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>pandas DataFrames are a powerful way of storing and working with tabular (row/column) data</p></li>
 <li><p>pandas columns and rows can have names</p></li>
@@ -4308,7 +3711,7 @@ row labels in the dataframe.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./3-python"
         },
         predefinedOutput: true
@@ -4316,50 +3719,143 @@ row labels in the dataframe.</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="working_w_data.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Working with Data</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="working_w_data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Working with Data</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="looping_data_files.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="looping_data_files.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Looping Over Data Files</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to pandas DataFrames</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pandas">What is pandas?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-python-libraries">About Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-data-with-pandas">Importing data with pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heads-or-tails">Heads or Tails?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-values-in-a-dataframe">Accessing values in a DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-a-column-using">Select a column using <code class="docutils literal notranslate"><span class="pre">[]</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-indexing-using-iloc">Numerical indexing using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-based-indexing-using-loc">Label-based indexing using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-on-its-own-to-mean-all-columns-or-all-rows">Use <code class="docutils literal notranslate"><span class="pre">:</span></code> on its own to mean all columns or all rows.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-works-on-dataframes">Slicing works on DataFrames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-lists-to-select-non-contiguous-sections-of-a-dataframe">Use lists to select non-contiguous sections of a DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#it-s-easy-to-do-simple-math-and-statistics-in-dataframes">It’s easy to do simple math and statistics in DataFrames</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise">Mini-Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-cells-based-on-conditions">Evaluate cells based on conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-values-or-nan-using-a-boolean-mask">Select values or NaN using a Boolean mask.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-apply-combine">Split-Apply-Combine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split">Split</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply">Apply</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combine">Combine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chaining">Chaining</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-individual-values">Selecting Individual Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extent-of-slicing">Extent of Slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstructing-data">Reconstructing Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-indices">Selecting Indices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-selection">Practice with Selection</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-key-points">Summary of Key Points:</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Hyosub Kim<br/>
-  
-      &copy; Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Hyosub Kim
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

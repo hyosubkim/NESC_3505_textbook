@@ -1,113 +1,179 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Basic Statistics in Python: t tests with SciPy &#8212; Data Science for Kinesiology</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
+    <script>DOCUMENTATION_OPTIONS.pagename = '5-eda/ttests';</script>
+    <link rel="icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Statistical inference" href="../6-Inference/inference.html" />
     <link rel="prev" title="Data Cleaning - Dealing with Outliers" href="data_cleaning.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/NESC3505_icon.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Data Science for Kinesiology</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/NESC3505_icon.png" class="logo__image only-light" alt="Data Science for Kinesiology - Home"/>
+    <script>document.write(`<img src="../_static/NESC3505_icon.png" class="logo__image only-dark" alt="Data Science for Kinesiology - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -116,926 +182,370 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  1. About This Course
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. About This Course</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/about-this-course.html">
-   About this course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/learning_objectives.html">
-   Learning Objectives for this Course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/academic-integrity.html">
-   Academic Integrity and Collaboration
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/about-this-course.html">About this course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/learning_objectives.html">Learning Objectives for this Course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/academic-integrity.html">Academic Integrity and Collaboration</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  2. Introduction to Data Science
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Introduction to Data Science</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../2-nds/introduction.html">
-   Getting Started with the Course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../2-nds/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/what-is-datascience.html">
-   What is Data Science?
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/data.html">
-     Data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/tools_for_datasci.html">
-   Tools for (Kinesiological) Data Science
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/spreadsheets.html">
-     Spreadsheets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/spreadsheets_limits.html">
-     Limitations of Spreadsheets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/reproducibility.html">
-     Reproducibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/sci_prog_lang.html">
-     Scientific Programming Languages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/which_lang.html">
-     Which language to use?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/libs.html">
-     Libraries and packages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/why_python.html">
-     Why Python for this Course?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/coding.html">
-   Coding Tools
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/python.html">
-     Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/datacamp.html">
-     DataCamp
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/jupyter.html">
-     Jupyter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/markdown.html">
-     Markdown
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../2-nds/introduction.html">Getting Started with the Course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2-nds/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/data.html">Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  3. Introduction to Python
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets.html">Spreadsheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets_limits.html">Limitations of Spreadsheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/reproducibility.html">Reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/sci_prog_lang.html">Scientific Programming Languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/which_lang.html">Which language to use?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/libs.html">Libraries and packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/why_python.html">Why Python for this Course?</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/datacamp.html">DataCamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/jupyter.html">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/markdown.html">Markdown</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Introduction to Python</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/introduction.html">
-   Introducing Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/jupyter_jhub.html">
-   Introduction to Jupyter Notebooks in JupyterHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/getting_help.html">
-   Getting Help with Python
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3-python/data_types.html">
-   Data types
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/variables_assignment.html">
-     Variables and Assignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/types_conversion.html">
-     Data Types and Conversion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/builtin.html">
-     Python Built-Ins
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/lists.html">
-     Lists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/dictionaries.html">
-     Dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3-python/flow_control.html">
-   Flow Control
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/for_loops.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     Loops
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/conditionals.html">
-     Conditionals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/writing-a-function.html">
-   Writing Functions
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3-python/working_w_data.html">
-   Working with Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/pandas_dataframes.html">
-     Introduction to pandas DataFrames
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/looping_data_files.html">
-     Looping Over Data Files
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/introduction.html">Introducing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/jupyter_jhub.html">Introduction to Jupyter Notebooks in JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/getting_help.html">Getting Help with Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/data_types.html">Data types</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/variables_assignment.html">Variables and Assignment</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3-python/types_conversion.html">Data Types and Conversion</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3-python/builtin.html">Python Built-Ins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/lists.html">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/dictionaries.html">Dictionaries</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  4. Data Visualization
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/flow_control.html">Flow Control</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/conditionals.html">Conditionals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/writing-a-function.html">Writing Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/working_w_data.html">Working with Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/pandas_dataframes.html">Introduction to pandas DataFrames</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../3-python/looping_data_files.html">Looping Over Data Files</a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Data Visualization</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/introduction.html">
-   Introduction to Data Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/plotting.html">
-   Introduction to Plotting with Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/proc_vs_oo.html">
-   Procedural versus Object-Oriented Plotting in Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/subplots.html">
-   Subplots
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/plotting_types.html">
-   Thinking About Data for Plotting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/seaborn.html">
-   Introduction to Plotting with Seaborn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/human_factors.html">
-   Accessibility and Human Factors in Plotting
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/introduction.html">Introduction to Data Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/plotting.html">Introduction to Plotting with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/proc_vs_oo.html">Procedural versus Object-Oriented Plotting in Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/subplots.html">Subplots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/plotting_types.html">Thinking About Data for Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/seaborn.html">Introduction to Plotting with Seaborn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/human_factors.html">Accessibility and Human Factors in Plotting</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  5. Exploratory Data Analysis
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Exploratory Data Analysis</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="introduction.html">
-   Introduction to EDA
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="repeated_measures.html">
-   Working with Repeated Measures Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data_cleaning.html">
-   Data Cleaning - Dealing with Outliers
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Basic Statistics in Python:
-   <em>
-    t
-   </em>
-   tests with SciPy
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to EDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repeated_measures.html">Working with Repeated Measures Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_cleaning.html">Data Cleaning - Dealing with Outliers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic Statistics in Python: <em>t</em> tests with SciPy</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  6. Statistical Inference and the Bootstrap
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Statistical Inference and the Bootstrap</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../6-Inference/inference.html">
-   Statistical inference
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../6-Inference/inference.html">Statistical inference</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  7. Single Unit Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Single Unit Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../7-single_unit/introduction.html">
-   Introduction to Single Unit Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../7-single_unit/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../7-single_unit/single_unit_intro.html">
-   Single Unit Data and Spike Trains
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/intro_spike_trains.html">
-     Introduction to Spike Train Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/ten_intensities.html">
-     Effects of Light Intensity on Spike Rate
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/heat_maps.html">
-     Heat Maps
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../7-single_unit/intro_multielec_data.html">
-   Introducing Multielectrode Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/pandas_multielec.html">
-     Working with Multielectrode Data in pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/corr_spike_trains.html">
-     Correlating spike trains
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../7-single_unit/introduction.html">Introduction to Single Unit Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7-single_unit/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/intro_spike_trains.html">Introduction to Spike Train Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/ten_intensities.html">Effects of Light Intensity on Spike Rate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/heat_maps.html">Heat Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  8. Signal Processing
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/pandas_multielec.html">Working with Multielectrode Data in pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/corr_spike_trains.html">Correlating spike trains</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Signal Processing</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../8-signal_processing/signals-sampling-filtering.html">
-   Signals, Sampling &amp; Filtering
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../8-signal_processing/signals-sampling-filtering.html">Signals, Sampling &amp; Filtering</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/hyosubkim/datasci-for-kin/master?urlpath=tree/5-eda/ttests.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/hyosubkim/datasci-for-kin" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/hyosubkim/datasci-for-kin/issues/new?title=Issue%20on%20page%20%2F5-eda/ttests.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/5-eda/ttests.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/hyosubkim/datasci-for-kin"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/hyosubkim/datasci-for-kin/issues/new?title=Issue%20on%20page%20%2F5-eda/ttests.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/5-eda/ttests.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-t-test">
-   The
-   <em>
-    t
-   </em>
-   test
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#paired-t-test">
-   Paired
-   <em>
-    t
-   </em>
-   -test
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#select-the-data">
-     Select the data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#run-the-t-test">
-     Run the
-     <em>
-      t
-     </em>
-     test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tailed-vs-2-tailed-p-values">
-     1-tailed vs. 2-tailed
-     <em>
-      p
-     </em>
-     values
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#be-careful-about-order-of-data-values">
-   Be careful about order of data values
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ensure-pandas-indexing-is-used-in-t-tests">
-     Ensure pandas indexing is used in
-     <em>
-      t
-     </em>
-     tests
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#what-could-go-wrong">
-       What could go wrong?
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solution-1-use-dataframe-columns-rather-than-extracting-series">
-   Solution 1: Use DataFrame columns rather than extracting Series
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solution-2-use-sort-index-to-ensure-paired-data-are-aligned">
-     Solution 2: Use
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .sort_index()
-      </span>
-     </code>
-     to ensure paired data are aligned
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testing-differences-one-sample-t-tests">
-   Testing differences: one-sample
-   <em>
-    t
-   </em>
-   tests
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#paired-vs-1-sample-t-tests">
-     Paired vs. 1-sample
-     <em>
-      t
-     </em>
-     tests?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Basic Statistics in Python: t tests with SciPy</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-t-test">
-   The
-   <em>
-    t
-   </em>
-   test
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#paired-t-test">
-   Paired
-   <em>
-    t
-   </em>
-   -test
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#select-the-data">
-     Select the data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#run-the-t-test">
-     Run the
-     <em>
-      t
-     </em>
-     test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tailed-vs-2-tailed-p-values">
-     1-tailed vs. 2-tailed
-     <em>
-      p
-     </em>
-     values
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#be-careful-about-order-of-data-values">
-   Be careful about order of data values
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ensure-pandas-indexing-is-used-in-t-tests">
-     Ensure pandas indexing is used in
-     <em>
-      t
-     </em>
-     tests
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#what-could-go-wrong">
-       What could go wrong?
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#solution-1-use-dataframe-columns-rather-than-extracting-series">
-   Solution 1: Use DataFrame columns rather than extracting Series
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solution-2-use-sort-index-to-ensure-paired-data-are-aligned">
-     Solution 2: Use
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .sort_index()
-      </span>
-     </code>
-     to ensure paired data are aligned
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testing-differences-one-sample-t-tests">
-   Testing differences: one-sample
-   <em>
-    t
-   </em>
-   tests
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#paired-vs-1-sample-t-tests">
-     Paired vs. 1-sample
-     <em>
-      t
-     </em>
-     tests?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Basic Statistics in Python: t tests with SciPy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-t-test">The <em>t</em> test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-t-test">Paired <em>t</em>-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-the-data">Select the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-t-test">Run the <em>t</em> test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tailed-vs-2-tailed-p-values">1-tailed vs. 2-tailed <em>p</em> values</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-about-order-of-data-values">Be careful about order of data values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensure-pandas-indexing-is-used-in-t-tests">Ensure pandas indexing is used in <em>t</em> tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-could-go-wrong">What could go wrong?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-1-use-dataframe-columns-rather-than-extracting-series">Solution 1: Use DataFrame columns rather than extracting Series</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-2-use-sort-index-to-ensure-paired-data-are-aligned">Solution 2: Use <code class="docutils literal notranslate"><span class="pre">.sort_index()</span></code> to ensure paired data are aligned</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-differences-one-sample-t-tests">Testing differences: one-sample <em>t</em> tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-vs-1-sample-t-tests">Paired vs. 1-sample <em>t</em> tests?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="basic-statistics-in-python-t-tests-with-scipy">
-<h1>Basic Statistics in Python: <em>t</em> tests with SciPy<a class="headerlink" href="#basic-statistics-in-python-t-tests-with-scipy" title="Permalink to this headline">#</a></h1>
+<h1>Basic Statistics in Python: <em>t</em> tests with SciPy<a class="headerlink" href="#basic-statistics-in-python-t-tests-with-scipy" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="learning-objectives">
-<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Implement paired, unpaired, and 1-sample <em>t</em> tests using the SciPy package</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>An introductory course in statistics is a prerequisite for this class, so we assume you remember (some of) the basics including <em>t</em>-tests, ANOVAs, and regression (or at least correlation).</p>
 <p>Here we will demonstrate how to perform <em>t</em> tests in Python.</p>
 </section>
 <section id="the-t-test">
-<h2>The <em>t</em> test<a class="headerlink" href="#the-t-test" title="Permalink to this headline">#</a></h2>
-<p>A <em>t</em> test is used to compare the means of two sets of data. For example, in the flanker experiment we used in the <span class="xref myst">previous section</span>, we could compare the mean RTs for the congruent and incongruent conditions. <em>t</em> tests consider the size of the difference between the means of the two data sets, relative to the variance in each one. The less the distributions of values in the two data sets overlap, the larger the <em>t</em> value will tend to be. We can then estimate the probability that the observed difference occurred simply by chance, rather than due to a true difference — this is the <em>p</em> value. Typically, researchers use a <em>p</em> &lt; .05 threshold to determine statistical significance.</p>
+<h2>The <em>t</em> test<a class="headerlink" href="#the-t-test" title="Link to this heading">#</a></h2>
+<p>A <em>t</em> test is used to compare the means of two sets of data. For example, in the flanker experiment we used in the <a class="reference internal" href="#./repeated_meaasures"><span class="xref myst">previous section</span></a>, we could compare the mean RTs for the congruent and incongruent conditions. <em>t</em> tests consider the size of the difference between the means of the two data sets, relative to the variance in each one. The less the distributions of values in the two data sets overlap, the larger the <em>t</em> value will tend to be. We can then estimate the probability that the observed difference occurred simply by chance, rather than due to a true difference — this is the <em>p</em> value. Typically, researchers use a <em>p</em> &lt; .05 threshold to determine statistical significance.</p>
 <p><em>t</em> tests are implemented in the <a class="reference external" href="https://docs.scipy.org">SciPy</a> library, which “provides many user-friendly and efficient numerical routines, such as routines for numerical integration, interpolation, optimization, linear algebra, and statistics.” Each of those type of routines is in a separate sub-module of SciPy; the one we’ll want is <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>. We can import this specific module with the command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
 </pre></div>
 </div>
 </div>
@@ -1062,12 +572,12 @@ title="Print to PDF"
 </section>
 <hr class="docutils" />
 <section id="paired-t-test">
-<h2>Paired <em>t</em>-test<a class="headerlink" href="#paired-t-test" title="Permalink to this headline">#</a></h2>
+<h2>Paired <em>t</em>-test<a class="headerlink" href="#paired-t-test" title="Link to this heading">#</a></h2>
 <p>Let’s start by comparing the mean RTs for the congruent and incongruent flanker conditions.</p>
 <p>Recall that we are working with repeated-measures data – for each participant, we have 160 trials across 4 conditions. <em>t</em> tests are not meant for <em>within-condition</em> repeated measures data — we need only one measurement per participant in each condition. This is for essentially the same reason discussed at the end of the previous section on repeated measures data: if we treat the within-participant variability the same as the between-participant variability, then we will tend to grossly under-estimate the true (between-participant) variance. When running a <em>t</em> test, this would result in erroneously large <em>t</em> values that could often falsely suggest a statistically significant result. So, we need to use the aggregated data, <code class="docutils literal notranslate"><span class="pre">df_avg</span></code>.</p>
 <p>The other important characteristic of our data are that, even though aggregation has reduced the data to one measurement per participant, we still have repeated measures, across the two conditions. The <em>default</em> assumption of a <em>t</em> test is that each of the two data sets being compared come from different samples of the population (often called a <em>between-subjects design</em>). This means that <em>t</em> tests assume there is no relationship between any particular measurement in each of the two data sets being compared (such as coming from the same participants!). When we <em>do</em> have measurements from the same people in both data sets (a <em>within-subjects design</em>), we need to account for this, or the <em>t</em> test will again suggest an inflated (incorrect) value. We account for this by using what’s referred to as a <strong>paired <em>t</em> test</strong>. In SciPy, this is the function <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_rel.html"><code class="docutils literal notranslate"><span class="pre">ttest_rel()</span></code></a>.  (For a between-subjects — or <em>independent groups</em> design, which we will not cover here, you would use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html"><code class="docutils literal notranslate"><span class="pre">ttest_ind()</span></code></a>).</p>
 <section id="select-the-data">
-<h3>Select the data<a class="headerlink" href="#select-the-data" title="Permalink to this headline">#</a></h3>
+<h3>Select the data<a class="headerlink" href="#select-the-data" title="Link to this heading">#</a></h3>
 <p>Running <code class="docutils literal notranslate"><span class="pre">ttest_rel()</span></code> is as simple as giving it the two sets of data you want to compare, as arguments. We can pull these directly from our <code class="docutils literal notranslate"><span class="pre">df_avg</span></code> pandas DataFrame. We’ll do this in a few lines of code below, first assigning each data set to a new variable, and then running the <em>t</em> test.</p>
 <p>Let’s make sure you understand how to appropriately parse the data. We’ve seen these steps before, but maybe not in exactly this form — and it is quite complex, but logical.</p>
 <p>Let’s start first by selecting only the rows of the DataFrame associated with congruent trials, which returns a Boolean mask:</p>
@@ -1391,7 +901,7 @@ Name: rt, dtype: float64
 <p>Likewise, <code class="docutils literal notranslate"><span class="pre">incongr</span></code> is a Series of the same length (the number of participants).</p>
 </section>
 <section id="run-the-t-test">
-<h3>Run the <em>t</em> test<a class="headerlink" href="#run-the-t-test" title="Permalink to this headline">#</a></h3>
+<h3>Run the <em>t</em> test<a class="headerlink" href="#run-the-t-test" title="Link to this heading">#</a></h3>
 <p>Now we just pass <code class="docutils literal notranslate"><span class="pre">congr</span></code> and <code class="docutils literal notranslate"><span class="pre">incongr</span></code> as the first (and only) two arguments to <code class="docutils literal notranslate"><span class="pre">ttest_rel()</span></code>, and print the results out with some explanatory text. Note that we have to write <code class="docutils literal notranslate"><span class="pre">stats.ttest_rel()</span></code>, because we imported the library as <code class="docutils literal notranslate"><span class="pre">stats</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1409,7 +919,7 @@ Name: rt, dtype: float64
 <p>We can make the output nicer by rounding to a reasonable level of precision:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Congruent vs. Incongruent t = </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="si">}</span><span class="s1">, p = </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Congruent vs. Incongruent t = </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="si">}</span><span class="s1">, p = </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1422,7 +932,7 @@ Name: rt, dtype: float64
 <p>Now those are results any researcher would be happy to see! The <em>p</em> value is not actually zero by the way, but note in the original output the <em>p</em> value was reported in scientific notation, ending in <code class="docutils literal notranslate"><span class="pre">e-10</span></code>. This means that the <em>p</em> value is actually 0.00000000013739. We would typically report this as <em>p</em> &lt; .0001, since we rounded to 4 decimal places (which is fairly typical for reporting <em>p</em> values).</p>
 </section>
 <section id="tailed-vs-2-tailed-p-values">
-<h3>1-tailed vs. 2-tailed <em>p</em> values<a class="headerlink" href="#tailed-vs-2-tailed-p-values" title="Permalink to this headline">#</a></h3>
+<h3>1-tailed vs. 2-tailed <em>p</em> values<a class="headerlink" href="#tailed-vs-2-tailed-p-values" title="Link to this heading">#</a></h3>
 <p>By default, SciPy’s <code class="docutils literal notranslate"><span class="pre">ttest_</span></code> functions return <strong>2-tailed <em>p</em> values</strong>. This means that the <em>p</em> value considers both possible directions of difference between the two conditions. In the present example, that means <em>either</em> RTs for congruent are faster than incongruent, <em>or</em> they are slower for congruent than incongruent. In contrast, a <strong>1-tailed <em>p</em> value</strong> should be used, in theory, if we have a specific prediction of a “direction” of the difference. Using a 1-tailed <em>p</em> value will tend to be less conservative, i.e., more likely to find a significant effect. This is because, for a given <em>p</em> threshold (e.g., <span class="math notranslate nohighlight">\(\alpha = .05\)</span>), a 2-tailed test effectively splits the <em>p</em> in half, and reflects a probability of 2.5% that the result occurred by chance in one direction (e.g., congruent slower) and a 2.5% probability of getting the reverse result (e.g., congruent faster) by chance. In contrast, a 1-tailed test allocates all of the 5% chance probability to the likelihood of a difference in one direction (e.g., congruent faster).</p>
 <p>Practically speaking, 2-tailed tests should be used by default, but if you have a specific a priori hypothesis regarding the direction of the difference, you can use a 1-tailed test. For example, for the flanker experiment we’re working with here, previous research would lead us to the congruent-faster hypothesis.</p>
 <p>In the present example, it really doesn’t matter since the two-tailed <em>p</em> value is miniscule. However, if you want to convert to a one-tailed <em>p</em> value, you just need to divide <em>p</em> in half:</p>
@@ -1442,7 +952,7 @@ Name: rt, dtype: float64
 </section>
 <hr class="docutils" />
 <section id="be-careful-about-order-of-data-values">
-<h2>Be careful about order of data values<a class="headerlink" href="#be-careful-about-order-of-data-values" title="Permalink to this headline">#</a></h2>
+<h2>Be careful about order of data values<a class="headerlink" href="#be-careful-about-order-of-data-values" title="Link to this heading">#</a></h2>
 <p>The above paired <em>t</em> test worked properly because in our pandas DataFrame, participants are listed in a consistent order. So when we create separate Series for congruent and incongruent, the same rows of the two Series belong to the same participant. However, this isn’t always guaranteed, and so it’s good practice to do things in a way that ensures proper pairing of participants between data sets.</p>
 <p>pandas indexing allows us to do this. Recall that indexes are row labels. By default, when we read a CSV file to a DataFrame, the rows are indexed numerically starting from zero. Indeed, if you look back above at the contents of <code class="docutils literal notranslate"><span class="pre">congr</span></code> and <code class="docutils literal notranslate"><span class="pre">incongr</span></code>, you’ll see the indexes in the left column are discontinuous and different between the two, because each data point came from a separate row. To ensure alignment of each participant’s data across the two series, we can first use the participant ID as the index of <code class="docutils literal notranslate"><span class="pre">df_avg</span></code>, and then create separate Series for each condition:</p>
 <div class="cell docutils container">
@@ -1536,9 +1046,9 @@ Name: rt, dtype: float64
 </div>
 </div>
 <section id="ensure-pandas-indexing-is-used-in-t-tests">
-<h3>Ensure pandas indexing is used in <em>t</em> tests<a class="headerlink" href="#ensure-pandas-indexing-is-used-in-t-tests" title="Permalink to this headline">#</a></h3>
+<h3>Ensure pandas indexing is used in <em>t</em> tests<a class="headerlink" href="#ensure-pandas-indexing-is-used-in-t-tests" title="Link to this heading">#</a></h3>
 <section id="what-could-go-wrong">
-<h4>What could go wrong?<a class="headerlink" href="#what-could-go-wrong" title="Permalink to this headline">#</a></h4>
+<h4>What could go wrong?<a class="headerlink" href="#what-could-go-wrong" title="Link to this heading">#</a></h4>
 <p>It turns out that SciPy’s <code class="docutils literal notranslate"><span class="pre">ttest</span></code> functions ignore pandas indexes, so indexing on its own won’t ensure that the <em>t</em> test compares data points from the same individuals. We can see that by randomizing the order of the rows of the <code class="docutils literal notranslate"><span class="pre">incongr2</span></code> series, while preserving the relationship between indexes (participant IDs) and RTs (you can compare with above data to confirm that the same RT values are associated with the same IDs as in the original <code class="docutils literal notranslate"><span class="pre">incongr</span></code> Series):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1553,33 +1063,33 @@ Name: rt, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>participant
-s14    0.453524
-s21    0.507033
-s5     0.530722
-s11    0.473012
-s1     0.471838
-s16    0.492921
-s8     0.494878
-s13    0.478367
-s9     0.437926
-s12    0.506722
-s4     0.428867
-s20    0.507257
-s2     0.518216
 s17    0.504452
-s10    0.499031
-s26    0.565531
-s27    0.501069
-s3     0.591022
-s25    0.513179
-s15    0.591644
-s23    0.554172
-s6     0.490298
-s22    0.474612
-s7     0.650769
-s24    0.595977
-s19    0.591181
+s21    0.507033
 s18    0.527152
+s9     0.437926
+s20    0.507257
+s13    0.478367
+s23    0.554172
+s3     0.591022
+s7     0.650769
+s15    0.591644
+s19    0.591181
+s11    0.473012
+s14    0.453524
+s27    0.501069
+s10    0.499031
+s16    0.492921
+s26    0.565531
+s25    0.513179
+s4     0.428867
+s6     0.490298
+s12    0.506722
+s24    0.595977
+s8     0.494878
+s22    0.474612
+s5     0.530722
+s2     0.518216
+s1     0.471838
 Name: rt, dtype: float64
 </pre></div>
 </div>
@@ -1594,7 +1104,7 @@ Name: rt, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Congruent vs. Incongruent t =  -3.24  p =  0.0032
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Congruent vs. Incongruent t =  -3.13  p =  0.0043
 </pre></div>
 </div>
 </div>
@@ -1603,7 +1113,7 @@ Name: rt, dtype: float64
 </section>
 </section>
 <section id="solution-1-use-dataframe-columns-rather-than-extracting-series">
-<h2>Solution 1: Use DataFrame columns rather than extracting Series<a class="headerlink" href="#solution-1-use-dataframe-columns-rather-than-extracting-series" title="Permalink to this headline">#</a></h2>
+<h2>Solution 1: Use DataFrame columns rather than extracting Series<a class="headerlink" href="#solution-1-use-dataframe-columns-rather-than-extracting-series" title="Link to this heading">#</a></h2>
 <p>Above, we extracted the two data sets we wanted to compare with a <em>t</em> test from a DataFrame (df) to two pandas Series, <code class="docutils literal notranslate"><span class="pre">congr</span></code> and <code class="docutils literal notranslate"><span class="pre">incongr</span></code>. On the one hand, this simplifies the syntax of the <em>t</em> test command, but on the other hand we lose the structure of the pandas DataFrame. That is, in the DataFrame, the values for each condition were grouped by participant, so we don’t have to worry about the order of the data values. We can run the <em>t</em> test based on the <code class="docutils literal notranslate"><span class="pre">flankers</span></code> value of the pandas DataFrame and be assured that <code class="docutils literal notranslate"><span class="pre">congruent</span></code> and <code class="docutils literal notranslate"><span class="pre">incongruent</span></code> values will be matched by participant. The code is just a little more complex to look at:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1620,13 +1130,13 @@ Name: rt, dtype: float64
 </div>
 </div>
 <p>This is probably the best approach to use in most cases, because:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>It ensures that the repeated-measures structure of the data is preserved</p></li>
 <li><p>It uses less memory resources, because we aren’t copying columns of our DataFrame to new Series/variables.</p></li>
 </ol>
 <p>It may in fact seem overly convoluted to have first demonstrated the extract-to-Series approach, then explain that it’s not the ideal way to do things! However, for many people, it’s intuitive to extract subsets of data to perform further processing on. One point of this lesson was to illustrate how that can create problems, even though it might seem like a logical approach.</p>
 <section id="solution-2-use-sort-index-to-ensure-paired-data-are-aligned">
-<h3>Solution 2: Use <code class="docutils literal notranslate"><span class="pre">.sort_index()</span></code> to ensure paired data are aligned<a class="headerlink" href="#solution-2-use-sort-index-to-ensure-paired-data-are-aligned" title="Permalink to this headline">#</a></h3>
+<h3>Solution 2: Use <code class="docutils literal notranslate"><span class="pre">.sort_index()</span></code> to ensure paired data are aligned<a class="headerlink" href="#solution-2-use-sort-index-to-ensure-paired-data-are-aligned" title="Link to this heading">#</a></h3>
 <p>If you do choose to work with a pair of Series, the way we can ensure that the indexes of the two data sets align this is by <em>re-ordering</em> the data in both Series that we’re comparing (<code class="docutils literal notranslate"><span class="pre">congr</span></code> and <code class="docutils literal notranslate"><span class="pre">incongr2</span></code> in this case), using pandas <code class="docutils literal notranslate"><span class="pre">.sort_index()</span></code> method:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1646,7 +1156,7 @@ Name: rt, dtype: float64
 </section>
 <hr class="docutils" />
 <section id="testing-differences-one-sample-t-tests">
-<h2>Testing differences: one-sample <em>t</em> tests<a class="headerlink" href="#testing-differences-one-sample-t-tests" title="Permalink to this headline">#</a></h2>
+<h2>Testing differences: one-sample <em>t</em> tests<a class="headerlink" href="#testing-differences-one-sample-t-tests" title="Link to this heading">#</a></h2>
 <p>An alternative way to compare the congruent and incongruent conditions is to compute the difference in mean RTs between the two conditions for each participant (since it is a paired design), and then run a <em>t</em> test on the differences. In this case, we use a <strong>one sample</strong> <em>t</em> test, in which we compare the data set to zero. In other words, is the difference between the conditions basically zero, or is it significantly different from zero (i.e., a believable difference)?</p>
 <p>We can compute the difference between two pandas Series easily just using the <code class="docutils literal notranslate"><span class="pre">-</span></code> (minus) operator, so in this case we could use <code class="docutils literal notranslate"><span class="pre">congr</span> <span class="pre">-</span> <span class="pre">incongr</span></code></p>
 <p>Note that this subtraction <em>only</em> works if the two Series are indexed by participant ID (or in some way that preserves the alignment of values between the two data sets). However, because we are subtracting two pandas objects, pandas recognizes the indexes in each and aligns them, even if the indexes aren’t in the same order in the two input Series. So we don’t have to worry about using <code class="docutils literal notranslate"><span class="pre">.sort_index()</span></code> as we did above for paired <em>t</em> tests.</p>
@@ -1670,7 +1180,7 @@ Name: rt, dtype: float64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">congr_vs_incongr</span> <span class="o">=</span> <span class="n">congr</span> <span class="o">-</span> <span class="n">incongr2</span>
 <span class="n">congr_vs_incongr</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span><span class="n">congr_vs_incongr</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Congruent vs. Incongruent t = </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="si">}</span><span class="s1">, p = </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Congruent vs. Incongruent t = </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="si">}</span><span class="s1">, p = </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1682,14 +1192,14 @@ Name: rt, dtype: float64
 </div>
 <div class="alert alert-block alert-info">
 <section id="paired-vs-1-sample-t-tests">
-<h3>Paired vs. 1-sample <em>t</em> tests?<a class="headerlink" href="#paired-vs-1-sample-t-tests" title="Permalink to this headline">#</a></h3>
+<h3>Paired vs. 1-sample <em>t</em> tests?<a class="headerlink" href="#paired-vs-1-sample-t-tests" title="Link to this heading">#</a></h3>
 <p>You’ll note the result of the 1-sample <em>t</em> test is the same as the paired <em>t</em> test above. This is expected, because in both cases we ran a <em>t</em> test to compare the difference between the same two sets of data. From a coding perspective, the paired <em>t</em> test is a bit simpler, because you don’t have to perform a subtraction on the data prior to running the <em>t</em> test.</p>
 <p>The reasons we might want to run a 1-sample <em>t</em> test include cases where are data are already represented as a subtraction, or in some cases when we’re working with multiple variables, performing subtractions can be a way of simplifying our presentation of the results. As well, since pandas subtraction respects the indexes, computing differences and then 1-sample <em>t</em> tests can be a bit safer in ensuring that the proper within-participants nesting structure of your data is preserved.</p>
 </div></section>
 </section>
 <hr class="docutils" />
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><em>t</em> tests are used to compare the means of two sets of data to each other, or the mean of one set of data against a particular value (such as zero)</p></li>
 <li><p>An <strong>unpaired <em>t</em> test</strong> is used to compare two independent sets of data (e.g., from two different samples of a population, two groups, etc.)</p></li>
@@ -1725,7 +1235,7 @@ Name: rt, dtype: float64
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./5-eda"
         },
         predefinedOutput: true
@@ -1733,50 +1243,127 @@ Name: rt, dtype: float64
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="data_cleaning.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Data Cleaning - Dealing with Outliers</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="data_cleaning.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Data Cleaning - Dealing with Outliers</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../6-Inference/inference.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../6-Inference/inference.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Statistical inference</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-t-test">The <em>t</em> test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-t-test">Paired <em>t</em>-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-the-data">Select the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-t-test">Run the <em>t</em> test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tailed-vs-2-tailed-p-values">1-tailed vs. 2-tailed <em>p</em> values</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-about-order-of-data-values">Be careful about order of data values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensure-pandas-indexing-is-used-in-t-tests">Ensure pandas indexing is used in <em>t</em> tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-could-go-wrong">What could go wrong?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-1-use-dataframe-columns-rather-than-extracting-series">Solution 1: Use DataFrame columns rather than extracting Series</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-2-use-sort-index-to-ensure-paired-data-are-aligned">Solution 2: Use <code class="docutils literal notranslate"><span class="pre">.sort_index()</span></code> to ensure paired data are aligned</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-differences-one-sample-t-tests">Testing differences: one-sample <em>t</em> tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-vs-1-sample-t-tests">Paired vs. 1-sample <em>t</em> tests?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Hyosub Kim<br/>
-  
-      &copy; Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Hyosub Kim
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,113 +1,179 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Statistical inference &#8212; Data Science for Kinesiology</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
+    <script>DOCUMENTATION_OPTIONS.pagename = '6-Inference/inference';</script>
+    <link rel="icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction to Single Unit Data" href="../7-single_unit/introduction.html" />
     <link rel="prev" title="Basic Statistics in Python: t tests with SciPy" href="../5-eda/ttests.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/NESC3505_icon.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Data Science for Kinesiology</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/NESC3505_icon.png" class="logo__image only-light" alt="Data Science for Kinesiology - Home"/>
+    <script>document.write(`<img src="../_static/NESC3505_icon.png" class="logo__image only-dark" alt="Data Science for Kinesiology - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -116,799 +182,338 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  1. About This Course
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. About This Course</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/about-this-course.html">
-   About this course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/learning_objectives.html">
-   Learning Objectives for this Course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/academic-integrity.html">
-   Academic Integrity and Collaboration
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/about-this-course.html">About this course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/learning_objectives.html">Learning Objectives for this Course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/academic-integrity.html">Academic Integrity and Collaboration</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  2. Introduction to Data Science
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Introduction to Data Science</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../2-nds/introduction.html">
-   Getting Started with the Course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../2-nds/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/what-is-datascience.html">
-   What is Data Science?
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/data.html">
-     Data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/tools_for_datasci.html">
-   Tools for (Kinesiological) Data Science
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/spreadsheets.html">
-     Spreadsheets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/spreadsheets_limits.html">
-     Limitations of Spreadsheets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/reproducibility.html">
-     Reproducibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/sci_prog_lang.html">
-     Scientific Programming Languages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/which_lang.html">
-     Which language to use?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/libs.html">
-     Libraries and packages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/why_python.html">
-     Why Python for this Course?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/coding.html">
-   Coding Tools
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/python.html">
-     Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/datacamp.html">
-     DataCamp
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/jupyter.html">
-     Jupyter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/markdown.html">
-     Markdown
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../2-nds/introduction.html">Getting Started with the Course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2-nds/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/data.html">Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  3. Introduction to Python
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets.html">Spreadsheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets_limits.html">Limitations of Spreadsheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/reproducibility.html">Reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/sci_prog_lang.html">Scientific Programming Languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/which_lang.html">Which language to use?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/libs.html">Libraries and packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/why_python.html">Why Python for this Course?</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/datacamp.html">DataCamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/jupyter.html">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/markdown.html">Markdown</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Introduction to Python</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/introduction.html">
-   Introducing Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/jupyter_jhub.html">
-   Introduction to Jupyter Notebooks in JupyterHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/getting_help.html">
-   Getting Help with Python
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3-python/data_types.html">
-   Data types
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/variables_assignment.html">
-     Variables and Assignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/types_conversion.html">
-     Data Types and Conversion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/builtin.html">
-     Python Built-Ins
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/lists.html">
-     Lists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/dictionaries.html">
-     Dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3-python/flow_control.html">
-   Flow Control
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/for_loops.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     Loops
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/conditionals.html">
-     Conditionals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/writing-a-function.html">
-   Writing Functions
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3-python/working_w_data.html">
-   Working with Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/pandas_dataframes.html">
-     Introduction to pandas DataFrames
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/looping_data_files.html">
-     Looping Over Data Files
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/introduction.html">Introducing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/jupyter_jhub.html">Introduction to Jupyter Notebooks in JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/getting_help.html">Getting Help with Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/data_types.html">Data types</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/variables_assignment.html">Variables and Assignment</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3-python/types_conversion.html">Data Types and Conversion</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3-python/builtin.html">Python Built-Ins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/lists.html">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/dictionaries.html">Dictionaries</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  4. Data Visualization
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/flow_control.html">Flow Control</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/conditionals.html">Conditionals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/writing-a-function.html">Writing Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/working_w_data.html">Working with Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/pandas_dataframes.html">Introduction to pandas DataFrames</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../3-python/looping_data_files.html">Looping Over Data Files</a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Data Visualization</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/introduction.html">
-   Introduction to Data Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/plotting.html">
-   Introduction to Plotting with Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/proc_vs_oo.html">
-   Procedural versus Object-Oriented Plotting in Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/subplots.html">
-   Subplots
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/plotting_types.html">
-   Thinking About Data for Plotting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/seaborn.html">
-   Introduction to Plotting with Seaborn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/human_factors.html">
-   Accessibility and Human Factors in Plotting
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/introduction.html">Introduction to Data Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/plotting.html">Introduction to Plotting with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/proc_vs_oo.html">Procedural versus Object-Oriented Plotting in Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/subplots.html">Subplots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/plotting_types.html">Thinking About Data for Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/seaborn.html">Introduction to Plotting with Seaborn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/human_factors.html">Accessibility and Human Factors in Plotting</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  5. Exploratory Data Analysis
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Exploratory Data Analysis</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../5-eda/introduction.html">
-   Introduction to EDA
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../5-eda/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../5-eda/repeated_measures.html">
-   Working with Repeated Measures Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../5-eda/data_cleaning.html">
-   Data Cleaning - Dealing with Outliers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../5-eda/ttests.html">
-   Basic Statistics in Python:
-   <em>
-    t
-   </em>
-   tests with SciPy
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../5-eda/introduction.html">Introduction to EDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-eda/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-eda/repeated_measures.html">Working with Repeated Measures Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-eda/data_cleaning.html">Data Cleaning - Dealing with Outliers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-eda/ttests.html">Basic Statistics in Python: <em>t</em> tests with SciPy</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  6. Statistical Inference and the Bootstrap
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Statistical Inference and the Bootstrap</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Statistical inference
-  </a>
- </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Statistical inference</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  7. Single Unit Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Single Unit Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../7-single_unit/introduction.html">
-   Introduction to Single Unit Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../7-single_unit/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../7-single_unit/single_unit_intro.html">
-   Single Unit Data and Spike Trains
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/intro_spike_trains.html">
-     Introduction to Spike Train Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/ten_intensities.html">
-     Effects of Light Intensity on Spike Rate
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/heat_maps.html">
-     Heat Maps
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../7-single_unit/intro_multielec_data.html">
-   Introducing Multielectrode Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/pandas_multielec.html">
-     Working with Multielectrode Data in pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/corr_spike_trains.html">
-     Correlating spike trains
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../7-single_unit/introduction.html">Introduction to Single Unit Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7-single_unit/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/intro_spike_trains.html">Introduction to Spike Train Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/ten_intensities.html">Effects of Light Intensity on Spike Rate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/heat_maps.html">Heat Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  8. Signal Processing
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/pandas_multielec.html">Working with Multielectrode Data in pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/corr_spike_trains.html">Correlating spike trains</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Signal Processing</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../8-signal_processing/signals-sampling-filtering.html">
-   Signals, Sampling &amp; Filtering
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../8-signal_processing/signals-sampling-filtering.html">Signals, Sampling &amp; Filtering</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/hyosubkim/datasci-for-kin/master?urlpath=tree/6-Inference/inference.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/hyosubkim/datasci-for-kin" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/hyosubkim/datasci-for-kin/issues/new?title=Issue%20on%20page%20%2F6-Inference/inference.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/6-Inference/inference.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/hyosubkim/datasci-for-kin"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/hyosubkim/datasci-for-kin/issues/new?title=Issue%20on%20page%20%2F6-Inference/inference.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/6-Inference/inference.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-learning-objectives">
-   Chapter learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-do-we-need-sampling">
-   Why do we need sampling?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling-distributions">
-   Sampling distributions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sampling-distributions-for-proportions">
-     Sampling distributions for proportions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sampling-distributions-for-means">
-     Sampling distributions for means
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     Summary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bootstrapping">
-   Bootstrapping
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Overview
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bootstrapping-in-python">
-     Bootstrapping in Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-the-bootstrap-to-calculate-a-plausible-range">
-     Using the bootstrap to calculate a plausible range
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#additional-resources">
-   Additional resources
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Statistical inference</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-learning-objectives">
-   Chapter learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-do-we-need-sampling">
-   Why do we need sampling?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling-distributions">
-   Sampling distributions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sampling-distributions-for-proportions">
-     Sampling distributions for proportions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sampling-distributions-for-means">
-     Sampling distributions for means
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     Summary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bootstrapping">
-   Bootstrapping
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Overview
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bootstrapping-in-python">
-     Bootstrapping in Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-the-bootstrap-to-calculate-a-plausible-range">
-     Using the bootstrap to calculate a plausible range
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#additional-resources">
-   Additional resources
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Statistical inference</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-learning-objectives">Chapter learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-sampling">Why do we need sampling?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions">Sampling distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions-for-proportions">Sampling distributions for proportions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions-for-means">Sampling distributions for means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapping">Bootstrapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapping-in-python">Bootstrapping in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-bootstrap-to-calculate-a-plausible-range">Using the bootstrap to calculate a plausible range</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="statistical-inference">
-<h1>Statistical inference<a class="headerlink" href="#statistical-inference" title="Permalink to this headline">#</a></h1>
+<h1>Statistical inference<a class="headerlink" href="#statistical-inference" title="Link to this heading">#</a></h1>
 <p><em>This chapter has been adapted from <a class="reference external" href="https://python.datasciencebook.ca/inference.html">Data Science: A First Introduction (Python Edition)</a>, by Trevor Campbell, Tiffany Timbers, Melissa Lee, Lindsey Heagy, and Joel Ostblom of UBC.</em></p>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>A typical data analysis task in practice is to draw conclusions about some
 unknown aspect of a population of interest based on observed data sampled from
 that population; we typically do not get data on the <em>entire</em> population.  Data
@@ -919,7 +524,7 @@ populations and then introduce two common techniques in statistical inference:
 <em>point estimation</em> and <em>interval estimation</em>.</p>
 </section>
 <section id="chapter-learning-objectives">
-<h2>Chapter learning objectives<a class="headerlink" href="#chapter-learning-objectives" title="Permalink to this headline">#</a></h2>
+<h2>Chapter learning objectives<a class="headerlink" href="#chapter-learning-objectives" title="Link to this heading">#</a></h2>
 <p>By the end of the chapter, readers will be able to do the following:</p>
 <ul class="simple">
 <li><p>Describe real-world examples of questions that can be answered with statistical inference.</p></li>
@@ -935,7 +540,7 @@ populations and then introduce two common techniques in statistical inference:
 </ul>
 </section>
 <section id="why-do-we-need-sampling">
-<h2>Why do we need sampling?<a class="headerlink" href="#why-do-we-need-sampling" title="Permalink to this headline">#</a></h2>
+<h2>Why do we need sampling?<a class="headerlink" href="#why-do-we-need-sampling" title="Link to this heading">#</a></h2>
 <p>We often need to understand how quantities we observe in a subset
 of data relate to the same quantities in the broader population. For example, suppose a
 retailer is considering selling iPhone accessories, and they want to estimate
@@ -989,15 +594,15 @@ could compute each of these numbers exactly; therefore, these are all
 population parameters. There are many kinds of observations and population
 parameters that you will run into in practice, but in this chapter, we will
 focus on two settings:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Using categorical observations to estimate the proportion of a category</p></li>
 <li><p>Using quantitative observations to estimate the average (or mean)</p></li>
 </ol>
 </section>
 <section id="sampling-distributions">
-<h2>Sampling distributions<a class="headerlink" href="#sampling-distributions" title="Permalink to this headline">#</a></h2>
+<h2>Sampling distributions<a class="headerlink" href="#sampling-distributions" title="Link to this heading">#</a></h2>
 <section id="sampling-distributions-for-proportions">
-<h3>Sampling distributions for proportions<a class="headerlink" href="#sampling-distributions-for-proportions" title="Permalink to this headline">#</a></h3>
+<h3>Sampling distributions for proportions<a class="headerlink" href="#sampling-distributions-for-proportions" title="Link to this heading">#</a></h3>
 <p>We will look at an example using data from
 <a class="reference external" href="http://insideairbnb.com/">Inside Airbnb</a>. Airbnb is an online
 marketplace for arranging vacation rentals and places to stay. The data set
@@ -1014,6 +619,12 @@ night.</p>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
 </pre></div>
 </div>
 </div>
@@ -1199,11 +810,12 @@ by using the <code class="docutils literal notranslate"><span class="pre">value_
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Entire home/apt    0.747497
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>room_type
+Entire home/apt    0.747497
 Private room       0.246408
 Shared room        0.005224
 Hotel room         0.000871
-Name: room_type, dtype: float64
+Name: proportion, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1229,10 +841,11 @@ we are also setting the random seed via numpy to make the results reproducible. 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Entire home/apt    0.725
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>room_type
+Entire home/apt    0.725
 Private room       0.250
 Shared room        0.025
-Name: room_type, dtype: float64
+Name: proportion, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1253,10 +866,11 @@ we would not get the same answer:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Entire home/apt    0.625
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>room_type
+Entire home/apt    0.625
 Private room       0.350
 Shared room        0.025
-Name: room_type, dtype: float64
+Name: proportion, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1491,7 +1105,7 @@ below to show that we end up with 20,000 point estimates, one for each of the 20
            Shared room        0.025
 19999      Entire home/apt    0.750
            Private room       0.250
-Name: room_type, Length: 44552, dtype: float64
+Name: proportion, Length: 44552, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1745,7 +1359,7 @@ sampling distribution directly for learning purposes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_22_0.png" src="../_images/inference_22_0.png" />
+<img alt="../_images/7b958531b2c4b982c740f6609e9acd675e717cd73a2c7cf79fbe4570df01a2a3.png" src="../_images/7b958531b2c4b982c740f6609e9acd675e717cd73a2c7cf79fbe4570df01a2a3.png" />
 </div>
 </div>
 <p>The sampling distribution above appears
@@ -1778,7 +1392,7 @@ sample, this implies that you would suspect that your sample point estimate is
 roughly equally likely to be above or below the true population proportion.</p>
 </section>
 <section id="sampling-distributions-for-means">
-<h3>Sampling distributions for means<a class="headerlink" href="#sampling-distributions-for-means" title="Permalink to this headline">#</a></h3>
+<h3>Sampling distributions for means<a class="headerlink" href="#sampling-distributions-for-means" title="Link to this heading">#</a></h3>
 <p>In the previous section, our variable of interest—<code class="docutils literal notranslate"><span class="pre">room_type</span></code>—was
 <em>categorical</em>, and the population parameter was a proportion. As mentioned in
 the chapter introduction, there are many choices of the population parameter
@@ -1797,7 +1411,7 @@ We can visualize the population distribution of the price per night with a histo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_27_0.png" src="../_images/inference_27_0.png" />
+<img alt="../_images/84f17d99f8f18a3ceb979713c90c68a022deb4c59d678709935c0c12265e7425.png" src="../_images/84f17d99f8f18a3ceb979713c90c68a022deb4c59d678709935c0c12265e7425.png" />
 </div>
 </div>
 <p>In this figure, we see that the population distribution
@@ -1847,7 +1461,7 @@ of our sample.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_33_0.png" src="../_images/inference_33_0.png" />
+<img alt="../_images/c5517c257c86055ddde380868f22f2e69b3428c27e8b69abc5f02a811d033729.png" src="../_images/c5517c257c86055ddde380868f22f2e69b3428c27e8b69abc5f02a811d033729.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1991,7 +1605,7 @@ distribution of sample means for samples of size 40.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_37_0.png" src="../_images/inference_37_0.png" />
+<img alt="../_images/a2f767d74af098bbb1a3378a29ba2e53df8fcf1bea1af987b1528c3571b10482.png" src="../_images/a2f767d74af098bbb1a3378a29ba2e53df8fcf1bea1af987b1528c3571b10482.png" />
 </div>
 </div>
 <p>In the figure above, the sampling distribution of the mean
@@ -2043,7 +1657,7 @@ sample, which will keep the average from being too extreme.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_39_0.png" src="../_images/inference_39_0.png" />
+<img alt="../_images/b27d1002f3a60ae4bcb58c8251f6f849a149e77ad3e10b009f76305190de1cc2.png" src="../_images/b27d1002f3a60ae4bcb58c8251f6f849a149e77ad3e10b009f76305190de1cc2.png" />
 </div>
 </div>
 <p>Given that there is quite a bit of variation in the sampling distribution of
@@ -2071,43 +1685,6 @@ distribution with a orange vertical line.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File ~/opt/anaconda3/envs/datasci-for-kin/lib/python3.10/site-packages/pandas/core/indexes/base.py:3803,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key, method, tolerance)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3802</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3803</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/datasci-for-kin/lib/python3.10/site-packages/pandas/_libs/index.pyx:138,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/datasci-for-kin/lib/python3.10/site-packages/pandas/_libs/index.pyx:165,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
-
-<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:5745,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
-
-<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:5753,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
-
-<span class="ne">KeyError</span>: &#39;replicate&#39;
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File ~/opt/anaconda3/envs/datasci-for-kin/lib/python3.10/site-packages/pandas/core/frame.py:4138,</span> in <span class="ni">DataFrame._set_item_mgr</span><span class="nt">(self, key, value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4137</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">4138</span>     <span class="n">loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4139</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">4140</span>     <span class="c1"># This item wasn&#39;t present, just insert at end</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/datasci-for-kin/lib/python3.10/site-packages/pandas/core/indexes/base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key, method, tolerance)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3805</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
-<span class="g g-Whitespace">   </span><span class="mi">3806</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="c1"># If we have a listlike key, _check_indexing_error will raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">3808</span>     <span class="c1">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">3809</span>     <span class="c1">#  the TypeError.</span>
-
-<span class="ne">KeyError</span>: &#39;replicate&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">sample_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">]</span>
@@ -2120,70 +1697,37 @@ distribution with a orange vertical line.</p>
 <span class="nn">     10     for replicate</span> in <span class="ni">range</span><span class="nt">(replicates)</span>
 <span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="p">])</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;sample_size&quot;</span><span class="p">,</span> <span class="s2">&quot;replicate&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
-<span class="nn">Cell In[20], line 6,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">sample_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">replicates</span> <span class="o">=</span> <span class="mi">20000</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">base</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="n">airbnb</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">sample_size</span><span class="o">=</span><span class="n">sample_size</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="n">replicate</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">for</span> <span class="n">sample_size</span> <span class="ow">in</span> <span class="n">sample_sizes</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="p">])</span>
-<span class="nn">     10     for replicate</span> in <span class="ni">range</span><span class="nt">(replicates)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="p">])</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;sample_size&quot;</span><span class="p">,</span> <span class="s2">&quot;replicate&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/pandas/core/reshape/concat.py:395,</span> in <span class="ni">concat</span><span class="nt">(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">copy</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span> <span class="n">op</span> <span class="o">=</span> <span class="n">_Concatenator</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">objs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span>     <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">395</span> <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
 
-<span class="nn">Cell In[20], line 7,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">sample_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">replicates</span> <span class="o">=</span> <span class="mi">20000</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">base</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
-<span class="ne">----&gt; </span><span class="mi">7</span>         <span class="n">airbnb</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">sample_size</span><span class="o">=</span><span class="n">sample_size</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="n">replicate</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">for</span> <span class="n">sample_size</span> <span class="ow">in</span> <span class="n">sample_sizes</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="p">])</span>
-<span class="nn">     10     for replicate</span> in <span class="ni">range</span><span class="nt">(replicates)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="p">])</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;sample_size&quot;</span><span class="p">,</span> <span class="s2">&quot;replicate&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/pandas/core/reshape/concat.py:684,</span> in <span class="ni">_Concatenator.get_result</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">680</span>             <span class="n">indexers</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj_labels</span><span class="o">.</span><span class="n">get_indexer</span><span class="p">(</span><span class="n">new_labels</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">682</span>     <span class="n">mgrs_indexers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">obj</span><span class="o">.</span><span class="n">_mgr</span><span class="p">,</span> <span class="n">indexers</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">684</span> <span class="n">new_data</span> <span class="o">=</span> <span class="n">concatenate_managers</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span>     <span class="n">mgrs_indexers</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_axes</span><span class="p">,</span> <span class="n">concat_axis</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">bm_axis</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">copy</span>
+<span class="g g-Whitespace">    </span><span class="mi">686</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">using_copy_on_write</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">688</span>     <span class="n">new_data</span><span class="o">.</span><span class="n">_consolidate_inplace</span><span class="p">()</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/datasci-for-kin/lib/python3.10/site-packages/pandas/core/frame.py:4878,</span> in <span class="ni">DataFrame.assign</span><span class="nt">(self, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4875</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">4877</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="ne">-&gt; </span><span class="mi">4878</span>     <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">apply_if_callable</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4879</span> <span class="k">return</span> <span class="n">data</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/datasci-for-kin/lib/python3.10/site-packages/pandas/core/frame.py:3977,</span> in <span class="ni">DataFrame.__setitem__</span><span class="nt">(self, key, value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3974</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_setitem_array</span><span class="p">([</span><span class="n">key</span><span class="p">],</span> <span class="n">value</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3975</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3976</span>     <span class="c1"># set column</span>
-<span class="ne">-&gt; </span><span class="mi">3977</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_set_item</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/datasci-for-kin/lib/python3.10/site-packages/pandas/core/frame.py:4184,</span> in <span class="ni">DataFrame._set_item</span><span class="nt">(self, key, value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4181</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">existing_piece</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">4182</span>             <span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">existing_piece</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
-<span class="ne">-&gt; </span><span class="mi">4184</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_item_mgr</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/datasci-for-kin/lib/python3.10/site-packages/pandas/core/frame.py:4141,</span> in <span class="ni">DataFrame._set_item_mgr</span><span class="nt">(self, key, value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4138</span>     <span class="n">loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4139</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">4140</span>     <span class="c1"># This item wasn&#39;t present, just insert at end</span>
-<span class="ne">-&gt; </span><span class="mi">4141</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="p">),</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4142</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">4143</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_iset_item_mgr</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/datasci-for-kin/lib/python3.10/site-packages/pandas/core/internals/managers.py:1403,</span> in <span class="ni">BlockManager.insert</span><span class="nt">(self, loc, item, value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1401</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1402</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_insert_update_mgr_locs</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1403</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_insert_update_blklocs_and_blknos</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1405</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_axis</span>
-<span class="g g-Whitespace">   </span><span class="mi">1406</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span> <span class="o">+=</span> <span class="p">(</span><span class="n">block</span><span class="p">,)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/datasci-for-kin/lib/python3.10/site-packages/pandas/core/internals/managers.py:1442,</span> in <span class="ni">BlockManager._insert_update_blklocs_and_blknos</span><span class="nt">(self, loc)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1439</span> <span class="c1"># Accessing public blklocs ensures the public versions are initialized</span>
-<span class="g g-Whitespace">   </span><span class="mi">1440</span> <span class="k">if</span> <span class="n">loc</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">blklocs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1441</span>     <span class="c1"># np.append is a lot faster, let&#39;s use it if we can.</span>
-<span class="ne">-&gt; </span><span class="mi">1442</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_blklocs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_blklocs</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1443</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_blknos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_blknos</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">blocks</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1444</span> <span class="k">elif</span> <span class="n">loc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1445</span>     <span class="c1"># np.append is a lot faster, let&#39;s use it if we can.</span>
-
-<span class="nn">File &lt;__array_function__ internals&gt;:177,</span> in <span class="ni">append</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/pandas/core/internals/concat.py:177,</span> in <span class="ni">concatenate_managers</span><span class="nt">(mgrs_indexers, axes, concat_axis, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">167</span> <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">ju</span><span class="o">.</span><span class="n">block</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">ju</span> <span class="ow">in</span> <span class="n">join_units</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">169</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">blk</span><span class="o">.</span><span class="n">is_extension</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span>     <span class="c1"># _is_uniform_join_units ensures a single dtype, so</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span>     <span class="c1">#  we can use np.concatenate, which is more performant</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="c1"># expected &quot;Union[_SupportsArray[dtype[Any]],</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="c1"># _NestedSequence[_SupportsArray[dtype[Any]]]]&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">177</span>     <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># type: ignore[arg-type]</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="k">elif</span> <span class="n">is_1d_only_ea_dtype</span><span class="p">(</span><span class="n">blk</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="c1"># TODO(EA2D): special-casing not needed with 2D EAs</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">values</span> <span class="o">=</span> <span class="n">concat_compat</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ea_compat_axis</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -2224,12 +1768,12 @@ distribution with a orange vertical line.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_42_0.png" src="../_images/inference_42_0.png" />
+<img alt="../_images/53026cf93226ae3f0dfb35adffe031a27bc793d027c72b50fc960187cf73f69b.png" src="../_images/53026cf93226ae3f0dfb35adffe031a27bc793d027c72b50fc960187cf73f69b.png" />
 </div>
 </div>
 <p>Based on the visualization above, three points
 about the sample mean become clear:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The mean of the sample mean (across
 samples) is equal to the population mean. In other words, the sampling
 distribution is centered at the population mean.</p></li>
@@ -2249,8 +1793,8 @@ How large is "large enough?" Unfortunately, it depends entirely on the problem a
 as a rule of thumb, often a sample size of at least 20 will suffice.
                             </div></section>
 <section id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>A point estimate is a single value computed using a sample from a population (e.g., a mean or proportion).</p></li>
 <li><p>The sampling distribution of an estimate is the distribution of the estimate for all possible samples of a fixed size from the same population.</p></li>
 <li><p>The shape of the sampling distribution is usually bell-shaped with one peak and centered at the population mean or proportion.</p></li>
@@ -2259,9 +1803,9 @@ as a rule of thumb, often a sample size of at least 20 will suffice.
 </section>
 </section>
 <section id="bootstrapping">
-<h2>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permalink to this headline">#</a></h2>
+<h2>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h3>Overview<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>Overview<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p><em>Why all this emphasis on sampling distributions?</em></p>
 <p>We saw in the previous section that we could compute a <strong>point estimate</strong> of a
 population parameter using a sample of observations from the population. And
@@ -2321,7 +1865,7 @@ large enough sample.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_47_0.png" src="../_images/inference_47_0.png" />
+<img alt="../_images/a3bbc5f5367abf0e55fa05ef8a9ce9901e4b19894a98317a25d807a9562268e6.png" src="../_images/a3bbc5f5367abf0e55fa05ef8a9ce9901e4b19894a98317a25d807a9562268e6.png" />
 </div>
 </div>
 <p>In the previous section, we took many samples of the same size <em>from our
@@ -2339,7 +1883,7 @@ Otherwise, if we had a sample of size $n$, and obtained a sample from it of
 </div><p>This section will explore how to create a bootstrap distribution from a single
 sample using Python.  The process is visualized in the flow chart below.
 For a sample of size <span class="math notranslate nohighlight">\(n\)</span>, you would do the following:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Randomly select an observation from the original sample (e.g., 9 Airbnb listings, 15 individuals post-stroke, 20 healthy young adults, etc.), which was drawn from the population (all Vancouver Airbnb listings, all Canadian adults post-stroke, all healthy, neurotypical adults between the ages of 18-35 across the globe, etc.).</p></li>
 <li><p>Record the observation’s value.</p></li>
 <li><p>Replace that observation.</p></li>
@@ -2351,7 +1895,7 @@ For a sample of size <span class="math notranslate nohighlight">\(n\)</span>, yo
 <p><img alt="" src="../_images/intro-bootstrap.jpeg" /></p>
 </section>
 <section id="bootstrapping-in-python">
-<h3>Bootstrapping in Python<a class="headerlink" href="#bootstrapping-in-python" title="Permalink to this headline">#</a></h3>
+<h3>Bootstrapping in Python<a class="headerlink" href="#bootstrapping-in-python" title="Link to this heading">#</a></h3>
 <p>Let’s continue working with our Airbnb example to illustrate how we might create
 and use a bootstrap distribution using just a single sample from the population.
 Once again, suppose we are
@@ -2848,7 +2392,7 @@ histogram of prices in the sample is displayed in the figure below.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_53_0.png" src="../_images/inference_53_0.png" />
+<img alt="../_images/e3e9b092dbde5929cdb905506862cca97d9951b07e1832175fa4da6374e3a8f9.png" src="../_images/e3e9b092dbde5929cdb905506862cca97d9951b07e1832175fa4da6374e3a8f9.png" />
 </div>
 </div>
 <p>The histogram for the sample is skewed, with a few observations out to the right. The
@@ -2874,7 +2418,7 @@ we change the <code class="docutils literal notranslate"><span class="pre">repla
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_55_0.png" src="../_images/inference_55_0.png" />
+<img alt="../_images/4e5ac6b4b5c5a4fd936d508835991ff8007cc1e0fd8dd6681b42b67f6db34bc8.png" src="../_images/4e5ac6b4b5c5a4fd936d508835991ff8007cc1e0fd8dd6681b42b67f6db34bc8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3108,7 +2652,7 @@ so that it is easier to read.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_60_0.png" src="../_images/inference_60_0.png" />
+<img alt="../_images/cfa125378f2298c2466ff6bbafa6a3f30784738a07a6f3171b6b55ef09f1a6ef.png" src="../_images/cfa125378f2298c2466ff6bbafa6a3f30784738a07a6f3171b6b55ef09f1a6ef.png" />
 </div>
 </div>
 <p>We can see how the distributions of the
@@ -3307,7 +2851,7 @@ our point estimate to behave if we take multiple samples.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_65_0.png" src="../_images/inference_65_0.png" />
+<img alt="../_images/a3166529c09aa5b028c3972ca7617fd7146aaa0ab440b029f4839e6fd99bf920.png" src="../_images/a3166529c09aa5b028c3972ca7617fd7146aaa0ab440b029f4839e6fd99bf920.png" />
 </div>
 </div>
 <p>Let’s compare the bootstrap distribution—which we construct by taking many samples from our original sample of size 40—with
@@ -3358,7 +2902,7 @@ the true sampling distribution—which corresponds to taking many samples from t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_67_0.png" src="../_images/inference_67_0.png" />
+<img alt="../_images/8eb0c7039b0676eea0940a9d9fafb8c411dab2e6bd38c47a4b8b61dabd82a269.png" src="../_images/8eb0c7039b0676eea0940a9d9fafb8c411dab2e6bd38c47a4b8b61dabd82a269.png" />
 </div>
 </div>
 <p>There are two essential points that we can take away from
@@ -3382,7 +2926,7 @@ plausible range for our population parameter along with our estimate!</p>
 <p><img alt="" src="https://datasciencebook.ca/_main_files/figure-html/11-bootstrapping7-1.png" /></p>
 </section>
 <section id="using-the-bootstrap-to-calculate-a-plausible-range">
-<h3>Using the bootstrap to calculate a plausible range<a class="headerlink" href="#using-the-bootstrap-to-calculate-a-plausible-range" title="Permalink to this headline">#</a></h3>
+<h3>Using the bootstrap to calculate a plausible range<a class="headerlink" href="#using-the-bootstrap-to-calculate-a-plausible-range" title="Link to this heading">#</a></h3>
 <p>Now that we have constructed our bootstrap distribution, let’s use it to create
 an approximate 95% percentile bootstrap confidence interval (one of the most common applications of bootstrapping).
 A <strong>confidence interval</strong> is a range of plausible values for the population parameter. We will
@@ -3402,7 +2946,7 @@ instance, if our decision impacts human life and the implications of being
 wrong are deadly, we may want to be very confident and choose a higher
 confidence level.</p>
 <p>To calculate a 95% percentile bootstrap confidence interval, we will do the following:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Arrange the observations in the bootstrap distribution in ascending order.</p></li>
 <li><p>Find the value such that 2.5% of observations fall below it (the 2.5% percentile). Use that value as the lower bound of the interval.</p></li>
 <li><p>Find the value such that 97.5% of observations fall below it (the 97.5% percentile). Use that value as the upper bound of the interval.</p></li>
@@ -3442,7 +2986,7 @@ visualize the interval on our distribution in the following figure.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/inference_74_0.png" src="../_images/inference_74_0.png" />
+<img alt="../_images/67d8fb5b1d95e9c4157d65751374d62753ff7d2b301ec64242c291ff10a1c75a.png" src="../_images/67d8fb5b1d95e9c4157d65751374d62753ff7d2b301ec64242c291ff10a1c75a.png" />
 </div>
 </div>
 <p>To finish our estimation of the population parameter, we would report the point
@@ -3466,7 +3010,7 @@ statistical techniques you may learn about in the future!</p>
 </section>
 </section>
 <section id="additional-resources">
-<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h2>
+<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Chapters 4 to 7 of <a class="reference external" href="https://www.openintro.org/book/os/">OpenIntro Statistics</a>
 provide a good next step in learning about inference. Although it is still certainly
@@ -3495,7 +3039,7 @@ will come naturally to you!</p></li>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./6-Inference"
         },
         predefinedOutput: true
@@ -3503,50 +3047,118 @@ will come naturally to you!</p></li>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../5-eda/ttests.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Basic Statistics in Python: <em>t</em> tests with SciPy</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../5-eda/ttests.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Basic Statistics in Python: <em>t</em> tests with SciPy</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../7-single_unit/introduction.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../7-single_unit/introduction.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Introduction to Single Unit Data</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-learning-objectives">Chapter learning objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-sampling">Why do we need sampling?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions">Sampling distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions-for-proportions">Sampling distributions for proportions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions-for-means">Sampling distributions for means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapping">Bootstrapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapping-in-python">Bootstrapping in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-bootstrap-to-calculate-a-plausible-range">Using the bootstrap to calculate a plausible range</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Hyosub Kim<br/>
-  
-      &copy; Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Hyosub Kim
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

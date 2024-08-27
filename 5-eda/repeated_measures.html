@@ -1,113 +1,179 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Working with Repeated Measures Data &#8212; Data Science for Kinesiology</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
+    <script>DOCUMENTATION_OPTIONS.pagename = '5-eda/repeated_measures';</script>
+    <link rel="icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Data Cleaning - Dealing with Outliers" href="data_cleaning.html" />
     <link rel="prev" title="Learning Objectives" href="learning_objectives.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/NESC3505_icon.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Data Science for Kinesiology</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/NESC3505_icon.png" class="logo__image only-light" alt="Data Science for Kinesiology - Home"/>
+    <script>document.write(`<img src="../_static/NESC3505_icon.png" class="logo__image only-dark" alt="Data Science for Kinesiology - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -116,871 +182,350 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  1. About This Course
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. About This Course</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/about-this-course.html">
-   About this course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/learning_objectives.html">
-   Learning Objectives for this Course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../1-intro/academic-integrity.html">
-   Academic Integrity and Collaboration
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/about-this-course.html">About this course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/learning_objectives.html">Learning Objectives for this Course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1-intro/academic-integrity.html">Academic Integrity and Collaboration</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  2. Introduction to Data Science
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Introduction to Data Science</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../2-nds/introduction.html">
-   Getting Started with the Course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../2-nds/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/what-is-datascience.html">
-   What is Data Science?
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/data.html">
-     Data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/tools_for_datasci.html">
-   Tools for (Kinesiological) Data Science
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/spreadsheets.html">
-     Spreadsheets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/spreadsheets_limits.html">
-     Limitations of Spreadsheets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/reproducibility.html">
-     Reproducibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/sci_prog_lang.html">
-     Scientific Programming Languages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/which_lang.html">
-     Which language to use?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/libs.html">
-     Libraries and packages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/why_python.html">
-     Why Python for this Course?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2-nds/coding.html">
-   Coding Tools
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/python.html">
-     Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/datacamp.html">
-     DataCamp
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/jupyter.html">
-     Jupyter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2-nds/markdown.html">
-     Markdown
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../2-nds/introduction.html">Getting Started with the Course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2-nds/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/data.html">Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  3. Introduction to Python
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets.html">Spreadsheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets_limits.html">Limitations of Spreadsheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/reproducibility.html">Reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/sci_prog_lang.html">Scientific Programming Languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/which_lang.html">Which language to use?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/libs.html">Libraries and packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/why_python.html">Why Python for this Course?</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/datacamp.html">DataCamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/jupyter.html">Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-nds/markdown.html">Markdown</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Introduction to Python</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/introduction.html">
-   Introducing Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/jupyter_jhub.html">
-   Introduction to Jupyter Notebooks in JupyterHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/getting_help.html">
-   Getting Help with Python
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3-python/data_types.html">
-   Data types
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/variables_assignment.html">
-     Variables and Assignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/types_conversion.html">
-     Data Types and Conversion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/builtin.html">
-     Python Built-Ins
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/lists.html">
-     Lists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/dictionaries.html">
-     Dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3-python/flow_control.html">
-   Flow Control
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/for_loops.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     Loops
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/conditionals.html">
-     Conditionals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../3-python/writing-a-function.html">
-   Writing Functions
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3-python/working_w_data.html">
-   Working with Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/pandas_dataframes.html">
-     Introduction to pandas DataFrames
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3-python/looping_data_files.html">
-     Looping Over Data Files
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/introduction.html">Introducing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/jupyter_jhub.html">Introduction to Jupyter Notebooks in JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/getting_help.html">Getting Help with Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/data_types.html">Data types</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/variables_assignment.html">Variables and Assignment</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3-python/types_conversion.html">Data Types and Conversion</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3-python/builtin.html">Python Built-Ins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/lists.html">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/dictionaries.html">Dictionaries</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  4. Data Visualization
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/flow_control.html">Flow Control</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/conditionals.html">Conditionals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-python/writing-a-function.html">Writing Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/working_w_data.html">Working with Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-python/pandas_dataframes.html">Introduction to pandas DataFrames</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../3-python/looping_data_files.html">Looping Over Data Files</a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Data Visualization</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/introduction.html">
-   Introduction to Data Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/plotting.html">
-   Introduction to Plotting with Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/proc_vs_oo.html">
-   Procedural versus Object-Oriented Plotting in Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/subplots.html">
-   Subplots
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/plotting_types.html">
-   Thinking About Data for Plotting
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/seaborn.html">
-   Introduction to Plotting with Seaborn
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4-viz/human_factors.html">
-   Accessibility and Human Factors in Plotting
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/introduction.html">Introduction to Data Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/plotting.html">Introduction to Plotting with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/proc_vs_oo.html">Procedural versus Object-Oriented Plotting in Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/subplots.html">Subplots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/plotting_types.html">Thinking About Data for Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/seaborn.html">Introduction to Plotting with Seaborn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-viz/human_factors.html">Accessibility and Human Factors in Plotting</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  5. Exploratory Data Analysis
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Exploratory Data Analysis</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="introduction.html">
-   Introduction to EDA
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Working with Repeated Measures Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data_cleaning.html">
-   Data Cleaning - Dealing with Outliers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ttests.html">
-   Basic Statistics in Python:
-   <em>
-    t
-   </em>
-   tests with SciPy
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to EDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Working with Repeated Measures Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_cleaning.html">Data Cleaning - Dealing with Outliers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ttests.html">Basic Statistics in Python: <em>t</em> tests with SciPy</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  6. Statistical Inference and the Bootstrap
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Statistical Inference and the Bootstrap</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../6-Inference/inference.html">
-   Statistical inference
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../6-Inference/inference.html">Statistical inference</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  7. Single Unit Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Single Unit Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../7-single_unit/introduction.html">
-   Introduction to Single Unit Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../7-single_unit/learning_objectives.html">
-   Learning Objectives
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../7-single_unit/single_unit_intro.html">
-   Single Unit Data and Spike Trains
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/intro_spike_trains.html">
-     Introduction to Spike Train Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/ten_intensities.html">
-     Effects of Light Intensity on Spike Rate
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/heat_maps.html">
-     Heat Maps
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../7-single_unit/intro_multielec_data.html">
-   Introducing Multielectrode Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/pandas_multielec.html">
-     Working with Multielectrode Data in pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../7-single_unit/corr_spike_trains.html">
-     Correlating spike trains
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../7-single_unit/introduction.html">Introduction to Single Unit Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7-single_unit/learning_objectives.html">Learning Objectives</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/intro_spike_trains.html">Introduction to Spike Train Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/ten_intensities.html">Effects of Light Intensity on Spike Rate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/heat_maps.html">Heat Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  8. Signal Processing
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/pandas_multielec.html">Working with Multielectrode Data in pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../7-single_unit/corr_spike_trains.html">Correlating spike trains</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Signal Processing</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../8-signal_processing/signals-sampling-filtering.html">
-   Signals, Sampling &amp; Filtering
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../8-signal_processing/signals-sampling-filtering.html">Signals, Sampling &amp; Filtering</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/hyosubkim/datasci-for-kin/master?urlpath=tree/5-eda/repeated_measures.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/hyosubkim/datasci-for-kin" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/hyosubkim/datasci-for-kin/issues/new?title=Issue%20on%20page%20%2F5-eda/repeated_measures.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/5-eda/repeated_measures.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/hyosubkim/datasci-for-kin"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/hyosubkim/datasci-for-kin/issues/new?title=Issue%20on%20page%20%2F5-eda/repeated_measures.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/5-eda/repeated_measures.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#about-the-data">
-     About the data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-data">
-   Load the data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examine-the-data-without-considering-repeated-measures">
-   Examine the data without considering repeated measures
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#stingray-plot">
-     Stingray plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#strip-plot">
-     Strip plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#point-plot">
-     Point plot
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examine-individual-participant-data">
-   Examine individual participant data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualizing-nested-data-with-seaborn">
-     Visualizing nested data with Seaborn
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#appropriately-dealing-with-repeated-measures-aggregating-data-by-participants">
-   Appropriately dealing with repeated measures: Aggregating data by participants
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#why-do-cis-get-larger-when-we-properly-aggregate-repeated-measures-data">
-     Why do CIs get larger when we properly aggregate repeated measures data?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aggregating-using-split-apply-combine">
-   Aggregating using Split-Apply-Combine
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-data-aggregated-across-trials">
-     Plot data aggregated across trials
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Strip plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#line-plot">
-     Line plot
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#point-plots-aggregated-across-participants">
-   Point plots aggregated across participants
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Working with Repeated Measures Data</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#about-the-data">
-     About the data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-data">
-   Load the data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examine-the-data-without-considering-repeated-measures">
-   Examine the data without considering repeated measures
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#stingray-plot">
-     Stingray plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#strip-plot">
-     Strip plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#point-plot">
-     Point plot
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examine-individual-participant-data">
-   Examine individual participant data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualizing-nested-data-with-seaborn">
-     Visualizing nested data with Seaborn
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#appropriately-dealing-with-repeated-measures-aggregating-data-by-participants">
-   Appropriately dealing with repeated measures: Aggregating data by participants
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#why-do-cis-get-larger-when-we-properly-aggregate-repeated-measures-data">
-     Why do CIs get larger when we properly aggregate repeated measures data?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aggregating-using-split-apply-combine">
-   Aggregating using Split-Apply-Combine
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-data-aggregated-across-trials">
-     Plot data aggregated across trials
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Strip plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#line-plot">
-     Line plot
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#point-plots-aggregated-across-participants">
-   Point plots aggregated across participants
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Working with Repeated Measures Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-data">About the data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-data-without-considering-repeated-measures">Examine the data without considering repeated measures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stingray-plot">Stingray plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strip-plot">Strip plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#point-plot">Point plot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-individual-participant-data">Examine individual participant data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-nested-data-with-seaborn">Visualizing nested data with Seaborn</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appropriately-dealing-with-repeated-measures-aggregating-data-by-participants">Appropriately dealing with repeated measures: Aggregating data by participants</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-cis-get-larger-when-we-properly-aggregate-repeated-measures-data">Why do CIs get larger when we properly aggregate repeated measures data?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-using-split-apply-combine">Aggregating using Split-Apply-Combine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data-aggregated-across-trials">Plot data aggregated across trials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Strip plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plot">Line plot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-plots-aggregated-across-participants">Point plots aggregated across participants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-repeated-measures-data">
-<h1>Working with Repeated Measures Data<a class="headerlink" href="#working-with-repeated-measures-data" title="Permalink to this headline">#</a></h1>
+<h1>Working with Repeated Measures Data<a class="headerlink" href="#working-with-repeated-measures-data" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="learning-objectives">
-<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Learn how to use split-apply-combine to average repeated measures data appropriately</p></li>
 <li><p>Learn how to properly visualize repeated measures data with Seaborn</p></li>
@@ -988,16 +533,16 @@ title="Print to PDF"
 </section>
 <hr class="docutils" />
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>In the previous chapter on Seaborn plots, we worked with some simulated reaction time (RT) data from 5 individual participants. We showed various Seaborn plots that allowed us to examine the variance in the data sets. However, for the sake of focusing on the different types of Seaborn plots and what they show us, we glossed over one really important aspect of the data — its <em>nesting structure</em>, and in particular the fact that we have repeated measures. Repeated measures data are very common in cognitive psychology and neuroscience. In fact, while they are often treated as a “special case” in statistical and data science texts, in this context we focus on them because most of the data we will encounter later in this course include repeated measures — and <strong>it’s very easy to treat the data incorrectly and draw incorrect conclusions if you’re not used to working with repeated measures data</strong>.</p>
 <p>Recall that in the <em>Thinking About Data for Plotting</em> lesson, we learned that variance within individual units of measurement (such as individual participants) is not the same as the variance between participants. Furthermore, in a typical experiment our interest is in examining the average effects across individuals, and the range of differences between individuals. When we have nested data, such as many individual trials for each participant, this is because we recognize that any individual measurement may not be accurate, and so by averaging over many measurements we are likely to get a more accurate estimate of the true measurement for each individual. However, if we average the trial-to-trial variance of each individual (which is typically low, within the individual) across individuals, we lose the true inter-individual differences.</p>
 <p>For this reason, when plotting nested data it is usually appropriate to first average within each individual (for each condition), and then compute and visualize measures of the true inter-individual variability. Seaborn does not do this by default, and so the plots we generated in the previous lesson were actually inappropriate for assessing whether there was a true experimental effect. In this lesson we’ll see how to use pandas <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> to use Seaborn appropriately with nested data.</p>
 <section id="about-the-data">
-<h3>About the data<a class="headerlink" href="#about-the-data" title="Permalink to this headline">#</a></h3>
-<p>First, let’s load in a new data set (<code class="docutils literal notranslate"><span class="pre">flanker_rt_data.csv</span></code>). This real data from a flanker experiment (similar to that described in the section on <span class="xref myst">spreadsheets</span>).  In this experiment, participants had to press either the left or right arrow key, to indicate whether an arrow shown on the screen is pointing left or right, respectively. However, the catch is that the centre arrow is “flanked” by two other arrows on each side; these can be pointing the same way as the target arrow (congruent):</p>
-<p><img alt="flanker_congruent" src="../_images/flanker_congruent&#64;0.75x1.png" /></p>
+<h3>About the data<a class="headerlink" href="#about-the-data" title="Link to this heading">#</a></h3>
+<p>First, let’s load in a new data set (<code class="docutils literal notranslate"><span class="pre">flanker_rt_data.csv</span></code>). This real data from a flanker experiment (similar to that described in the section on <a class="reference internal" href="#../2/spreadsheets.html"><span class="xref myst">spreadsheets</span></a>).  In this experiment, participants had to press either the left or right arrow key, to indicate whether an arrow shown on the screen is pointing left or right, respectively. However, the catch is that the centre arrow is “flanked” by two other arrows on each side; these can be pointing the same way as the target arrow (congruent):</p>
+<p><img alt="flanker_congruent" src="../_images/flanker_congruent%400.75x1.png" /></p>
 <p>or in the opposite direction (incongruent)</p>
-<p><img alt="flanker_incongruent" src="../_images/flanker_incongruent&#64;0.75x1.png" /></p>
+<p><img alt="flanker_incongruent" src="../_images/flanker_incongruent%400.75x1.png" /></p>
 <p>We expect that the incongruent condition would be associated with slower RTs, because the flanking arrows create some visual confusion and response competition (cognitive interference; this process is not unlike that underlying the famous <a class="reference external" href="https://en.wikipedia.org/wiki/Stroop_effect">Stroop</a> experiment, which you are likely familiar with). In order to confirm this hypothesis, we would want to get an estimate of the RT for each condition, from a representative sample of human participants. We need a number of participants because we know that there is variability in the average RT from person to person (<strong>between-subject</strong> variability). Here we have 27 participants.</p>
 <p>To estimate the average RT for each condition for an individual, we would want to present many trials of each condition, in random order. We do this because there is always some trial-to-trial variability in measuring human RTs (<strong>within-subject</strong> variability). In this study each participant completed 40 trials in each condition. Thus we have repeated measures of RT for each participant, in each experimental condition.</p>
 <p>This experiment also had a third condition, <em>neutral</em>. On neutral trials, only the centre arrow was presented, without flankers. This condition was included to control for the fact that 5 arrows all pointing in the same direction might facilitate (speed up) responses relative to a single arrow — there might be additive, beneficial effects of congruent flankers. Comparing both the congruent and incongruent conditions to the neutral condition allows us to estimate the relative cost or benefit of flankers that are incongruent or congruent with the direction of the centre arrow. To ensure that there were as many neutral (single-arrow) as flanker (five-arrow) trials, 80 neutral trials were included per participant.</p>
@@ -1005,7 +550,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="load-the-data">
-<h2>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">#</a></h2>
+<h2>Load the data<a class="headerlink" href="#load-the-data" title="Link to this heading">#</a></h2>
 <p>First we’ll import the packages we’ll need, read in the data, and view a sample of 10 rows of the DataFrame:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1047,84 +592,84 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
-      <th>819</th>
-      <td>s8</td>
-      <td>1</td>
-      <td>21</td>
-      <td>neutral</td>
-      <td>0.416528</td>
-    </tr>
-    <tr>
-      <th>139</th>
-      <td>s25</td>
-      <td>5</td>
-      <td>12</td>
-      <td>neutral</td>
-      <td>0.423601</td>
-    </tr>
-    <tr>
-      <th>1889</th>
-      <td>s7</td>
-      <td>5</td>
-      <td>20</td>
-      <td>neutral</td>
-      <td>0.673615</td>
-    </tr>
-    <tr>
-      <th>3011</th>
-      <td>s6</td>
-      <td>5</td>
-      <td>27</td>
-      <td>congruent</td>
-      <td>0.437177</td>
-    </tr>
-    <tr>
-      <th>1201</th>
-      <td>s21</td>
-      <td>3</td>
-      <td>25</td>
-      <td>neutral</td>
-      <td>0.454654</td>
-    </tr>
-    <tr>
-      <th>495</th>
-      <td>s22</td>
-      <td>1</td>
-      <td>16</td>
-      <td>incongruent</td>
-      <td>0.722015</td>
-    </tr>
-    <tr>
-      <th>615</th>
-      <td>s22</td>
-      <td>5</td>
-      <td>8</td>
-      <td>congruent</td>
-      <td>0.405832</td>
-    </tr>
-    <tr>
-      <th>3543</th>
-      <td>s20</td>
+      <th>2120</th>
+      <td>s9</td>
       <td>2</td>
-      <td>20</td>
-      <td>congruent</td>
-      <td>0.421928</td>
+      <td>29</td>
+      <td>neutral</td>
+      <td>0.389845</td>
     </tr>
     <tr>
-      <th>4279</th>
-      <td>s15</td>
-      <td>5</td>
+      <th>2487</th>
+      <td>s14</td>
+      <td>4</td>
+      <td>14</td>
+      <td>neutral</td>
+      <td>0.601882</td>
+    </tr>
+    <tr>
+      <th>1469</th>
+      <td>s1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>neutral</td>
+      <td>0.441207</td>
+    </tr>
+    <tr>
+      <th>3673</th>
+      <td>s17</td>
+      <td>1</td>
       <td>23</td>
       <td>neutral</td>
-      <td>0.845636</td>
+      <td>0.434127</td>
     </tr>
     <tr>
-      <th>3597</th>
-      <td>s20</td>
-      <td>4</td>
-      <td>10</td>
+      <th>3159</th>
+      <td>s23</td>
+      <td>5</td>
+      <td>17</td>
+      <td>neutral</td>
+      <td>0.569945</td>
+    </tr>
+    <tr>
+      <th>288</th>
+      <td>s18</td>
+      <td>5</td>
+      <td>1</td>
       <td>congruent</td>
-      <td>0.561984</td>
+      <td>0.637621</td>
+    </tr>
+    <tr>
+      <th>2565</th>
+      <td>s4</td>
+      <td>1</td>
+      <td>28</td>
+      <td>neutral</td>
+      <td>0.493799</td>
+    </tr>
+    <tr>
+      <th>2310</th>
+      <td>s26</td>
+      <td>3</td>
+      <td>28</td>
+      <td>incongruent</td>
+      <td>0.597077</td>
+    </tr>
+    <tr>
+      <th>1640</th>
+      <td>s13</td>
+      <td>2</td>
+      <td>20</td>
+      <td>neutral</td>
+      <td>0.452383</td>
+    </tr>
+    <tr>
+      <th>1669</th>
+      <td>s13</td>
+      <td>3</td>
+      <td>17</td>
+      <td>incongruent</td>
+      <td>0.428999</td>
     </tr>
   </tbody>
 </table>
@@ -1132,7 +677,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="examine-the-data-without-considering-repeated-measures">
-<h2>Examine the data without considering repeated measures<a class="headerlink" href="#examine-the-data-without-considering-repeated-measures" title="Permalink to this headline">#</a></h2>
+<h2>Examine the data without considering repeated measures<a class="headerlink" href="#examine-the-data-without-considering-repeated-measures" title="Link to this heading">#</a></h2>
 <p>First we’ll get some descriptive statistics for RT in each condition. We do this using pandas <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> method to group by flanker condition, and then we select the <code class="docutils literal notranslate"><span class="pre">rt</span></code> column for further processing by putting it in square brackets (which is pandas’ way of selecting columns). Finally we chain all this with the <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> method:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1230,14 +775,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_9_0.png" src="../_images/repeated_measures_9_0.png" />
+<img alt="../_images/ec8135b5df913854ae9e832c478a7f2c2065f9474641e2bfa594ba19c839b67b.png" src="../_images/ec8135b5df913854ae9e832c478a7f2c2065f9474641e2bfa594ba19c839b67b.png" />
 </div>
 </div>
 <p>The data show the skew that is expected of RT data — there are fundamental human performance limits on how fast a person can response (short RTs), but the upper limit of RTs is theoretically unlimited. In the present experiment, participants actually only had a 1 s window in which to respond, so the RTs are all less than 1. Nevertheless, the data are skewed because there is a wider range of RTs above the median than below.</p>
 <p>Another thing we can see about the distribution of values is that there are many outliers (individual points in the box plot) at the long end of the RT range, but few at the short end. This is, again, a consequence of the skewed nature of the data. However, notably some of the outliers on the short end of the distributions are suspicious: human RTs in very simple tasks (like pressing a button any time a light comes on) are rarely shorter than 200 ms, yet we have a few RT values below that. So our box plots suggest that we may have some anomalous data, perhaps from trials on which someone pressed a button accidentally prior to processing the actual direction of the arrow.</p>
 <p>Finally, the box plots suggest that RTs are slowest in the incongruent condition and fastest in the congruent condition — consistent with our predictions based on past studies of the flanker effect. RTs for the neutral condition are in between the other two conditions. This suggests that perhaps both facilitation effects in the congruent condition, and interference effects in the incongruent condition, are present in the data. However, it’s hard to know how large or believable those differences are, because the distributions overlap quite a bit between the three conditions.</p>
 <section id="stingray-plot">
-<h3>Stingray plot<a class="headerlink" href="#stingray-plot" title="Permalink to this headline">#</a></h3>
+<h3>Stingray plot<a class="headerlink" href="#stingray-plot" title="Link to this heading">#</a></h3>
 <p>Let’s look at a couple of other ways of viewing the data that we learned about in the Seaborn lesson. First, we’ll use a violin (stingray) plot to see both the KDE and box plot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1249,13 +794,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_11_0.png" src="../_images/repeated_measures_11_0.png" />
+<img alt="../_images/db6cfe62433c43b6cfc42a7affd71d0dc577f987d86d845b0b579ecb7b2d1494.png" src="../_images/db6cfe62433c43b6cfc42a7affd71d0dc577f987d86d845b0b579ecb7b2d1494.png" />
 </div>
 </div>
 <p>The skewed nature of the data are again evident, but we can see that not only are the median values for the three conditions different, but the bulk of values in each distribution of RTs also appear to be rather different. That is, the “humps” in the middle of each distribution are relatively non-overlapping, although neutral and incongruent are fairly similar.</p>
 </section>
 <section id="strip-plot">
-<h3>Strip plot<a class="headerlink" href="#strip-plot" title="Permalink to this headline">#</a></h3>
+<h3>Strip plot<a class="headerlink" href="#strip-plot" title="Link to this heading">#</a></h3>
 <p>Next let’s look at a strip plot of the data, which plots each data point separately:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1267,14 +812,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_13_0.png" src="../_images/repeated_measures_13_0.png" />
+<img alt="../_images/0c6c2df9cacc1347efa9fa3fa857810c696471e2aaa3dd40c68400762971945f.png" src="../_images/0c6c2df9cacc1347efa9fa3fa857810c696471e2aaa3dd40c68400762971945f.png" />
 </div>
 </div>
 <p>This is really less informative than the above plots, because there are so many data points! Mostly we just see big patches of the plots for each condition with lots of individual values.</p>
 <p>However, the strip plots do show us something interesting that wasn’t evident in the previous plots: the very fast outlier data points are quite anomalous, even compared to the very slow outliers. That is, there are few “fast” data points, and they are generally quite far from the rest of the distribution of RTs. In contrast, the slower data points are more plentiful, and seem to form a rather continuous set of values, albeit more sparse than the points closer to the centres of the distributions. This suggests that the slower data points might be quite believable as real data — mosly people make faster resposnes, but sometimes they’re a bit slower. In contrast, the strip plot gives us greater confidence that the very fast RTs should be eliminated from analysis, because they are not just slightly-faster reponses than he next-fastest responses.</p>
 </section>
 <section id="point-plot">
-<h3>Point plot<a class="headerlink" href="#point-plot" title="Permalink to this headline">#</a></h3>
+<h3>Point plot<a class="headerlink" href="#point-plot" title="Link to this heading">#</a></h3>
 <p>Finally, let’s look at a point plot. Recall that point plots show the mean for each condition, along with 95% confidence intervals (CIs) as the measure of variance. CIs are much narrower than the whiskers in box plots, because they are meant to represent our confidence in the estimate of the mean, rather than showing the overall distribution of values. In general, we can interpret conditions with non-overlapping 95% CIs as being “believably different” from each other, and likely to be statistically significantly different as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1286,7 +831,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_15_0.png" src="../_images/repeated_measures_15_0.png" />
+<img alt="../_images/3a0b0d92b07562fffd4129a202288f0048a99dfc4ce6871fde8423a460d0b4cd.png" src="../_images/3a0b0d92b07562fffd4129a202288f0048a99dfc4ce6871fde8423a460d0b4cd.png" />
 </div>
 </div>
 <p>We can see that the CIs are quite far apart, suggesting that there are very large differences between RTs for each pair of conditions.</p>
@@ -1294,7 +839,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="examine-individual-participant-data">
-<h2>Examine individual participant data<a class="headerlink" href="#examine-individual-participant-data" title="Permalink to this headline">#</a></h2>
+<h2>Examine individual participant data<a class="headerlink" href="#examine-individual-participant-data" title="Link to this heading">#</a></h2>
 <p>Now, let’s use split-apply-combine to average the RTs within each individual participant (and within each condition within individuals) prior to the group-level descriptive statistics. We can do this in one line of code by chaining, combining the following steps:</p>
 <ul class="simple">
 <li><p>group by both participant ID and condition (split). Note that the argument to <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> is a list containing the two columns we want to group by</p></li>
@@ -1484,7 +1029,7 @@ title="Print to PDF"
 </div>
 <p>This is a lot of numbers to look at! Indeed, so may that pandas doesn’t show us all the rows. From what is shown, we can see that there is certainly variance in mean RTs for each individual, and in variance (as measured by standard deviation), but it’s hard to get a real sense of how much variability there is, or whether there are any participants whose data may be anomalous relative to most others.</p>
 <section id="visualizing-nested-data-with-seaborn">
-<h3>Visualizing nested data with Seaborn<a class="headerlink" href="#visualizing-nested-data-with-seaborn" title="Permalink to this headline">#</a></h3>
+<h3>Visualizing nested data with Seaborn<a class="headerlink" href="#visualizing-nested-data-with-seaborn" title="Link to this heading">#</a></h3>
 <p>Seaborn makes it easy to separate data by participants in visualization. For example, we can generate box plots as we did above, but put participant on the <em>x</em> axis, and use the <code class="docutils literal notranslate"><span class="pre">hue</span></code> kwarg to colour-code flanker condition. Because there are lots of individual participants, we add the <code class="docutils literal notranslate"><span class="pre">aspect=3</span></code> kwarg to tell Seaborn to make the plot 3x as wide as it is tall.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1498,7 +1043,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_20_0.png" src="../_images/repeated_measures_20_0.png" />
+<img alt="../_images/38c9efddb93f24da26c538385f33d00af6946dc9ae92cb0655180e9dbc03fa3a.png" src="../_images/38c9efddb93f24da26c538385f33d00af6946dc9ae92cb0655180e9dbc03fa3a.png" />
 </div>
 </div>
 <p>Another way to visualize so many different box plots is with Seaborn’s <code class="docutils literal notranslate"><span class="pre">col</span></code> and <code class="docutils literal notranslate"><span class="pre">col_wrap</span></code> kwargs. On its own, <code class="docutils literal notranslate"><span class="pre">col=</span></code> will plot whatever variable you give it in separate columns — in our case, participants (rather than as different locations on the <em>x</em> axis, as shown above). Adding the <code class="docutils literal notranslate"><span class="pre">col_wrap</span></code> kwarg is necessary when the number of categories passed to <code class="docutils literal notranslate"><span class="pre">col</span></code> is large, as in our 27 participants. This kwag tells Seaborn how many columns to put on one row before wrapping around to a new row.</p>
@@ -1516,7 +1061,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_22_0.png" src="../_images/repeated_measures_22_0.png" />
+<img alt="../_images/c4a999fc87be6164e85d97d69ee81ac8a791188bc2bf221f9bd15c3b20d8689d.png" src="../_images/c4a999fc87be6164e85d97d69ee81ac8a791188bc2bf221f9bd15c3b20d8689d.png" />
 </div>
 </div>
 <p>This plot shows us that, indeed, there is variability among participants in both the median RTs and the variance (as indicated by the length of the whiskers, and the number and range of outlier points). Encouragingly, however, each individual seems to show the expected effect, of longer RTs for incongruent than congruent flakers. It also shows us that those anomalously fast RTs we saw above are contributed only by a couple of participants, again leading us to think that these are not believable data points.</p>
@@ -1531,7 +1076,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_24_0.png" src="../_images/repeated_measures_24_0.png" />
+<img alt="../_images/d42f0a5e0f69ae123aa9fd4b4a526d018e459513339cc588b1eba688f39707b5.png" src="../_images/d42f0a5e0f69ae123aa9fd4b4a526d018e459513339cc588b1eba688f39707b5.png" />
 </div>
 </div>
 <p>This is not a lot more useful than the strip plot above, because Seaborn draws dots for each participant over those of previous participants. So we see lots of pink in the plot above, because that is the colour used for the last participant plotted. This is addressed by using a swam plot (which will take a long time to execute if you try to run this, due to the large number of data points it’s trying to plot):</p>
@@ -1606,7 +1151,7 @@ title="Print to PDF"
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/matplotlib/pyplot.py:387,</span> in <span class="ni">show</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">344</span><span class="sd"> Display all open figures.</span>
 <span class="g g-Whitespace">    </span><span class="mi">345</span><span class="sd"> </span>
 <span class="sd">   (...)</span>
@@ -1647,7 +1192,7 @@ title="Print to PDF"
 <span class="ne">--&gt; </span><span class="mi">232</span> <span class="k">return</span> <span class="n">caller</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">extras</span> <span class="o">+</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
 
 <span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/IPython/core/formatters.py:221,</span> in <span class="ni">catch_format_error</span><span class="nt">(method, self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span> <span class="sd">&quot;&quot;&quot;show traceback on failed format call&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;show traceback on failed format call&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">220</span> <span class="k">try</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">221</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">222</span> <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
@@ -1710,7 +1255,7 @@ title="Print to PDF"
 <span class="g g-Whitespace">    </span><span class="mi">491</span> <span class="nd">@_api</span><span class="o">.</span><span class="n">delete_parameter</span><span class="p">(</span><span class="s2">&quot;3.5&quot;</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">def</span> <span class="nf">print_png</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename_or_obj</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">493</span>               <span class="n">metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pil_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">495</span><span class="sd">     Write the figure to a PNG file.</span>
 <span class="g g-Whitespace">    </span><span class="mi">496</span><span class="sd"> </span>
 <span class="sd">   (...)</span>
@@ -1804,42 +1349,14 @@ title="Print to PDF"
 <span class="g g-Whitespace">   </span><span class="mi">3451</span> <span class="c1"># Place it into the swarm</span>
 <span class="g g-Whitespace">   </span><span class="mi">3452</span> <span class="n">swarm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">swarm</span><span class="p">,</span> <span class="n">new_xyr_i</span><span class="p">])</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/seaborn/categorical.py:3511,</span> in <span class="ni">Beeswarm.first_non_overlapping_candidate</span><span class="nt">(self, candidates, neighbors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3506</span> <span class="n">sep_needed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">neighbors_r</span> <span class="o">+</span> <span class="n">r_i</span><span class="p">)</span>
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/seaborn/categorical.py:3506,</span> in <span class="ni">Beeswarm.first_non_overlapping_candidate</span><span class="nt">(self, candidates, neighbors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3503</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">neighbors_y</span> <span class="o">-</span> <span class="n">y_i</span>
+<span class="g g-Whitespace">   </span><span class="mi">3504</span> <span class="n">sq_distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">dy</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3506</span> <span class="n">sep_needed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">neighbors_r</span> <span class="o">+</span> <span class="n">r_i</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3508</span> <span class="c1"># Good candidate does not overlap any of neighbors which means that</span>
 <span class="g g-Whitespace">   </span><span class="mi">3509</span> <span class="c1"># squared distance between candidate and any of the neighbors has</span>
 <span class="g g-Whitespace">   </span><span class="mi">3510</span> <span class="c1"># to be at least square of the summed radii</span>
-<span class="ne">-&gt; </span><span class="mi">3511</span> <span class="n">good_candidate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">sq_distances</span> <span class="o">&gt;=</span> <span class="n">sep_needed</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3513</span> <span class="k">if</span> <span class="n">good_candidate</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3514</span>     <span class="k">return</span> <span class="n">xyr_i</span>
-
-<span class="nn">File &lt;__array_function__ internals&gt;:180,</span> in <span class="ni">all</span><span class="nt">(*args, **kwargs)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/numpy/core/fromnumeric.py:2489,</span> in <span class="ni">all</span><span class="nt">(a, axis, out, keepdims, where)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2406</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_all_dispatcher</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2407</span> <span class="k">def</span> <span class="nf">all</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">2408</span>     <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2409</span><span class="sd">     Test whether all array elements along a given axis evaluate to True.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2410</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2487</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">2488</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">2489</span>     <span class="k">return</span> <span class="n">_wrapreduction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2490</span>                           <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/numpy/core/fromnumeric.py:70,</span> in <span class="ni">_wrapreduction</span><span class="nt">(obj, ufunc, method, axis, dtype, out, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="k">def</span> <span class="nf">_wrapreduction</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="nn">---&gt; 70     passkwargs = {k: v for k, v</span> in <span class="ni">kwargs.items</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>                   <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">}</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">mu</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/numpy/core/fromnumeric.py:71,</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="k">def</span> <span class="nf">_wrapreduction</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="nn">     70     passkwargs = {k: v for k, v</span> in <span class="ni">kwargs.items</span><span class="nt">()</span>
-<span class="ne">---&gt; </span><span class="mi">71</span>                   <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">}</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">mu</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3511</span> <span class="n">good_candidate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">sq_distances</span> <span class="o">&gt;=</span> <span class="n">sep_needed</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1850,7 +1367,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="appropriately-dealing-with-repeated-measures-aggregating-data-by-participants">
-<h2>Appropriately dealing with repeated measures: Aggregating data by participants<a class="headerlink" href="#appropriately-dealing-with-repeated-measures-aggregating-data-by-participants" title="Permalink to this headline">#</a></h2>
+<h2>Appropriately dealing with repeated measures: Aggregating data by participants<a class="headerlink" href="#appropriately-dealing-with-repeated-measures-aggregating-data-by-participants" title="Link to this heading">#</a></h2>
 <p>Because there are so many data points, and variation in both the mean and range of values between participants, it is necessary to first average (<strong>aggregate</strong>) within each participant and condition, prior to computing descriptive statistics or visualizing. This ensures that the variance we are examining is the <strong>between-subjects variance</strong>, unconfounded with <strong>within-subjects variance</strong>. This is primarily important in generating plots that show confidence intervals (CIs), such as point plots and bar plots, for reasons explained below.</p>
 <p>Seaborn has a way of doing this “on the fly” when you generate plots, using the <code class="docutils literal notranslate"><span class="pre">units=</span></code> kwarg and passing the name of the grouping variable for repeated measures (in this case, <code class="docutils literal notranslate"><span class="pre">participant</span></code>):</p>
 <div class="cell docutils container">
@@ -1863,12 +1380,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_29_0.png" src="../_images/repeated_measures_29_0.png" />
+<img alt="../_images/3d914fa51268de0835dc296b8d7de0aaa47d0a3a54083c2f43457eeea12e7155.png" src="../_images/3d914fa51268de0835dc296b8d7de0aaa47d0a3a54083c2f43457eeea12e7155.png" />
 </div>
 </div>
 <p><strong>This is the most important figure in this lesson</strong>. Compared to the point plot with 95% CIs that we generated above for the aggregated data, the CIs in this plot are much larger than those we saw earlier, in the point plot for the un-aggregated data. In that previous plot, the width of the CIs was only about 0.005 s (5 ms). Here, with the CIs computed properly (as reflecting the variance across individuals), the width of the CIs is approximately 0.02 s (20 ms). While still small relative to the differences in the means, the CIs are nonetheless roughly 4x wider in the aggregated data.</p>
 <section id="why-do-cis-get-larger-when-we-properly-aggregate-repeated-measures-data">
-<h3>Why do CIs get larger when we properly aggregate repeated measures data?<a class="headerlink" href="#why-do-cis-get-larger-when-we-properly-aggregate-repeated-measures-data" title="Permalink to this headline">#</a></h3>
+<h3>Why do CIs get larger when we properly aggregate repeated measures data?<a class="headerlink" href="#why-do-cis-get-larger-when-we-properly-aggregate-repeated-measures-data" title="Link to this heading">#</a></h3>
 <p>We’ve already seen that the variance in the data actually went down, as quantified by the min-max range of values, and the standard deviation. So it may seem strange that the CIs do the opposite, and get bigger. To understand this, consider how the 95% CIs are computed:</p>
 <p><span class="math notranslate nohighlight">\(CI = 1.96 * \frac{std}{\sqrt n}\)</span></p>
 <p>CIs are computed by dividing the standard deviation (<span class="math notranslate nohighlight">\(std\)</span>) by the square root of <span class="math notranslate nohighlight">\(n\)</span> — the number of data points used to compute the mean and standard deviation. In the un-aggregated data, this was approximately 1000 – 2000 data points for each condition. In contrast, for the aggregated data, <span class="math notranslate nohighlight">\(n\)</span> = 27. Thus the CIs are much wider, because dividing by a larger number (1000 - 2000, rather than 27) results in a smaller number (even factoring in the differences in standard deviation, and the square root calculation). The values are multiplied by 1.96 because this is the <em>z</em> value corresponding to <em>p</em> = .05 in a normal distribution.</p>
@@ -1878,7 +1395,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="aggregating-using-split-apply-combine">
-<h2>Aggregating using Split-Apply-Combine<a class="headerlink" href="#aggregating-using-split-apply-combine" title="Permalink to this headline">#</a></h2>
+<h2>Aggregating using Split-Apply-Combine<a class="headerlink" href="#aggregating-using-split-apply-combine" title="Link to this heading">#</a></h2>
 <p>While it’s nice that Seaborn can aggregate repeated-measures data for us, that only works for generating Seaborn plots. It’s also good to know how to create a DataFrame of aggregated data, which you can then use to generate tables of descriptive statistics, and eventually perform statistical tests on.</p>
 <p>To do this, we will use <em>two</em> split-apply-combine operations in sequence. In one chained command, we will:</p>
 <ul class="simple">
@@ -2061,7 +1578,7 @@ title="Print to PDF"
 <p>However, the range of values decreases when we look at the <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> values. This is a normal consequence of averaging — the most extreme values found in a set of individual data points will be reduced when we average by some grouping variables (like participant).</p>
 <p>The variance (as reflected by the standard deviation, <code class="docutils literal notranslate"><span class="pre">std</span></code>) gets smaller as well, for a similar reason: the variance is now among the average RTs for each participant in each condition, which have a smaller range than the raw data points.</p>
 <section id="plot-data-aggregated-across-trials">
-<h3>Plot data aggregated across trials<a class="headerlink" href="#plot-data-aggregated-across-trials" title="Permalink to this headline">#</a></h3>
+<h3>Plot data aggregated across trials<a class="headerlink" href="#plot-data-aggregated-across-trials" title="Link to this heading">#</a></h3>
 <p>Now let’s re-plot the data using the same plots we did above, but now for the data averaged within participants.</p>
 <p>First let’s save the aggregated data in a new DataFrame called <code class="docutils literal notranslate"><span class="pre">df_avg</span></code>. We chain the <code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code> method to the end of this, because <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> sets the indexes of the DataFrame to be the grouping variables (in this case, <code class="docutils literal notranslate"><span class="pre">rt</span></code> and <code class="docutils literal notranslate"><span class="pre">flankers()</span></code>). This is ideal fo rlooking at tables of the data (e.g., in the above, RT and condition are in bold), but index columns are not visible to Seaborn as data columns for plotting. So we use <code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code> to convert <code class="docutils literal notranslate"><span class="pre">rt</span></code> and <code class="docutils literal notranslate"><span class="pre">flankers</span></code> back from indexes to regular DataFrame columns.</p>
 <div class="cell docutils container">
@@ -2082,7 +1599,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_39_0.png" src="../_images/repeated_measures_39_0.png" />
+<img alt="../_images/32b4b65c4464506f75cd1f14a396b88e7fa1a50f65122a1b47916501c8a8b968.png" src="../_images/32b4b65c4464506f75cd1f14a396b88e7fa1a50f65122a1b47916501c8a8b968.png" />
 </div>
 </div>
 <p>Another, somewhat confusing, thing is that the order of the conditions on the <em>x</em> axis is reversed: whereas before the order was congruent- neutral - incongruent, now neutral is last. This is a consequence of the <code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code> method, which led to the conditions being re-ordered alphabetically. This highlights that its always good to pay close attention to your plot labels!</p>
@@ -2098,13 +1615,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_41_0.png" src="../_images/repeated_measures_41_0.png" />
+<img alt="../_images/cc60b63aa7b6bbf4cef3120f0e888bda626718f6557258f7184345c6f2216577.png" src="../_images/cc60b63aa7b6bbf4cef3120f0e888bda626718f6557258f7184345c6f2216577.png" />
 </div>
 </div>
 <p>If you compare this to the box plot based on every data point that we generated earlier, you’ll see that the range covered by the whiskers and the box are both smaller. This is consistent with the reduced range in the data that we observed in the tables of descriptive statistics. Likewise, the boxes (which represent the IQR) are now non-overlapping, whereas before they overlapped.</p>
 </section>
 <section id="id1">
-<h3>Strip plot<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>Strip plot<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>A strip plot of the data now much easier to make sense of, because we only have one point per participant in each condition:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2116,12 +1633,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_43_0.png" src="../_images/repeated_measures_43_0.png" />
+<img alt="../_images/0eaf234ec42a3a43affb17d8af5ac1c1d4036926c6d47fd463ca43da44860f5b.png" src="../_images/0eaf234ec42a3a43affb17d8af5ac1c1d4036926c6d47fd463ca43da44860f5b.png" />
 </div>
 </div>
 </section>
 <section id="line-plot">
-<h3>Line plot<a class="headerlink" href="#line-plot" title="Permalink to this headline">#</a></h3>
+<h3>Line plot<a class="headerlink" href="#line-plot" title="Link to this heading">#</a></h3>
 <p>This makes it easier to get a sense of the variability between individuals. However, It’s a bit hard to see how each individual’s RT changes between the two experimental conditions. To facilitate this, let’s use a point plot, which by default draws lines to join data from each individual:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2134,7 +1651,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_45_0.png" src="../_images/repeated_measures_45_0.png" />
+<img alt="../_images/0a6b6db2bb57d717b4bfff5f718522cf6d3c3708b4eb2abd399e5cf3253c526b.png" src="../_images/0a6b6db2bb57d717b4bfff5f718522cf6d3c3708b4eb2abd399e5cf3253c526b.png" />
 </div>
 </div>
 <p>You may recall that point plots typically show means and 95% CIs, but the plot above lacks CIs. This is because in the <code class="docutils literal notranslate"><span class="pre">df_avg</span></code> DataFrame, there is only one value for each participant in each condition (because we averaged across trials). If we wanted to see CIs for each individual, we could use the un-aggregated data (<code class="docutils literal notranslate"><span class="pre">df</span></code>).</p>
@@ -2149,13 +1666,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_47_0.png" src="../_images/repeated_measures_47_0.png" />
+<img alt="../_images/eaf90597214d5b419bd70399e36becddffcc26d61fe02be2492f12252cc27ff8.png" src="../_images/eaf90597214d5b419bd70399e36becddffcc26d61fe02be2492f12252cc27ff8.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="point-plots-aggregated-across-participants">
-<h2>Point plots aggregated across participants<a class="headerlink" href="#point-plots-aggregated-across-participants" title="Permalink to this headline">#</a></h2>
+<h2>Point plots aggregated across participants<a class="headerlink" href="#point-plots-aggregated-across-participants" title="Link to this heading">#</a></h2>
 <p>The CIs in the above plot don’t, however, help us to make a simple inference as to whether, across all participants, there is a significant RT difference between congruent and incongruent. The data are certainly suggestive of this, because all participants show slower RTs for incongruent. But this is where a point plot with 95% CIs, across participants, is useful:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2168,13 +1685,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/repeated_measures_49_0.png" src="../_images/repeated_measures_49_0.png" />
+<img alt="../_images/041ac33c650e0c4c967424320b467536d8db9ddf6ff7edeab79cb44951f039b6.png" src="../_images/041ac33c650e0c4c967424320b467536d8db9ddf6ff7edeab79cb44951f039b6.png" />
 </div>
 </div>
 </section>
 <hr class="docutils" />
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Repeated measures occur when we take repeated samples of the same measurement. This is common in cognitive psychology and neuroscience data, because individual measurements typically include noise. Averaging across repeated measurements yields a more robust estimate of the true value for that individual</p></li>
 <li><p>When we have repeated measures data, we need to be concerned about the difference between within-subjects variance, and between-subjects variance</p></li>
@@ -2204,7 +1721,7 @@ title="Print to PDF"
             mode: "jupyter_books"
         },
         kernelOptions: {
-            kernelName: "jupyter_books",
+            name: "jupyter_books",
             path: "./5-eda"
         },
         predefinedOutput: true
@@ -2212,50 +1729,130 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'jupyter_books'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="learning_objectives.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Learning Objectives</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="learning_objectives.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Learning Objectives</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="data_cleaning.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="data_cleaning.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Data Cleaning - Dealing with Outliers</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-data">About the data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-data-without-considering-repeated-measures">Examine the data without considering repeated measures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stingray-plot">Stingray plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strip-plot">Strip plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#point-plot">Point plot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-individual-participant-data">Examine individual participant data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-nested-data-with-seaborn">Visualizing nested data with Seaborn</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appropriately-dealing-with-repeated-measures-aggregating-data-by-participants">Appropriately dealing with repeated measures: Aggregating data by participants</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-cis-get-larger-when-we-properly-aggregate-repeated-measures-data">Why do CIs get larger when we properly aggregate repeated measures data?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-using-split-apply-combine">Aggregating using Split-Apply-Combine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data-aggregated-across-trials">Plot data aggregated across trials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Strip plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plot">Line plot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-plots-aggregated-across-participants">Point plots aggregated across participants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Hyosub Kim<br/>
-  
-      &copy; Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Hyosub Kim
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
