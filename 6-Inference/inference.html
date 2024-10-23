@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Statistical inference &#8212; Data Science for Kinesiology</title>
   
@@ -14,53 +15,57 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '6-Inference/inference';</script>
-    <link rel="icon" href="../_static/NESC3505_icon.png"/>
+    <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction to Single Unit Data" href="../7-single_unit/introduction.html" />
@@ -74,23 +79,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -112,20 +122,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,9 +142,6 @@
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
-  
-    
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -161,18 +160,7 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -192,11 +180,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/introduction.html">Getting Started with the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/data.html">Data</a></li>
 </ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets.html">Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets_limits.html">Limitations of Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/reproducibility.html">Reproducibility</a></li>
@@ -205,14 +193,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/libs.html">Libraries and packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/why_python.html">Why Python for this Course?</a></li>
 </ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/datacamp.html">DataCamp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/jupyter.html">Jupyter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/markdown.html">Markdown</a></li>
 </ul>
-</details></li>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Introduction to Python</span></p>
 <ul class="nav bd-sidenav">
@@ -220,7 +208,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../3-python/learning_objectives.html">Learning Objectives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/jupyter_jhub.html">Introduction to Jupyter Notebooks in JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/getting_help.html">Getting Help with Python</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/data_types.html">Data types</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/data_types.html">Data types</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/variables_assignment.html">Variables and Assignment</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../3-python/types_conversion.html">Data Types and Conversion</a></li>
@@ -229,21 +217,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../3-python/lists.html">Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/dictionaries.html">Dictionaries</a></li>
 </ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/flow_control.html">Flow Control</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/flow_control.html">Flow Control</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/conditionals.html">Conditionals</a></li>
 </ul>
-</details></li>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/writing-a-function.html">Writing Functions</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/working_w_data.html">Working with Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/working_w_data.html">Working with Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/pandas_dataframes.html">Introduction to pandas DataFrames</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="../3-python/looping_data_files.html">Looping Over Data Files</a></li>
 
 </ul>
-</details></li>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Data Visualization</span></p>
 <ul class="nav bd-sidenav">
@@ -272,17 +260,17 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../7-single_unit/introduction.html">Introduction to Single Unit Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../7-single_unit/learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/intro_spike_trains.html">Introduction to Spike Train Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/ten_intensities.html">Effects of Light Intensity on Spike Rate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/heat_maps.html">Heat Maps</a></li>
 </ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/pandas_multielec.html">Working with Multielectrode Data in pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/corr_spike_trains.html">Correlating spike trains</a></li>
 </ul>
-</details></li>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Signal Processing</span></p>
 <ul class="nav bd-sidenav">
@@ -302,7 +290,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -311,14 +299,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -440,28 +428,26 @@
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -507,13 +493,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="statistical-inference">
-<h1>Statistical inference<a class="headerlink" href="#statistical-inference" title="Link to this heading">#</a></h1>
+<h1>Statistical inference<a class="headerlink" href="#statistical-inference" title="Permalink to this heading">#</a></h1>
 <p><em>This chapter has been adapted from <a class="reference external" href="https://python.datasciencebook.ca/inference.html">Data Science: A First Introduction (Python Edition)</a>, by Trevor Campbell, Tiffany Timbers, Melissa Lee, Lindsey Heagy, and Joel Ostblom of UBC.</em></p>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>A typical data analysis task in practice is to draw conclusions about some
 unknown aspect of a population of interest based on observed data sampled from
 that population; we typically do not get data on the <em>entire</em> population.  Data
@@ -524,7 +510,7 @@ populations and then introduce two common techniques in statistical inference:
 <em>point estimation</em> and <em>interval estimation</em>.</p>
 </section>
 <section id="chapter-learning-objectives">
-<h2>Chapter learning objectives<a class="headerlink" href="#chapter-learning-objectives" title="Link to this heading">#</a></h2>
+<h2>Chapter learning objectives<a class="headerlink" href="#chapter-learning-objectives" title="Permalink to this heading">#</a></h2>
 <p>By the end of the chapter, readers will be able to do the following:</p>
 <ul class="simple">
 <li><p>Describe real-world examples of questions that can be answered with statistical inference.</p></li>
@@ -540,7 +526,7 @@ populations and then introduce two common techniques in statistical inference:
 </ul>
 </section>
 <section id="why-do-we-need-sampling">
-<h2>Why do we need sampling?<a class="headerlink" href="#why-do-we-need-sampling" title="Link to this heading">#</a></h2>
+<h2>Why do we need sampling?<a class="headerlink" href="#why-do-we-need-sampling" title="Permalink to this heading">#</a></h2>
 <p>We often need to understand how quantities we observe in a subset
 of data relate to the same quantities in the broader population. For example, suppose a
 retailer is considering selling iPhone accessories, and they want to estimate
@@ -600,9 +586,9 @@ focus on two settings:</p>
 </ol>
 </section>
 <section id="sampling-distributions">
-<h2>Sampling distributions<a class="headerlink" href="#sampling-distributions" title="Link to this heading">#</a></h2>
+<h2>Sampling distributions<a class="headerlink" href="#sampling-distributions" title="Permalink to this heading">#</a></h2>
 <section id="sampling-distributions-for-proportions">
-<h3>Sampling distributions for proportions<a class="headerlink" href="#sampling-distributions-for-proportions" title="Link to this heading">#</a></h3>
+<h3>Sampling distributions for proportions<a class="headerlink" href="#sampling-distributions-for-proportions" title="Permalink to this heading">#</a></h3>
 <p>We will look at an example using data from
 <a class="reference external" href="http://insideairbnb.com/">Inside Airbnb</a>. Airbnb is an online
 marketplace for arranging vacation rentals and places to stay. The data set
@@ -619,12 +605,6 @@ night.</p>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
 </pre></div>
 </div>
 </div>
@@ -810,12 +790,11 @@ by using the <code class="docutils literal notranslate"><span class="pre">value_
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>room_type
-Entire home/apt    0.747497
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Entire home/apt    0.747497
 Private room       0.246408
 Shared room        0.005224
 Hotel room         0.000871
-Name: proportion, dtype: float64
+Name: room_type, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -841,11 +820,10 @@ we are also setting the random seed via numpy to make the results reproducible. 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>room_type
-Entire home/apt    0.725
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Entire home/apt    0.725
 Private room       0.250
 Shared room        0.025
-Name: proportion, dtype: float64
+Name: room_type, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -866,11 +844,10 @@ we would not get the same answer:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>room_type
-Entire home/apt    0.625
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Entire home/apt    0.625
 Private room       0.350
 Shared room        0.025
-Name: proportion, dtype: float64
+Name: room_type, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1105,7 +1082,7 @@ below to show that we end up with 20,000 point estimates, one for each of the 20
            Shared room        0.025
 19999      Entire home/apt    0.750
            Private room       0.250
-Name: proportion, Length: 44552, dtype: float64
+Name: room_type, Length: 44552, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1359,7 +1336,7 @@ sampling distribution directly for learning purposes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7b958531b2c4b982c740f6609e9acd675e717cd73a2c7cf79fbe4570df01a2a3.png" src="../_images/7b958531b2c4b982c740f6609e9acd675e717cd73a2c7cf79fbe4570df01a2a3.png" />
+<img alt="../_images/e380cd67e64cd60397ffe746313729e1ce595eb4b9ad56dab69ff12692d775e9.png" src="../_images/e380cd67e64cd60397ffe746313729e1ce595eb4b9ad56dab69ff12692d775e9.png" />
 </div>
 </div>
 <p>The sampling distribution above appears
@@ -1392,7 +1369,7 @@ sample, this implies that you would suspect that your sample point estimate is
 roughly equally likely to be above or below the true population proportion.</p>
 </section>
 <section id="sampling-distributions-for-means">
-<h3>Sampling distributions for means<a class="headerlink" href="#sampling-distributions-for-means" title="Link to this heading">#</a></h3>
+<h3>Sampling distributions for means<a class="headerlink" href="#sampling-distributions-for-means" title="Permalink to this heading">#</a></h3>
 <p>In the previous section, our variable of interest—<code class="docutils literal notranslate"><span class="pre">room_type</span></code>—was
 <em>categorical</em>, and the population parameter was a proportion. As mentioned in
 the chapter introduction, there are many choices of the population parameter
@@ -1411,7 +1388,7 @@ We can visualize the population distribution of the price per night with a histo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/84f17d99f8f18a3ceb979713c90c68a022deb4c59d678709935c0c12265e7425.png" src="../_images/84f17d99f8f18a3ceb979713c90c68a022deb4c59d678709935c0c12265e7425.png" />
+<img alt="../_images/4a6ba40b92d4f69e7a22055bd8bb71dc2f58bc0dd4a2d6ce2109f68892d7e3fa.png" src="../_images/4a6ba40b92d4f69e7a22055bd8bb71dc2f58bc0dd4a2d6ce2109f68892d7e3fa.png" />
 </div>
 </div>
 <p>In this figure, we see that the population distribution
@@ -1461,7 +1438,7 @@ of our sample.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c5517c257c86055ddde380868f22f2e69b3428c27e8b69abc5f02a811d033729.png" src="../_images/c5517c257c86055ddde380868f22f2e69b3428c27e8b69abc5f02a811d033729.png" />
+<img alt="../_images/e3e9b092dbde5929cdb905506862cca97d9951b07e1832175fa4da6374e3a8f9.png" src="../_images/e3e9b092dbde5929cdb905506862cca97d9951b07e1832175fa4da6374e3a8f9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1605,7 +1582,7 @@ distribution of sample means for samples of size 40.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a2f767d74af098bbb1a3378a29ba2e53df8fcf1bea1af987b1528c3571b10482.png" src="../_images/a2f767d74af098bbb1a3378a29ba2e53df8fcf1bea1af987b1528c3571b10482.png" />
+<img alt="../_images/6a4f6862d53ebecaabbefe78da0674e38105698ac14d30dc2d1bfb56d7e8e885.png" src="../_images/6a4f6862d53ebecaabbefe78da0674e38105698ac14d30dc2d1bfb56d7e8e885.png" />
 </div>
 </div>
 <p>In the figure above, the sampling distribution of the mean
@@ -1657,7 +1634,7 @@ sample, which will keep the average from being too extreme.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b27d1002f3a60ae4bcb58c8251f6f849a149e77ad3e10b009f76305190de1cc2.png" src="../_images/b27d1002f3a60ae4bcb58c8251f6f849a149e77ad3e10b009f76305190de1cc2.png" />
+<img alt="../_images/1ad327fe10058db8a4e2434f671f55902419fd9ce2ac5c3ebb353916ae26f428.png" src="../_images/1ad327fe10058db8a4e2434f671f55902419fd9ce2ac5c3ebb353916ae26f428.png" />
 </div>
 </div>
 <p>Given that there is quite a bit of variation in the sampling distribution of
@@ -1697,37 +1674,123 @@ distribution with a orange vertical line.</p>
 <span class="nn">     10     for replicate</span> in <span class="ni">range</span><span class="nt">(replicates)</span>
 <span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="p">])</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;sample_size&quot;</span><span class="p">,</span> <span class="s2">&quot;replicate&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/pandas/core/reshape/concat.py:395,</span> in <span class="ni">concat</span><span class="nt">(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">copy</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span> <span class="n">op</span> <span class="o">=</span> <span class="n">_Concatenator</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">objs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">392</span>     <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">395</span> <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
+<span class="nn">Cell In[20], line 6,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">sample_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">replicates</span> <span class="o">=</span> <span class="mi">20000</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">base</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="n">airbnb</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">sample_size</span><span class="o">=</span><span class="n">sample_size</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="n">replicate</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">for</span> <span class="n">sample_size</span> <span class="ow">in</span> <span class="n">sample_sizes</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="p">])</span>
+<span class="nn">     10     for replicate</span> in <span class="ni">range</span><span class="nt">(replicates)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="p">])</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;sample_size&quot;</span><span class="p">,</span> <span class="s2">&quot;replicate&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/pandas/core/reshape/concat.py:684,</span> in <span class="ni">_Concatenator.get_result</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">680</span>             <span class="n">indexers</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj_labels</span><span class="o">.</span><span class="n">get_indexer</span><span class="p">(</span><span class="n">new_labels</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">682</span>     <span class="n">mgrs_indexers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">obj</span><span class="o">.</span><span class="n">_mgr</span><span class="p">,</span> <span class="n">indexers</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">684</span> <span class="n">new_data</span> <span class="o">=</span> <span class="n">concatenate_managers</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">685</span>     <span class="n">mgrs_indexers</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_axes</span><span class="p">,</span> <span class="n">concat_axis</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">bm_axis</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">copy</span>
-<span class="g g-Whitespace">    </span><span class="mi">686</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">687</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">using_copy_on_write</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">688</span>     <span class="n">new_data</span><span class="o">.</span><span class="n">_consolidate_inplace</span><span class="p">()</span>
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/pandas/core/internals/concat.py:177,</span> in <span class="ni">concatenate_managers</span><span class="nt">(mgrs_indexers, axes, concat_axis, copy)</span>
-<span class="g g-Whitespace">    </span><span class="mi">167</span> <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">ju</span><span class="o">.</span><span class="n">block</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">ju</span> <span class="ow">in</span> <span class="n">join_units</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">blk</span><span class="o">.</span><span class="n">is_extension</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span>     <span class="c1"># _is_uniform_join_units ensures a single dtype, so</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span>     <span class="c1">#  we can use np.concatenate, which is more performant</span>
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/reshape/concat.py:381,</span> in <span class="ni">concat</span><span class="nt">(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span><span class="sd"> Concatenate pandas objects along a particular axis.</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span><span class="sd"> 1   3   4</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span> <span class="n">op</span> <span class="o">=</span> <span class="n">_Concatenator</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span>     <span class="n">objs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">370</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="c1"># expected &quot;Union[_SupportsArray[dtype[Any]],</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="c1"># _NestedSequence[_SupportsArray[dtype[Any]]]]&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">177</span>     <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># type: ignore[arg-type]</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="k">elif</span> <span class="n">is_1d_only_ea_dtype</span><span class="p">(</span><span class="n">blk</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="c1"># TODO(EA2D): special-casing not needed with 2D EAs</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">values</span> <span class="o">=</span> <span class="n">concat_compat</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ea_compat_axis</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>     <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">381</span> <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/reshape/concat.py:616,</span> in <span class="ni">_Concatenator.get_result</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">612</span>             <span class="n">indexers</span><span class="p">[</span><span class="n">ax</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj_labels</span><span class="o">.</span><span class="n">get_indexer</span><span class="p">(</span><span class="n">new_labels</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="n">mgrs_indexers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">obj</span><span class="o">.</span><span class="n">_mgr</span><span class="p">,</span> <span class="n">indexers</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">616</span> <span class="n">new_data</span> <span class="o">=</span> <span class="n">concatenate_managers</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span>     <span class="n">mgrs_indexers</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_axes</span><span class="p">,</span> <span class="n">concat_axis</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">bm_axis</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">copy</span>
+<span class="g g-Whitespace">    </span><span class="mi">618</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">620</span>     <span class="n">new_data</span><span class="o">.</span><span class="n">_consolidate_inplace</span><span class="p">()</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/concat.py:216,</span> in <span class="ni">concatenate_managers</span><span class="nt">(mgrs_indexers, axes, concat_axis, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>         <span class="n">values</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="n">fastpath</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">216</span> <span class="k">elif</span> <span class="n">_is_uniform_join_units</span><span class="p">(</span><span class="n">join_units</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">ju</span><span class="o">.</span><span class="n">block</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">ju</span> <span class="ow">in</span> <span class="n">join_units</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">blk</span><span class="o">.</span><span class="n">is_extension</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="c1"># _is_uniform_join_units ensures a single dtype, so</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="c1">#  we can use np.concatenate, which is more performant</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>         <span class="c1">#  than concat_compat</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/concat.py:660,</span> in <span class="ni">_is_uniform_join_units</span><span class="nt">(join_units)</span>
+<span class="g g-Whitespace">    </span><span class="mi">643</span> <span class="k">if</span> <span class="n">first</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;V&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">644</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span> <span class="k">return</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span>     <span class="c1"># exclude cases where a) ju.block is None or b) we have e.g. Int64+int64</span>
+<span class="g g-Whitespace">    </span><span class="mi">647</span>     <span class="nb">all</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ju</span><span class="o">.</span><span class="n">block</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">type</span><span class="p">(</span><span class="n">first</span><span class="p">)</span> <span class="k">for</span> <span class="n">ju</span> <span class="ow">in</span> <span class="n">join_units</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">648</span>     <span class="ow">and</span>
+<span class="g g-Whitespace">    </span><span class="mi">649</span>     <span class="c1"># e.g. DatetimeLikeBlock can be dt64 or td64, but these are not uniform</span>
+<span class="g g-Whitespace">    </span><span class="mi">650</span>     <span class="nb">all</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">651</span>         <span class="n">is_dtype_equal</span><span class="p">(</span><span class="n">ju</span><span class="o">.</span><span class="n">block</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">first</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">652</span>         <span class="c1"># GH#42092 we only want the dtype_equal check for non-numeric blocks</span>
+<span class="g g-Whitespace">    </span><span class="mi">653</span>         <span class="c1">#  (for now, may change but that would need a deprecation)</span>
+<span class="g g-Whitespace">    </span><span class="mi">654</span>         <span class="ow">or</span> <span class="n">ju</span><span class="o">.</span><span class="n">block</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;u&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">655</span>         <span class="k">for</span> <span class="n">ju</span> <span class="ow">in</span> <span class="n">join_units</span>
+<span class="g g-Whitespace">    </span><span class="mi">656</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">657</span>     <span class="ow">and</span>
+<span class="g g-Whitespace">    </span><span class="mi">658</span>     <span class="c1"># no blocks that would get missing values (can lead to type upcasts)</span>
+<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="c1"># unless we&#39;re an extension dtype.</span>
+<span class="ne">--&gt; </span><span class="mi">660</span>     <span class="nb">all</span><span class="p">(</span><span class="ow">not</span> <span class="n">ju</span><span class="o">.</span><span class="n">is_na</span> <span class="ow">or</span> <span class="n">ju</span><span class="o">.</span><span class="n">block</span><span class="o">.</span><span class="n">is_extension</span> <span class="k">for</span> <span class="n">ju</span> <span class="ow">in</span> <span class="n">join_units</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span>     <span class="ow">and</span>
+<span class="g g-Whitespace">    </span><span class="mi">662</span>     <span class="c1"># no blocks with indexers (as then the dimensions do not fit)</span>
+<span class="g g-Whitespace">    </span><span class="mi">663</span>     <span class="nb">all</span><span class="p">(</span><span class="ow">not</span> <span class="n">ju</span><span class="o">.</span><span class="n">indexers</span> <span class="k">for</span> <span class="n">ju</span> <span class="ow">in</span> <span class="n">join_units</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="ow">and</span>
+<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="c1"># only use this path when there is something to concatenate</span>
+<span class="g g-Whitespace">    </span><span class="mi">666</span>     <span class="nb">len</span><span class="p">(</span><span class="n">join_units</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">667</span> <span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/concat.py:660,</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">643</span> <span class="k">if</span> <span class="n">first</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;V&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">644</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span> <span class="k">return</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span>     <span class="c1"># exclude cases where a) ju.block is None or b) we have e.g. Int64+int64</span>
+<span class="g g-Whitespace">    </span><span class="mi">647</span>     <span class="nb">all</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ju</span><span class="o">.</span><span class="n">block</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">type</span><span class="p">(</span><span class="n">first</span><span class="p">)</span> <span class="k">for</span> <span class="n">ju</span> <span class="ow">in</span> <span class="n">join_units</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">648</span>     <span class="ow">and</span>
+<span class="g g-Whitespace">    </span><span class="mi">649</span>     <span class="c1"># e.g. DatetimeLikeBlock can be dt64 or td64, but these are not uniform</span>
+<span class="g g-Whitespace">    </span><span class="mi">650</span>     <span class="nb">all</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">651</span>         <span class="n">is_dtype_equal</span><span class="p">(</span><span class="n">ju</span><span class="o">.</span><span class="n">block</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">first</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">652</span>         <span class="c1"># GH#42092 we only want the dtype_equal check for non-numeric blocks</span>
+<span class="g g-Whitespace">    </span><span class="mi">653</span>         <span class="c1">#  (for now, may change but that would need a deprecation)</span>
+<span class="g g-Whitespace">    </span><span class="mi">654</span>         <span class="ow">or</span> <span class="n">ju</span><span class="o">.</span><span class="n">block</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;u&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">655</span>         <span class="k">for</span> <span class="n">ju</span> <span class="ow">in</span> <span class="n">join_units</span>
+<span class="g g-Whitespace">    </span><span class="mi">656</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">657</span>     <span class="ow">and</span>
+<span class="g g-Whitespace">    </span><span class="mi">658</span>     <span class="c1"># no blocks that would get missing values (can lead to type upcasts)</span>
+<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="c1"># unless we&#39;re an extension dtype.</span>
+<span class="ne">--&gt; </span><span class="mi">660</span>     <span class="nb">all</span><span class="p">(</span><span class="ow">not</span> <span class="n">ju</span><span class="o">.</span><span class="n">is_na</span> <span class="ow">or</span> <span class="n">ju</span><span class="o">.</span><span class="n">block</span><span class="o">.</span><span class="n">is_extension</span> <span class="k">for</span> <span class="n">ju</span> <span class="ow">in</span> <span class="n">join_units</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span>     <span class="ow">and</span>
+<span class="g g-Whitespace">    </span><span class="mi">662</span>     <span class="c1"># no blocks with indexers (as then the dimensions do not fit)</span>
+<span class="g g-Whitespace">    </span><span class="mi">663</span>     <span class="nb">all</span><span class="p">(</span><span class="ow">not</span> <span class="n">ju</span><span class="o">.</span><span class="n">indexers</span> <span class="k">for</span> <span class="n">ju</span> <span class="ow">in</span> <span class="n">join_units</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="ow">and</span>
+<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="c1"># only use this path when there is something to concatenate</span>
+<span class="g g-Whitespace">    </span><span class="mi">666</span>     <span class="nb">len</span><span class="p">(</span><span class="n">join_units</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">667</span> <span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/_libs/properties.pyx:36,</span> in <span class="ni">pandas._libs.properties.CachedProperty.__get__</span><span class="nt">()</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/concat.py:415,</span> in <span class="ni">JoinUnit.is_na</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span>     <span class="c1"># TODO: better to use can_hold_element?</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span>     <span class="k">return</span> <span class="n">is_valid_na_for_dtype</span><span class="p">(</span><span class="n">na_value</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">415</span> <span class="nd">@cache_readonly</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span> <span class="k">def</span> <span class="nf">is_na</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span>     <span class="n">blk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">block</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span>     <span class="k">if</span> <span class="n">blk</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;V&quot;</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1793,7 +1856,7 @@ How large is "large enough?" Unfortunately, it depends entirely on the problem a
 as a rule of thumb, often a sample size of at least 20 will suffice.
                             </div></section>
 <section id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>A point estimate is a single value computed using a sample from a population (e.g., a mean or proportion).</p></li>
 <li><p>The sampling distribution of an estimate is the distribution of the estimate for all possible samples of a fixed size from the same population.</p></li>
@@ -1803,9 +1866,9 @@ as a rule of thumb, often a sample size of at least 20 will suffice.
 </section>
 </section>
 <section id="bootstrapping">
-<h2>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Link to this heading">#</a></h2>
+<h2>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permalink to this heading">#</a></h2>
 <section id="id1">
-<h3>Overview<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3>Overview<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p><em>Why all this emphasis on sampling distributions?</em></p>
 <p>We saw in the previous section that we could compute a <strong>point estimate</strong> of a
 population parameter using a sample of observations from the population. And
@@ -1895,7 +1958,7 @@ For a sample of size <span class="math notranslate nohighlight">\(n\)</span>, yo
 <p><img alt="" src="../_images/intro-bootstrap.jpeg" /></p>
 </section>
 <section id="bootstrapping-in-python">
-<h3>Bootstrapping in Python<a class="headerlink" href="#bootstrapping-in-python" title="Link to this heading">#</a></h3>
+<h3>Bootstrapping in Python<a class="headerlink" href="#bootstrapping-in-python" title="Permalink to this heading">#</a></h3>
 <p>Let’s continue working with our Airbnb example to illustrate how we might create
 and use a bootstrap distribution using just a single sample from the population.
 Once again, suppose we are
@@ -2926,7 +2989,7 @@ plausible range for our population parameter along with our estimate!</p>
 <p><img alt="" src="https://datasciencebook.ca/_main_files/figure-html/11-bootstrapping7-1.png" /></p>
 </section>
 <section id="using-the-bootstrap-to-calculate-a-plausible-range">
-<h3>Using the bootstrap to calculate a plausible range<a class="headerlink" href="#using-the-bootstrap-to-calculate-a-plausible-range" title="Link to this heading">#</a></h3>
+<h3>Using the bootstrap to calculate a plausible range<a class="headerlink" href="#using-the-bootstrap-to-calculate-a-plausible-range" title="Permalink to this heading">#</a></h3>
 <p>Now that we have constructed our bootstrap distribution, let’s use it to create
 an approximate 95% percentile bootstrap confidence interval (one of the most common applications of bootstrapping).
 A <strong>confidence interval</strong> is a range of plausible values for the population parameter. We will
@@ -3010,7 +3073,7 @@ statistical techniques you may learn about in the future!</p>
 </section>
 </section>
 <section id="additional-resources">
-<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h2>
+<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Chapters 4 to 7 of <a class="reference external" href="https://www.openintro.org/book/os/">OpenIntro Statistics</a>
 provide a good next step in learning about inference. Although it is still certainly
@@ -3054,8 +3117,8 @@ will come naturally to you!</p></li>
               
               
               
-                <footer class="prev-next-footer d-print-none">
-                  
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../5-eda/ttests.html"
@@ -3083,7 +3146,6 @@ will come naturally to you!</p></li>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -3128,7 +3190,6 @@ By Hyosub Kim
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..
@@ -3155,8 +3216,8 @@ By Hyosub Kim
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>
