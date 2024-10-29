@@ -1404,7 +1404,7 @@ the average price per night for all the Airbnb listings.</p>
 </div>
 </div>
 </div>
-<p>The price per night of all Airbnb rentals in Vancouver, BC
+<p>The price per night of all Airbnb rentals in Vancouver, BC,
 is $154.51, on average. This value is our
 population parameter since we are calculating it using the population data.</p>
 <p>Now suppose we did not have access to the population data (which is nearly <em>always</em> the
@@ -1448,14 +1448,9 @@ of our sample.</p>
 </div>
 </div>
 </div>
-<p>The average value of the sample of size 40
-is \<span class="math notranslate nohighlight">\(152.48. This
-number is a point estimate for the mean of the full population.
-Recall that the population mean was
-\\\)</span>154.51. So our estimate was fairly close to
+<p>The average value of the sample of size 40 is $152.48. This number is a point estimate for the mean of the full population. Recall that the population mean was \$154.51. So our estimate was fairly close to
 the population parameter: the mean was about
-0.7%
-off.  Note that we usually cannot compute the estimate’s accuracy in practice
+0.7% off.  Note that we usually cannot compute the estimate’s accuracy in practice
 since we do not have access to the population parameter; if we did, we wouldn’t
 need to estimate it!</p>
 <p>Also, recall from the previous section that the point estimate can vary; if we
@@ -1723,82 +1718,33 @@ distribution with a orange vertical line.</p>
 <span class="g g-Whitespace">   </span><span class="mi">3891</span> <span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3892</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_constructor</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;take&quot;</span><span class="p">)</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/managers.py:968,</span> in <span class="ni">BaseBlockManager.take</span><span class="nt">(self, indexer, axis, verify, convert_indices)</span>
-<span class="g g-Whitespace">    </span><span class="mi">965</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="n">maybe_convert_indices</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="n">verify</span><span class="p">)</span>
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/managers.py:965,</span> in <span class="ni">BaseBlockManager.take</span><span class="nt">(self, indexer, axis, verify, convert_indices)</span>
+<span class="g g-Whitespace">    </span><span class="mi">963</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">964</span> <span class="k">if</span> <span class="n">convert_indices</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">965</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="n">maybe_convert_indices</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="n">verify</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">967</span> <span class="n">new_labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">968</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reindex_indexer</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">968</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reindex_indexer</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">969</span>     <span class="n">new_axis</span><span class="o">=</span><span class="n">new_labels</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="n">indexer</span><span class="o">=</span><span class="n">indexer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">971</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">972</span>     <span class="n">allow_dups</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">973</span>     <span class="n">copy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">974</span> <span class="p">)</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/managers.py:742,</span> in <span class="ni">BaseBlockManager.reindex_indexer</span><span class="nt">(self, new_axis, indexer, axis, fill_value, allow_dups, copy, only_slice, use_na_proxy)</span>
-<span class="g g-Whitespace">    </span><span class="mi">735</span>     <span class="n">new_blocks</span><span class="p">,</span> <span class="n">new_refs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slice_take_blocks_ax0</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">736</span>         <span class="n">indexer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">737</span>         <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">738</span>         <span class="n">only_slice</span><span class="o">=</span><span class="n">only_slice</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">739</span>         <span class="n">use_na_proxy</span><span class="o">=</span><span class="n">use_na_proxy</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">740</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">741</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">742</span>     <span class="n">new_blocks</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">743</span>         <span class="n">blk</span><span class="o">.</span><span class="n">take_nd</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">744</span>             <span class="n">indexer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">745</span>             <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">746</span>             <span class="n">fill_value</span><span class="o">=</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">747</span>                 <span class="n">fill_value</span> <span class="k">if</span> <span class="n">fill_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">blk</span><span class="o">.</span><span class="n">fill_value</span>
-<span class="g g-Whitespace">    </span><span class="mi">748</span>             <span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">749</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">750</span>         <span class="k">for</span> <span class="n">blk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span>
-<span class="g g-Whitespace">    </span><span class="mi">751</span>     <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">752</span>     <span class="n">new_refs</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">754</span> <span class="n">new_axes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/indexers/utils.py:279,</span> in <span class="ni">maybe_convert_indices</span><span class="nt">(indices, n, verify)</span>
+<span class="g g-Whitespace">    </span><span class="mi">276</span>         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">indices</span> <span class="o">&lt;</span> <span class="mi">0</span>
+<span class="ne">--&gt; </span><span class="mi">279</span> <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="n">indices</span> <span class="o">=</span> <span class="n">indices</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="n">indices</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">+=</span> <span class="n">n</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/managers.py:743,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">735</span>     <span class="n">new_blocks</span><span class="p">,</span> <span class="n">new_refs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slice_take_blocks_ax0</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">736</span>         <span class="n">indexer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">737</span>         <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">738</span>         <span class="n">only_slice</span><span class="o">=</span><span class="n">only_slice</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">739</span>         <span class="n">use_na_proxy</span><span class="o">=</span><span class="n">use_na_proxy</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">740</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">741</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">742</span>     <span class="n">new_blocks</span> <span class="o">=</span> <span class="p">[</span>
-<span class="ne">--&gt; </span><span class="mi">743</span>         <span class="n">blk</span><span class="o">.</span><span class="n">take_nd</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">744</span>             <span class="n">indexer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">745</span>             <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">746</span>             <span class="n">fill_value</span><span class="o">=</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">747</span>                 <span class="n">fill_value</span> <span class="k">if</span> <span class="n">fill_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">blk</span><span class="o">.</span><span class="n">fill_value</span>
-<span class="g g-Whitespace">    </span><span class="mi">748</span>             <span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">749</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">750</span>         <span class="k">for</span> <span class="n">blk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span>
-<span class="g g-Whitespace">    </span><span class="mi">751</span>     <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">752</span>     <span class="n">new_refs</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">754</span> <span class="n">new_axes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/blocks.py:878,</span> in <span class="ni">Block.take_nd</span><span class="nt">(self, indexer, axis, new_mgr_locs, fill_value)</span>
-<span class="g g-Whitespace">    </span><span class="mi">875</span>     <span class="n">allow_fill</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">877</span> <span class="c1"># Note: algos.take_nd has upcast logic similar to coerce_to_target_dtype</span>
-<span class="ne">--&gt; </span><span class="mi">878</span> <span class="n">new_values</span> <span class="o">=</span> <span class="n">algos</span><span class="o">.</span><span class="n">take_nd</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">879</span>     <span class="n">values</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">allow_fill</span><span class="o">=</span><span class="n">allow_fill</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span>
-<span class="g g-Whitespace">    </span><span class="mi">880</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">882</span> <span class="c1"># Called from three places in managers, all of which satisfy</span>
-<span class="g g-Whitespace">    </span><span class="mi">883</span> <span class="c1">#  this assertion</span>
-<span class="g g-Whitespace">    </span><span class="mi">884</span> <span class="k">assert</span> <span class="ow">not</span> <span class="p">(</span><span class="n">axis</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">new_mgr_locs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/array_algos/take.py:117,</span> in <span class="ni">take_nd</span><span class="nt">(arr, indexer, axis, fill_value, allow_fill)</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span> <span class="n">allow_fill</span><span class="o">=</span><span class="n">allow_fill</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">117</span> <span class="k">return</span> <span class="n">_take_nd_ndarray</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">,</span> <span class="n">allow_fill</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/array_algos/take.py:158,</span> in <span class="ni">_take_nd_ndarray</span><span class="nt">(arr, indexer, axis, fill_value, allow_fill)</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">out_shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">158</span>     <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">out_shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="n">func</span> <span class="o">=</span> <span class="n">_get_take_nd_function</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="n">arr</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">mask_info</span><span class="o">=</span><span class="n">mask_info</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span> <span class="n">func</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span>
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/numpy/core/_methods.py:54,</span> in <span class="ni">_any</span><span class="nt">(a, axis, dtype, out, keepdims, where)</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="k">def</span> <span class="nf">_prod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span>           <span class="n">initial</span><span class="o">=</span><span class="n">_NoValue</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="k">return</span> <span class="n">umr_prod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">,</span> <span class="n">initial</span><span class="p">,</span> <span class="n">where</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">54</span> <span class="k">def</span> <span class="nf">_any</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="c1"># Parsing keyword arguments is currently fairly slow, so avoid it for now</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="k">if</span> <span class="n">where</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span>         <span class="k">return</span> <span class="n">umr_any</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
