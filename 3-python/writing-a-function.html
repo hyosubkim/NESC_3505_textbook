@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Writing Functions &#8212; Data Science for Kinesiology</title>
   
@@ -15,63 +14,63 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=ff8fa330"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '3-python/writing-a-function';</script>
-    <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
+    <link rel="icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Working with Data" href="working_w_data.html" />
     <link rel="prev" title="Conditionals" href="conditionals.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,32 +78,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -112,7 +95,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -120,16 +102,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -142,6 +133,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -156,11 +150,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="../_static/NESC3505_icon.png" class="logo__image only-light" alt="Data Science for Kinesiology - Home"/>
-    <script>document.write(`<img src="../_static/NESC3505_icon.png" class="logo__image only-dark" alt="Data Science for Kinesiology - Home"/>`);</script>
+    <img src="../_static/NESC3505_icon.png" class="logo__image only-dark pst-js-only" alt="Data Science for Kinesiology - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -180,11 +181,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/introduction.html">Getting Started with the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/data.html">Data</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets.html">Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets_limits.html">Limitations of Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/reproducibility.html">Reproducibility</a></li>
@@ -192,15 +193,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/which_lang.html">Which language to use?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/libs.html">Libraries and packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/why_python.html">Why Python for this Course?</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/datacamp.html">DataCamp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/jupyter.html">Jupyter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/markdown.html">Markdown</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Introduction to Python</span></p>
 <ul class="current nav bd-sidenav">
@@ -208,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="learning_objectives.html">Learning Objectives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter_jhub.html">Introduction to Jupyter Notebooks in JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_help.html">Getting Help with Python</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="data_types.html">Data types</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="data_types.html">Data types</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="variables_assignment.html">Variables and Assignment</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="types_conversion.html">Data Types and Conversion</a></li>
@@ -216,22 +217,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="builtin.html">Python Built-Ins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists.html">Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries.html">Dictionaries</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="flow_control.html">Flow Control</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="flow_control.html">Flow Control</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals.html">Conditionals</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Writing Functions</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="working_w_data.html">Working with Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="working_w_data.html">Working with Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas_dataframes.html">Introduction to pandas DataFrames</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="looping_data_files.html">Looping Over Data Files</a></li>
 
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Data Visualization</span></p>
 <ul class="nav bd-sidenav">
@@ -260,17 +261,17 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../7-single_unit/introduction.html">Introduction to Single Unit Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../7-single_unit/learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/intro_spike_trains.html">Introduction to Spike Train Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/ten_intensities.html">Effects of Light Intensity on Spike Rate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/heat_maps.html">Heat Maps</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/pandas_multielec.html">Working with Multielectrode Data in pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/corr_spike_trains.html">Correlating spike trains</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Signal Processing</span></p>
 <ul class="nav bd-sidenav">
@@ -290,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -299,14 +300,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -428,26 +429,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -492,26 +487,26 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="writing-functions">
-<h1>Writing Functions<a class="headerlink" href="#writing-functions" title="Permalink to this heading">#</a></h1>
+<h1>Writing Functions<a class="headerlink" href="#writing-functions" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="questions">
-<h2>Questions:<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
+<h2>Questions:<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How can I create my own functions?</p></li>
 </ul>
 </section>
 <section id="objectives">
-<h2>Objectives:<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
+<h2>Objectives:<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Explain and identify the difference between function definition and function call.</p></li>
 <li><p>Write a function that takes a small, fixed number of arguments and produces a single result.</p></li>
 </ul>
 </section>
 <section id="keypoints">
-<h2>Keypoints:<a class="headerlink" href="#keypoints" title="Permalink to this heading">#</a></h2>
+<h2>Keypoints:<a class="headerlink" href="#keypoints" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Break programs down into functions to make them easier to understand.</p></li>
 <li><p>Define a function using <code class="docutils literal notranslate"><span class="pre">def</span></code> with a name, parameters, and a block of code.</p></li>
@@ -522,7 +517,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="break-programs-down-into-functions-to-make-them-easier-to-understand">
-<h2>Break programs down into functions to make them easier to understand.<a class="headerlink" href="#break-programs-down-into-functions-to-make-them-easier-to-understand" title="Permalink to this heading">#</a></h2>
+<h2>Break programs down into functions to make them easier to understand.<a class="headerlink" href="#break-programs-down-into-functions-to-make-them-easier-to-understand" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Human beings can only keep a few items in working memory at a time.</p></li>
 <li><p>Functions help us simplify complex ideas/tasks by breaking them down into smaller components</p>
@@ -540,7 +535,7 @@ document.write(`
 <p>Functions also help to avoid duplication of code and can therefore make programs smaller and easier to understand. For example, you may need to perform identical mathematical operations on multiple sets of inputs. You could write these lines multiple times in your program, but this is prone to errors. If you made an error when writing this code, it’s likely that the error would be copied into multiple parts of your program. Instead, it’s better to define a function that can complete the operation and then call the function each time you need to perform that operation.</p>
 </section>
 <section id="a-motivating-example">
-<h2>A motivating example<a class="headerlink" href="#a-motivating-example" title="Permalink to this heading">#</a></h2>
+<h2>A motivating example<a class="headerlink" href="#a-motivating-example" title="Link to this heading">#</a></h2>
 <p>Let’s work through a small example.  Suppose we find ourselves repeatedly needing to compute the average of three numbers.  So, at many places in our code, we have expressions like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
 <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
@@ -572,7 +567,7 @@ document.write(`
 <p>Following the interim summary below, we will review, and expand upon, the above points on writing functions.</p>
 </section>
 <section id="interim-summary-define-a-function-using-def-with-a-name-parameters-and-a-block-of-code">
-<h2>Interim Summary: Define a function using <code class="docutils literal notranslate"><span class="pre">def</span></code> with a name, parameters, and a block of code.<a class="headerlink" href="#interim-summary-define-a-function-using-def-with-a-name-parameters-and-a-block-of-code" title="Permalink to this heading">#</a></h2>
+<h2>Interim Summary: Define a function using <code class="docutils literal notranslate"><span class="pre">def</span></code> with a name, parameters, and a block of code.<a class="headerlink" href="#interim-summary-define-a-function-using-def-with-a-name-parameters-and-a-block-of-code" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Begin the definition of a new function with <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p></li>
 <li><p>Followed by the name of the function.</p>
@@ -593,7 +588,7 @@ document.write(`
 <b>What's the difference between parameters and arguments?</b> Parameters are the variables listed in the function's definition inside the parentheses. Arguments are the actual values passed to the function. In the average_of_three function definition, a, b, and c are the parameters. The numbers we want to find the average of in average_of_three are the arguments we pass to the function. In everyday usage, however, I find that people often use "parameter" and "argument" interchangeably and that this is usually not an issue.
 </div></section>
 <section id="defining-a-function-does-not-run-it">
-<h2>Defining a function does not run it.<a class="headerlink" href="#defining-a-function-does-not-run-it" title="Permalink to this heading">#</a></h2>
+<h2>Defining a function does not run it.<a class="headerlink" href="#defining-a-function-does-not-run-it" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Defining a function does not run it.</p>
 <ul>
@@ -628,7 +623,7 @@ Right?
 </div>
 </section>
 <section id="arguments-in-a-function-call-are-matched-to-its-defined-parameters">
-<h2>Arguments in a function call are matched to its defined parameters.<a class="headerlink" href="#arguments-in-a-function-call-are-matched-to-its-defined-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Arguments in a function call are matched to its defined parameters.<a class="headerlink" href="#arguments-in-a-function-call-are-matched-to-its-defined-parameters" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Functions are most useful when they can operate on different data.</p></li>
 <li><p>Specify <em>parameters</em> when defining a function.</p>
@@ -679,7 +674,7 @@ while the body contains the recipe.</p></li>
 </ul>
 </section>
 <section id="functions-may-return-a-result-to-their-caller-using-return">
-<h2>Functions may return a result to their caller using <code class="docutils literal notranslate"><span class="pre">return</span></code>.<a class="headerlink" href="#functions-may-return-a-result-to-their-caller-using-return" title="Permalink to this heading">#</a></h2>
+<h2>Functions may return a result to their caller using <code class="docutils literal notranslate"><span class="pre">return</span></code>.<a class="headerlink" href="#functions-may-return-a-result-to-their-caller-using-return" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">return...</span></code> to give a value back to the caller.</p></li>
 <li><p>May occur anywhere in the function.</p></li>
@@ -745,7 +740,7 @@ result of call is: None
 </div>
 </section>
 <section id="identifying-syntax-errors">
-<h2>Identifying Syntax Errors<a class="headerlink" href="#identifying-syntax-errors" title="Permalink to this heading">#</a></h2>
+<h2>Identifying Syntax Errors<a class="headerlink" href="#identifying-syntax-errors" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Read the code below and try to identify what the errors are
 <em>without</em> running it.</p></li>
@@ -774,7 +769,7 @@ Is it a <code class="docutils literal notranslate"><span class="pre">SyntaxError
 </div>
 </section>
 <section id="definition-and-use">
-<h2>Definition and Use<a class="headerlink" href="#definition-and-use" title="Permalink to this heading">#</a></h2>
+<h2>Definition and Use<a class="headerlink" href="#definition-and-use" title="Link to this heading">#</a></h2>
 <p>What does the following program print?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -811,7 +806,7 @@ pressure is 22.5
 </div>
 </section>
 <section id="order-of-operations">
-<h2>Order of Operations<a class="headerlink" href="#order-of-operations" title="Permalink to this heading">#</a></h2>
+<h2>Order of Operations<a class="headerlink" href="#order-of-operations" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>What’s wrong in this example?</p></li>
 </ol>
@@ -862,7 +857,7 @@ of the <code class="docutils literal notranslate"><span class="pre">result</span
 </div>
 </section>
 <section id="find-the-first">
-<h2>Find the First<a class="headerlink" href="#find-the-first" title="Permalink to this heading">#</a></h2>
+<h2>Find the First<a class="headerlink" href="#find-the-first" title="Link to this heading">#</a></h2>
 <p>Fill in the blanks to create a function that takes a list of numbers as an argument
 and returns the first negative value in the list.
 What does your function do if the list is empty? What if the list has no negative numbers?</p>
@@ -892,7 +887,7 @@ What does your function do if the list is empty? What if the list has no negativ
 </div>
 </section>
 <section id="calling-by-name">
-<h2>Calling by Name<a class="headerlink" href="#calling-by-name" title="Permalink to this heading">#</a></h2>
+<h2>Calling by Name<a class="headerlink" href="#calling-by-name" title="Link to this heading">#</a></h2>
 <p>Earlier we saw this function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
     <span class="n">joined</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
@@ -917,7 +912,7 @@ have inside the function. It can also reduce the chances of passing arguments in
 </div>
 </section>
 <section id="encapsulation-of-an-if-print-block">
-<h2>Encapsulation of an If/Print Block<a class="headerlink" href="#encapsulation-of-an-if-print-block" title="Permalink to this heading">#</a></h2>
+<h2>Encapsulation of an If/Print Block<a class="headerlink" href="#encapsulation-of-an-if-print-block" title="Link to this heading">#</a></h2>
 <p>The code below will run on a label-printer for chicken eggs.  A digital scale will report a chicken egg’s mass (in grams)
 to the computer and then the computer will print a label.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -981,7 +976,7 @@ Revising the program to use the function would give us this:</p>
 </div>
 </div>
 <hr class="docutils" />
-<p>This chapter has been adapted from <span class="xref myst">Software Carpentry’s Plotting and Programming in Python workshop</span> and materials <a class="reference external" href="https://vancouver.calendar.ubc.ca/course-descriptions/courses/cpsc-103-introduction-systematic-program-design">UBC’s CPSC 103 course</a> as taught by Prof. Meghan Allen.</p>
+<p>This chapter has been adapted from <a class="reference internal" href="#%22http://swcarpentry.github.io/python-novice-gapminder/"><span class="xref myst">Software Carpentry’s Plotting and Programming in Python workshop</span></a> and materials <a class="reference external" href="https://vancouver.calendar.ubc.ca/course-descriptions/courses/cpsc-103-introduction-systematic-program-design">UBC’s CPSC 103 course</a> as taught by Prof. Meghan Allen.</p>
 </section>
 </section>
 
@@ -1012,8 +1007,8 @@ Revising the program to use the function would give us this:</p>
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="conditionals.html"
@@ -1040,7 +1035,9 @@ Revising the program to use the function would give us this:</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1084,6 +1081,7 @@ By Hyosub Kim
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..
@@ -1110,8 +1108,8 @@ By Hyosub Kim
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

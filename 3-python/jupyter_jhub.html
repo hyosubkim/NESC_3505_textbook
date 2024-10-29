@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introduction to Jupyter Notebooks in JupyterHub &#8212; Data Science for Kinesiology</title>
   
@@ -15,61 +14,61 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=ff8fa330"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '3-python/jupyter_jhub';</script>
-    <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
+    <link rel="icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Getting Help with Python" href="getting_help.html" />
     <link rel="prev" title="Learning Objectives" href="learning_objectives.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,32 +76,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -110,7 +93,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -118,16 +100,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -140,6 +131,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -154,11 +148,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="../_static/NESC3505_icon.png" class="logo__image only-light" alt="Data Science for Kinesiology - Home"/>
-    <script>document.write(`<img src="../_static/NESC3505_icon.png" class="logo__image only-dark" alt="Data Science for Kinesiology - Home"/>`);</script>
+    <img src="../_static/NESC3505_icon.png" class="logo__image only-dark pst-js-only" alt="Data Science for Kinesiology - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -178,11 +179,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/introduction.html">Getting Started with the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/data.html">Data</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets.html">Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets_limits.html">Limitations of Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/reproducibility.html">Reproducibility</a></li>
@@ -190,15 +191,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/which_lang.html">Which language to use?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/libs.html">Libraries and packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/why_python.html">Why Python for this Course?</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/datacamp.html">DataCamp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/jupyter.html">Jupyter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/markdown.html">Markdown</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Introduction to Python</span></p>
 <ul class="current nav bd-sidenav">
@@ -206,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="learning_objectives.html">Learning Objectives</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Jupyter Notebooks in JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_help.html">Getting Help with Python</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="data_types.html">Data types</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="data_types.html">Data types</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="variables_assignment.html">Variables and Assignment</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="types_conversion.html">Data Types and Conversion</a></li>
@@ -214,22 +215,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="builtin.html">Python Built-Ins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lists.html">Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries.html">Dictionaries</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="flow_control.html">Flow Control</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="flow_control.html">Flow Control</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals.html">Conditionals</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="writing-a-function.html">Writing Functions</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="working_w_data.html">Working with Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="working_w_data.html">Working with Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas_dataframes.html">Introduction to pandas DataFrames</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="looping_data_files.html">Looping Over Data Files</a></li>
 
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Data Visualization</span></p>
 <ul class="nav bd-sidenav">
@@ -258,17 +259,17 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../7-single_unit/introduction.html">Introduction to Single Unit Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../7-single_unit/learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/intro_spike_trains.html">Introduction to Spike Train Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/ten_intensities.html">Effects of Light Intensity on Spike Rate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/heat_maps.html">Heat Maps</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/pandas_multielec.html">Working with Multielectrode Data in pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/corr_spike_trains.html">Correlating spike trains</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Signal Processing</span></p>
 <ul class="nav bd-sidenav">
@@ -288,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -297,14 +298,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -426,26 +427,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -492,20 +487,20 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-jupyter-notebooks-in-jupyterhub">
-<h1>Introduction to Jupyter Notebooks in JupyterHub<a class="headerlink" href="#introduction-to-jupyter-notebooks-in-jupyterhub" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to Jupyter Notebooks in JupyterHub<a class="headerlink" href="#introduction-to-jupyter-notebooks-in-jupyterhub" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
+<h2>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How do I use JupyterHub?</p></li>
 <li><p>How do I work with and navigate Jupyter notebooks in JupyterHub?</p></li>
 </ul>
 </section>
 <section id="learning-objectives">
-<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Be able to open a Jupyter notebook</p></li>
 <li><p>Be able to navigate a Jupyter notebook</p></li>
@@ -515,8 +510,8 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="jupyter-notebooks">
-<h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this heading">#</a></h2>
-<p>If you’re in class now, you should currently be viewing this Jupyter notebook file on JupyterHub as opposed to looking at the static webpage for the textbook. You can go to the <a class="reference external" href="https://canvas.ubc.ca/courses/124902">course Canvas page</a> where you will see the <a class="reference external" href="https://open.jupyter.ubc.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fhyosubkim%2Fdatasci-for-kin-student&amp;urlpath=lab%2Ftree%2Fdatasci-for-kin-student%2F">link</a> to access your UBC JupyterHub account. Your first “assignment” should be ready (“A0.ipynb”). <strong>IMPORTANT: We are using a version of JupyterHub at UBC referred to as “Jupyter Open”. If you google “UBC Jupyter Hub” you may see links to other JupyterHubs  like “Syzygy”, but that will not take you to your account for this course, so don’t be confused. Whenever in doubt, use the Canvas link.</strong></p>
+<h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Link to this heading">#</a></h2>
+<p>If you’re in class now, you should currently be viewing this Jupyter notebook file on JupyterHub as opposed to looking at the static webpage for the textbook. You can go to the <a class="reference external" href="https://canvas.ubc.ca/courses/124902">course Canvas page</a> where you will see the <a class="reference external" href="https://open.jupyter.ubc.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fhyosubkim%2Fdatasci-for-kin-student&amp;amp;urlpath=lab%2Ftree%2Fdatasci-for-kin-student%2F">link</a> to access your UBC JupyterHub account. Your first “assignment” should be ready (“A0.ipynb”). <strong>IMPORTANT: We are using a version of JupyterHub at UBC referred to as “Jupyter Open”. If you google “UBC Jupyter Hub” you may see links to other JupyterHubs  like “Syzygy”, but that will not take you to your account for this course, so don’t be confused. Whenever in doubt, use the Canvas link.</strong></p>
 <p>Jupyter notebooks are composed of <em>cells</em>. Cells can be of three types: code, Markdown, or raw. This cell you’re reading is Markdown, a simple language for formatting rich text. The cell below is a code cell, where you can write and run Python commands. Raw cells are “raw” text — they aren’t fancy-formatted Markdown, and they aren’t run-able as code. They also aren’t terribly useful.</p>
 <p>Cells have two modes: <strong>edit</strong> and <strong>command</strong>. Edit mode is indicated by the cell having a white background, while in command mode the cell has a gray background. In edit mode, you can type into the cell and edit it. In command mode, you can run the cell, or manipulate it in certain ways (e.g., deleting a whole cell, or moving it). (Note: These visual cues are slightly different in the classic Jupyter notebook view, where Edit mode is indicated by a green boorder and command mode is indicated by a blue border. Either way, the functionality is identical.)</p>
 <p>This text you are currently reading is a Markdown cell. If you are viewing it in JupyterHub, and click once on this text, the cell should become active in command mode. If you double-click on this (or any other Markdown) cell,  the text will change to a <em>fixed-width</em> font and you’ll see the Markdown formatting tags (like <code class="docutils literal notranslate"><span class="pre">#</span></code> for headings). Try it! Then hit Shift &amp; Enter to execute the cell (which applies and renders the Markdown formatting).</p>
@@ -623,17 +618,17 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="a-bit-more-about-jupyter-notebooks">
-<h2>A bit more about Jupyter notebooks<a class="headerlink" href="#a-bit-more-about-jupyter-notebooks" title="Permalink to this heading">#</a></h2>
+<h2>A bit more about Jupyter notebooks<a class="headerlink" href="#a-bit-more-about-jupyter-notebooks" title="Link to this heading">#</a></h2>
 <p>The top of this window probably looks a bit intimidating, with a lot of menus and buttons. You’ll gradually get familiar with many of these functions, although some you may never use in this course. For now, we’ll go through the most important functions and concepts.</p>
 <section id="working-with-files">
-<h3>Working With Files<a class="headerlink" href="#working-with-files" title="Permalink to this heading">#</a></h3>
+<h3>Working With Files<a class="headerlink" href="#working-with-files" title="Link to this heading">#</a></h3>
 <p>In general, when using JupyterHub you don’t need to explicitly save files. Notebooks are auto-saved so you don’t have to worry about it! But there is a button to manually save between auto-saves.</p>
 <p>Although for most of your work you will receive assignments with pre-made files to work in, for projects, for practice, or just for fun, you can create new files — including Jupyter notebooks but a variety of others as well. The <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">New</span></code> menu item will give you the options for different types of files you can create. All of your JupyterHub files are associated with your account, and will last through the duration of the course — and, possibly, even beyond! The <code class="docutils literal notranslate"><span class="pre">File</span></code>menu also provides options for downloading your notebook files, including converting them from Jupyter notebooks to PDFs or other formats.</p>
 <p>You can have multiple files open at once, and they appear as tabs at the top of the JupyterHub window. In general, the tabs/files you have open will stay there even when you close your browser window/tab or log out, so the next time you connect to JupyterHub you’ll see those tabs still there. <strong>HOWEVER</strong> (and this is important), even if you leave your browser with the JupyterHub window/tab open on your computer, JupyterHub will eventually “terminate” your running notebook (i.e., the kernel will shut down, but you will not lose your work – see below).</p>
 <p><strong>Pro tip:</strong> Notebook files can get really long. JupyterHub has a “Table of Contents” button on the left that will show you a table of contents for a notebook file. It makes this automatically from all the Markdown headings it finds. Find the Table of Contents button and click it to see.</p>
 </section>
 <section id="running-kernels-and-items-in-memory">
-<h3>Running Kernels, and Items in Memory<a class="headerlink" href="#running-kernels-and-items-in-memory" title="Permalink to this heading">#</a></h3>
+<h3>Running Kernels, and Items in Memory<a class="headerlink" href="#running-kernels-and-items-in-memory" title="Link to this heading">#</a></h3>
 <p>This may seem contradictory: how is it that the file is still open, but the notebook is terminated? The answer lies in the fact that when you open a notebook file, you are <em>also</em> starting a new Python <strong>kernel</strong> — a live, running instance of Python that will interpret your Python commands and produce output. Each notebook you open will start a new Python kernel. As long as the kernel is running, the things you do in Python will be stored in memory (RAM). This will make more sense as you start to use Python, but when you’re running Python, you generally don’t just run commands and get output. You also read data files into memory, and store the results of one command in memory for use in the next command. For example, a bit earlier in this notebook you were instructed to run a cell with the code:
 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
 <p>This <em>assigned</em> a value of <code class="docutils literal notranslate"><span class="pre">1</span></code> to a <em>variable</em> named <code class="docutils literal notranslate"><span class="pre">x</span></code>. This is now stored in RAM inside this notebook’s kernel, so now in the cell below if you type
@@ -646,23 +641,23 @@ document.write(`
 <p><strong>Pro tip:</strong> In general, it’s a good idea to clear all output from a notebook when you restart the kernel, so you don’t get confused between old and new outputs.</p>
 </section>
 <section id="working-in-notebooks">
-<h3>Working in Notebooks<a class="headerlink" href="#working-in-notebooks" title="Permalink to this heading">#</a></h3>
+<h3>Working in Notebooks<a class="headerlink" href="#working-in-notebooks" title="Link to this heading">#</a></h3>
 <p>There is an <strong>undo</strong> function, which works similarly to other software you’ll have used, sequentially undoing things you’ve typed in cells. <strong>Importantly</strong>, <em>the undo function does <em>not</em> undo the results of commands you’ve run in Python</em>. Continuing with our previous example, this means that if you ran the Python command <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code>, then ran “undo”, Jupyter would delete your typing, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code>. However, in the kernel’s memory, <code class="docutils literal notranslate"><span class="pre">x</span></code> would still equal <code class="docutils literal notranslate"><span class="pre">1</span></code>. So you could run <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> the output would be <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <p>You can insert a new cell right below whatever cell is currently active, either by pressing the “+” button under the menu, or using the <code class="docutils literal notranslate"><span class="pre">Insert</span></code> menu, or as long as no cell is in edit mode) pressing the <code class="docutils literal notranslate"><span class="pre">b</span></code> key on the keyboard to insert a new cell <em>b</em>elow the selected cell (or <code class="docutils literal notranslate"><span class="pre">a</span></code> to insert a cell <em>a</em>bove the selected one). The <code class="docutils literal notranslate"><span class="pre">Cell</span></code> menu also has a variety of useful tools for working with cells, which are pretty self-explanatory if you look at them.</p>
 <p>We encourage you to peruse the menus and randomly push buttons and try things in a notebook file. You will not break the internet (probably). Maybe first create a new notebook file first, though, and don’t mess this one up!</p>
 </section>
 <section id="help">
-<h3>Help!<a class="headerlink" href="#help" title="Permalink to this heading">#</a></h3>
+<h3>Help!<a class="headerlink" href="#help" title="Link to this heading">#</a></h3>
 <p>JupyterLab, which is what you are likely using to view this notebook as that is the application JupyterHub brings you to, has <a class="reference external" href="https://jupyterlab.readthedocs.io/en/latest/">extensive documentation</a>.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="markdown">
-<h2>Markdown<a class="headerlink" href="#markdown" title="Permalink to this heading">#</a></h2>
+<h2>Markdown<a class="headerlink" href="#markdown" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://daringfireball.net/projects/markdown/"><strong>Markdown</strong></a> is a “plain text formatting syntax” and a tool for converting such plain text to a formatted version, such as <a class="reference external" href="https://en.wikipedia.org/wiki/HTML">HTML</a> for display in a web page. There is a fundamental difference between plain text (.txt files) versus rich text (such as in Markdown, and also Microsoft Word or Google Docs). Rich text files display the text that you enter, and the formatting you choose (e.g., boldface), and hide the information telling your computer to make that text boldface “behind the scenes” in a complex file. In contrast, when you open a plain text file, what you see is literally the contents of that file, with nothing hiding in the background (except for a couple of hidden features, like markers for line breaks and tabs).</p>
 <p>So a plain text file can never contain formatting like boldface or italic. Markdown allows you to create a text file with special codes that you type to “mark” certain text for formatting, and then run a program on that text file to produce a formatted output. For example, text surrounded by <code class="docutils literal notranslate"><span class="pre">*one</span> <span class="pre">asterisk*</span></code> shows up in <em>italics</em>; text surrounded by <code class="docutils literal notranslate"><span class="pre">**two</span> <span class="pre">asterisks**</span></code> shows up as <strong>boldface</strong>.</p>
 <section id="lists-in-markdown">
-<h3>Lists in Markdown<a class="headerlink" href="#lists-in-markdown" title="Permalink to this heading">#</a></h3>
+<h3>Lists in Markdown<a class="headerlink" href="#lists-in-markdown" title="Link to this heading">#</a></h3>
 <p>You can make a bulleted list by starting each line of the list with a hyphen (<code class="docutils literal notranslate"><span class="pre">-</span></code>) followed by a space:</p>
 <ul class="simple">
 <li><p>this is a first list item</p></li>
@@ -675,7 +670,7 @@ document.write(`
 </ol>
 </section>
 <section id="different-levels-of-headings">
-<h3>Different levels of headings<a class="headerlink" href="#different-levels-of-headings" title="Permalink to this heading">#</a></h3>
+<h3>Different levels of headings<a class="headerlink" href="#different-levels-of-headings" title="Link to this heading">#</a></h3>
 <p>Different levels of headings can be indicated with hash marks; the more hash marks, the more deeply embedded a header is. So, the following:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Heading</span> <span class="pre">1</span></code> = first-level heading (like the title at the very top of this page)</p></li>
@@ -689,7 +684,7 @@ document.write(`
 </section>
 </section>
 <section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <p>Create a cell below this one, convert it to Markdown, and use Markdown to do the following:</p>
 <ul class="simple">
 <li><p>your name, with your last name in bold</p></li>
@@ -700,7 +695,7 @@ document.write(`
 <p>Note: By default, new cells are code cells. Use the drop-down menu at the top (which will say “Code”) to change it to a Markdown cell.</p>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>JupyterHub is a cloud platform for working with Jupyter notebooks</p></li>
 <li><p>You can edit and run code in Jupyter notebooks. Results will appear in the notebook</p></li>
@@ -744,8 +739,8 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="learning_objectives.html"
@@ -772,7 +767,9 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -818,6 +815,7 @@ By Hyosub Kim
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..
@@ -844,8 +842,8 @@ By Hyosub Kim
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

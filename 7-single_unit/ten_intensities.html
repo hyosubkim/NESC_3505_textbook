@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Effects of Light Intensity on Spike Rate &#8212; Data Science for Kinesiology</title>
   
@@ -15,61 +14,61 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=ff8fa330"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '7-single_unit/ten_intensities';</script>
-    <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
+    <link rel="icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Heat Maps" href="heat_maps.html" />
     <link rel="prev" title="Introduction to Spike Train Data" href="intro_spike_trains.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,32 +76,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -110,7 +93,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -118,16 +100,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -140,6 +131,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -154,11 +148,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="../_static/NESC3505_icon.png" class="logo__image only-light" alt="Data Science for Kinesiology - Home"/>
-    <script>document.write(`<img src="../_static/NESC3505_icon.png" class="logo__image only-dark" alt="Data Science for Kinesiology - Home"/>`);</script>
+    <img src="../_static/NESC3505_icon.png" class="logo__image only-dark pst-js-only" alt="Data Science for Kinesiology - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -178,11 +179,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/introduction.html">Getting Started with the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/data.html">Data</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets.html">Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets_limits.html">Limitations of Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/reproducibility.html">Reproducibility</a></li>
@@ -190,15 +191,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/which_lang.html">Which language to use?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/libs.html">Libraries and packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/why_python.html">Why Python for this Course?</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/datacamp.html">DataCamp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/jupyter.html">Jupyter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/markdown.html">Markdown</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Introduction to Python</span></p>
 <ul class="nav bd-sidenav">
@@ -206,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../3-python/learning_objectives.html">Learning Objectives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/jupyter_jhub.html">Introduction to Jupyter Notebooks in JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/getting_help.html">Getting Help with Python</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/data_types.html">Data types</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/data_types.html">Data types</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/variables_assignment.html">Variables and Assignment</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../3-python/types_conversion.html">Data Types and Conversion</a></li>
@@ -214,22 +215,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../3-python/builtin.html">Python Built-Ins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/lists.html">Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/dictionaries.html">Dictionaries</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/flow_control.html">Flow Control</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/flow_control.html">Flow Control</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/conditionals.html">Conditionals</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/writing-a-function.html">Writing Functions</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/working_w_data.html">Working with Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/working_w_data.html">Working with Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/pandas_dataframes.html">Introduction to pandas DataFrames</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="../3-python/looping_data_files.html">Looping Over Data Files</a></li>
 
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Data Visualization</span></p>
 <ul class="nav bd-sidenav">
@@ -258,17 +259,17 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Single Unit Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="single_unit_intro.html">Single Unit Data and Spike Trains</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="single_unit_intro.html">Single Unit Data and Spike Trains</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro_spike_trains.html">Introduction to Spike Train Data</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Effects of Light Intensity on Spike Rate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="heat_maps.html">Heat Maps</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="intro_multielec_data.html">Introducing Multielectrode Data</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="intro_multielec_data.html">Introducing Multielectrode Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas_multielec.html">Working with Multielectrode Data in pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="corr_spike_trains.html">Correlating spike trains</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Signal Processing</span></p>
 <ul class="nav bd-sidenav">
@@ -288,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -297,14 +298,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -426,26 +427,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -494,14 +489,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="effects-of-light-intensity-on-spike-rate">
-<h1>Effects of Light Intensity on Spike Rate<a class="headerlink" href="#effects-of-light-intensity-on-spike-rate" title="Permalink to this heading">#</a></h1>
+<h1>Effects of Light Intensity on Spike Rate<a class="headerlink" href="#effects-of-light-intensity-on-spike-rate" title="Link to this heading">#</a></h1>
 <p>Now we’re going to load an even larger data set. The <code class="docutils literal notranslate"><span class="pre">ten_intensities</span></code> data set expands on the optogenetic spike train data we worked with in the previous chapter. Now we have data recorded from a neuron as it was stimulated with ten different intensities of the light that activates its receptors (550 nm green). We have 10 trials’ worth of data at each intensity, so 100 trials in total. Each trial was 20 ms long, with optical stimulation starting at 4 ms and ending at 14 ms. Measuring the neuron’s response across a range of intensities allows us to map out the response “profile” of the neuron in terms of the number of spikes elicited by differing intensities.</p>
 <hr class="docutils" />
 <section id="learning-objectives">
-<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Understand spike data in sparse format</p></li>
 <li><p>Select data for a specific intensity level</p></li>
@@ -514,7 +509,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="import-necessary-packages">
-<h2>Import necessary packages<a class="headerlink" href="#import-necessary-packages" title="Permalink to this heading">#</a></h2>
+<h2>Import necessary packages<a class="headerlink" href="#import-necessary-packages" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -526,7 +521,7 @@ document.write(`
 </div>
 </section>
 <section id="define-variables-for-known-experimental-parameters">
-<h2>Define variables for known experimental parameters<a class="headerlink" href="#define-variables-for-known-experimental-parameters" title="Permalink to this heading">#</a></h2>
+<h2>Define variables for known experimental parameters<a class="headerlink" href="#define-variables-for-known-experimental-parameters" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stim_on</span> <span class="o">=</span> <span class="mi">4</span>   <span class="c1"># time stimulus turned on</span>
@@ -539,7 +534,7 @@ document.write(`
 </div>
 </section>
 <section id="read-the-data">
-<h2>Read the data<a class="headerlink" href="#read-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Read the data<a class="headerlink" href="#read-the-data" title="Link to this heading">#</a></h2>
 <p>First we load the data. This data set is adapted from Nylen, E.L., and Wallisch, P.. (2017). <a class="reference external" href="https://www.sciencedirect.com/book/9780128040430/neural-data-science"><em>Neural Data Science</em></a>. Academic Press.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -550,7 +545,7 @@ document.write(`
 </div>
 </section>
 <section id="figure-out-the-structure-of-the-data">
-<h2>Figure out the structure of the data<a class="headerlink" href="#figure-out-the-structure-of-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Figure out the structure of the data<a class="headerlink" href="#figure-out-the-structure-of-the-data" title="Link to this heading">#</a></h2>
 <p>When first starting to work with a data set, you need to explore it and understand how it’s structured. What variable type(s) are in it? How are different experimental conditions coded? Sometimes you know this, if you created the data, but often you only have a general idea of what’s in a data file, and you need to inspect it to figure out the details.</p>
 <p>If we look at the <code class="docutils literal notranslate"><span class="pre">head</span></code> of the data, we can see that there are columns for intensitiy level, trial number, and spike time:</p>
 <div class="cell docutils container">
@@ -652,106 +647,124 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>130</th>
-      <td>7</td>
-      <td>5</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>4</td>
-      <td>7</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th>178</th>
+      <th>167</th>
       <td>8</td>
-      <td>7</td>
+      <td>4</td>
       <td>9</td>
     </tr>
     <tr>
-      <th>176</th>
+      <th>16</th>
+      <td>2</td>
+      <td>5</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>9</td>
       <td>8</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>3</td>
+      <td>1</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>212</th>
+      <td>9</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>8</td>
+      <td>4</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>5</td>
+      <td>6</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>6</td>
+      <td>4</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>3</td>
+      <td>1</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>6</td>
+      <td>2</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>219</th>
+      <td>9</td>
+      <td>7</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>217</th>
+      <td>9</td>
       <td>6</td>
       <td>11</td>
     </tr>
     <tr>
-      <th>119</th>
-      <td>7</td>
-      <td>3</td>
+      <th>84</th>
       <td>6</td>
-    </tr>
-    <tr>
-      <th>213</th>
-      <td>9</td>
       <td>5</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>7</td>
+      <td>6</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>208</th>
       <td>9</td>
+      <td>3</td>
+      <td>12</td>
     </tr>
     <tr>
-      <th>170</th>
-      <td>8</td>
-      <td>5</td>
-      <td>0</td>
+      <th>89</th>
+      <td>6</td>
+      <td>6</td>
+      <td>16</td>
     </tr>
     <tr>
-      <th>151</th>
-      <td>8</td>
-      <td>0</td>
+      <th>100</th>
+      <td>6</td>
+      <td>9</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>3</td>
+      <td>3</td>
       <td>18</td>
     </tr>
     <tr>
-      <th>121</th>
-      <td>7</td>
-      <td>3</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>4</td>
-      <td>6</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>128</th>
-      <td>7</td>
-      <td>5</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>124</th>
-      <td>7</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>3</td>
-      <td>4</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>114</th>
-      <td>7</td>
-      <td>2</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>5</td>
-      <td>2</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>222</th>
-      <td>9</td>
+      <th>150</th>
       <td>8</td>
-      <td>12</td>
+      <td>0</td>
+      <td>17</td>
     </tr>
     <tr>
-      <th>30</th>
-      <td>3</td>
-      <td>9</td>
-      <td>12</td>
+      <th>142</th>
+      <td>7</td>
+      <td>8</td>
+      <td>10</td>
     </tr>
     <tr>
       <th>118</th>
@@ -760,46 +773,28 @@ document.write(`
       <td>19</td>
     </tr>
     <tr>
-      <th>28</th>
-      <td>3</td>
-      <td>4</td>
-      <td>18</td>
+      <th>140</th>
+      <td>7</td>
+      <td>7</td>
+      <td>17</td>
     </tr>
     <tr>
-      <th>201</th>
-      <td>9</td>
-      <td>1</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>1</td>
-      <td>6</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>3</td>
-      <td>1</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>59</th>
+      <th>61</th>
       <td>5</td>
       <td>7</td>
-      <td>9</td>
+      <td>18</td>
     </tr>
     <tr>
-      <th>95</th>
-      <td>6</td>
-      <td>7</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th>230</th>
-      <td>9</td>
+      <th>18</th>
+      <td>2</td>
       <td>9</td>
       <td>17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1</td>
+      <td>18</td>
     </tr>
   </tbody>
 </table>
@@ -819,7 +814,7 @@ document.write(`
 </div>
 </div>
 <section id="data-format">
-<h3>Data format<a class="headerlink" href="#data-format" title="Permalink to this heading">#</a></h3>
+<h3>Data format<a class="headerlink" href="#data-format" title="Link to this heading">#</a></h3>
 <p>This data set doesn’t look like the previous spike trains we saw: rather than zeros and ones, we have a column of spike times. This is called a <strong>sparse</strong> representation of the data, and it is a much more efficient way of representing spike trains than the way we saw in the previous lesson. This is because spikes are relatively rare, occurring only a few times at most on each trial. So if we represent the data by having a vale for each time point on every trial, we have a lot of data points that are filled with zeros, and really tell us nothing. If our data only represent when the ones are, we can infer that the rest of the data points are zero, but we end up storing much less data. This makes working with the data faster, especially with very large data sets.</p>
 <p>In the <code class="docutils literal notranslate"><span class="pre">spikes</span></code> DataFrame, the first column encodes the intensity level:</p>
 <div class="cell docutils container">
@@ -859,9 +854,9 @@ document.write(`
 </section>
 </section>
 <section id="visualizing-the-data">
-<h2>Visualizing the Data<a class="headerlink" href="#visualizing-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Visualizing the Data<a class="headerlink" href="#visualizing-the-data" title="Link to this heading">#</a></h2>
 <section id="raster-plot">
-<h3>Raster plot<a class="headerlink" href="#raster-plot" title="Permalink to this heading">#</a></h3>
+<h3>Raster plot<a class="headerlink" href="#raster-plot" title="Link to this heading">#</a></h3>
 <p>We’d like to visualize this larger data set using raster plots and PSTHs, as we did for the previous data. To do this, we’ll need to consider how to show the different responses for each each intensity level. There are a few ways we could do this, but here we’ll do it by adding more subplots, expanding on how we drew the raster plot and PSTH in the same figure in the previous page.</p>
 <p>Here we’ll build the code up in stages, first getting one plot working (a raster of one intensity level) and then adding the PSTH for that level, then plotting all the levels of intensity in different subplots, in a loop. We’ll start with the highest intensity level (<code class="docutils literal notranslate"><span class="pre">9</span></code>) as our “test case” because we can expect that it will elicit the most intense responses.</p>
 <div class="cell docutils container">
@@ -899,7 +894,7 @@ document.write(`
 <p>We can see right away that there does seem to be a relationship between stimulation and spiking, since there are more ticks during the “on” (shaded) time than before it.</p>
 </section>
 <section id="psth">
-<h3>PSTH<a class="headerlink" href="#psth" title="Permalink to this heading">#</a></h3>
+<h3>PSTH<a class="headerlink" href="#psth" title="Link to this heading">#</a></h3>
 <p>Now we can draw a PSTH for this intensity level. We’re going to draw this differently from before, because in the previous lesson we could sum the number of spikes in each time bin. Since our data here are represented as spike times, it’s easiest to use the <code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code> function to count the number of times each time point is found in the data, for this particular intensity level. For the PSTH, we want a bin for every time point, so we use a combination of two kwargs to force this (because otherwise, the histogram range will only include the minimum and maximum times at which spikes occur for this intensity level, which could potentially not include the earliest and/or latest time points in the trial. The <code class="docutils literal notranslate"><span class="pre">bins</span></code> kwarg is used to set the number of bins equal to the number of time points, and the <code class="docutils literal notranslate"><span class="pre">range</span></code> kwarg tell Matplotlib to space those bins evenly from 0 to the end of the trial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -920,7 +915,7 @@ document.write(`
 </div>
 </section>
 <section id="combine-raster-and-psth">
-<h3>Combine raster and PSTH<a class="headerlink" href="#combine-raster-and-psth" title="Permalink to this heading">#</a></h3>
+<h3>Combine raster and PSTH<a class="headerlink" href="#combine-raster-and-psth" title="Link to this heading">#</a></h3>
 <p>Next we combined the raster and PSTH in one figure. Ultimately we want to show all intensity levels in one figure, to as a layout it will work better to have the raster and PSTH side-by-side in one row, rather than one above the other as in the previous lesson:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -955,7 +950,7 @@ document.write(`
 </div>
 </section>
 <section id="plotting-all-intensity-levels">
-<h3>Plotting all intensity levels<a class="headerlink" href="#plotting-all-intensity-levels" title="Permalink to this heading">#</a></h3>
+<h3>Plotting all intensity levels<a class="headerlink" href="#plotting-all-intensity-levels" title="Link to this heading">#</a></h3>
 <p>Now we can embed the plot commands above into a loop through all intensity levels.</p>
 <p>First, for convenience we’ll create a list of intensity levels, and sort them so that they plot in a logical order (lowest to highest intensity):</p>
 <div class="cell docutils container">
@@ -1012,7 +1007,7 @@ document.write(`
 </div>
 </section>
 <section id="scale-the-x-axes">
-<h3>Scale the <em>x</em> axes<a class="headerlink" href="#scale-the-x-axes" title="Permalink to this heading">#</a></h3>
+<h3>Scale the <em>x</em> axes<a class="headerlink" href="#scale-the-x-axes" title="Link to this heading">#</a></h3>
 <p>You may note that the plot above looks wrong — the “stimulus on” shading doesn’t line up for all the plots! This is because by default, Matplotlib scales each subplot’s axes independently. For the low intensity levels, there are few spikes, and so if you look at the units on the <em>x</em> axes, they are quite variable.</p>
 <p>We can fix this by adding a <code class="docutils literal notranslate"><span class="pre">sharex=True</span></code> kwarg to the <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> call, which forces all the subplots to share the same <em>x</em> axis range. Since the histograms are already set to range from 0-21 ms, the raster plots will “inherit” the same range due to <code class="docutils literal notranslate"><span class="pre">sharex=True</span></code>. We add one further line, using <code class="docutils literal notranslate"><span class="pre">.set_xticks()</span></code> to specify the spacing of the tickmarks on the <em>x</em> axis to 2 ms:</p>
 <div class="cell docutils container">
@@ -1060,11 +1055,11 @@ document.write(`
 </div>
 </section>
 <section id="scale-the-y-axes">
-<h3>Scale the <em>y</em> axes<a class="headerlink" href="#scale-the-y-axes" title="Permalink to this heading">#</a></h3>
+<h3>Scale the <em>y</em> axes<a class="headerlink" href="#scale-the-y-axes" title="Link to this heading">#</a></h3>
 <p>Although there is also a <code class="docutils literal notranslate"><span class="pre">sharey</span></code> kwarg for the <em>y</em> axis, this isn’t appropriate for the current figure because the raster and PSTH plots necessarily will have different scales. The rasters are already on the same scale, since there were 10 trials at each intensity level. However, note that the <em>y</em> scales for the PSTHs are all different, which makes it very hard to compare between different intensity levels.</p>
 <p>There are (at least) two different ways we could do this: we could normalize the histograms (making the <em>y</em> axis the proportion of total spikes in each bin), or we could simply scale them all to the maximum number of spikes in any bin, across the entire data set.</p>
 <p>In this case, the latter option makes more sense. We want to compare the amount of spiking activity between different intensity levels, so we want to compare “apples to apples” by using the absolute number of spikes in each bin, rather than the proportion of spikes in each bin, at a particular intensity level.</p>
-<p>The way we figure out what the maximum value on the <em>y</em> axis should be, is by using an <span class="xref myst">accumulator variable</span>. We initialize <code class="docutils literal notranslate"><span class="pre">y_max</span></code> before we start the plotting loop, and then as we plot the data for each intensity level we compare the upper limit of the <em>y</em> axis for the current intensity against the current value of <code class="docutils literal notranslate"><span class="pre">y_max</span></code>, and update <code class="docutils literal notranslate"><span class="pre">y_max</span></code> if the current value is larger. By the time we have looped through all intensity levels, <code class="docutils literal notranslate"><span class="pre">y_max</span></code> will contain the largest number of spikes found in the data set.</p>
+<p>The way we figure out what the maximum value on the <em>y</em> axis should be, is by using an <a class="reference internal" href="#../3/for_loops"><span class="xref myst">accumulator variable</span></a>. We initialize <code class="docutils literal notranslate"><span class="pre">y_max</span></code> before we start the plotting loop, and then as we plot the data for each intensity level we compare the upper limit of the <em>y</em> axis for the current intensity against the current value of <code class="docutils literal notranslate"><span class="pre">y_max</span></code>, and update <code class="docutils literal notranslate"><span class="pre">y_max</span></code> if the current value is larger. By the time we have looped through all intensity levels, <code class="docutils literal notranslate"><span class="pre">y_max</span></code> will contain the largest number of spikes found in the data set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the number of subplot rows based on number of intensity levels in data</span>
@@ -1127,7 +1122,7 @@ document.write(`
 <p>Now the PSTHs more clearly show us that the low intensity levels elicited very few spikes, while the higher intensity levels elicited a lot more.</p>
 </section>
 <section id="label-the-plot">
-<h3>Label the plot<a class="headerlink" href="#label-the-plot" title="Permalink to this heading">#</a></h3>
+<h3>Label the plot<a class="headerlink" href="#label-the-plot" title="Link to this heading">#</a></h3>
 <p>Finally, we can properly annotate (label) the graph for easy interpretation, adding things like axis labels and titles. We’ll also make sure the axes of all the plots are the same:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1216,7 +1211,7 @@ document.write(`
 </section>
 </section>
 <section id="interpreting-the-data">
-<h2>Interpreting the data<a class="headerlink" href="#interpreting-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Interpreting the data<a class="headerlink" href="#interpreting-the-data" title="Link to this heading">#</a></h2>
 <p>Now that we have a nice visualization, we can use it to make sense of the data. Take some time to look at the figure above and think about what it shows you, about the relationship between light intensity and the activity of the neuron, then read on below.</p>
 <p>It is clear from the figure that more intense light stimulation elicits a stronger response from the neuron. Furthermore, it doesn’t look like there is a <em>linear</em> relationship between intensity and neuronal activity. If the relationship was linear, we would see a steady increase in spiking with increasing intensity level. Instead, it looks like the light elicits very little response at levels 0–2, a weak response at levels 3–5, and a stronger response at levels 6–9. So it may be that the neuron has a <em>threshold</em> level of light intensity, below which it doesn’t respond, and above which it does respond. From levels 3 to 8, spiking intensity seems to increase with light intensity, however at level 9 the peak number of spikes is lower than for levels 7 or 8.</p>
 <p>This relationship also appears to involve both the intensity of the neuron’s response (spike rate), and its timing. As intensity increases, especially from level 3 upwards, the time at which spiking activity is evident relative to the onset of the light stimulation seems to get earlier, as does the time at which peak spiking occurs. So it seems that the latency to first spike property we mentioned in the previous lesson is influenced by light intensity.</p>
@@ -1253,8 +1248,8 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="intro_spike_trains.html"
@@ -1281,7 +1276,9 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1329,6 +1326,7 @@ By Hyosub Kim
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..
@@ -1355,8 +1353,8 @@ By Hyosub Kim
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

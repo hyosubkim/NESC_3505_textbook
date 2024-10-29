@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Signals, Sampling &amp; Filtering &#8212; Data Science for Kinesiology</title>
   
@@ -15,62 +14,62 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=ff8fa330"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '8-signal_processing/signals-sampling-filtering';</script>
-    <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
+    <link rel="icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Correlating spike trains" href="../7-single_unit/corr_spike_trains.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +132,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -155,11 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="../_static/NESC3505_icon.png" class="logo__image only-light" alt="Data Science for Kinesiology - Home"/>
-    <script>document.write(`<img src="../_static/NESC3505_icon.png" class="logo__image only-dark" alt="Data Science for Kinesiology - Home"/>`);</script>
+    <img src="../_static/NESC3505_icon.png" class="logo__image only-dark pst-js-only" alt="Data Science for Kinesiology - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -179,11 +180,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/introduction.html">Getting Started with the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/data.html">Data</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets.html">Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets_limits.html">Limitations of Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/reproducibility.html">Reproducibility</a></li>
@@ -191,15 +192,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/which_lang.html">Which language to use?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/libs.html">Libraries and packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/why_python.html">Why Python for this Course?</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/datacamp.html">DataCamp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/jupyter.html">Jupyter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/markdown.html">Markdown</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Introduction to Python</span></p>
 <ul class="nav bd-sidenav">
@@ -207,7 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../3-python/learning_objectives.html">Learning Objectives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/jupyter_jhub.html">Introduction to Jupyter Notebooks in JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/getting_help.html">Getting Help with Python</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/data_types.html">Data types</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/data_types.html">Data types</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/variables_assignment.html">Variables and Assignment</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../3-python/types_conversion.html">Data Types and Conversion</a></li>
@@ -215,22 +216,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../3-python/builtin.html">Python Built-Ins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/lists.html">Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/dictionaries.html">Dictionaries</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/flow_control.html">Flow Control</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/flow_control.html">Flow Control</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/conditionals.html">Conditionals</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/writing-a-function.html">Writing Functions</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/working_w_data.html">Working with Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/working_w_data.html">Working with Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/pandas_dataframes.html">Introduction to pandas DataFrames</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="../3-python/looping_data_files.html">Looping Over Data Files</a></li>
 
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Data Visualization</span></p>
 <ul class="nav bd-sidenav">
@@ -259,17 +260,17 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../7-single_unit/introduction.html">Introduction to Single Unit Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../7-single_unit/learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/intro_spike_trains.html">Introduction to Spike Train Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/ten_intensities.html">Effects of Light Intensity on Spike Rate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/heat_maps.html">Heat Maps</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/pandas_multielec.html">Working with Multielectrode Data in pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/corr_spike_trains.html">Correlating spike trains</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Signal Processing</span></p>
 <ul class="current nav bd-sidenav">
@@ -289,7 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -298,14 +299,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -427,26 +428,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -496,17 +491,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="signals-sampling-filtering">
-<h1>Signals, Sampling &amp; Filtering<a class="headerlink" href="#signals-sampling-filtering" title="Permalink to this heading">#</a></h1>
+<h1>Signals, Sampling &amp; Filtering<a class="headerlink" href="#signals-sampling-filtering" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <div class="alert alert-block alert-info">
 This chapter was copied and lightly adapted (mostly code edits) from Paul Gribble's <a href="https://gribblelab.org/teaching/scicomp2020/">Scientific Computing</a> course under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. Some of the topics here are more advanced. The goal is to provide you an introduction to this extremely important topic as well as some conceptual and practical understanding. Hence, you may find a lot of value in returning to this chapter in the future, whether to boost your understanding or utilize the code examples provided. 
 </div><p>Whereas signals in nature (such as sound waves, magnetic fields, hand position, electromyograms (EMG), electroencephalograms (EEG), extra-cellular potentials, etc) vary continuously, often in science we measure these signals by <strong>sampling</strong> them repeatedly over time, at some <strong>sampling frequency</strong>. The resulting collection of measurements is a <strong>discretized</strong> representation of the original continuous signal.</p>
 <p>Before we get into <strong>sampling theory</strong> however we should first define some common terms and talk about how signals can be represented both in the <strong>time domain</strong> and in the <strong>frequency domain</strong>.</p>
 <section id="terminology">
-<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading">#</a></h2>
+<h2>Terminology<a class="headerlink" href="#terminology" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Frequency - number of cycles per unit time (usually seconds)</p></li>
 <li><p>Period - how long it takes a signal to go through a full cycle (e.g., 2<span class="math notranslate nohighlight">\(\pi\)</span> radians)</p></li>
@@ -514,7 +509,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </ul>
 </section>
 <section id="time-domain-representation-of-signals">
-<h2>Time domain representation of signals<a class="headerlink" href="#time-domain-representation-of-signals" title="Permalink to this heading">#</a></h2>
+<h2>Time domain representation of signals<a class="headerlink" href="#time-domain-representation-of-signals" title="Link to this heading">#</a></h2>
 <p>This is how you are probably used to thinking about signals, namely how the magnitude of a signal varies over time. So for example a signal <span class="math notranslate nohighlight">\(s\)</span> containing a sinusoid with a period <span class="math notranslate nohighlight">\(T\)</span> of 0.5 seconds (a frequency of 2 Hz) and a peak-to-peak magnitude <span class="math notranslate nohighlight">\(b\)</span> of 2 volts is represented in the time domain <span class="math notranslate nohighlight">\(t\)</span> as:</p>
 <div class="math notranslate nohighlight">
 \[ s(t) = \left(\frac{b}{2}\right) \mathrm{sin}\left(wt\right) \]</div>
@@ -556,7 +551,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </div>
 </section>
 <section id="frequency-domain-representation-of-signals">
-<h2>Frequency domain representation of signals<a class="headerlink" href="#frequency-domain-representation-of-signals" title="Permalink to this heading">#</a></h2>
+<h2>Frequency domain representation of signals<a class="headerlink" href="#frequency-domain-representation-of-signals" title="Link to this heading">#</a></h2>
 <p>We can also represent signals in the frequency domain. This requires some understanding of the <a class="reference external" href="http://en.wikipedia.org/wiki/Fourier_series">Fourier series</a>. The idea of the Fourier series is that all periodic signals can be represented by (decomposed into) the sum of a set of pure sines and cosines that differ in frequency and period. See the wikipedia link for lots of details and a helpful animation.</p>
 <div class="math notranslate nohighlight">
 \[ s(t) = \frac{a_{0}}{2} + \sum_{n=1}^{\infty} \left[a_{n}\mathrm{cos}(nwt) + b_{n}\mathrm{sin}(nwt)\right] \]</div>
@@ -568,7 +563,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <p>Here is a java applet that lets you play with how sines and cosines can be used to represent different signals: <a class="reference external" href="http://www.falstad.com/fourier/">Fourier Series Applet</a>.</p>
 </section>
 <section id="fast-fourier-transform-fft">
-<h2>Fast Fourier transform (FFT)<a class="headerlink" href="#fast-fourier-transform-fft" title="Permalink to this heading">#</a></h2>
+<h2>Fast Fourier transform (FFT)<a class="headerlink" href="#fast-fourier-transform-fft" title="Link to this heading">#</a></h2>
 <p>Given a signal there is a very efficient computational algorithm called the <a class="reference external" href="http://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier transform</a> (FFT) for computing the magnitude and phase coefficients. We will not go into the details of this algorithm here, most high level programming languages have a library that includes the FFT algorithm.</p>
 <p>Here is a video showing a 100-year-old mechanical computer that does both forward and inverse Fourier transforms:</p>
 <ul class="simple">
@@ -579,7 +574,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </ul>
 </section>
 <section id="sampling">
-<h2>Sampling<a class="headerlink" href="#sampling" title="Permalink to this heading">#</a></h2>
+<h2>Sampling<a class="headerlink" href="#sampling" title="Link to this heading">#</a></h2>
 <p>Before we talk about the FFT and magnitude and phase coefficients, we need to talk about discrete versus continuous signals, and sampling. In theory we can derive a mathematical description of the Fourier decomposition of a continuous signal, as we have done above, in terms of an infinite number of sinusoids. In practice however, signals are not continuous, but are <strong>sampled</strong> at some discrete <strong>sampling rate</strong>.</p>
 <p>For example, when we use Optotrak to record the position of the fingertip during pointing experiments, we choose a sampling rate of 200 Hz. This means 200 times per second the measurement instrument samples and records the position of the fingertip. The interval between any two samples is 5 ms. It turns out that the sampling rate used has a specific effect on the number of frequencies used in a discrete Fourier representation of the recorded signals.</p>
 <p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Shannon-Nyquist sampling theorem</a> states that a signal must be sampled at a rate which is at least twice that of its highest frequency component. If a signal contains power at frequencies higher than half the sampling rate, these high frequency components will appear in the sampled data at lower frequencies and will distort the recording. This is known as the problem of <a class="reference external" href="http://en.wikipedia.org/wiki/Aliasing">aliasing</a>.</p>
@@ -591,7 +586,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </div><p>So the message here is that in advance, before choosing your sampling rate, you should have some knowledge about the highest frequency that you (a) are interested in identifying; and (b) you think is a real component in the signal (as opposed to random noise). In cases where you have no a priori knowledge about the expected frequency content, one strategy is to remove high frequency components <em>before sampling</em>. This can be accomplished using low-pass filtering — sometimes called anti-aliasing filters. Once the signal has been sampled, it’s too late to perform anti-aliasing.</p>
 </section>
 <section id="power-spectra">
-<h2>Power spectra<a class="headerlink" href="#power-spectra" title="Permalink to this heading">#</a></h2>
+<h2>Power spectra<a class="headerlink" href="#power-spectra" title="Link to this heading">#</a></h2>
 <p>Rather than going into the computational details of how magnitude and phase coefficients are estimated (which goes beyond the scope of this course), we will now talk about how to interpret them.</p>
 <p>For a given signal, the collection of magnitude coefficients gives a description of the signal in terms of the strength of the various underlying frequency components. For our immediate purposes these magnitude coefficients will be most important to us and we can for the moment set aside the phase coefficients.</p>
 <p>Here is an example of a power spectrum for a pure 10 Hz signal, sampled at 100 Hz.</p>
@@ -634,7 +629,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <p>Typically however signals in the real world that we record are not pure sinusoids, but contain random noise. Noise can originate from the actual underlying process that we are interested in measuring, and it can also originate from the instruments we use to measure the signal. For noisy signals, the FFT taken across the whole signal can be noisy as well, and can make it difficult to see peaks.</p>
 </section>
 <section id="power-spectral-density">
-<h2>Power Spectral Density<a class="headerlink" href="#power-spectral-density" title="Permalink to this heading">#</a></h2>
+<h2>Power Spectral Density<a class="headerlink" href="#power-spectral-density" title="Link to this heading">#</a></h2>
 <p>One solution is instead of performing the FFT on the entire signal all at once, to instead, split the signal into chunks, take the FFT of each chunk, and then average these spectra to come up with a smoother spectrum. This can be accomplished using a <a class="reference external" href="http://www.mathworks.com/help/signal/ref/dspdata.psd.html">power spectral density</a> function. In Python in the SciPy package there is a function scipy.signal.welch() to accomplish this. We won’t go into the mathematical details or the theoretical considerations (relating to stochastic processes) but for now suffice it to say that the psd can often give you a better estimate of the power at different frequencies compared to a “plain” FFT, in the presence of random noise.</p>
 <p>Here is an example of plotting the power spectral density of a signal. We construct a 12 Hz signal at 1000 Hz sampling rate, and we add some random noise on top:</p>
 <div class="cell docutils container">
@@ -664,14 +659,14 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/80f277227a9ffc0bd44ef926f2fa8bc5066175ba1ade09ac7b5d05aba720cb95.png" src="../_images/80f277227a9ffc0bd44ef926f2fa8bc5066175ba1ade09ac7b5d05aba720cb95.png" />
+<img alt="../_images/dc404c403658c35b46dadee9fe26386927397a830e01d0d47182bb70e4437611.png" src="../_images/dc404c403658c35b46dadee9fe26386927397a830e01d0d47182bb70e4437611.png" />
 </div>
 </div>
 <p>In the Figure above you can see that the peak at 12 Hz stands nicely above all the noise in the power spectral density estimate (bottom panel).</p>
 <p>We have been ignoring the <strong>phase</strong> of the signal here, but just like the magnitude coefficients over frequencies, we can recover the phase coefficients of the signal as well.</p>
 </section>
 <section id="decibel-scale">
-<h2>Decibel scale<a class="headerlink" href="#decibel-scale" title="Permalink to this heading">#</a></h2>
+<h2>Decibel scale<a class="headerlink" href="#decibel-scale" title="Link to this heading">#</a></h2>
 <p>The decibel (dB) scale is a ratio scale. It is commonly used to measure sound level but is also widely used in electronics and signal processing. The dB is a logarithmic unit used to describe a ratio. You will often see power spectra displayed in units of decibels.</p>
 <p>The difference between two sound levels (or two power levels, as in the case of the power spectra above), is defined to be:</p>
 <div class="math notranslate nohighlight">
@@ -682,7 +677,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <p>For our purposes in the absence of a meaningful reference we can use 1.0 as the reference (i.e. as <span class="math notranslate nohighlight">\(P_{1}\)</span> in the above equation).</p>
 </section>
 <section id="spectrogram">
-<h2>Spectrogram<a class="headerlink" href="#spectrogram" title="Permalink to this heading">#</a></h2>
+<h2>Spectrogram<a class="headerlink" href="#spectrogram" title="Link to this heading">#</a></h2>
 <p>Often there are times when you may want to examine how the power spectrum of a signal (in other words its frequency content) changes over time. In speech acoustics for example, at certain frequencies, bands of energy called <a class="reference external" href="http://en.wikipedia.org/wiki/Formant">formants</a> may be identified, and are associated with certain speech sounds like vowels and vowel transitions. It is thought that the neural systems for human speech recognition are tuned for identification of these formants.</p>
 <p>Essentially a spectrogram is a way to visualize a series of power spectra computed from slices of a signal over time. Imagine a series of single power spectra (frequency versus power) repeated over time and stacked next to each other over a time axis.</p>
 <p>Matplotlib has a built-in function called <code class="docutils literal notranslate"><span class="pre">.pyplot.specgram()</span></code> that will generate a spectrogram. In the figure below, power is color-coded such that cool colors (blues) represent low power and hot colors (reds) represent high power.</p>
@@ -710,7 +705,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </div>
 </section>
 <section id="inverse-fast-fourier-transform-ifft">
-<h2>Inverse Fast Fourier transform (IFFT)<a class="headerlink" href="#inverse-fast-fourier-transform-ifft" title="Permalink to this heading">#</a></h2>
+<h2>Inverse Fast Fourier transform (IFFT)<a class="headerlink" href="#inverse-fast-fourier-transform-ifft" title="Link to this heading">#</a></h2>
 <p>Once we have the FFT of a signal, which represents the signal in the frequency domain as a series of magnitude and phase coefficients, we can reconstruct the signal in the time-domain using the inverse fast fourier transform (IFFT). Here is a concrete example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -763,7 +758,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <p>You can see above that the original signal is reconstructed in its entirety, simply on the basis of its frequency domain representation (the FFT).</p>
 </section>
 <section id="filtering">
-<h2>Filtering<a class="headerlink" href="#filtering" title="Permalink to this heading">#</a></h2>
+<h2>Filtering<a class="headerlink" href="#filtering" title="Link to this heading">#</a></h2>
 <p>We can use this property of signals to filter them. Below I take our original signal containing frequency components at 6, 10 and 13 Hz, I take the FFT, and then I set the values in the FFT corresponding to the frequency peaks of 10 and 13 Hz, to zero (and I leave the value corresponding to the frequency of 6 Hz unchanged). I then reconstruct a signal based on this altered frequency domain representation, using <code class="docutils literal notranslate"><span class="pre">ifft()</span></code>, and plot the resulting signal. What you can see is that by setting the coefficients corresponding to 10 and 13 Hz to zero, I essentially <strong>filtered out</strong> all of the power in the signal at those frequencies. The reconstructed signal now only has power at 6 Hz (the red line, it looks like a pure 6 Hz sinusoid).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -824,7 +819,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <li><p><strong>band-stop filters</strong> (sometimes called <strong>band-reject filters</strong> or <strong>notch filters</strong>) attenuate frequencies within the <strong>stop band</strong> and pass all others</p></li>
 </ul>
 <section id="characterizing-filter-performance">
-<h3>Characterizing filter performance<a class="headerlink" href="#characterizing-filter-performance" title="Permalink to this heading">#</a></h3>
+<h3>Characterizing filter performance<a class="headerlink" href="#characterizing-filter-performance" title="Link to this heading">#</a></h3>
 <p>A useful way of characterizing a filter’s performance is in terms of the ratio of the amplitude of the output to the input (the amplitude ratio AR or gain), and the phase shift ((\phi)) between the input and output, as functions of frequency. A plot of the amplitude ratio and phase shift against frequency is called a <a class="reference external" href="http://en.wikipedia.org/wiki/Bode_plot">Bode plot</a>.</p>
 <p>The <strong>pass band</strong> of a filter is the range of frequencies over which signals pass with no change. The <strong>stop band</strong> refers to the range of frequencies over which a filter attenuates signals. The <strong>cutoff frequency</strong> or <strong>corner frequency</strong> of a filter is used to describe the transition point from the pass band to the reject band. Since this transition cannot occur instantaneously it is usually defined to be the point at which the filter output is equal to -6 dB of the input in the pass band. The cutoff frequency is sometimes called the -6 dB point or the half-power point since -6 dB corresponds to half the signal power. The <strong>roll-off</strong> refers to the rate at which the filter attenuates the input after the cutoff point. When the roll-off is linear it can be specified as a specific slope, e.g. in terms of dB/decade or dB/octave (an octave is a doubling in frequency).</p>
 <p>Let’s look at some examples of filter characteristics.</p>
@@ -835,7 +830,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <!-- <img src="signal_bodetime.jpg" width=400> --><p>So we see a very good example of how low-pass filtering can be used very effectively to filter out random noise. Key is the appropriate choice of cut-off frequency.</p>
 </section>
 <section id="common-filters">
-<h3>Common Filters<a class="headerlink" href="#common-filters" title="Permalink to this heading">#</a></h3>
+<h3>Common Filters<a class="headerlink" href="#common-filters" title="Link to this heading">#</a></h3>
 <p>There are many different designs of filters, each with their own characteristics (gain, phase and delay characteristics). Some common types:</p>
 <ul class="simple">
 <li><p><strong>Butterworth Filters</strong> have frequency responses which are maximally flat and have a monotonic roll-off. They are well behaved and this makes them very popular choices for simple filtering applications. For example in my work I use them exlusively for filtering physiological signals. MATLAB has a built-in function called <code class="docutils literal notranslate"><span class="pre">butter()</span></code> that implements the butterworth filter.</p></li>
@@ -845,13 +840,13 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </ul>
 </section>
 <section id="filter-order">
-<h3>Filter order<a class="headerlink" href="#filter-order" title="Permalink to this heading">#</a></h3>
+<h3>Filter order<a class="headerlink" href="#filter-order" title="Link to this heading">#</a></h3>
 <p>In <a class="reference external" href="http://en.wikipedia.org/wiki/Filter_design">filter design</a> the <strong>order</strong> of a filter is one characteristic that you might come across. Technically the definition of the filter order is the highest exponent in the <a class="reference external" href="http://en.wikipedia.org/wiki/Z-transform">z-domain</a> (<a class="reference external" href="http://en.wikipedia.org/wiki/Transfer_function">transfer function</a>) of a <a class="reference external" href="http://en.wikipedia.org/wiki/Digital_filter">digital filter</a>. That’s helpful isn’t it! (not) Another way of describing filter order is the degree of the approximating polynomial for the filter. Yet another way of describing it is that increasing the filter order increases roll-off and brings the filter closer to the ideal response (i.e. a “brick wall” roll-off).</p>
 <p>Practically speaking, you will find that a second-order butterworth filter provides a nice sharp roll-off without too much undesirable side-effects (e.g. large time lag, ripple in the pass-band, etc).</p>
 <p>See <a class="reference external" href="http://en.wikipedia.org/wiki/Low-pass_filter#Continuous-time_low-pass_filters">this section</a> of the wikipedia page on low-pass filters for another description.</p>
 </section>
 <section id="python-code-for-filtering">
-<h3>Python code for filtering<a class="headerlink" href="#python-code-for-filtering" title="Permalink to this heading">#</a></h3>
+<h3>Python code for filtering<a class="headerlink" href="#python-code-for-filtering" title="Link to this heading">#</a></h3>
 <p>Below is Python code for implementing low-pass, high-pass, band-pass, and band-stop filters using a Butterworth design (more on these terms below).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -886,7 +881,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </div>
 </section>
 <section id="application-high-frequency-noise-and-taking-derivatives">
-<h3>Application: high-frequency noise and taking derivatives<a class="headerlink" href="#application-high-frequency-noise-and-taking-derivatives" title="Permalink to this heading">#</a></h3>
+<h3>Application: high-frequency noise and taking derivatives<a class="headerlink" href="#application-high-frequency-noise-and-taking-derivatives" title="Link to this heading">#</a></h3>
 <p>One of the characteristics of just about any experimental measurement is that the signal that you measure with your instrument will contain a combination of true signal and “noise” (random variations in the signal). A common approach is to take many measurements and average them together. This is what is commonly done in EEG/ERP studies, in EMG studies, with spike-triggered averaging, and many others. The idea is that if the “real” part of the signal is constant over trials, and the “noise” part of the signal is random from trial to trial, then averaging over many trials will average out the noise (which is sometimes positive, sometimes negative, but on balance, zero) and what remains will be the true signal.</p>
 <p>You can imagine however that there are downsides to this approach. First of all, it requires that many, many measures be taken so that averages can be computed. Second, there is no guarantee that the underlying “true” signal will in fact remain constant over those many measurements. Third, one cannot easily do analyses on single trials, since we have to wait for the average before we can look at the data.</p>
 <p>One solution is to use signal processing techniques such as <strong>filtering</strong> to separate the noise from the signal. A limitation of this technique however is that when we apply a filter (for example a low-pass filter), we filter out <strong>all</strong> power in the signal above the cutoff frequency — whether “real” signal or noise. This approach thus assumes that we are fairly certain that the power above our cutoff is of no interest to us.</p>
@@ -924,7 +919,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fce39c1a60f3c142fda46624dddf95874a7eddd010c74a63497c856e9c91105e.png" src="../_images/fce39c1a60f3c142fda46624dddf95874a7eddd010c74a63497c856e9c91105e.png" />
+<img alt="../_images/cb069fc665228399af459dc50fa02d40d57dc750c315f192a915664bce3c02a6.png" src="../_images/cb069fc665228399af459dc50fa02d40d57dc750c315f192a915664bce3c02a6.png" />
 </div>
 </div>
 <p>The top panel shows position in one coordinate over time. The middle panel shows the result of taking the derivative of the position signal to obtain velocity. I have simply used the <code class="docutils literal notranslate"><span class="pre">diff()</span></code> function here to obtain a numerical estimate of the derivative, taking the forward difference. Note how much noisier it looks than the position signal. Finally the bottom panel shows the result of taking the derivative of the velocity signal, to obtain acceleration. It is so noisy one cannot even see the peaks in the acceleration signal, they are completely masked by noise.</p>
@@ -953,14 +948,14 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/81c54d4262a34f2b6f828b554af7c0adce5b0e16227312148a0e15bf43ae2274.png" src="../_images/81c54d4262a34f2b6f828b554af7c0adce5b0e16227312148a0e15bf43ae2274.png" />
+<img alt="../_images/421b0cd8a3ab211ed85e67bb0b4166bf8d7e675d138af3b488982b71b47a5d80.png" src="../_images/421b0cd8a3ab211ed85e67bb0b4166bf8d7e675d138af3b488982b71b47a5d80.png" />
 </div>
 </div>
 <p>What you can see is that for the position over time, the filtered version (shown in red) doesn’t differ that much, at least not visibly, from the unfiltered version (in blue). The velocity and acceleration traces however look vastly different. Differentiating the filtered position signal yields a velocity trace (shown in red in the middle panel) that is way less noisy than the original version. Taking the derivative again of this new velocity signal yields an acceleration signal (shown in red in the bottom panel) that is actually usable. The original version (shown in blue) is so noisy it overwhelms the entire panel. Note the scale change on the ordinate.</p>
 </section>
 </section>
 <section id="quantization">
-<h2>Quantization<a class="headerlink" href="#quantization" title="Permalink to this heading">#</a></h2>
+<h2>Quantization<a class="headerlink" href="#quantization" title="Link to this heading">#</a></h2>
 <p>Converting an analog signal to a digital form involves the quantization of the analog signal. In this procedure the range of the input variable is divided into a set of class intervals. Quantization involves the replacement of each value of the input variable by the nearest class interval centre.</p>
 <p>Another way of saying this is that when sampling an analog signal and converting it to digital values, one is limited by the precision with which one can represent the (analog) signal digitally. Usually a piece of hardware called an analog-to-digital (A/D) board is the thing that performs this conversion. The range of A/D boards are usually specified in terms of <strong>bits</strong>. For example a 12-bit A/D board is capable of specifying <span class="math notranslate nohighlight">\(2^{12}=4096\)</span> unique values. This means that a continuous signal will be represented using only 4096 possible values. A 16-bit A/D board would be capable of using <span class="math notranslate nohighlight">\(2^{16}=65,536\)</span> different values. Obviously the higher the better, in terms of the resolution of the underlying digital representation. Often however in practice, higher resolutions come at the expense of lower sampling rates.</p>
 <p>As an example, let’s look at a continuous signal and its digital representation using a variety of (low) sample resolutions:</p>
@@ -971,7 +966,7 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
 <p>Whenever possible, amplify your signal to occupy the maximum range of the A/D board you’re using. Of course the trick is always to amplify the signal without also amplifying the noise!</p>
 </section>
 <section id="sources-of-noise">
-<h2>Sources of noise<a class="headerlink" href="#sources-of-noise" title="Permalink to this heading">#</a></h2>
+<h2>Sources of noise<a class="headerlink" href="#sources-of-noise" title="Link to this heading">#</a></h2>
 <p>It is useful to list a number of common sources of noise in physiological signals:</p>
 <ul class="simple">
 <li><p><strong>Extraneous Signal Noise</strong> arises when a recording device records more than one signal — i.e. signals in addition to the one you as an experimenter are interested in. It’s up to you to decide which is signal and which is noise. For example, electrodes placed on the chest will record both ECG and EMG activity from respiratory muscles. A cardiologist might consider the ECG signal and EMG noise, while a respiratory physiologist might consider the EMG signal and the ECG noise.</p></li>
@@ -1011,8 +1006,8 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../7-single_unit/corr_spike_trains.html"
@@ -1030,7 +1025,9 @@ This chapter was copied and lightly adapted (mostly code edits) from Paul Gribbl
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1079,6 +1076,7 @@ By Hyosub Kim
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..
@@ -1105,8 +1103,8 @@ By Hyosub Kim
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

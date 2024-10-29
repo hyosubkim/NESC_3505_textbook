@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introduction to Plotting with Matplotlib &#8212; Data Science for Kinesiology</title>
   
@@ -15,61 +14,61 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=949a1ff5" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=ff8fa330"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '4-viz/plotting';</script>
-    <link rel="shortcut icon" href="../_static/NESC3505_icon.png"/>
+    <link rel="icon" href="../_static/NESC3505_icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Procedural versus Object-Oriented Plotting in Matplotlib" href="proc_vs_oo.html" />
     <link rel="prev" title="Learning Objectives" href="learning_objectives.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,32 +76,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -110,7 +93,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -118,16 +100,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -140,6 +131,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -154,11 +148,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="../_static/NESC3505_icon.png" class="logo__image only-light" alt="Data Science for Kinesiology - Home"/>
-    <script>document.write(`<img src="../_static/NESC3505_icon.png" class="logo__image only-dark" alt="Data Science for Kinesiology - Home"/>`);</script>
+    <img src="../_static/NESC3505_icon.png" class="logo__image only-dark pst-js-only" alt="Data Science for Kinesiology - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -178,11 +179,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/introduction.html">Getting Started with the Course</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2-nds/learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/what-is-datascience.html">What is Data Science?</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/data.html">Data</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/tools_for_datasci.html">Tools for (Kinesiological) Data Science</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets.html">Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/spreadsheets_limits.html">Limitations of Spreadsheets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/reproducibility.html">Reproducibility</a></li>
@@ -190,15 +191,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/which_lang.html">Which language to use?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/libs.html">Libraries and packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/why_python.html">Why Python for this Course?</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-nds/coding.html">Coding Tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/datacamp.html">DataCamp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/jupyter.html">Jupyter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2-nds/markdown.html">Markdown</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Introduction to Python</span></p>
 <ul class="nav bd-sidenav">
@@ -206,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../3-python/learning_objectives.html">Learning Objectives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/jupyter_jhub.html">Introduction to Jupyter Notebooks in JupyterHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/getting_help.html">Getting Help with Python</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/data_types.html">Data types</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/data_types.html">Data types</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/variables_assignment.html">Variables and Assignment</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../3-python/types_conversion.html">Data Types and Conversion</a></li>
@@ -214,22 +215,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../3-python/builtin.html">Python Built-Ins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/lists.html">Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/dictionaries.html">Dictionaries</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/flow_control.html">Flow Control</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/flow_control.html">Flow Control</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/conditionals.html">Conditionals</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../3-python/writing-a-function.html">Writing Functions</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/working_w_data.html">Working with Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-python/working_w_data.html">Working with Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3-python/pandas_dataframes.html">Introduction to pandas DataFrames</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="../3-python/looping_data_files.html">Looping Over Data Files</a></li>
 
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Data Visualization</span></p>
 <ul class="current nav bd-sidenav">
@@ -258,17 +259,17 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../7-single_unit/introduction.html">Introduction to Single Unit Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../7-single_unit/learning_objectives.html">Learning Objectives</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/single_unit_intro.html">Single Unit Data and Spike Trains</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/intro_spike_trains.html">Introduction to Spike Train Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/ten_intensities.html">Effects of Light Intensity on Spike Rate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/heat_maps.html">Heat Maps</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../7-single_unit/intro_multielec_data.html">Introducing Multielectrode Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/pandas_multielec.html">Working with Multielectrode Data in pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../7-single_unit/corr_spike_trains.html">Correlating spike trains</a></li>
-</ul>
-</li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Signal Processing</span></p>
 <ul class="nav bd-sidenav">
@@ -288,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -297,14 +298,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -426,26 +427,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -500,20 +495,20 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-plotting-with-matplotlib">
-<h1>Introduction to Plotting with Matplotlib<a class="headerlink" href="#introduction-to-plotting-with-matplotlib" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to Plotting with Matplotlib<a class="headerlink" href="#introduction-to-plotting-with-matplotlib" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
+<h2>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How can I plot my data?</p></li>
 <li><p>How can I save my plot for publishing?</p></li>
 </ul>
 </section>
 <section id="learning-objectives">
-<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Create a time series plot showing a single data set</p></li>
 <li><p>Create a scatter plot showing relationship between two data sets</p></li>
@@ -527,11 +522,11 @@ document.write(`
 <p>Matplotlib is also a very mature Python package, having been first released in 2003 and continuously updated since then. It has a strong development community, a detailed website with extensive documentation and many examples, and there is copious third party documentation in the form of blog posts, books, and more — much of which is freely available.</p>
 </section>
 <section id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">#</a></h2>
+<h2>History<a class="headerlink" href="#history" title="Link to this heading">#</a></h2>
 <p>Matplotlib’s original developer, <a class="reference external" href="https://en.wikipedia.org/wiki/John_D._Hunter">John D. Hunter</a> (1968-2012), was a neuroscience PhD student who needed to plot electrocorticography (ECoG) data (electrical data recorded directly from the surface of the brain). Hunter originally designed Matplotlib to emulate the plotting abilities of <a class="reference external" href="https://www.mathworks.com/products/matlab.html">Matlab</a>, but in Python. Matlab is a commercial programming language and environment, designed for — and widely used by — engineers and scientists. Hunter encountered limitations in Matlab that he wanted to work around. Because Matlab is a commercial product, rather than an open source one, development is controlled by a company (Mathworks). Although developers can write quite extensive and complex applications in Matlab, they are ultimately limited by the decisions that its developers have made. Hunter decided to switch his work to use Python, and wanted to develop a plotting interface that was similar to that used in Matlab. Indeed, this is where the “Mat” part of the name Matplotlib came from.</p>
 </section>
 <section id="importing-matplotlib">
-<h2>Importing Matplotlib<a class="headerlink" href="#importing-matplotlib" title="Permalink to this heading">#</a></h2>
+<h2>Importing Matplotlib<a class="headerlink" href="#importing-matplotlib" title="Link to this heading">#</a></h2>
 <p>We have previously covered how to import a Python package using the <code class="docutils literal notranslate"><span class="pre">import</span></code> command. We also covered how to import a package with an alias, using the syntax <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">[pacakge]</span> <span class="pre">as</span> <span class="pre">[alias]</span></code></p>
 <p>For Matplotlib, we will do this again, but we add an extra detail: Matplotlib, like many Python packages, is organized into a number of “modules” (essentially subsets of functions). The one that you will typically want to import for plotting is called <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>. So we use the syntax below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -546,7 +541,7 @@ document.write(`
 </div>
 </section>
 <section id="generating-a-plot">
-<h2>Generating a Plot<a class="headerlink" href="#generating-a-plot" title="Permalink to this heading">#</a></h2>
+<h2>Generating a Plot<a class="headerlink" href="#generating-a-plot" title="Link to this heading">#</a></h2>
 <p>Now we can draw a simple line plot using the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>’s <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function, by creating two lists of data points (each 4 elements long), which represent time elapsed and distance traveled by some hypothetical object:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
@@ -564,7 +559,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8b604e7280&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc5e33fd2a0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/2d5e64dfa2738ebdb3b45ee6b20b23c027b08b77e803a360ca91b6531bd2d4fe.png" src="../_images/2d5e64dfa2738ebdb3b45ee6b20b23c027b08b77e803a360ca91b6531bd2d4fe.png" />
@@ -591,7 +586,7 @@ document.write(`
 </div>
 </section>
 <section id="labelling-axes">
-<h2>Labelling Axes<a class="headerlink" href="#labelling-axes" title="Permalink to this heading">#</a></h2>
+<h2>Labelling Axes<a class="headerlink" href="#labelling-axes" title="Link to this heading">#</a></h2>
 <p>Matplotlib also allows us to modify the plot in many ways, which can improve the interpretability of a plot. For example, it’s always good practice to label the axes of a plot.</p>
 <p>In most cases, the way we modify or enhance a Matplotlib plot are not by adding arguments to the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> command, but executing additional commands after <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> that modify what was created by <code class="docutils literal notranslate"><span class="pre">.plot()</span></code>, culminating in the <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> command for the “final reveal”:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
@@ -615,10 +610,10 @@ document.write(`
 </div>
 </section>
 <section id="plotting-pandas-dataframes">
-<h2>Plotting pandas DataFrames<a class="headerlink" href="#plotting-pandas-dataframes" title="Permalink to this heading">#</a></h2>
+<h2>Plotting pandas DataFrames<a class="headerlink" href="#plotting-pandas-dataframes" title="Link to this heading">#</a></h2>
 <p>pandas is integrated with Matplotlib, making it easy to generate plots of data stored in pandas DataFrames. Methods are defined for pandas DataFrames that generate plots using Matplotlib.</p>
 <section id="import-data-as-a-pandas-dataframe">
-<h3>Import Data as a pandas DataFrame<a class="headerlink" href="#import-data-as-a-pandas-dataframe" title="Permalink to this heading">#</a></h3>
+<h3>Import Data as a pandas DataFrame<a class="headerlink" href="#import-data-as-a-pandas-dataframe" title="Link to this heading">#</a></h3>
 <p>Let’s try this by first importing pandas and loading in the Gapminder Oceania data (<code class="docutils literal notranslate"><span class="pre">data/gapminder_gdp_oceania.csv</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/gapminder_gdp_oceania.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
@@ -728,7 +723,7 @@ document.write(`
 <p>There are only two countries in this data set, which makes it easy to work with.</p>
 </section>
 <section id="plotting-directly-from-a-pandas-dataframe">
-<h3>Plotting directly from a pandas DataFrame<a class="headerlink" href="#plotting-directly-from-a-pandas-dataframe" title="Permalink to this heading">#</a></h3>
+<h3>Plotting directly from a pandas DataFrame<a class="headerlink" href="#plotting-directly-from-a-pandas-dataframe" title="Link to this heading">#</a></h3>
 <p>Our goal is to plot the GDP for a particular country (or countries), as a function of year. In other words, we want to plot a line for each country, with year on the <em>x</em> axis and GDP on the <em>y</em> axis.</p>
 <p>Let’s run the pandas <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method on our DataFrame to generate a Matplotlib plot:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
@@ -861,7 +856,7 @@ document.write(`
 </section>
 </section>
 <section id="renaming-columns">
-<h2>Renaming Columns<a class="headerlink" href="#renaming-columns" title="Permalink to this heading">#</a></h2>
+<h2>Renaming Columns<a class="headerlink" href="#renaming-columns" title="Link to this heading">#</a></h2>
 <p>The <em>x</em> axis labels in the above plot are hard to read, because each column name contains not only the year, but the preceding text <code class="docutils literal notranslate"><span class="pre">gdpPercap_</span></code>,  e.g., <code class="docutils literal notranslate"><span class="pre">gdpPercap_1972</span></code>. It would be nice to remove this leading text so column labels are just the numerical years.</p>
 <p>Fortunately, pandas has a <code class="docutils literal notranslate"><span class="pre">.str.strip()</span></code> method, which removes from the string the characters stated in the argument. This method works on strings, which is why we call <code class="docutils literal notranslate"><span class="pre">str</span></code> before <code class="docutils literal notranslate"><span class="pre">.strip()</span></code>. To rename the columns, we can rely on the fact that pandas DataFrames have a <code class="docutils literal notranslate"><span class="pre">.columns</span></code> property that allows us to refer to the entire set of column labels.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;gdpPercap_&#39;</span><span class="p">)</span>
@@ -1069,7 +1064,7 @@ document.write(`
 </div>
 </section>
 <section id="customizing-plot-appearance">
-<h2>Customizing Plot Appearance<a class="headerlink" href="#customizing-plot-appearance" title="Permalink to this heading">#</a></h2>
+<h2>Customizing Plot Appearance<a class="headerlink" href="#customizing-plot-appearance" title="Link to this heading">#</a></h2>
 <p>If we want to customize the colours of a plot with multiple categories (lines, bars, etc), we can pass a <em>keyword argument</em> (kwarg) to the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method.</p>
 <p>To change line colours, we pass the kwarg <code class="docutils literal notranslate"><span class="pre">color=</span></code> followed by a list of color names, with the number of list items equal to the number of categories we’re plotting (in this case, two):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">])</span>
@@ -1092,7 +1087,7 @@ document.write(`
 </div>
 </div>
 <section id="selecting-subsets-of-a-dataframe">
-<h3>Selecting subsets of a DataFrame<a class="headerlink" href="#selecting-subsets-of-a-dataframe" title="Permalink to this heading">#</a></h3>
+<h3>Selecting subsets of a DataFrame<a class="headerlink" href="#selecting-subsets-of-a-dataframe" title="Link to this heading">#</a></h3>
 <p>Suppose we want to plot only Australia’s GDP. We can do that quite efficiently by <em>chaining</em> together calls to the pandas <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method together with the <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> selector. This way, we can select the relevant data ‘on the fly’ rather than first defining a variable to hold that data.</p>
 <p>For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Australia&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
@@ -1129,7 +1124,7 @@ document.write(`
 </section>
 </section>
 <section id="types-of-plots">
-<h2>Types of plots<a class="headerlink" href="#types-of-plots" title="Permalink to this heading">#</a></h2>
+<h2>Types of plots<a class="headerlink" href="#types-of-plots" title="Link to this heading">#</a></h2>
 <p>Matplotlib will make some assumptions about how to plot your data, based on the types of values it is given. However, you can override these defaults by specifying the type of plot you desire. For example, we can plot the same Gapminder data as bars, by using the keyword argument <code class="docutils literal notranslate"><span class="pre">kind='bar'</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;GDP per capita&#39;</span><span class="p">)</span>
@@ -1151,7 +1146,7 @@ document.write(`
 <p>Something to get used to is that some plot styles can be defined as keyword arguments to <code class="docutils literal notranslate"><span class="pre">.plot()</span></code>, as above, others can be generated using subfunctions of <code class="docutils literal notranslate"><span class="pre">.plot</span></code>, such as <code class="docutils literal notranslate"><span class="pre">.plot.scatter()</span></code>, as below. Often, you can use either one to get the same result. It’s often the case in Python that there are many different ways to do the same thing!</p>
 </section>
 <section id="scatterplots">
-<h2>Scatterplots<a class="headerlink" href="#scatterplots" title="Permalink to this heading">#</a></h2>
+<h2>Scatterplots<a class="headerlink" href="#scatterplots" title="Link to this heading">#</a></h2>
 <p>Since Australia and New Zealand are in the same region of the world, and engage in a lot of trade with each other, it’s likely that their GDPs are correlated with each other. That is, as Australia’s GDP goes up, we would expect New Zealand’s to go up similarly.</p>
 <p>Below we generate a <em>scatterplot</em> to examine whether the two Oceania countries’ GDPs correlate. This requires a different type of data selection from the plots above, because here we want to use the data from one row as the <em>x</em> axis, and another row as the <em>y</em> axis — rather than using rows for groups and columns for the <em>x</em> axis. Fortunately, the pandas <code class="docutils literal notranslate"><span class="pre">.plot.scatter()</span></code> method recognizes our row names (indexes) so we just have to specify their names:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Australia&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;New Zealand&#39;</span><span class="p">)</span>
@@ -1175,9 +1170,9 @@ document.write(`
 </div>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <section id="the-expanding-wealth-gap">
-<h3>The Expanding Wealth Gap<a class="headerlink" href="#the-expanding-wealth-gap" title="Permalink to this heading">#</a></h3>
+<h3>The Expanding Wealth Gap<a class="headerlink" href="#the-expanding-wealth-gap" title="Link to this heading">#</a></h3>
 <p>Fill in the blanks below to plot the minimum GDP per capita over time for all the countries in Europe. Modify it again to plot the maximum GDP per capita over time for Europe.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_europe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/gapminder_gdp_europe.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
 <span class="n">data_europe</span><span class="o">.</span><span class="n">___</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">)</span> <span class="c1"># Method to find the minimum value</span>
@@ -1208,7 +1203,7 @@ document.write(`
 </div>
 </section>
 <section id="more-correlations">
-<h3>More Correlations<a class="headerlink" href="#more-correlations" title="Permalink to this heading">#</a></h3>
+<h3>More Correlations<a class="headerlink" href="#more-correlations" title="Link to this heading">#</a></h3>
 <p>This short program creates a plot showing the correlation between GDP and life expectancy for 2007, normalizing marker size by population:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/gapminder_all.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
 <span class="n">data_all</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> 
@@ -1223,7 +1218,7 @@ document.write(`
 </section>
 </section>
 <section id="saving-your-plot-to-a-file">
-<h2>Saving your plot to a file<a class="headerlink" href="#saving-your-plot-to-a-file" title="Permalink to this heading">#</a></h2>
+<h2>Saving your plot to a file<a class="headerlink" href="#saving-your-plot-to-a-file" title="Link to this heading">#</a></h2>
 <p>If you are satisfied with the plot you see you may want to save it to a file, perhaps to include it in a publication. There is a function in the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> module that accomplishes this: <code class="docutils literal notranslate"><span class="pre">.savefig()</span></code>. Calling this function, e.g. with</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;my_figure.png&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1238,7 +1233,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="summary-of-key-points">
-<h2>Summary of Key Points<a class="headerlink" href="#summary-of-key-points" title="Permalink to this heading">#</a></h2>
+<h2>Summary of Key Points<a class="headerlink" href="#summary-of-key-points" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Matplotlib is the most widely used scientific plotting library in Python.</p></li>
 <li><p>Methods allow you to plot data directly from a pandas dataframe.</p></li>
@@ -1278,8 +1273,8 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="learning_objectives.html"
@@ -1306,7 +1301,9 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1360,6 +1357,7 @@ By Hyosub Kim
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License..
@@ -1386,8 +1384,8 @@ By Hyosub Kim
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

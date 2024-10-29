@@ -43,7 +43,7 @@ File [0;32m~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pand
 [0;32m   (...)[0m
 [1;32m    157[0m     copy: [38;5;28mbool[39m [38;5;241m=[39m [38;5;28;01mTrue[39;00m,
 [1;32m    158[0m ) [38;5;241m-[39m[38;5;241m>[39m DataFrame [38;5;241m|[39m Series:
-[1;32m    159[0m     [38;5;124;03m"""[39;00m
+[1;32m    159[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
 [1;32m    160[0m [38;5;124;03m    Concatenate pandas objects along a particular axis.[39;00m
 [1;32m    161[0m 
 [0;32m   (...)[0m
