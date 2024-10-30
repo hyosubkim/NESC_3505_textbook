@@ -1577,8 +1577,8 @@ distribution of sample means for samples of size 40.</p>
 </div>
 <p>In the figure above, the sampling distribution of the mean
 has one peak and is bell-shaped. Most of the estimates are between
-about  \<span class="math notranslate nohighlight">\(140 and
-\\\)</span>160; but there are
+about  $140 and
+\$160; but there are
 a good fraction of cases outside this range (i.e., where the point estimate was
 not close to the population parameter). So it does indeed look like we were
 quite lucky when we estimated the population mean with only
@@ -1718,33 +1718,76 @@ distribution with a orange vertical line.</p>
 <span class="g g-Whitespace">   </span><span class="mi">3891</span> <span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3892</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_constructor</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;take&quot;</span><span class="p">)</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/managers.py:965,</span> in <span class="ni">BaseBlockManager.take</span><span class="nt">(self, indexer, axis, verify, convert_indices)</span>
-<span class="g g-Whitespace">    </span><span class="mi">963</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">964</span> <span class="k">if</span> <span class="n">convert_indices</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">965</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="n">maybe_convert_indices</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="n">verify</span><span class="p">)</span>
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/managers.py:968,</span> in <span class="ni">BaseBlockManager.take</span><span class="nt">(self, indexer, axis, verify, convert_indices)</span>
+<span class="g g-Whitespace">    </span><span class="mi">965</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="n">maybe_convert_indices</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="n">verify</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">967</span> <span class="n">new_labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">968</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reindex_indexer</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">968</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reindex_indexer</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">969</span>     <span class="n">new_axis</span><span class="o">=</span><span class="n">new_labels</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">970</span>     <span class="n">indexer</span><span class="o">=</span><span class="n">indexer</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">971</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>     <span class="n">allow_dups</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">973</span>     <span class="n">copy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">974</span> <span class="p">)</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/indexers/utils.py:279,</span> in <span class="ni">maybe_convert_indices</span><span class="nt">(indices, n, verify)</span>
-<span class="g g-Whitespace">    </span><span class="mi">276</span>         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">indices</span> <span class="o">&lt;</span> <span class="mi">0</span>
-<span class="ne">--&gt; </span><span class="mi">279</span> <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="n">indices</span> <span class="o">=</span> <span class="n">indices</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="n">indices</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">+=</span> <span class="n">n</span>
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/managers.py:742,</span> in <span class="ni">BaseBlockManager.reindex_indexer</span><span class="nt">(self, new_axis, indexer, axis, fill_value, allow_dups, copy, only_slice, use_na_proxy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">735</span>     <span class="n">new_blocks</span><span class="p">,</span> <span class="n">new_refs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slice_take_blocks_ax0</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">736</span>         <span class="n">indexer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">737</span>         <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">738</span>         <span class="n">only_slice</span><span class="o">=</span><span class="n">only_slice</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">739</span>         <span class="n">use_na_proxy</span><span class="o">=</span><span class="n">use_na_proxy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">740</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">741</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">742</span>     <span class="n">new_blocks</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">743</span>         <span class="n">blk</span><span class="o">.</span><span class="n">take_nd</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">744</span>             <span class="n">indexer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">745</span>             <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">746</span>             <span class="n">fill_value</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">747</span>                 <span class="n">fill_value</span> <span class="k">if</span> <span class="n">fill_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">blk</span><span class="o">.</span><span class="n">fill_value</span>
+<span class="g g-Whitespace">    </span><span class="mi">748</span>             <span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">749</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">750</span>         <span class="k">for</span> <span class="n">blk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span>
+<span class="g g-Whitespace">    </span><span class="mi">751</span>     <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">752</span>     <span class="n">new_refs</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">754</span> <span class="n">new_axes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
 
-<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/numpy/core/_methods.py:54,</span> in <span class="ni">_any</span><span class="nt">(a, axis, dtype, out, keepdims, where)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="k">def</span> <span class="nf">_prod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>           <span class="n">initial</span><span class="o">=</span><span class="n">_NoValue</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="k">return</span> <span class="n">umr_prod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">,</span> <span class="n">initial</span><span class="p">,</span> <span class="n">where</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">54</span> <span class="k">def</span> <span class="nf">_any</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="c1"># Parsing keyword arguments is currently fairly slow, so avoid it for now</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="k">if</span> <span class="n">where</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span>         <span class="k">return</span> <span class="n">umr_any</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)</span>
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/managers.py:743,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">735</span>     <span class="n">new_blocks</span><span class="p">,</span> <span class="n">new_refs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slice_take_blocks_ax0</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">736</span>         <span class="n">indexer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">737</span>         <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">738</span>         <span class="n">only_slice</span><span class="o">=</span><span class="n">only_slice</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">739</span>         <span class="n">use_na_proxy</span><span class="o">=</span><span class="n">use_na_proxy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">740</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">741</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">742</span>     <span class="n">new_blocks</span> <span class="o">=</span> <span class="p">[</span>
+<span class="ne">--&gt; </span><span class="mi">743</span>         <span class="n">blk</span><span class="o">.</span><span class="n">take_nd</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">744</span>             <span class="n">indexer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">745</span>             <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">746</span>             <span class="n">fill_value</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">747</span>                 <span class="n">fill_value</span> <span class="k">if</span> <span class="n">fill_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">blk</span><span class="o">.</span><span class="n">fill_value</span>
+<span class="g g-Whitespace">    </span><span class="mi">748</span>             <span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">749</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">750</span>         <span class="k">for</span> <span class="n">blk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span>
+<span class="g g-Whitespace">    </span><span class="mi">751</span>     <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">752</span>     <span class="n">new_refs</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">754</span> <span class="n">new_axes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/internals/blocks.py:878,</span> in <span class="ni">Block.take_nd</span><span class="nt">(self, indexer, axis, new_mgr_locs, fill_value)</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>     <span class="n">allow_fill</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span> <span class="c1"># Note: algos.take_nd has upcast logic similar to coerce_to_target_dtype</span>
+<span class="ne">--&gt; </span><span class="mi">878</span> <span class="n">new_values</span> <span class="o">=</span> <span class="n">algos</span><span class="o">.</span><span class="n">take_nd</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>     <span class="n">values</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">allow_fill</span><span class="o">=</span><span class="n">allow_fill</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span> <span class="c1"># Called from three places in managers, all of which satisfy</span>
+<span class="g g-Whitespace">    </span><span class="mi">883</span> <span class="c1">#  this assertion</span>
+<span class="g g-Whitespace">    </span><span class="mi">884</span> <span class="k">assert</span> <span class="ow">not</span> <span class="p">(</span><span class="n">axis</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">new_mgr_locs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/envs/jupyter_books/lib/python3.10/site-packages/pandas/core/array_algos/take.py:116,</span> in <span class="ni">take_nd</span><span class="nt">(arr, indexer, axis, fill_value, allow_fill)</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span>         <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">take</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>             <span class="n">indexer</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span> <span class="n">allow_fill</span><span class="o">=</span><span class="n">allow_fill</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span> <span class="n">allow_fill</span><span class="o">=</span><span class="n">allow_fill</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">116</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span> <span class="k">return</span> <span class="n">_take_nd_ndarray</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">,</span> <span class="n">allow_fill</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1785,7 +1828,7 @@ distribution with a orange vertical line.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/53026cf93226ae3f0dfb35adffe031a27bc793d027c72b50fc960187cf73f69b.png" src="../_images/53026cf93226ae3f0dfb35adffe031a27bc793d027c72b50fc960187cf73f69b.png" />
+<img alt="../_images/0bba2d85094069ffdc492b5ef46c048489264fe4f2785a7fe7b15199f516bfd8.png" src="../_images/0bba2d85094069ffdc492b5ef46c048489264fe4f2785a7fe7b15199f516bfd8.png" />
 </div>
 </div>
 <p>Based on the visualization above, three points
@@ -1882,7 +1925,7 @@ large enough sample.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a3bbc5f5367abf0e55fa05ef8a9ce9901e4b19894a98317a25d807a9562268e6.png" src="../_images/a3bbc5f5367abf0e55fa05ef8a9ce9901e4b19894a98317a25d807a9562268e6.png" />
+<img alt="../_images/5d37f2a44d78568e625b262cafcdd38b4aab28e40441546736b8e8d2d031147f.png" src="../_images/5d37f2a44d78568e625b262cafcdd38b4aab28e40441546736b8e8d2d031147f.png" />
 </div>
 </div>
 <p>In the previous section, we took many samples of the same size <em>from our
@@ -2409,7 +2452,7 @@ histogram of prices in the sample is displayed in the figure below.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e3e9b092dbde5929cdb905506862cca97d9951b07e1832175fa4da6374e3a8f9.png" src="../_images/e3e9b092dbde5929cdb905506862cca97d9951b07e1832175fa4da6374e3a8f9.png" />
+<img alt="../_images/c5517c257c86055ddde380868f22f2e69b3428c27e8b69abc5f02a811d033729.png" src="../_images/c5517c257c86055ddde380868f22f2e69b3428c27e8b69abc5f02a811d033729.png" />
 </div>
 </div>
 <p>The histogram for the sample is skewed, with a few observations out to the right. The
@@ -2420,7 +2463,7 @@ this sample and estimate are the only data we can work with.</p>
 sample in Python and calculate a point estimate from that bootstrap sample. We will
 continue using the <code class="docutils literal notranslate"><span class="pre">sample</span></code> function of our dataframe,
 Critically, note that we now
-set <code class="docutils literal notranslate"><span class="pre">frac=1</span></code> (“fraction”) to indicate that we want to draw as many samples as there are rows in the dataframe
+set <code class="docutils literal notranslate"><span class="pre">frac=1</span></code> (“fraction”) to indicate that we want to draw as many observations as there are rows in the dataframe
 (we could also have set <code class="docutils literal notranslate"><span class="pre">n=40</span></code> but then we would need to manually keep track of how many rows there are).
 Since we need to sample with replacement when bootstrapping,
 we change the <code class="docutils literal notranslate"><span class="pre">replace</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
@@ -2435,7 +2478,7 @@ we change the <code class="docutils literal notranslate"><span class="pre">repla
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4e5ac6b4b5c5a4fd936d508835991ff8007cc1e0fd8dd6681b42b67f6db34bc8.png" src="../_images/4e5ac6b4b5c5a4fd936d508835991ff8007cc1e0fd8dd6681b42b67f6db34bc8.png" />
+<img alt="../_images/c3f62133657de8090e48cfdb38c938457efc9c239e445b3ebaa08f7952713cc2.png" src="../_images/c3f62133657de8090e48cfdb38c938457efc9c239e445b3ebaa08f7952713cc2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2669,7 +2712,7 @@ so that it is easier to read.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cfa125378f2298c2466ff6bbafa6a3f30784738a07a6f3171b6b55ef09f1a6ef.png" src="../_images/cfa125378f2298c2466ff6bbafa6a3f30784738a07a6f3171b6b55ef09f1a6ef.png" />
+<img alt="../_images/c4a7b3791940b40373d7eeb26ee89b21ca46361f77943ecbd2ffccbdbf5433bc.png" src="../_images/c4a7b3791940b40373d7eeb26ee89b21ca46361f77943ecbd2ffccbdbf5433bc.png" />
 </div>
 </div>
 <p>We can see how the distributions of the
@@ -2868,7 +2911,7 @@ our point estimate to behave if we take multiple samples.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a3166529c09aa5b028c3972ca7617fd7146aaa0ab440b029f4839e6fd99bf920.png" src="../_images/a3166529c09aa5b028c3972ca7617fd7146aaa0ab440b029f4839e6fd99bf920.png" />
+<img alt="../_images/c7bfa36d2ed0dbbff1d53d0621b9bcea2162993cb2343ae3584b6aac9f4b11b3.png" src="../_images/c7bfa36d2ed0dbbff1d53d0621b9bcea2162993cb2343ae3584b6aac9f4b11b3.png" />
 </div>
 </div>
 <p>Let’s compare the bootstrap distribution—which we construct by taking many samples from our original sample of size 40—with
@@ -2881,6 +2924,7 @@ the true sampling distribution—which corresponds to taking many samples from t
 <span class="c1"># Plot sampling distribution</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">sample_estimates</span><span class="p">[</span><span class="s1">&#39;mean_price&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1f77b4&quot;</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Sample mean price per night (dollars)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span> <span class="mi">250</span><span class="p">])</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample_estimates</span><span class="p">[</span><span class="s1">&#39;mean_price&#39;</span><span class="p">]),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#f58518&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample_estimates</span><span class="p">[</span><span class="s1">&#39;mean_price&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">5</span><span class="p">),</span>
@@ -2896,11 +2940,12 @@ the true sampling distribution—which corresponds to taking many samples from t
 <span class="c1"># Plot bootstrap distribution</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">boot20000_means</span><span class="p">[</span><span class="s1">&#39;mean_price&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1f77b4&quot;</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Sample mean price per night (dollars)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span> <span class="mi">250</span><span class="p">])</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">boot20000_means</span><span class="p">[</span><span class="s1">&#39;mean_price&#39;</span><span class="p">]),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#f58518&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">boot20000_means</span><span class="p">[</span><span class="s1">&#39;mean_price&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">5</span><span class="p">),</span>
     <span class="n">y</span><span class="o">=</span><span class="mi">1250</span><span class="p">,</span>
-    <span class="n">s</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Mean = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">boot20000_means</span><span class="p">[</span><span class="s1">&#39;mean_price&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">s</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Mean = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">boot20000_means</span><span class="p">[</span><span class="s1">&#39;mean_price&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#f58518&quot;</span><span class="p">,</span>
     <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
     <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
@@ -2919,7 +2964,7 @@ the true sampling distribution—which corresponds to taking many samples from t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8eb0c7039b0676eea0940a9d9fafb8c411dab2e6bd38c47a4b8b61dabd82a269.png" src="../_images/8eb0c7039b0676eea0940a9d9fafb8c411dab2e6bd38c47a4b8b61dabd82a269.png" />
+<img alt="../_images/482d0d6389b38e502a6e7ab22b796c30f463493a9f5b977bfe1784fcabf8c866.png" src="../_images/482d0d6389b38e502a6e7ab22b796c30f463493a9f5b977bfe1784fcabf8c866.png" />
 </div>
 </div>
 <p>There are two essential points that we can take away from
@@ -2928,9 +2973,9 @@ distribution and the bootstrap distribution are similar; the bootstrap
 distribution lets us get a sense of the point estimate’s variability. The
 second important point is that the means of these two distributions are
 slightly different. The sampling distribution is centered at
-\<span class="math notranslate nohighlight">\(154.51, the population mean value. However, the bootstrap
-distribution is centered at the original sample's mean price per night,
-\\\)</span>153.48. Because we are resampling from the
+$154.47, the population mean value. However, the bootstrap
+distribution is centered at the original sample’s mean price per night,
+\$153.73. Because we are resampling from the
 original sample repeatedly, we see that the bootstrap distribution is centered
 at the original sample’s mean value (unlike the sampling distribution of the
 sample mean, which is centered at the population parameter value).</p>
@@ -2987,7 +3032,7 @@ Name: mean_price, dtype: float64
 </div>
 </div>
 </div>
-<p>Our interval, \<span class="math notranslate nohighlight">\(121.6 to \\\)</span>191.5, captures
+<p>Our interval, $121.6 to \$191.5, captures
 the middle 95% of the sample mean prices in the bootstrap distribution. We can
 visualize the interval on our distribution in the following figure.</p>
 <div class="cell docutils container">
@@ -3003,7 +3048,7 @@ visualize the interval on our distribution in the following figure.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/67d8fb5b1d95e9c4157d65751374d62753ff7d2b301ec64242c291ff10a1c75a.png" src="../_images/67d8fb5b1d95e9c4157d65751374d62753ff7d2b301ec64242c291ff10a1c75a.png" />
+<img alt="../_images/045404041e9cc69a0180604212a0c2e86642197d1607bb41fbd142311020a0c4.png" src="../_images/045404041e9cc69a0180604212a0c2e86642197d1607bb41fbd142311020a0c4.png" />
 </div>
 </div>
 <p>To finish our estimation of the population parameter, we would report the point
@@ -3011,9 +3056,9 @@ estimate and our confidence interval’s lower and upper bounds. Here the sample
 mean price-per-night of 40 Airbnb listings was
 \<span class="math notranslate nohighlight">\(153.48, and we are 95% &quot;confident&quot; that the true
 population mean price-per-night for all Airbnb listings in Vancouver is between
-\\\)</span>(121.6, 191.5).
+\$(121.6, 191.5).
 Notice that our interval does indeed contain the true
-population mean value, \$154.51! However, in
+population mean value, \\\)</span>154.51! However, in
 practice, we would not know whether our interval captured the population
 parameter or not because we usually only have a single sample, not the entire
 population. This is the best we can do when we only have one sample!</p>
