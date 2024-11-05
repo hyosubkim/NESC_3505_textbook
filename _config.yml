@@ -21,6 +21,12 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default! See here: https://jupyterbook.org/en/stable/customize/config.html
+    - html_image
+
 # Information about where the book exists on the web
 repository:
   url: "https://github.com/hyosubkim/datasci-for-kin"  # Online location of your book
